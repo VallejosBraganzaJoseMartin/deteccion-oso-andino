@@ -41,6 +41,15 @@ ENV/
 *.onnx
 *.weights
 
+# Imágenes / datasets de imágenes (no van al repo; solo sus registros CSV)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
 # OS specific files
 .DS_Store
 Thumbs.db
