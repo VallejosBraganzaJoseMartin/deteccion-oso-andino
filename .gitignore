@@ -30,6 +30,7 @@ wheels/
 env/
 venv/
 ENV/
+venv_etiquetado/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

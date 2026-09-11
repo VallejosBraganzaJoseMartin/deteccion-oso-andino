@@ -1,0 +1,92 @@
+{
+  "version": "4.0.6",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "oso",
+      "shape_type": "rectangle",
+      "flags": {},
+      "points": [
+        [
+          337.512096,
+          427.454976
+        ],
+        [
+          414.684,
+          427.454976
+        ],
+        [
+          414.684,
+          538.002944
+        ],
+        [
+          337.512096,
+          538.002944
+        ]
+      ],
+      "group_id": null,
+      "description": null,
+      "difficult": false,
+      "attributes": {}
+    },
+    {
+      "label": "oso",
+      "shape_type": "rectangle",
+      "flags": {},
+      "points": [
+        [
+          192.54672000000002,
+          565.5920639999999
+        ],
+        [
+          331.582176,
+          565.5920639999999
+        ],
+        [
+          331.582176,
+          713.2692480000001
+        ],
+        [
+          192.54672000000002,
+          713.2692480000001
+        ]
+      ],
+      "group_id": null,
+      "description": null,
+      "difficult": false,
+      "attributes": {}
+    },
+    {
+      "label": "oso",
+      "shape_type": "rectangle",
+      "flags": {},
+      "points": [
+        [
+          191.676672,
+          565.286912
+        ],
+        [
+          331.85548800000004,
+          565.286912
+        ],
+        [
+          331.85548800000004,
+          714.336256
+        ],
+        [
+          191.676672,
+          714.336256
+        ]
+      ],
+      "group_id": null,
+      "description": null,
+      "difficult": false,
+      "attributes": {}
+    }
+  ],
+  "imagePath": "inat_235345232_418532869.jpg",
+  "imageData": null,
+  "imageHeight": 1024,
+  "imageWidth": 576
+}

@@ -1,0 +1,8 @@
+# Dataset proxy iteracion 1 (iNaturalist + ENA24). Generado por dividir_dataset.py
+# En Kaggle cambiar 'path' por la ruta donde quede descomprimida la carpeta.
+path: C:/Users/Martin/Desktop/8vo Semestre/Titulacion/Deteccion de Oso Andino/data/processed
+train: images/train
+val: images/val
+test: images/test
+nc: 1
+names: ['oso']

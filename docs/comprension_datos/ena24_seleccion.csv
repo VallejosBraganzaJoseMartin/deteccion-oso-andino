@@ -1,0 +1,2094 @@
+archivo,image_id,rol,categorias,cat_prioritaria,n_cajas_oso,grupo,nocturna,brillo_medio,img_w,img_h
+1003.jpg,1003,negativo,Eastern Chipmunk,otras,0,e0e1da604b9f6f90,False,104.6,2048,1536
+1182.jpg,1182,negativo,Eastern Chipmunk,otras,0,a424da6a4bb76783,False,92.8,2048,1536
+1212.jpg,1212,negativo,Woodchuck,otras,0,8e8adbd7d5343430,False,90.6,2048,1536
+1242.jpg,1242,negativo,Woodchuck,otras,0,b6f44d0d482a2dd7,False,111.0,2048,1536
+1619.jpg,1619,negativo,Bird,otras,0,adec4c6c70836733,False,100.0,2048,1536
+1673.jpg,1673,negativo,White_Tailed_Deer,deer,0,c932f3c836c87ec1,True,31.9,2048,1536
+1674.jpg,1674,negativo,White_Tailed_Deer,deer,0,c932f84973cc3ce1,True,32.5,2048,1536
+1677.jpg,1677,negativo,White_Tailed_Deer,deer,0,c932dec873cc3cc1,True,32.5,2048,1536
+1679.jpg,1679,negativo,White_Tailed_Deer,deer,0,c932de4973cc3cc1,True,33.0,2048,1536
+1680.jpg,1680,negativo,White_Tailed_Deer,deer,0,c932de4873cc3ec1,True,32.3,2048,1536
+1681.jpg,1681,negativo,White_Tailed_Deer,deer,0,c932de4873cc3ec1,True,32.3,2048,1536
+1682.jpg,1682,negativo,White_Tailed_Deer,deer,0,c932d7c872cc2ee1,True,32.2,2048,1536
+1683.jpg,1683,negativo,White_Tailed_Deer,deer,0,c932c7c972cc2ee1,True,32.2,2048,1536
+1684.jpg,1684,negativo,White_Tailed_Deer,deer,0,c932c7c872cc2fe1,True,32.0,2048,1536
+1687.jpg,1687,negativo,White_Tailed_Deer,deer,0,c932d7c872cc2ee1,True,32.4,2048,1536
+1690.jpg,1690,negativo,White_Tailed_Deer,deer,0,c932d34933cc6ee1,True,31.6,2048,1536
+1691.jpg,1691,negativo,White_Tailed_Deer,deer,0,c932c34973cc6ee1,True,31.7,2048,1536
+1692.jpg,1692,negativo,White_Tailed_Deer,deer,0,c932d74972cc2fc1,True,32.6,2048,1536
+1693.jpg,1693,negativo,White_Tailed_Deer,deer,0,c932d74933cc3ec1,True,31.8,2048,1536
+1694.jpg,1694,negativo,White_Tailed_Deer,deer,0,c932d74972cc2ee1,True,31.8,2048,1536
+1697.jpg,1697,negativo,White_Tailed_Deer,deer,0,c932d24933cc7ee1,True,32.5,2048,1536
+1698.jpg,1698,negativo,White_Tailed_Deer,deer,0,cd32f14c77c838c3,True,33.3,2048,1536
+1699.jpg,1699,negativo,White_Tailed_Deer,deer,0,c932c3c933cc6ee1,True,31.8,2048,1536
+1700.jpg,1700,negativo,White_Tailed_Deer,deer,0,c932d3c933cc6ec1,True,31.9,2048,1536
+1703.jpg,1703,negativo,White_Tailed_Deer,deer,0,c932c34d73cc6ec1,True,33.9,2048,1536
+1704.jpg,1704,negativo,White_Tailed_Deer,deer,0,c932c74973cc6ec1,True,34.5,2048,1536
+1705.jpg,1705,negativo,White_Tailed_Deer,deer,0,c932c74c73cc6ec1,True,33.9,2048,1536
+1707.jpg,1707,negativo,White_Tailed_Deer,deer,0,c932c74c73cc6ec1,True,33.5,2048,1536
+1710.jpg,1710,negativo,White_Tailed_Deer,deer,0,c932c3cc72cc6ec9,True,34.5,2048,1536
+1711.jpg,1711,negativo,White_Tailed_Deer,deer,0,c932c3cc72cc6ec9,True,34.4,2048,1536
+1714.jpg,1714,negativo,White_Tailed_Deer,deer,0,c932d34973cc6ec1,True,35.0,2048,1536
+1715.jpg,1715,negativo,White_Tailed_Deer,deer,0,c932d7cc72cc2ec1,True,34.5,2048,1536
+1716.jpg,1716,negativo,White_Tailed_Deer,deer,0,c932d3cc72cc6ec1,True,34.4,2048,1536
+1718.jpg,1718,negativo,White_Tailed_Deer,deer,0,c932d3cc72cc2ec3,True,34.4,2048,1536
+1719.jpg,1719,negativo,White_Tailed_Deer,deer,0,c932df4972cc2ec1,True,34.1,2048,1536
+1721.jpg,1721,negativo,White_Tailed_Deer,deer,0,c932df4873cc2ec1,True,34.2,2048,1536
+1726.jpg,1726,negativo,White_Tailed_Deer,deer,0,c932c34c73cc6ec9,True,34.2,2048,1536
+1727.jpg,1727,negativo,White_Tailed_Deer,deer,0,c932c34c73cc7ec1,True,34.1,2048,1536
+1728.jpg,1728,negativo,White_Tailed_Deer,deer,0,c932c34d73cc6ec1,True,34.1,2048,1536
+1731.jpg,1731,negativo,White_Tailed_Deer,deer,0,cd33f1cc36c12ec4,True,33.3,2048,1536
+1732.jpg,1732,negativo,White_Tailed_Deer,deer,0,cb32f8c963d838c3,True,33.9,2048,1536
+1733.jpg,1733,negativo,White_Tailed_Deer,deer,0,c932dfc862cc3ec1,True,34.1,2048,1536
+1734.jpg,1734,negativo,White_Tailed_Deer,deer,0,c932d74872cc2fe1,True,33.4,2048,1536
+1735.jpg,1735,negativo,White_Tailed_Deer,deer,0,c933c3c872cc2fe1,True,32.8,2048,1536
+1738.jpg,1738,negativo,White_Tailed_Deer,deer,0,c932d3c833cc6ee1,True,32.4,2048,1536
+1739.jpg,1739,negativo,White_Tailed_Deer,deer,0,c932d3c833cc6ee1,True,32.5,2048,1536
+1741.jpg,1741,negativo,White_Tailed_Deer,deer,0,d933c34c73cc26c3,True,35.0,2048,1536
+1742.jpg,1742,negativo,White_Tailed_Deer,deer,0,d933c74c72cc2ec1,True,34.9,2048,1536
+1743.jpg,1743,negativo,White_Tailed_Deer,deer,0,c932df4872cc3ec1,True,35.8,2048,1536
+1745.jpg,1745,negativo,White_Tailed_Deer,deer,0,c932dec963cc3cc1,True,35.6,2048,1536
+1747.jpg,1747,negativo,White_Tailed_Deer,deer,0,c932ddc863cc3cc3,True,35.7,2048,1536
+1748.jpg,1748,negativo,White_Tailed_Deer,deer,0,c932dfc872cc2ec1,True,34.9,2048,1536
+1749.jpg,1749,negativo,White_Tailed_Deer,deer,0,c933c74872ce6ec1,True,35.3,2048,1536
+1750.jpg,1750,negativo,White_Tailed_Deer,deer,0,d93387c872ce26f0,True,38.2,2048,1536
+1751.jpg,1751,negativo,White_Tailed_Deer,deer,0,d93383c876ce22cb,True,37.9,2048,1536
+1753.jpg,1753,negativo,White_Tailed_Deer,deer,0,cf30b9c4e2382ec7,True,41.6,2048,1536
+1755.jpg,1755,negativo,White_Tailed_Deer,deer,0,c937f0d9676218cc,True,45.8,2048,1536
+1757.jpg,1757,negativo,White_Tailed_Deer,deer,0,db277198666699c8,True,46.6,2048,1536
+1758.jpg,1758,negativo,White_Tailed_Deer,deer,0,cb34f0c8677298c7,True,45.1,2048,1536
+1759.jpg,1759,negativo,White_Tailed_Deer,deer,0,c932cbac77ca24d1,True,37.9,2048,1536
+1761.jpg,1761,negativo,White_Tailed_Deer,deer,0,9922ef946a6e94c9,True,43.1,2048,1536
+1762.jpg,1762,negativo,White_Tailed_Deer,deer,0,c932f8c933c86ec3,True,30.2,2048,1536
+1763.jpg,1763,negativo,White_Tailed_Deer,deer,0,c932d8c973cc2ec3,True,30.5,2048,1536
+1764.jpg,1764,negativo,White_Tailed_Deer,deer,0,c932dfc872cc2ec1,True,30.6,2048,1536
+1766.jpg,1766,negativo,White_Tailed_Deer,deer,0,d932c34976c826f9,True,31.3,2048,1536
+1767.jpg,1767,negativo,White_Tailed_Deer,deer,0,993bc9946ace26c3,True,47.8,2048,1536
+1768.jpg,1768,negativo,White_Tailed_Deer,deer,0,993ac9956aee26c1,True,46.9,2048,1536
+1769.jpg,1769,negativo,White_Tailed_Deer,deer,0,c936c34872cc6fc6,True,30.8,2048,1536
+1772.jpg,1772,negativo,White_Tailed_Deer,deer,0,db24cd9264ccbbc2,True,37.8,2048,1536
+1773.jpg,1773,negativo,White_Tailed_Deer,deer,0,db24cd9264ccb3c6,True,37.5,2048,1536
+1776.jpg,1776,negativo,White_Tailed_Deer,deer,0,d32cc99264ccbbc6,True,38.1,2048,1536
+1777.jpg,1777,negativo,White_Tailed_Deer,deer,0,db24e49b64c49be4,True,39.1,2048,1536
+1778.jpg,1778,negativo,White_Tailed_Deer,deer,0,db24cd9364cc93e4,True,38.2,2048,1536
+1779.jpg,1779,negativo,White_Tailed_Deer,deer,0,da25e49a63cc9b62,True,41.1,2048,1536
+1786.jpg,1786,negativo,White_Tailed_Deer,deer,0,cb2738ca633c9ce1,True,41.3,2048,1536
+1788.jpg,1788,negativo,White_Tailed_Deer,deer,0,d52ac9146bcc37ca,True,34.2,2048,1536
+1791.jpg,1791,negativo,White_Tailed_Deer,deer,0,d52bc1946ac4b7ca,True,35.7,2048,1536
+1793.jpg,1793,negativo,White_Tailed_Deer,deer,0,c936c3487ecc2bc6,True,31.6,2048,1536
+1794.jpg,1794,negativo,White_Tailed_Deer,deer,0,c936cf48f0cc2fe0,True,31.8,2048,1536
+1795.jpg,1795,negativo,White_Tailed_Deer,deer,0,c936de4073cc3fc0,True,32.1,2048,1536
+1796.jpg,1796,negativo,White_Tailed_Deer,deer,0,c936dc41739c3bc1,True,33.0,2048,1536
+1797.jpg,1797,negativo,White_Tailed_Deer,deer,0,cb32d84573982ec7,True,32.5,2048,1536
+1800.jpg,1800,negativo,White_Tailed_Deer,deer,0,c936de4173cc2fc0,True,31.6,2048,1536
+1801.jpg,1801,negativo,White_Tailed_Deer,deer,0,c936de4173cc2fc0,True,31.6,2048,1536
+1802.jpg,1802,negativo,White_Tailed_Deer,deer,0,c937c34877cc2bc4,True,31.3,2048,1536
+1804.jpg,1804,negativo,White_Tailed_Deer,deer,0,c936c34877cc2bc6,True,30.9,2048,1536
+1805.jpg,1805,negativo,White_Tailed_Deer,deer,0,c62e9963ee1ca853,True,68.8,2048,1536
+1806.jpg,1806,negativo,White_Tailed_Deer,deer,0,c62e9963ee1ca853,True,68.2,2048,1536
+1807.jpg,1807,negativo,White_Tailed_Deer,deer,0,936fc432fb45a852,True,46.7,2048,1536
+1812.jpg,1812,negativo,White_Tailed_Deer,deer,0,c73bb846c338a857,True,60.2,2048,1536
+1815.jpg,1815,negativo,White_Tailed_Deer,deer,0,8b8bbc3a7ac06327,False,102.1,2048,1536
+1816.jpg,1816,negativo,White_Tailed_Deer,deer,0,8b8bb83a7ac06727,False,101.9,2048,1536
+1817.jpg,1817,negativo,White_Tailed_Deer,deer,0,838bb8787ac0762f,False,101.6,2048,1536
+1818.jpg,1818,negativo,White_Tailed_Deer,deer,0,8b8bb8387ac0672f,False,101.9,2048,1536
+1819.jpg,1819,negativo,White_Tailed_Deer,deer,0,818bb9787ac1632f,False,101.6,2048,1536
+1820.jpg,1820,negativo,White_Tailed_Deer,deer,0,818bbd787ac16327,False,102.8,2048,1536
+1821.jpg,1821,negativo,White_Tailed_Deer,deer,0,c983b9787ac063a7,False,101.5,2048,1536
+1822.jpg,1822,negativo,White_Tailed_Deer,deer,0,838d7b387ac263a6,False,102.8,2048,1536
+1823.jpg,1823,negativo,White_Tailed_Deer,deer,0,cb813a7878ca6766,False,102.2,2048,1536
+1824.jpg,1824,negativo,White_Tailed_Deer,deer,0,8389bc3a7ac3622f,False,104.0,2048,1536
+1825.jpg,1825,negativo,White_Tailed_Deer,deer,0,8b8bb9387ac36227,False,104.2,2048,1536
+1826.jpg,1826,negativo,White_Tailed_Deer,deer,0,898bbc3a7ac06727,False,110.2,2048,1536
+1827.jpg,1827,negativo,White_Tailed_Deer,deer,0,8b8dbc7a7ac06227,False,109.7,2048,1536
+1828.jpg,1828,negativo,White_Tailed_Deer,deer,0,898bb93a7ac16327,False,110.3,2048,1536
+1829.jpg,1829,negativo,White_Tailed_Deer,deer,0,8b8dbc7a7ac06227,False,109.9,2048,1536
+1830.jpg,1830,negativo,White_Tailed_Deer,deer,0,898bbd387ac16627,False,110.5,2048,1536
+1831.jpg,1831,negativo,White_Tailed_Deer,deer,0,818bbc787ac16727,False,110.3,2048,1536
+1832.jpg,1832,negativo,White_Tailed_Deer,deer,0,898bfc387ac16627,False,111.9,2048,1536
+1833.jpg,1833,negativo,White_Tailed_Deer,deer,0,8b8df8387ac06727,False,111.8,2048,1536
+1834.jpg,1834,negativo,White_Tailed_Deer,deer,0,818bbd787ac06727,False,111.2,2048,1536
+1835.jpg,1835,negativo,White_Tailed_Deer,deer,0,c626f0c53fd16d60,True,49.6,2048,1536
+1836.jpg,1836,negativo,White_Tailed_Deer,deer,0,c626f8c53fc16c64,True,49.8,2048,1536
+1837.jpg,1837,negativo,White_Tailed_Deer,deer,0,c626f8c537c16d64,True,49.9,2048,1536
+1838.jpg,1838,negativo,White_Tailed_Deer,deer,0,c626f0c93fd16d60,True,49.7,2048,1536
+1840.jpg,1840,negativo,White_Tailed_Deer,deer,0,c626f0c13fd16d64,True,50.2,2048,1536
+1841.jpg,1841,negativo,White_Tailed_Deer,deer,0,c626f1c82ed179cc,True,50.3,2048,1536
+1842.jpg,1842,negativo,White_Tailed_Deer,deer,0,c626f2c93fc16e48,True,50.0,2048,1536
+1843.jpg,1843,negativo,White_Tailed_Deer,deer,0,cc33f3cc33b14cc4,True,50.9,2048,1536
+1844.jpg,1844,negativo,White_Tailed_Deer,deer,0,926d6d926c6ceb90,True,33.8,2048,1536
+1846.jpg,1846,negativo,White_Tailed_Deer,deer,0,aa56d4a935aa4db4,True,66.8,2048,1536
+1848.jpg,1848,negativo,White_Tailed_Deer,deer,0,c626f0c93fc16e64,True,50.1,2048,1536
+1850.jpg,1850,negativo,White_Tailed_Deer,deer,0,852afa857ac16d6a,True,51.8,2048,1536
+1851.jpg,1851,negativo,White_Tailed_Deer,deer,0,c626f1c03fc17e64,True,50.3,2048,1536
+1852.jpg,1852,negativo,White_Tailed_Deer,deer,0,8736f28d76c12d64,True,51.4,2048,1536
+1853.jpg,1853,negativo,White_Tailed_Deer,deer,0,c726f0c93fd06d60,True,50.3,2048,1536
+1855.jpg,1855,negativo,White_Tailed_Deer,deer,0,c722f2c97ac16d62,True,51.0,2048,1536
+1857.jpg,1857,negativo,White_Tailed_Deer,deer,0,8a75f08a75c06f6c,True,52.6,2048,1536
+1860.jpg,1860,negativo,White_Tailed_Deer,deer,0,c626f8c936c16de2,True,50.7,2048,1536
+1861.jpg,1861,negativo,White_Tailed_Deer,deer,0,c226e0c93fc16fe2,True,51.1,2048,1536
+1865.jpg,1865,negativo,White_Tailed_Deer,deer,0,8572f28d7ad22d64,True,53.5,2048,1536
+1868.jpg,1868,negativo,White_Tailed_Deer,deer,0,c236f0c977a16d64,True,49.7,2048,1536
+1869.jpg,1869,negativo,White_Tailed_Deer,deer,0,8736f0c976a16f60,True,49.9,2048,1536
+1870.jpg,1870,negativo,White_Tailed_Deer,deer,0,c626f2cc3bd16e60,True,48.6,2048,1536
+1871.jpg,1871,negativo,White_Tailed_Deer,deer,0,c626f2cc33d16e62,True,48.9,2048,1536
+1872.jpg,1872,negativo,White_Tailed_Deer,deer,0,9178d048e545ad7f,True,71.8,2048,1536
+1873.jpg,1873,negativo,White_Tailed_Deer,deer,0,9178d844e545ad77,True,72.2,2048,1536
+1874.jpg,1874,negativo,White_Tailed_Deer,deer,0,9178d048e545ad7f,True,71.8,2048,1536
+1876.jpg,1876,negativo,White_Tailed_Deer,deer,0,c0399f46e035af4e,True,92.9,2048,1536
+1877.jpg,1877,negativo,White_Tailed_Deer,deer,0,c626f0c93fd16c64,True,48.4,2048,1536
+1880.jpg,1880,negativo,White_Tailed_Deer,deer,0,89897d387ac26766,True,125.6,2048,1536
+1881.jpg,1881,negativo,White_Tailed_Deer,deer,0,898979387ac2676e,True,125.8,2048,1536
+1882.jpg,1882,negativo,White_Tailed_Deer,deer,0,89897d387ac2666e,True,123.7,2048,1536
+1883.jpg,1883,negativo,White_Tailed_Deer,deer,0,89897d387ac2666e,True,123.7,2048,1536
+1884.jpg,1884,negativo,White_Tailed_Deer,deer,0,8983bd387ac076e6,False,125.6,2048,1536
+1885.jpg,1885,negativo,White_Tailed_Deer,deer,0,89897d387ac26766,True,123.5,2048,1536
+1886.jpg,1886,negativo,White_Tailed_Deer,deer,0,8983fd387ac076a6,False,123.3,2048,1536
+1887.jpg,1887,negativo,White_Tailed_Deer,deer,0,8983fd387ac066ae,False,117.3,2048,1536
+1888.jpg,1888,negativo,White_Tailed_Deer,deer,0,8983b9387ac276e6,False,128.2,2048,1536
+1889.jpg,1889,negativo,White_Tailed_Deer,deer,0,8983f9387ac076ae,False,117.2,2048,1536
+1890.jpg,1890,negativo,White_Tailed_Deer,deer,0,c626f8c836c16fe4,True,51.2,2048,1536
+1891.jpg,1891,negativo,White_Tailed_Deer,deer,0,c726f0c83bc16f64,True,51.2,2048,1536
+1892.jpg,1892,negativo,White_Tailed_Deer,deer,0,c626f2c93ad16fc0,True,48.8,2048,1536
+1894.jpg,1894,negativo,White_Tailed_Deer,deer,0,c626f0c93bd16ec4,True,48.6,2048,1536
+1895.jpg,1895,negativo,White_Tailed_Deer,deer,0,b64969b2346d5ba2,True,60.0,2048,1536
+1896.jpg,1896,negativo,White_Tailed_Deer,deer,0,c3a6f8c127986dc3,True,57.7,2048,1536
+1897.jpg,1897,negativo,White_Tailed_Deer,deer,0,c2a6fa4967d46ec0,True,56.3,2048,1536
+1898.jpg,1898,negativo,White_Tailed_Deer,deer,0,c2a6fa4937d46ec0,True,56.1,2048,1536
+1900.jpg,1900,negativo,White_Tailed_Deer,deer,0,83a2f0cb7f806ce6,True,65.4,2048,1536
+1901.jpg,1901,negativo,White_Tailed_Deer,deer,0,c3a6fec070856fe0,True,66.1,2048,1536
+1903.jpg,1903,negativo,White_Tailed_Deer,deer,0,857b7226ad72d04b,True,129.1,2592,1944
+1904.jpg,1904,negativo,White_Tailed_Deer,deer,0,842a3a3ff0468f5d,True,129.2,2592,1944
+1906.jpg,1906,negativo,White_Tailed_Deer,deer,0,9f08607fbc50817f,True,126.4,2592,1944
+1910.jpg,1910,negativo,White_Tailed_Deer,deer,0,952b40776e55425f,True,182.5,2592,1944
+1911.jpg,1911,negativo,White_Tailed_Deer,deer,0,d5454a6a093f253f,True,225.3,2592,1944
+1912.jpg,1912,negativo,White_Tailed_Deer,deer,0,c02f085f2e573f07,True,228.2,2592,1944
+1913.jpg,1913,negativo,White_Tailed_Deer,deer,0,d5424a6b293f2537,True,224.6,2592,1944
+1914.jpg,1914,negativo,White_Tailed_Deer,deer,0,d5560a6f282d741f,True,222.9,2592,1944
+1915.jpg,1915,negativo,White_Tailed_Deer,deer,0,c12f083f2e1b3f07,True,230.2,2592,1944
+1916.jpg,1916,negativo,White_Tailed_Deer,deer,0,d05f20373f231f07,True,209.4,2592,1944
+1917.jpg,1917,negativo,White_Tailed_Deer,deer,0,c04f084f071f8f5f,True,196.2,2592,1944
+1918.jpg,1918,negativo,White_Tailed_Deer,deer,0,d09700270d3bbf79,True,216.5,2592,1944
+1919.jpg,1919,negativo,White_Tailed_Deer,deer,0,d582061f806ffa7a,True,201.8,2592,1944
+1921.jpg,1921,negativo,White_Tailed_Deer,deer,0,856ad225ab5abc55,True,48.8,2048,1536
+1922.jpg,1922,negativo,White_Tailed_Deer,deer,0,856ad225ab5af855,True,50.0,2048,1536
+1923.jpg,1923,negativo,White_Tailed_Deer,deer,0,836fd454fa0aa857,True,45.2,2048,1536
+1924.jpg,1924,negativo,White_Tailed_Deer,deer,0,836fd465ab14a857,True,44.9,2048,1536
+1925.jpg,1925,negativo,White_Tailed_Deer,deer,0,c067b11938e59a77,True,97.5,2048,1536
+1926.jpg,1926,negativo,White_Tailed_Deer,deer,0,c167b11938e51e67,True,97.0,2048,1536
+1929.jpg,1929,negativo,White_Tailed_Deer,deer,0,c167b11928e53a77,True,97.0,2048,1536
+1930.jpg,1930,negativo,White_Tailed_Deer,deer,0,993ba64738c48c77,True,86.5,2048,1536
+1934.jpg,1934,negativo,White_Tailed_Deer,deer,0,c4c4d419991f9577,False,119.9,2048,1536
+1936.jpg,1936,negativo,White_Tailed_Deer,deer,0,c4c4d419991f9577,False,116.7,2048,1536
+2136.jpg,2136,negativo,Virginia Opossum,otras,0,cb2038cf768c6ce3,True,57.0,1920,1080
+214.jpg,214,negativo,Eastern Gray Squirrel,otras,0,a9a943537f326741,False,99.4,1920,1080
+2490.jpg,2490,negativo,Virginia Opossum,otras,0,cb242d9a72cd6e92,True,52.6,1920,1080
+269.jpg,269,negativo,Eastern Gray Squirrel,otras,0,c08423bf79aa295f,False,80.7,2048,1536
+3373.jpg,3373,negativo,Red Fox,otras,0,cb28f4ce2ea05ee2,True,53.8,2048,1536
+3658.jpg,3658,negativo,White_Tailed_Deer,deer,0,c539b8c631d866a7,True,63.6,2048,1536
+3661.jpg,3661,negativo,White_Tailed_Deer,deer,0,cd39b0c62ccc7333,True,68.8,2048,1536
+3663.jpg,3663,negativo,White_Tailed_Deer,deer,0,c73df0c633d842a6,True,65.7,2048,1536
+3664.jpg,3664,negativo,White_Tailed_Deer,deer,0,c539e8c633c86ea3,True,67.1,2048,1536
+3665.jpg,3665,negativo,White_Tailed_Deer,deer,0,cd31f0c633d866a3,True,63.9,2048,1536
+443.jpg,443,negativo,Eastern Fox Squirrel,otras,0,82829295d55d7d6d,False,90.4,2048,1536
+4667.jpg,4667,negativo,Grey Fox,otras,0,993ba6d4807f29c5,True,119.2,2592,1944
+4852.jpg,4852,negativo,Horse,horse,0,9c0bafdee065c10e,False,180.8,2048,1536
+4855.jpg,4855,negativo,Horse,horse,0,870bacdea005baee,False,184.1,2048,1536
+4856.jpg,4856,negativo,Horse,horse,0,9e1f20dcfa14fb04,False,181.4,2048,1536
+4862.jpg,4862,negativo,Dog;Horse,dog,0,991cc45dbc45d936,False,112.7,2048,1536
+4878.jpg,4878,negativo,Dog,dog,0,d97f8e10e37d1023,False,179.5,2048,1536
+4924.jpg,4924,negativo,Horse,horse,0,d1f3aa2af206d166,False,199.1,2048,1536
+4925.jpg,4925,negativo,Horse,horse,0,d1f1aa6a5a16d526,False,199.0,2048,1536
+4926.jpg,4926,negativo,Horse,horse,0,d3f3ae694a12d126,False,199.5,2048,1536
+4953.jpg,4953,negativo,Horse,horse,0,e33c3871c7ce3831,True,55.7,2048,1536
+4969.jpg,4969,negativo,Horse,horse,0,c624f0c96bcc6fe0,True,33.7,2048,1536
+4972.jpg,4972,negativo,Horse,horse,0,c624e8c97ac46fe8,True,32.8,2048,1536
+4973.jpg,4973,negativo,Horse,horse,0,c624e8c97ac46fe8,True,32.9,2048,1536
+4974.jpg,4974,negativo,Horse,horse,0,c624e8c97ac06fe9,True,32.6,2048,1536
+4975.jpg,4975,negativo,Horse,horse,0,c620e4cd7bc06fe4,True,33.2,2048,1536
+4976.jpg,4976,negativo,Horse,horse,0,de20e4cc7b806fe4,True,33.3,2048,1536
+4977.jpg,4977,negativo,Horse,horse,0,cf20e4cc79896ee4,True,33.4,2048,1536
+4978.jpg,4978,negativo,Horse,horse,0,cf20e4cc79896ee4,True,33.5,2048,1536
+4980.jpg,4980,negativo,Horse,horse,0,cd20e6ce79886ee4,True,34.5,2048,1536
+4981.jpg,4981,negativo,Horse,horse,0,cc2ce2c369c86fe2,True,33.6,2048,1536
+4982.jpg,4982,negativo,Horse,horse,0,cc2ce2cb69c86ee2,True,33.5,2048,1536
+4983.jpg,4983,negativo,Horse,horse,0,cd28e6c669c86ee2,True,33.9,2048,1536
+4984.jpg,4984,negativo,Horse,horse,0,c928e6c669c96be2,True,34.3,2048,1536
+4985.jpg,4985,negativo,Horse,horse,0,c928e6c669c96be2,True,34.9,2048,1536
+4986.jpg,4986,negativo,Horse,horse,0,d928e446f9992be4,True,35.8,2048,1536
+4987.jpg,4987,negativo,Horse,horse,0,d928e6c679896be0,True,35.2,2048,1536
+4988.jpg,4988,negativo,Horse,horse,0,da38e4649a996be4,True,38.7,2048,1536
+4989.jpg,4989,negativo,Horse,horse,0,db38e4449b9969e4,True,36.7,2048,1536
+4990.jpg,4990,negativo,Horse,horse,0,92326d4d989b73e4,True,39.8,2048,1536
+4991.jpg,4991,negativo,Horse,horse,0,92326d4d989377e4,True,39.7,2048,1536
+4992.jpg,4992,negativo,Horse,horse,0,92326d4d989b73e4,True,39.6,2048,1536
+4993.jpg,4993,negativo,Horse,horse,0,92326d6d989973e4,True,39.8,2048,1536
+4994.jpg,4994,negativo,Horse,horse,0,92326d6d989973e4,True,39.9,2048,1536
+4999.jpg,4999,negativo,Horse,horse,0,d4248f65be4ee11c,False,112.3,2048,1536
+5000.jpg,5000,negativo,Horse,horse,0,d4248f47be4ee11c,False,109.7,2048,1536
+5001.jpg,5001,negativo,Horse,horse,0,c424a74fbe4ee01e,False,108.0,2048,1536
+5004.jpg,5004,negativo,Horse,horse,0,d424874fbe07e11e,False,109.9,2048,1536
+5006.jpg,5006,negativo,Horse,horse,0,c4349a67bd17e21c,False,110.4,2048,1536
+5007.jpg,5007,negativo,Horse,horse,0,c424976fba16f01d,False,110.4,2048,1536
+5033.jpg,5033,negativo,Horse,horse,0,c167cb21f44ba659,False,92.0,2048,1536
+5034.jpg,5034,negativo,Horse,horse,0,9774a8337c06b65a,False,85.0,2048,1536
+5043.jpg,5043,negativo,Horse,horse,0,c046e143f96e8a7e,False,65.0,2048,1536
+5044.jpg,5044,negativo,Horse,horse,0,c746e151f96c807e,False,63.7,2048,1536
+5052.jpg,5052,negativo,Horse,horse,0,9e0fa356b94c8279,False,104.6,2048,1536
+5053.jpg,5053,negativo,Horse,horse,0,9233a716e94fc271,False,89.3,2048,1536
+5054.jpg,5054,negativo,Horse,horse,0,9624b154c97e837d,False,84.6,2048,1536
+5064.jpg,5064,negativo,Horse,horse,0,cd6c8463aad521d7,False,132.2,2048,1536
+5085.jpg,5085,negativo,Horse,horse,0,c96bb171acd33264,False,147.5,2048,1536
+5086.jpg,5086,negativo,Horse,horse,0,ce24d0c96bcc6ee1,True,34.8,2048,1536
+5087.jpg,5087,negativo,Horse,horse,0,c624e0c969cc6fe9,True,35.1,2048,1536
+5088.jpg,5088,negativo,Horse,horse,0,c624e4cb6ac06fe9,True,35.3,2048,1536
+5089.jpg,5089,negativo,Horse,horse,0,c624e0c97ac46fe9,True,35.2,2048,1536
+5090.jpg,5090,negativo,Horse,horse,0,ce24e0cd6ac86fe4,True,35.3,2048,1536
+5091.jpg,5091,negativo,Horse,horse,0,c624e4cd6bc86fe0,True,35.0,2048,1536
+5092.jpg,5092,negativo,Horse,horse,0,ce24e0cd6acc6fe0,True,35.9,2048,1536
+5093.jpg,5093,negativo,Horse,horse,0,ce24e0cd6bc86fe0,True,35.1,2048,1536
+5094.jpg,5094,negativo,Horse,horse,0,f27e3f81c3613390,False,90.1,2048,1536
+5099.jpg,5099,negativo,Dog,dog,0,fe6a81867fbc4181,False,85.8,1920,1080
+5104.jpg,5104,negativo,Dog,dog,0,fe6a81867fbc4181,False,86.1,1920,1080
+5114.jpg,5114,negativo,Dog,dog,0,f8e5452eba9e05c1,False,95.0,1920,1080
+5120.jpg,5120,negativo,Dog,dog,0,ff3601813eef8b40,False,83.4,1920,1080
+5121.jpg,5121,negativo,Dog,dog,0,ff3600813eef8b41,False,85.3,1920,1080
+5124.jpg,5124,negativo,Dog,dog,0,ff3601813eef8b40,False,83.5,1920,1080
+5142.jpg,5142,negativo,Dog,dog,0,ce12aa7099ea37c9,False,109.6,2048,1536
+5144.jpg,5144,negativo,Dog,dog,0,fe7380877eef0081,False,91.3,1920,1080
+5145.jpg,5145,negativo,Dog,dog,0,f66be387370a4894,False,101.2,1920,1080
+5146.jpg,5146,negativo,Dog,dog,0,fe6fe7831b844490,False,101.1,1920,1080
+5149.jpg,5149,negativo,Dog,dog,0,ee6be3830f9118cc,False,100.8,1920,1080
+5152.jpg,5152,negativo,Dog,dog,0,fe6fe3833f8000d8,False,97.3,1920,1080
+5153.jpg,5153,negativo,Dog,dog,0,fe6fe3832f9000d8,False,97.4,1920,1080
+5155.jpg,5155,negativo,Dog,dog,0,fe7a81867ebc4181,False,86.0,1920,1080
+5156.jpg,5156,negativo,Dog,dog,0,ff7a80867fbc4081,False,86.5,1920,1080
+5158.jpg,5158,negativo,Dog,dog,0,f66b84da6e9249a4,False,80.3,1920,1080
+5162.jpg,5162,negativo,Dog,dog,0,df6a84da7eb44181,False,87.6,1920,1080
+5163.jpg,5163,negativo,Dog,dog,0,df6a84da7eb44181,False,87.4,1920,1080
+5164.jpg,5164,negativo,Dog,dog,0,fc6aa6d86cb34984,False,90.5,1920,1080
+5166.jpg,5166,negativo,Dog,dog,0,f56a85da6eb148a1,False,87.1,1920,1080
+5169.jpg,5169,negativo,Dog,dog,0,fe3a80877efe0181,False,93.6,1920,1080
+5171.jpg,5171,negativo,Dog,dog,0,ce6ba38c3cf344c1,False,99.2,1920,1080
+5172.jpg,5172,negativo,Dog,dog,0,fa0f88e03f9869c3,False,101.4,1920,1080
+5186.jpg,5186,negativo,Dog,dog,0,cc4f879c7ef84181,False,88.9,1920,1080
+5187.jpg,5187,negativo,Dog,dog,0,cc4f839d7ec84383,False,95.0,1920,1080
+5194.jpg,5194,negativo,Dog,dog,0,df6383c06f994e81,False,85.1,1920,1080
+5197.jpg,5197,negativo,Dog,dog,0,fe7e85a83cb038c8,False,90.6,2048,1536
+5200.jpg,5200,negativo,Dog,dog,0,f67e09a4307939d2,False,87.8,2048,1536
+5204.jpg,5204,negativo,Dog,dog,0,ce73f92c649332c2,False,93.9,2048,1536
+5208.jpg,5208,negativo,Dog,dog,0,8c66f738449c70eb,False,88.7,2048,1536
+5211.jpg,5211,negativo,Dog,dog,0,fe658f8039be30c8,False,92.2,2048,1536
+5212.jpg,5212,negativo,Dog,dog,0,cc22916827db6cde,False,98.4,2048,1536
+5215.jpg,5215,negativo,Dog,dog,0,dd268348369a78ee,False,99.4,2048,1536
+522.jpg,522,negativo,Eastern Fox Squirrel,otras,0,93d0cd0d2c7372b3,False,105.0,2048,1536
+5223.jpg,5223,negativo,Dog,dog,0,da6d24b23ab179c8,False,90.3,2048,1536
+5225.jpg,5225,negativo,Dog,dog,0,e778982f11907dd2,False,84.6,2048,1536
+5227.jpg,5227,negativo,Dog,dog,0,c73c1ba47ed324c8,False,88.4,2048,1536
+5229.jpg,5229,negativo,Dog,dog,0,cc7f1ba4789325c8,False,94.3,2048,1536
+5242.jpg,5242,negativo,Dog,dog,0,a669565658d629ad,False,94.2,1920,1080
+5243.jpg,5243,negativo,Dog,dog,0,a77847c2792d23a9,False,106.0,1920,1080
+5253.jpg,5253,negativo,Dog,dog,0,c7f84f56782d2309,False,99.2,1920,1080
+5256.jpg,5256,negativo,Dog,dog,0,86784b67311e6f49,False,93.4,1920,1080
+5257.jpg,5257,negativo,Dog,dog,0,83f86666729c7989,False,91.3,1920,1080
+5261.jpg,5261,negativo,Dog,dog,0,87784647791e3f09,False,93.8,1920,1080
+5265.jpg,5265,negativo,Dog,dog,0,c7f03c47c18c7749,False,87.5,1920,1080
+5268.jpg,5268,negativo,Dog,dog,0,c7f03cc7c1147758,False,84.6,1920,1080
+5272.jpg,5272,negativo,Dog,dog,0,c7ec3c6371307358,False,83.9,1920,1080
+5276.jpg,5276,negativo,Dog,dog,0,c7f03cc7c1147758,False,80.8,1920,1080
+5278.jpg,5278,negativo,Dog,dog,0,86f086e66d5c5749,False,102.6,1920,1080
+5279.jpg,5279,negativo,Dog,dog,0,87f086e6695c5749,False,101.7,1920,1080
+5294.jpg,5294,negativo,Dog,dog,0,86e0c6e65c5c7f48,False,92.0,1920,1080
+5295.jpg,5295,negativo,Dog,dog,0,86e0c6e35d5c7a4c,False,92.7,1920,1080
+5298.jpg,5298,negativo,Dog,dog,0,82e0c6f34d5c7e4c,False,92.3,1920,1080
+5299.jpg,5299,negativo,Dog,dog,0,86e0c6f34c5c7b4c,False,92.8,1920,1080
+5301.jpg,5301,negativo,Dog,dog,0,86e0c6f35c5c7b48,False,92.9,1920,1080
+5306.jpg,5306,negativo,Dog,dog,0,8778464778ac7b89,False,103.4,1920,1080
+5308.jpg,5308,negativo,Dog,dog,0,86f85e47790e3989,False,96.4,1920,1080
+5313.jpg,5313,negativo,Dog,dog,0,c7f85e66600e3b89,False,96.6,1920,1080
+5314.jpg,5314,negativo,Dog,dog,0,c6f85e47730e3988,False,93.7,1920,1080
+5317.jpg,5317,negativo,Dog,dog,0,c6f85e47712e3388,False,93.5,1920,1080
+5319.jpg,5319,negativo,Dog,dog,0,c7f85e47712e3380,False,86.8,1920,1080
+5321.jpg,5321,negativo,Dog,dog,0,c7f05e57780e3381,False,88.6,1920,1080
+5324.jpg,5324,negativo,Dog,dog,0,87f84e46794e3b81,False,101.5,1920,1080
+5333.jpg,5333,negativo,Dog,dog,0,d90f24d82ed1ebe0,True,51.7,1920,1080
+5334.jpg,5334,negativo,Dog,dog,0,d80f21d836d36fe0,True,51.8,1920,1080
+5337.jpg,5337,negativo,Dog,dog,0,d80f21d827d1efc4,True,51.9,1920,1080
+5339.jpg,5339,negativo,Dog,dog,0,dc0f31d82ed0ebe0,True,51.6,1920,1080
+5340.jpg,5340,negativo,Dog,dog,0,d80f21d83cd16fe4,True,51.9,1920,1080
+5342.jpg,5342,negativo,Dog,dog,0,8e784ea7799e3301,False,102.3,1920,1080
+5353.jpg,5353,negativo,Dog,dog,0,c4488ce77b83df60,False,95.6,2048,1536
+5354.jpg,5354,negativo,Dog,dog,0,c4488ce77b83df60,False,95.7,2048,1536
+5360.jpg,5360,negativo,Dog,dog,0,cef84e63798e3380,False,104.5,1920,1080
+5364.jpg,5364,negativo,Dog,dog,0,cef84e63798e7300,False,104.1,1920,1080
+5366.jpg,5366,negativo,Dog,dog,0,cef84e63798e3380,False,104.3,1920,1080
+5369.jpg,5369,negativo,Dog,dog,0,c6785ec6798c3709,False,98.2,1920,1080
+5370.jpg,5370,negativo,Dog,dog,0,c6785747798c3389,False,102.1,1920,1080
+5371.jpg,5371,negativo,Dog,dog,0,c6785ec7798c3701,False,101.6,1920,1080
+5376.jpg,5376,negativo,Dog,dog,0,8e7057ae78cc3709,False,92.9,1920,1080
+5377.jpg,5377,negativo,Dog,dog,0,867056a679ce3789,False,94.6,1920,1080
+5378.jpg,5378,negativo,Dog,dog,0,86705ba6794e3b89,False,95.2,1920,1080
+5388.jpg,5388,negativo,Dog,dog,0,cef05666798c3709,False,99.8,1920,1080
+5390.jpg,5390,negativo,Dog,dog,0,c6f84666790d3d83,False,101.8,1920,1080
+5394.jpg,5394,negativo,Dog,dog,0,c7f84767780f3c01,False,93.3,1920,1080
+5395.jpg,5395,negativo,Dog,dog,0,c7f84667790f3c01,False,93.7,1920,1080
+5405.jpg,5405,negativo,Dog,dog,0,c5de4e4b68e03732,False,97.0,1920,1080
+5406.jpg,5406,negativo,Dog,dog,0,c1de4e6762e03731,False,96.5,1920,1080
+5408.jpg,5408,negativo,Dog,dog,0,c1de4e6363e03f11,False,96.2,1920,1080
+5409.jpg,5409,negativo,Dog,dog,0,f92233db32a25ea1,False,100.0,1920,1080
+5415.jpg,5415,negativo,Dog,dog,0,f92232db33a65ca1,False,100.0,1920,1080
+5424.jpg,5424,negativo,Dog,dog,0,f0630bd626a5de29,False,93.9,1920,1080
+5425.jpg,5425,negativo,Dog,dog,0,bde2219e66a15e2c,False,91.3,1920,1080
+5430.jpg,5430,negativo,Dog,dog,0,e8b312ca16a6cd3d,False,86.9,1920,1080
+5433.jpg,5433,negativo,Dog,dog,0,e8b312ca16a6cd3d,False,87.3,1920,1080
+5434.jpg,5434,negativo,Dog,dog,0,e8b313c936a6cd19,False,87.8,1920,1080
+5439.jpg,5439,negativo,Dog,dog,0,e9b212cb36a4cd3c,False,84.6,1920,1080
+5441.jpg,5441,negativo,Dog,dog,0,e9b212cb36a4cd3c,False,84.6,1920,1080
+5452.jpg,5452,negativo,Dog,dog,0,fc6223d20ca5f72c,False,91.7,1920,1080
+5461.jpg,5461,negativo,Dog,dog,0,c4489ce77b06d963,False,95.6,2048,1536
+5479.jpg,5479,negativo,Dog,dog,0,fb2238d933c25ca5,False,98.6,1920,1080
+5480.jpg,5480,negativo,Dog,dog,0,eb2239d136ca7c8c,False,108.0,1920,1080
+5483.jpg,5483,negativo,Dog,dog,0,cb2233d13eca67a4,False,108.6,1920,1080
+5488.jpg,5488,negativo,Dog,dog,0,f16301de2bcd5c23,False,94.4,1920,1080
+5492.jpg,5492,negativo,Dog,dog,0,f32801d72cc47b3d,False,92.4,1920,1080
+5495.jpg,5495,negativo,Dog,dog,0,e22201d13fcd6d2f,False,97.9,1920,1080
+5500.jpg,5500,negativo,Dog,dog,0,e12217d92ecc6d3a,False,90.0,1920,1080
+5501.jpg,5501,negativo,Dog,dog,0,ce19f8c670ec6631,True,64.0,1920,1080
+5505.jpg,5505,negativo,Dog,dog,0,c22159f326cd7d0b,True,115.6,1920,1080
+5508.jpg,5508,negativo,Dog,dog,0,c22159f22ccd7d1b,True,113.7,1920,1080
+5510.jpg,5510,negativo,Dog,dog,0,ce1df8c6702c6671,True,64.6,1920,1080
+5511.jpg,5511,negativo,Dog,dog,0,ce1df8c6702c6671,True,65.4,1920,1080
+5512.jpg,5512,negativo,Dog,dog,0,c61cfcc6382c6763,True,67.2,1920,1080
+5513.jpg,5513,negativo,Dog,dog,0,c61cfcc6302c6773,True,66.7,1920,1080
+5514.jpg,5514,negativo,Dog,dog,0,c61cfcc6306c6771,True,66.3,1920,1080
+5515.jpg,5515,negativo,Dog,dog,0,c61cdcc63c2c6771,True,67.8,1920,1080
+5517.jpg,5517,negativo,Dog,dog,0,de0ecdf02cc56076,True,64.3,1920,1080
+5518.jpg,5518,negativo,Dog,dog,0,de0fcdf02cc47027,True,64.0,1920,1080
+5520.jpg,5520,negativo,Dog,dog,0,de8dc9fe24e46520,True,61.4,1920,1080
+5521.jpg,5521,negativo,Dog,dog,0,c0a119f326cd7d0f,True,107.9,1920,1080
+5526.jpg,5526,negativo,Dog,dog,0,c2a059d724cc3f3b,True,107.2,1920,1080
+5527.jpg,5527,negativo,Dog,dog,0,c0a119f326cc7f0f,True,108.1,1920,1080
+5528.jpg,5528,negativo,Dog,dog,0,c0a119f326cd7d0f,True,108.0,1920,1080
+5529.jpg,5529,negativo,Dog,dog,0,c2a149d720cd3f3b,True,107.3,1920,1080
+5531.jpg,5531,negativo,Dog,dog,0,c2a049d72ccc3f3b,True,107.2,1920,1080
+5532.jpg,5532,negativo,Dog,dog,0,c2a059d724cc3f3b,True,107.1,1920,1080
+5533.jpg,5533,negativo,Dog,dog,0,9e9dcdb664e46061,True,60.3,1920,1080
+5536.jpg,5536,negativo,Dog,dog,0,9e9ccdb664646463,True,59.1,1920,1080
+5538.jpg,5538,negativo,Dog,dog,0,9e9ccdb664646463,True,59.2,1920,1080
+5541.jpg,5541,negativo,Dog,dog,0,986ed99e658962a6,True,67.8,2048,1536
+5544.jpg,5544,negativo,Dog,dog,0,986ed99e658962a6,True,67.7,2048,1536
+5550.jpg,5550,negativo,Dog,dog,0,d289c9f22ccc703f,True,92.5,1920,1080
+5551.jpg,5551,negativo,Dog,dog,0,d281d9e62ccc6763,True,87.7,1920,1080
+5554.jpg,5554,negativo,Dog,dog,0,d281d9e22ccc633f,True,87.9,1920,1080
+5556.jpg,5556,negativo,Dog,dog,0,c3881de22ccc773e,True,89.7,1920,1080
+5559.jpg,5559,negativo,Dog,dog,0,d22fd9b034c824fb,False,98.4,1920,1080
+5560.jpg,5560,negativo,Dog,dog,0,d22fd9b034c824fb,False,98.4,1920,1080
+5563.jpg,5563,negativo,Dog,dog,0,f12307d32ecf4932,False,91.3,1920,1080
+5565.jpg,5565,negativo,Dog,dog,0,e12317d32a8f5d32,False,92.0,1920,1080
+5570.jpg,5570,negativo,Dog,dog,0,c8a373cc36616c4f,True,91.8,1920,1080
+5576.jpg,5576,negativo,Dog,dog,0,996e999e658a668c,True,56.0,2048,1536
+5577.jpg,5577,negativo,Dog,dog,0,9b6e999e658a628c,True,55.9,2048,1536
+5579.jpg,5579,negativo,Dog,dog,0,996e9d9e658a628c,True,55.9,2048,1536
+5581.jpg,5581,negativo,Dog,dog,0,996e9d9e658a628c,True,55.9,2048,1536
+5582.jpg,5582,negativo,Dog,dog,0,996e999e658a628d,True,55.9,2048,1536
+5583.jpg,5583,negativo,Dog,dog,0,996c999e658e628d,True,56.2,2048,1536
+5585.jpg,5585,negativo,Dog,dog,0,cf6c38c1e4c3ed82,True,37.1,1920,1080
+5588.jpg,5588,negativo,Dog,dog,0,cf6c38c1e4c3ed82,True,37.4,1920,1080
+5589.jpg,5589,negativo,Dog,dog,0,cf6c38c1e4c3ec83,True,38.0,1920,1080
+5591.jpg,5591,negativo,Dog,dog,0,c7c72bd0b0185ef4,False,78.8,1920,1080
+5596.jpg,5596,negativo,Dog,dog,0,83c4c50d3b3b7e62,False,94.6,1920,1080
+5602.jpg,5602,negativo,Dog,dog,0,c2816335f63a7e07,False,93.2,1920,1080
+5604.jpg,5604,negativo,Dog,dog,0,c9a1a510fb393e47,False,95.9,1920,1080
+5608.jpg,5608,negativo,Dog,dog,0,80c1e12db3387e3f,False,90.4,1920,1080
+5611.jpg,5611,negativo,Dog,dog,0,c3e16160bc9f6e38,False,93.7,1920,1080
+5612.jpg,5612,negativo,Dog,dog,0,c3e16160bc9f6e38,False,93.8,1920,1080
+5617.jpg,5617,negativo,Dog,dog,0,d1e14340bc987e5f,False,86.8,1920,1080
+5634.jpg,5634,negativo,Dog,dog,0,c36325247ad8763d,False,96.1,1920,1080
+5636.jpg,5636,negativo,Dog,dog,0,c36325257ad8743d,False,95.0,1920,1080
+5639.jpg,5639,negativo,Dog,dog,0,c5e313202d9c7e3e,False,96.7,1920,1080
+5641.jpg,5641,negativo,Dog,dog,0,c5e312282d9c7e3e,False,95.2,1920,1080
+5642.jpg,5642,negativo,Dog,dog,0,e3c34964269e7e19,False,94.5,1920,1080
+5644.jpg,5644,negativo,Dog,dog,0,9be043673d9d7c10,False,87.3,1920,1080
+5646.jpg,5646,negativo,Dog,dog,0,9be042613f9d7c0e,False,86.4,1920,1080
+5647.jpg,5647,negativo,Dog,dog,0,83e3611c8e997c7c,False,82.8,1920,1080
+5649.jpg,5649,negativo,Dog,dog,0,cf6ad0c575c229d1,True,83.4,1920,1080
+5651.jpg,5651,negativo,Dog,dog,0,cf6ad0c575c02dd1,True,83.6,1920,1080
+5652.jpg,5652,negativo,Dog,dog,0,cf6ad0c575c02dd1,True,83.5,1920,1080
+5658.jpg,5658,negativo,Dog,dog,0,bd7c4aa55e892552,False,103.6,1920,1080
+5668.jpg,5668,negativo,Dog,dog,0,bd7c4a856d892663,False,110.4,1920,1080
+5669.jpg,5669,negativo,Dog,dog,0,956aed827ec8658a,True,58.2,2048,1536
+5671.jpg,5671,negativo,Dog,dog,0,c36abc8367887cc3,True,59.3,2048,1536
+5672.jpg,5672,negativo,Dog,dog,0,956afc827eca6588,True,54.2,2048,1536
+5674.jpg,5674,negativo,Dog,dog,0,916bec927cc26798,True,54.4,2048,1536
+5675.jpg,5675,negativo,Dog,dog,0,956afc827ec8658a,True,54.5,2048,1536
+5676.jpg,5676,negativo,Dog,dog,0,956afc826fc8728a,True,55.3,2048,1536
+5684.jpg,5684,negativo,Dog,dog,0,956aed827ec8658a,True,54.5,2048,1536
+5685.jpg,5685,negativo,Dog,dog,0,956afc827ec8658a,True,54.4,2048,1536
+5686.jpg,5686,negativo,Dog,dog,0,956aec827fc8658a,True,54.5,2048,1536
+5687.jpg,5687,negativo,Dog,dog,0,956aec827ec8678a,True,54.4,2048,1536
+5688.jpg,5688,negativo,Dog,dog,0,8d6fff9a368062c0,True,87.7,2048,1536
+5689.jpg,5689,negativo,Dog,dog,0,8d6fff9b348062c0,True,88.0,2048,1536
+5693.jpg,5693,negativo,Dog,dog,0,8d6fff9a3e8060c0,True,87.9,2048,1536
+5695.jpg,5695,negativo,Dog,dog,0,8d6fff9a3e8060c0,True,87.9,2048,1536
+5696.jpg,5696,negativo,Dog,dog,0,8d6fff9a3e8042c0,True,88.2,2048,1536
+5700.jpg,5700,negativo,Dog,dog,0,8d6fff9a348660c0,True,88.0,2048,1536
+5701.jpg,5701,negativo,Dog,dog,0,8d6fff9a368062c0,True,88.1,2048,1536
+5704.jpg,5704,negativo,Dog,dog,0,8d6fff9b348062c0,True,88.2,2048,1536
+5707.jpg,5707,negativo,Dog,dog,0,856ffe9b398462c0,True,88.2,2048,1536
+5709.jpg,5709,negativo,Dog,dog,0,856fff9a36c85280,True,89.6,2048,1536
+5710.jpg,5710,negativo,Dog,dog,0,8d6fff9a368460c0,True,88.4,2048,1536
+5713.jpg,5713,negativo,Dog,dog,0,c46b3fbe590671c0,True,91.8,2048,1536
+5722.jpg,5722,negativo,Dog,dog,0,856fff9a3e8062c0,True,89.8,2048,1536
+5726.jpg,5726,negativo,Dog,dog,0,856fff9a368262c0,True,90.1,2048,1536
+5745.jpg,5745,negativo,Dog,dog,0,856fff9a3e8062c0,True,90.1,2048,1536
+5772.jpg,5772,negativo,Dog,dog,0,9f6ff89a3c8660c0,True,90.2,2048,1536
+5773.jpg,5773,negativo,Dog,dog,0,9f667f9b1b246480,True,92.7,2048,1536
+5774.jpg,5774,negativo,Dog,dog,0,9f6bff9f308042c0,True,70.8,2048,1536
+5775.jpg,5775,negativo,Dog,dog,0,876fb89867c65c90,True,73.2,2048,1536
+5781.jpg,5781,negativo,Dog,dog,0,876fb89867c65c90,True,73.4,2048,1536
+5782.jpg,5782,negativo,Dog,dog,0,876ff89867c65890,True,73.4,2048,1536
+5787.jpg,5787,negativo,Dog,dog,0,856fff9a3ec240c0,True,69.9,2048,1536
+5791.jpg,5791,negativo,Dog,dog,0,856fff9a3ec240c0,True,70.0,2048,1536
+5800.jpg,5800,negativo,Dog,dog,0,856fff9a3ec042c0,True,69.8,2048,1536
+5801.jpg,5801,negativo,Dog,dog,0,856fff9a3ec042c0,True,69.8,2048,1536
+5804.jpg,5804,negativo,Dog,dog,0,856ebf9b78804fc0,True,71.0,2048,1536
+5805.jpg,5805,negativo,Dog,dog,0,8d6fee993cc262c0,True,71.8,2048,1536
+5806.jpg,5806,negativo,Dog,dog,0,936bec8e3b9360c4,True,74.7,2048,1536
+5807.jpg,5807,negativo,Dog,dog,0,936bec8e3b9360c4,True,74.5,2048,1536
+5808.jpg,5808,negativo,Dog,dog,0,ce29b14eeed039c4,True,33.0,2048,1536
+5810.jpg,5810,negativo,Dog,dog,0,ce29b14eeed039c4,True,33.1,2048,1536
+5813.jpg,5813,negativo,Dog,dog,0,c629b14e6fd03bc4,True,33.4,2048,1536
+5815.jpg,5815,negativo,Dog,dog,0,ce2ab14eeed039c4,True,32.6,2048,1536
+5816.jpg,5816,negativo,Dog,dog,0,ce2ab14eeed039c4,True,32.7,2048,1536
+5818.jpg,5818,negativo,Dog,dog,0,ce28b14eefd039c4,True,33.3,2048,1536
+5820.jpg,5820,negativo,Dog,dog,0,856adba46ec932cc,True,37.6,2048,1536
+5824.jpg,5824,negativo,Dog,dog,0,da26f1daa6e42991,True,37.8,2048,1536
+5825.jpg,5825,negativo,Dog,dog,0,cf32d9046ed930cd,True,34.1,2048,1536
+5826.jpg,5826,negativo,Dog,dog,0,d628f9966ec831c6,True,37.1,2048,1536
+5827.jpg,5827,negativo,Dog,dog,0,ce2db14e66d039c6,True,33.4,2048,1536
+5835.jpg,5835,negativo,Dog,dog,0,d2f032ee4f252cd8,False,114.2,2048,1536
+5836.jpg,5836,negativo,Dog,dog,0,d0d03aee4d3d2ce4,False,113.9,2048,1536
+5839.jpg,5839,negativo,Dog,dog,0,959761cb74082fe3,True,129.4,2048,1536
+5930.jpg,5930,negativo,Wild Turkey,otras,0,960eceb83bd368e0,False,98.3,1920,1080
+6037.jpg,6037,negativo,Chicken;White_Tailed_Deer,deer,0,95b4df09f161660e,True,126.3,2048,1536
+6038.jpg,6038,negativo,Chicken;White_Tailed_Deer,deer,0,95b4df09f161660e,True,126.3,2048,1536
+604.jpg,604,negativo,Eastern Fox Squirrel,otras,0,9a38178b47f06aea,False,108.5,2048,1536
+6040.jpg,6040,negativo,Chicken;White_Tailed_Deer,deer,0,95b4db09e163662e,True,126.2,2048,1536
+6043.jpg,6043,negativo,Chicken;White_Tailed_Deer,deer,0,95bcdb01e169662e,True,126.1,2048,1536
+6045.jpg,6045,negativo,Chicken;White_Tailed_Deer,deer,0,95bcdb01e169662e,True,126.1,2048,1536
+6047.jpg,6047,negativo,Chicken;White_Tailed_Deer,deer,0,95bcdb81e168722b,True,125.9,2048,1536
+6048.jpg,6048,negativo,Chicken;White_Tailed_Deer,deer,0,9dbcdbc1b0786609,True,124.9,2048,1536
+6051.jpg,6051,negativo,Chicken;White_Tailed_Deer,deer,0,9dbcdbc1a078660b,True,124.6,2048,1536
+6054.jpg,6054,negativo,White_Tailed_Deer,deer,0,95b0dbc3e178660b,True,125.3,2048,1536
+6055.jpg,6055,negativo,White_Tailed_Deer,deer,0,9db0dbc1e170760e,True,125.4,2048,1536
+6060.jpg,6060,negativo,White_Tailed_Deer,deer,0,9db4dbc1e1607629,True,125.0,2048,1536
+6061.jpg,6061,negativo,White_Tailed_Deer,deer,0,95bcdbc1b5786209,True,123.7,2048,1536
+6062.jpg,6062,negativo,White_Tailed_Deer,deer,0,9db4d9c1e178720b,True,125.0,2048,1536
+6066.jpg,6066,negativo,White_Tailed_Deer,deer,0,9dbcd3c0bd796208,True,123.1,2048,1536
+6067.jpg,6067,negativo,White_Tailed_Deer,deer,0,9dbcd3c1f5796200,True,122.3,2048,1536
+6068.jpg,6068,negativo,White_Tailed_Deer,deer,0,9dbcd3c0b57f6200,True,122.5,2048,1536
+6071.jpg,6071,negativo,White_Tailed_Deer,deer,0,9dbcd3c1f5796200,True,122.2,2048,1536
+6072.jpg,6072,negativo,White_Tailed_Deer,deer,0,9dbcd3c1b57d6200,True,122.2,2048,1536
+6076.jpg,6076,negativo,White_Tailed_Deer,deer,0,9dbcd3c0b57f6200,True,122.7,2048,1536
+6077.jpg,6077,negativo,White_Tailed_Deer,deer,0,9dbcd3c0b57d6208,True,123.0,2048,1536
+6078.jpg,6078,negativo,White_Tailed_Deer,deer,0,9dbcd3c0bd796208,True,123.0,2048,1536
+6082.jpg,6082,negativo,White_Tailed_Deer,deer,0,9dbcd3c0fd796200,True,122.7,2048,1536
+6083.jpg,6083,negativo,White_Tailed_Deer,deer,0,9dbcd3c0fd796200,True,122.8,2048,1536
+6088.jpg,6088,negativo,White_Tailed_Deer,deer,0,95b4db89fd786201,True,123.6,2048,1536
+6090.jpg,6090,negativo,White_Tailed_Deer,deer,0,95b4db89fd786201,True,123.4,2048,1536
+6091.jpg,6091,negativo,White_Tailed_Deer,deer,0,9dbcd1c0fd7b6200,True,122.7,2048,1536
+6092.jpg,6092,negativo,White_Tailed_Deer,deer,0,bcb49d8d9f786060,False,106.8,2048,1536
+6093.jpg,6093,negativo,White_Tailed_Deer,deer,0,f4f4958f1b28606b,False,127.4,2048,1536
+6095.jpg,6095,negativo,White_Tailed_Deer,deer,0,bcb49d8f9f686060,False,108.8,2048,1536
+6096.jpg,6096,negativo,White_Tailed_Deer,deer,0,fcf49d8f9f086060,False,111.4,2048,1536
+6097.jpg,6097,negativo,White_Tailed_Deer,deer,0,f4f49d8f9f486060,False,114.9,2048,1536
+6098.jpg,6098,negativo,White_Tailed_Deer,deer,0,f4f49d8f9f486060,False,113.1,2048,1536
+6099.jpg,6099,negativo,White_Tailed_Deer,deer,0,f4f4958f1f08606b,False,125.1,2048,1536
+6100.jpg,6100,negativo,White_Tailed_Deer,deer,0,f4f4958f1f08606b,False,125.2,2048,1536
+6102.jpg,6102,negativo,White_Tailed_Deer,deer,0,f4f4958f1b08626b,False,129.5,2048,1536
+6105.jpg,6105,negativo,White_Tailed_Deer,deer,0,f4f4958f1b08626b,False,130.4,2048,1536
+6223.jpg,6223,negativo,Chicken,otras,0,f1e033d72e26ec0c,False,85.0,1920,1080
+6349.jpg,6349,negativo,Chicken,otras,0,f32671f304b36c8c,False,98.4,1920,1080
+6615.jpg,6615,negativo,Domestic Cat,domestic cat,0,b554e37cd383d430,False,117.0,3264,2448
+6616.jpg,6616,negativo,Domestic Cat,domestic cat,0,b554e93ec783d620,False,117.0,3264,2448
+6617.jpg,6617,negativo,Domestic Cat,domestic cat,0,b55cea39c78bd220,False,117.3,3264,2448
+6618.jpg,6618,negativo,Domestic Cat,domestic cat,0,987ae20f726b8e15,True,127.2,3264,2448
+6621.jpg,6621,negativo,Domestic Cat,domestic cat,0,f0f0f576a71c8a0c,False,68.7,3264,2448
+6622.jpg,6622,negativo,Domestic Cat,domestic cat,0,f0f1f576a51e800d,False,68.6,3264,2448
+6623.jpg,6623,negativo,Domestic Cat,domestic cat,0,f0f1f576af14800d,False,68.5,3264,2448
+6624.jpg,6624,negativo,Domestic Cat,domestic cat,0,b1b94e965645694b,False,97.5,2048,1536
+6625.jpg,6625,negativo,Domestic Cat,domestic cat,0,b1b94e965645694b,False,97.5,2048,1536
+6628.jpg,6628,negativo,Domestic Cat,domestic cat,0,b19d4e965645694b,False,97.2,2048,1536
+6631.jpg,6631,negativo,Domestic Cat,domestic cat,0,b5b94e925645694b,False,97.9,2048,1536
+6632.jpg,6632,negativo,Domestic Cat,domestic cat,0,b9b94e9656456949,False,97.3,2048,1536
+6634.jpg,6634,negativo,Domestic Cat,domestic cat,0,941d373c9264d177,False,135.7,3264,2448
+6635.jpg,6635,negativo,Domestic Cat,domestic cat,0,95143c37967cd274,False,136.0,3264,2448
+6636.jpg,6636,negativo,Domestic Cat,domestic cat,0,95143c3d966cd176,False,135.8,3264,2448
+6638.jpg,6638,negativo,Domestic Cat,domestic cat,0,8dada5259454b769,False,82.6,3264,2448
+6639.jpg,6639,negativo,Domestic Cat,domestic cat,0,8dada5259454b769,False,82.6,3264,2448
+6640.jpg,6640,negativo,Domestic Cat,domestic cat,0,c4e4bc1733d362e8,False,135.8,2048,1536
+6641.jpg,6641,negativo,Domestic Cat,domestic cat,0,89ada5459414f77c,False,117.8,3264,2448
+6642.jpg,6642,negativo,Domestic Cat,domestic cat,0,89ada5459414f77c,False,117.7,3264,2448
+6644.jpg,6644,negativo,Domestic Cat,domestic cat,0,916a861de30dfa47,True,73.9,3264,2448
+6645.jpg,6645,negativo,Domestic Cat,domestic cat,0,916a861be71df306,True,66.9,3264,2448
+6649.jpg,6649,negativo,Domestic Cat,domestic cat,0,956b861de30dfa0c,True,66.5,3264,2448
+6651.jpg,6651,negativo,Domestic Cat,domestic cat,0,906f8619ef00fb0f,True,73.3,3264,2448
+6657.jpg,6657,negativo,Domestic Cat,domestic cat,0,ad2dad049414bd7d,True,71.8,3264,2448
+6658.jpg,6658,negativo,Domestic Cat,domestic cat,0,ad2dad049454b57d,True,72.0,3264,2448
+6659.jpg,6659,negativo,Domestic Cat,domestic cat,0,93649bcc74ca6d92,True,48.0,2048,1536
+6660.jpg,6660,negativo,Domestic Cat,domestic cat,0,9366918c73ce6d92,True,48.1,2048,1536
+6662.jpg,6662,negativo,Domestic Cat,domestic cat,0,9364938c77ca6d92,True,47.9,2048,1536
+6671.jpg,6671,negativo,Domestic Cat,domestic cat,0,9b6693cc72c26d92,True,46.5,2048,1536
+6672.jpg,6672,negativo,Domestic Cat,domestic cat,0,9b6493cc72ca6c93,True,45.9,2048,1536
+6676.jpg,6676,negativo,Domestic Cat,domestic cat,0,9364938c76cb6d92,True,47.2,2048,1536
+6680.jpg,6680,negativo,Domestic Cat,domestic cat,0,9364938c76ca6d93,True,47.4,2048,1536
+6681.jpg,6681,negativo,Domestic Cat,domestic cat,0,9364938c76ca6d93,True,47.8,2048,1536
+6683.jpg,6683,negativo,Domestic Cat,domestic cat,0,9383ee666e4879b0,True,25.3,2048,1536
+6685.jpg,6685,negativo,Domestic Cat,domestic cat,0,88808f8e71bf613f,False,148.3,2048,1536
+6688.jpg,6688,negativo,Domestic Cat,domestic cat,0,8c808f8f61ff632c,False,148.5,2048,1536
+6689.jpg,6689,negativo,Domestic Cat,domestic cat,0,8c808f8f61bf632d,False,148.4,2048,1536
+6690.jpg,6690,negativo,Domestic Cat,domestic cat,0,8c800fcf716f722d,False,147.1,2048,1536
+6691.jpg,6691,negativo,Domestic Cat,domestic cat,0,80009f8e71af637f,False,144.8,2048,1536
+6693.jpg,6693,negativo,Domestic Cat,domestic cat,0,84802f8f71ef732c,False,144.2,2048,1536
+6696.jpg,6696,negativo,Domestic Cat,domestic cat,0,cf3080df607f72c1,False,139.0,2048,1536
+6697.jpg,6697,negativo,Domestic Cat,domestic cat,0,cf3080ff20fd63c1,False,139.0,2048,1536
+6698.jpg,6698,negativo,Domestic Cat,domestic cat,0,cf3080df20fd63c5,False,138.0,2048,1536
+6699.jpg,6699,negativo,Domestic Cat,domestic cat,0,cf3080ff20f972c5,False,137.9,2048,1536
+6700.jpg,6700,negativo,Domestic Cat,domestic cat,0,8b886c9e616d7366,False,142.5,2048,1536
+6701.jpg,6701,negativo,Domestic Cat,domestic cat,0,9b886c9e616d6762,False,143.3,2048,1536
+6703.jpg,6703,negativo,Domestic Cat,domestic cat,0,c523fbc83bc06bc8,True,60.7,2048,1536
+6705.jpg,6705,negativo,Domestic Cat,domestic cat,0,c521fbd83e91638c,True,59.1,2048,1536
+6708.jpg,6708,negativo,Domestic Cat,domestic cat,0,ff3fc220b8c12ee0,True,23.8,2048,1536
+6710.jpg,6710,negativo,Domestic Cat,domestic cat,0,ff3fc260b8c12ec0,True,23.9,2048,1536
+6711.jpg,6711,negativo,Domestic Cat,domestic cat,0,ff3fc220b8c02fe0,True,23.7,2048,1536
+6713.jpg,6713,negativo,Domestic Cat,domestic cat,0,c51ee3580ff10fe0,True,34.9,2048,1536
+6714.jpg,6714,negativo,Domestic Cat,domestic cat,0,95639968b699639c,True,41.7,2048,1536
+6715.jpg,6715,negativo,Domestic Cat,domestic cat,0,de25db326c9261cc,True,42.0,2048,1536
+6718.jpg,6718,negativo,Domestic Cat,domestic cat,0,c525db4c2e936c8b,True,60.7,2048,1536
+6720.jpg,6720,negativo,Domestic Cat,domestic cat,0,c527f94e38c378c8,True,59.6,2048,1536
+6723.jpg,6723,negativo,Domestic Cat,domestic cat,0,9569b348b6e26ba4,True,62.9,2048,1536
+6724.jpg,6724,negativo,Domestic Cat,domestic cat,0,956e996ab4d16698,True,55.3,2048,1536
+6725.jpg,6725,negativo,Domestic Cat,domestic cat,0,956a996abcd26a98,True,55.2,2048,1536
+6726.jpg,6726,negativo,Domestic Cat,domestic cat,0,967c65dd41967b80,True,92.8,2048,1536
+6729.jpg,6729,negativo,Domestic Cat,domestic cat,0,896e6289f9a67989,True,82.6,2048,1536
+6737.jpg,6737,negativo,Domestic Cat,domestic cat,0,986cf3936c496ee0,True,67.1,2048,1536
+6739.jpg,6739,negativo,Domestic Cat,domestic cat,0,8c6cf1837c446be3,True,65.8,2048,1536
+6741.jpg,6741,negativo,Domestic Cat,domestic cat,0,8c6cf1837c446be3,True,65.6,2048,1536
+6742.jpg,6742,negativo,Domestic Cat,domestic cat,0,8c6cf1937c446be2,True,65.8,2048,1536
+6744.jpg,6744,negativo,Domestic Cat,domestic cat,0,fc79078c6f801bc9,True,105.4,2048,1536
+6747.jpg,6747,negativo,Domestic Cat,domestic cat,0,f479078c6f803bc9,True,105.5,2048,1536
+6757.jpg,6757,negativo,Domestic Cat,domestic cat,0,f479078c6f803bc9,True,106.2,2048,1536
+6763.jpg,6763,negativo,Domestic Cat,domestic cat,0,f479878c6f8033c9,True,109.3,2048,1536
+6764.jpg,6764,negativo,Domestic Cat,domestic cat,0,fc78078e63863e89,True,80.2,2048,1536
+6771.jpg,6771,negativo,Domestic Cat,domestic cat,0,fc78078f63863a89,True,80.0,2048,1536
+6774.jpg,6774,negativo,Domestic Cat,domestic cat,0,fc780f846f820fc9,True,77.2,2048,1536
+6775.jpg,6775,negativo,Domestic Cat,domestic cat,0,fc780f846f820fc9,True,77.3,2048,1536
+6785.jpg,6785,negativo,Domestic Cat,domestic cat,0,fc788f846f820f83,True,80.0,2048,1536
+6787.jpg,6787,negativo,Domestic Cat,domestic cat,0,fc780f846f860f89,True,75.9,2048,1536
+6789.jpg,6789,negativo,Domestic Cat,domestic cat,0,fc780f846f860f89,True,76.0,2048,1536
+6792.jpg,6792,negativo,Domestic Cat,domestic cat,0,fc780f866b860f89,True,75.8,2048,1536
+6794.jpg,6794,negativo,Domestic Cat,domestic cat,0,de780f8c77822d83,True,78.6,2048,1536
+6796.jpg,6796,negativo,Domestic Cat,domestic cat,0,d0c0c0c86fef3e3a,False,128.3,2048,1536
+6799.jpg,6799,negativo,Domestic Cat,domestic cat,0,d0c0c0c86fef3e3a,False,126.2,2048,1536
+6805.jpg,6805,negativo,Domestic Cat,domestic cat,0,c0e49f1773c24eac,False,113.8,2048,1536
+6806.jpg,6806,negativo,Domestic Cat,domestic cat,0,c0e49f1773c24aec,False,113.9,2048,1536
+6807.jpg,6807,negativo,Domestic Cat,domestic cat,0,d062f1893f980ff2,True,71.3,2048,1536
+6814.jpg,6814,negativo,Domestic Cat,domestic cat,0,d062f1893f981be6,True,72.4,2048,1536
+6815.jpg,6815,negativo,Domestic Cat,domestic cat,0,d162e1893fb40ef1,True,72.1,2048,1536
+6819.jpg,6819,negativo,Domestic Cat,domestic cat,0,9062e18d7f981df2,True,74.6,2048,1536
+6820.jpg,6820,negativo,Domestic Cat,domestic cat,0,8067f18977980ef5,True,74.4,2048,1536
+6821.jpg,6821,negativo,Domestic Cat,domestic cat,0,d062f18937981ff2,True,73.5,2048,1536
+6823.jpg,6823,negativo,Domestic Cat,domestic cat,0,d062f1893f980ff2,True,73.0,2048,1536
+6826.jpg,6826,negativo,Domestic Cat,domestic cat,0,d063e1893f980ff2,True,73.2,2048,1536
+6829.jpg,6829,negativo,Domestic Cat,domestic cat,0,906be1947f9896e2,True,75.6,2048,1536
+6830.jpg,6830,negativo,Domestic Cat,domestic cat,0,d062e19a3fac9ab2,True,76.3,2048,1536
+6831.jpg,6831,negativo,Domestic Cat,domestic cat,0,d062f3893fb20ef0,True,74.4,2048,1536
+6834.jpg,6834,negativo,Domestic Cat,domestic cat,0,d062e3893fb20ef8,True,74.4,2048,1536
+6836.jpg,6836,negativo,Domestic Cat,domestic cat,0,d062e3893fb20ef8,True,74.4,2048,1536
+6838.jpg,6838,negativo,Domestic Cat,domestic cat,0,d062f1893f981bf4,True,73.7,2048,1536
+6839.jpg,6839,negativo,Domestic Cat,domestic cat,0,d062f1893f981be6,True,73.6,2048,1536
+6843.jpg,6843,negativo,Domestic Cat,domestic cat,0,d062e1893f988ff2,True,68.3,2048,1536
+6844.jpg,6844,negativo,Domestic Cat,domestic cat,0,d062e1893f988ff2,True,68.3,2048,1536
+6849.jpg,6849,negativo,Domestic Cat,domestic cat,0,d062f1893f981ff0,True,68.9,2048,1536
+6859.jpg,6859,negativo,Domestic Cat,domestic cat,0,d063e1893f9c0ff0,True,68.8,2048,1536
+6860.jpg,6860,negativo,Domestic Cat,domestic cat,0,d062e1893f9c0ff2,True,69.4,2048,1536
+6863.jpg,6863,negativo,Domestic Cat,domestic cat,0,d027f18977980ff0,True,69.3,2048,1536
+6865.jpg,6865,negativo,Domestic Cat,domestic cat,0,d026f18977980ff2,True,69.6,2048,1536
+6866.jpg,6866,negativo,Domestic Cat,domestic cat,0,d027f18977980ff0,True,69.4,2048,1536
+6870.jpg,6870,negativo,Domestic Cat,domestic cat,0,d023f18977b80fe4,True,70.0,2048,1536
+6873.jpg,6873,negativo,Domestic Cat,domestic cat,0,d026f189779c0ef2,True,62.6,2048,1536
+6874.jpg,6874,negativo,Domestic Cat,domestic cat,0,d026f189779c0ef2,True,62.0,2048,1536
+6875.jpg,6875,negativo,Domestic Cat,domestic cat,0,d026e1c9779c0ef2,True,61.3,2048,1536
+6878.jpg,6878,negativo,Domestic Cat,domestic cat,0,d826e1c97bbc06f0,True,63.5,2048,1536
+6879.jpg,6879,negativo,Domestic Cat,domestic cat,0,d826e1c97dbc06f0,True,64.0,2048,1536
+6883.jpg,6883,negativo,Domestic Cat,domestic cat,0,d826e1c97bb40ef0,True,64.4,2048,1536
+6885.jpg,6885,negativo,Domestic Cat,domestic cat,0,d026f1c9679c1ee2,True,61.7,2048,1536
+6890.jpg,6890,negativo,Domestic Cat,domestic cat,0,dc26f18d759806f4,True,64.6,2048,1536
+6895.jpg,6895,negativo,Domestic Cat,domestic cat,0,d026f18d739c0ef2,True,64.0,2048,1536
+6896.jpg,6896,negativo,Domestic Cat,domestic cat,0,d027f189739c0ef2,True,64.5,2048,1536
+6898.jpg,6898,negativo,Domestic Cat,domestic cat,0,d026fdc9739c82f0,True,63.6,2048,1536
+6901.jpg,6901,negativo,Domestic Cat,domestic cat,0,d12efcc9339c83b0,True,64.4,2048,1536
+6902.jpg,6902,negativo,Domestic Cat,domestic cat,0,cc7133ceccd86332,True,32.9,2048,1536
+6903.jpg,6903,negativo,Domestic Cat,domestic cat,0,9669f68962945be2,True,59.6,2048,1536
+6905.jpg,6905,negativo,Domestic Cat,domestic cat,0,cc713346d9d86666,True,34.6,2048,1536
+6906.jpg,6906,negativo,Domestic Cat,domestic cat,0,ce3933caccce3330,True,39.2,2048,1536
+6908.jpg,6908,negativo,Domestic Cat,domestic cat,0,82756b8a758a6d9a,True,98.6,1920,1080
+6910.jpg,6910,negativo,Domestic Cat,domestic cat,0,92756d8a75c86d8a,True,97.4,1920,1080
+6912.jpg,6912,negativo,Domestic Cat,domestic cat,0,92756d8a75ca6d90,True,95.5,1920,1080
+6921.jpg,6921,negativo,Domestic Cat,domestic cat,0,94316dc937c86f98,True,92.5,1920,1080
+6922.jpg,6922,negativo,Domestic Cat,domestic cat,0,94716dc837cc6f88,True,92.2,1920,1080
+6923.jpg,6923,negativo,Domestic Cat,domestic cat,0,94316dc937cc6f90,True,92.3,1920,1080
+6924.jpg,6924,negativo,Domestic Cat,domestic cat,0,94316dc937cc6f90,True,92.4,1920,1080
+6932.jpg,6932,negativo,Domestic Cat,domestic cat,0,c522a5c6732c3dcd,False,97.9,1920,1080
+6933.jpg,6933,negativo,Domestic Cat,domestic cat,0,c422adc6632c3fcd,False,97.5,1920,1080
+6934.jpg,6934,negativo,Domestic Cat,domestic cat,0,c522bcc6732c3dc5,False,106.7,1920,1080
+6935.jpg,6935,negativo,Domestic Cat,domestic cat,0,c522adc663243fcd,False,97.2,1920,1080
+6936.jpg,6936,negativo,Domestic Cat,domestic cat,0,c722a4c763ec39c5,False,106.1,1920,1080
+6937.jpg,6937,negativo,Domestic Cat,domestic cat,0,df22a09e67203dc7,False,104.8,1920,1080
+6938.jpg,6938,negativo,Domestic Cat,domestic cat,0,f30ea4f34c2639cc,False,100.6,1920,1080
+6943.jpg,6943,negativo,Domestic Cat,domestic cat,0,cb20face65807fc4,True,51.7,1920,1080
+6944.jpg,6944,negativo,Domestic Cat,domestic cat,0,cb24ecce66c96dc0,True,51.1,1920,1080
+6945.jpg,6945,negativo,Domestic Cat,domestic cat,0,c72ca7c4677839c4,False,103.8,1920,1080
+6946.jpg,6946,negativo,Domestic Cat,domestic cat,0,c72ca784776839d4,False,103.9,1920,1080
+6947.jpg,6947,negativo,Domestic Cat,domestic cat,0,c72ca584777839d4,False,103.9,1920,1080
+6949.jpg,6949,negativo,Domestic Cat,domestic cat,0,c724a7c4777839c4,False,103.9,1920,1080
+6950.jpg,6950,negativo,Domestic Cat,domestic cat,0,c72ca5c4677939c4,False,103.8,1920,1080
+6951.jpg,6951,negativo,Domestic Cat,domestic cat,0,c724a7c4677939c4,False,103.8,1920,1080
+6952.jpg,6952,negativo,Domestic Cat,domestic cat,0,c72ca586676939c6,False,103.6,1920,1080
+6953.jpg,6953,negativo,Domestic Cat,domestic cat,0,d52ca681756c3dd1,False,110.6,1920,1080
+6955.jpg,6955,negativo,Domestic Cat,domestic cat,0,bf442dc16624739e,False,94.4,1920,1080
+6956.jpg,6956,negativo,Domestic Cat,domestic cat,0,bf442dc066307b9e,False,94.6,1920,1080
+6957.jpg,6957,negativo,Domestic Cat,domestic cat,0,bf442dc16630739e,False,94.6,1920,1080
+6958.jpg,6958,negativo,Domestic Cat,domestic cat,0,bf4425c16624739f,False,94.5,1920,1080
+6959.jpg,6959,negativo,Domestic Cat,domestic cat,0,bf442dc16620739f,False,94.5,1920,1080
+6960.jpg,6960,negativo,Domestic Cat,domestic cat,0,bf4425c166307b9e,False,94.5,1920,1080
+6962.jpg,6962,negativo,Domestic Cat,domestic cat,0,bf442dc16630739e,False,94.3,1920,1080
+6963.jpg,6963,negativo,Domestic Cat,domestic cat,0,bf442cc16630739f,False,94.3,1920,1080
+6964.jpg,6964,negativo,Domestic Cat,domestic cat,0,bf442cc16630739f,False,94.3,1920,1080
+6965.jpg,6965,negativo,Domestic Cat,domestic cat,0,bf4425c16634739e,False,94.3,1920,1080
+6966.jpg,6966,negativo,Domestic Cat,domestic cat,0,bf442dc066247b9e,False,94.3,1920,1080
+6967.jpg,6967,negativo,Domestic Cat,domestic cat,0,bf442dc166207b9e,False,94.4,1920,1080
+6971.jpg,6971,negativo,Domestic Cat,domestic cat,0,8ad7258442771fcd,False,93.4,1920,1080
+6972.jpg,6972,negativo,Domestic Cat,domestic cat,0,8ad6259442771fcd,False,93.1,1920,1080
+6973.jpg,6973,negativo,Domestic Cat,domestic cat,0,8bc625954a711fcd,False,92.3,1920,1080
+6974.jpg,6974,negativo,Domestic Cat,domestic cat,0,8ac6259443771fcd,False,92.8,1920,1080
+6975.jpg,6975,negativo,Domestic Cat,domestic cat,0,aad62584ca741fcd,False,91.1,1920,1080
+6993.jpg,6993,negativo,Dog;Domestic Cat,dog,0,d63465c07d2939cd,True,116.9,1920,1080
+6994.jpg,6994,negativo,Dog;Domestic Cat,dog,0,d63465c07d2939cd,True,117.1,1920,1080
+6995.jpg,6995,negativo,Dog;Domestic Cat,dog,0,d63425d47f295989,True,116.7,1920,1080
+6998.jpg,6998,negativo,Domestic Cat,domestic cat,0,cb20bcce65c07dcc,True,49.8,1920,1080
+7002.jpg,7002,negativo,Domestic Cat,domestic cat,0,b2b6bd9d1c1c5a48,False,94.3,1920,1080
+7003.jpg,7003,negativo,Domestic Cat,domestic cat,0,b2b6bd9d1c1c5a48,False,94.3,1920,1080
+7004.jpg,7004,negativo,Domestic Cat,domestic cat,0,b2b6bd9c1d1c5a48,False,94.3,1920,1080
+7005.jpg,7005,negativo,Domestic Cat,domestic cat,0,b6b6bd9c5c185a48,False,94.3,1920,1080
+7006.jpg,7006,negativo,Domestic Cat,domestic cat,0,b2b6bd9d1c1e4a48,False,94.3,1920,1080
+7007.jpg,7007,negativo,Domestic Cat,domestic cat,0,b2b6bd9d1d1c4a48,False,94.3,1920,1080
+7008.jpg,7008,negativo,Domestic Cat,domestic cat,0,ce21dbce24c86ec3,True,44.9,1920,1080
+7009.jpg,7009,negativo,Domestic Cat,domestic cat,0,cf21dbce24c86cc3,True,44.9,1920,1080
+7014.jpg,7014,negativo,Domestic Cat,domestic cat,0,9792bdd55d544a48,False,104.4,1920,1080
+7015.jpg,7015,negativo,Domestic Cat,domestic cat,0,9793bdd45d544a48,False,104.4,1920,1080
+7016.jpg,7016,negativo,Domestic Cat,domestic cat,0,9797bdd45d544848,False,104.5,1920,1080
+7017.jpg,7017,negativo,Domestic Cat,domestic cat,0,9793bdd45d544a48,False,104.5,1920,1080
+7018.jpg,7018,negativo,Domestic Cat,domestic cat,0,97979ddc5c544a48,False,104.6,1920,1080
+7021.jpg,7021,negativo,Domestic Cat,domestic cat,0,b2b2b7b51c545a58,False,103.2,1920,1080
+7022.jpg,7022,negativo,Domestic Cat,domestic cat,0,b2a2b6b535525e58,False,103.2,1920,1080
+7023.jpg,7023,negativo,Domestic Cat,domestic cat,0,a2b2bcb535545c5a,False,103.0,1920,1080
+7024.jpg,7024,negativo,Domestic Cat,domestic cat,0,a2b2b9b5355a585a,False,102.9,1920,1080
+7025.jpg,7025,negativo,Domestic Cat,domestic cat,0,a2b2bbb515d25a58,False,103.1,1920,1080
+7026.jpg,7026,negativo,Domestic Cat,domestic cat,0,a2b2bbb515d25a58,False,103.2,1920,1080
+7027.jpg,7027,negativo,Domestic Cat,domestic cat,0,a2b2b3b51dd25a58,False,103.2,1920,1080
+7028.jpg,7028,negativo,Domestic Cat,domestic cat,0,a2b2b5b91d945a5a,False,103.2,1920,1080
+7029.jpg,7029,negativo,Domestic Cat,domestic cat,0,a2b2b6bd1d925a58,False,103.3,1920,1080
+7030.jpg,7030,negativo,Domestic Cat,domestic cat,0,b2a2bf951d125c5a,False,103.1,1920,1080
+7031.jpg,7031,negativo,Domestic Cat,domestic cat,0,a2b22eb1d6d67819,False,96.5,1920,1080
+7033.jpg,7033,negativo,Domestic Cat,domestic cat,0,de2199ce63996cc1,True,49.8,1920,1080
+7037.jpg,7037,negativo,Domestic Cat,domestic cat,0,dc2199ce67996cc1,True,49.9,1920,1080
+7039.jpg,7039,negativo,Domestic Cat,domestic cat,0,ce2199ce659d6cc1,True,48.9,1920,1080
+7042.jpg,7042,negativo,Domestic Cat,domestic cat,0,de2199ce63996cc1,True,48.9,1920,1080
+7043.jpg,7043,negativo,Domestic Cat,domestic cat,0,df2199ce61996cc1,True,48.9,1920,1080
+7044.jpg,7044,negativo,Domestic Cat,domestic cat,0,a2a227b735d4565c,False,99.2,1920,1080
+7046.jpg,7046,negativo,Domestic Cat,domestic cat,0,a2a223a53db477d2,False,98.7,1920,1080
+7047.jpg,7047,negativo,Domestic Cat,domestic cat,0,a6a622a5359777d0,False,98.8,1920,1080
+7048.jpg,7048,negativo,Domestic Cat,domestic cat,0,a2a22ca537f55c5c,False,98.5,1920,1080
+7049.jpg,7049,negativo,Domestic Cat,domestic cat,0,a2a226a735f456d6,False,98.7,1920,1080
+7051.jpg,7051,negativo,Domestic Cat,domestic cat,0,de20b9ce65887cc9,True,52.2,1920,1080
+7052.jpg,7052,negativo,Domestic Cat,domestic cat,0,ce20f8ce65887fc8,True,50.9,1920,1080
+7053.jpg,7053,negativo,Domestic Cat,domestic cat,0,ce20f9ce64807fcc,True,51.1,1920,1080
+7056.jpg,7056,negativo,Domestic Cat,domestic cat,0,ce20f8ce67887fc0,True,50.8,1920,1080
+7057.jpg,7057,negativo,Domestic Cat,domestic cat,0,fe21acf4436832cb,False,95.1,1920,1080
+7064.jpg,7064,negativo,Domestic Cat,domestic cat,0,fe21acf4436832cb,False,95.1,1920,1080
+7066.jpg,7066,negativo,Domestic Cat,domestic cat,0,fe21acb4476832cb,False,95.2,1920,1080
+7068.jpg,7068,negativo,Domestic Cat,domestic cat,0,ce20f9ce65c876c1,True,50.3,1920,1080
+7071.jpg,7071,negativo,Domestic Cat,domestic cat,0,ce20f8ce67886fc8,True,48.6,1920,1080
+7074.jpg,7074,negativo,Domestic Cat,domestic cat,0,ce20f8ce67886fc1,True,48.6,1920,1080
+7079.jpg,7079,negativo,Domestic Cat,domestic cat,0,ca24f8ca67886dcd,True,49.1,1920,1080
+7082.jpg,7082,negativo,Domestic Cat,domestic cat,0,9b64698667897d83,True,63.8,1920,1080
+7085.jpg,7085,negativo,Domestic Cat,domestic cat,0,9b64698667897d83,True,63.8,1920,1080
+7091.jpg,7091,negativo,Domestic Cat,domestic cat,0,9b64798667987983,True,64.2,1920,1080
+7094.jpg,7094,negativo,Domestic Cat,domestic cat,0,9b6479866698798b,True,64.3,1920,1080
+7095.jpg,7095,negativo,Domestic Cat,domestic cat,0,8f6479866698798b,True,64.6,1920,1080
+7096.jpg,7096,negativo,Domestic Cat,domestic cat,0,8f64798667987983,True,64.8,1920,1080
+7098.jpg,7098,negativo,Domestic Cat,domestic cat,0,9b647dc2638e7c81,True,64.4,1920,1080
+7099.jpg,7099,negativo,Domestic Cat,domestic cat,0,9b6469ce668a7d88,True,65.6,1920,1080
+7100.jpg,7100,negativo,Domestic Cat,domestic cat,0,99bda043c76189be,False,159.2,2048,1536
+7102.jpg,7102,negativo,Domestic Cat,domestic cat,0,8b652986778a758b,True,64.0,1920,1080
+7104.jpg,7104,negativo,Domestic Cat,domestic cat,0,9d62698572896dd3,True,66.4,1920,1080
+7106.jpg,7106,negativo,Domestic Cat,domestic cat,0,9b646d9272cc6d92,True,55.4,1920,1080
+7107.jpg,7107,negativo,Domestic Cat,domestic cat,0,99bca043c761a9be,False,159.3,2048,1536
+7108.jpg,7108,negativo,Domestic Cat,domestic cat,0,99bda043c76189be,False,159.2,2048,1536
+7109.jpg,7109,negativo,Coyote,coyote,0,c03cd7ca618e5ce3,True,86.9,2048,1536
+7110.jpg,7110,negativo,Coyote,coyote,0,c83ef3887ca67388,True,88.4,2048,1536
+7111.jpg,7111,negativo,Coyote,coyote,0,c93cd38d758a64a5,True,82.5,2048,1536
+7113.jpg,7113,negativo,Coyote,coyote,0,c32cdc8b718e58e3,True,85.2,2048,1536
+7114.jpg,7114,negativo,Coyote,coyote,0,d22cf98a748b49b6,True,84.4,2048,1536
+7115.jpg,7115,negativo,Coyote,coyote,0,ca3cf38b758a40a7,True,83.4,2048,1536
+7116.jpg,7116,negativo,Coyote,coyote,0,c83cf38e7da260cc,True,86.8,2048,1536
+7117.jpg,7117,negativo,Coyote,coyote,0,ce3cd78a718e44a3,True,79.1,2048,1536
+7120.jpg,7120,negativo,Coyote,coyote,0,cc39f386cc9962c6,True,56.4,2048,1536
+7121.jpg,7121,negativo,Coyote,coyote,0,ce3cd18e758844eb,True,81.7,2048,1536
+7122.jpg,7122,negativo,Coyote,coyote,0,c33dbc88638f5e28,True,87.2,2048,1536
+7124.jpg,7124,negativo,Coyote,coyote,0,c03c9f83719c5ce3,True,87.0,2048,1536
+7125.jpg,7125,negativo,Coyote,coyote,0,c03c9f8761985ee3,True,87.2,2048,1536
+7129.jpg,7129,negativo,Coyote,coyote,0,c73c98c3639c5cc3,True,81.1,2048,1536
+7131.jpg,7131,negativo,Coyote,coyote,0,ce3cd788718e44ea,True,79.6,2048,1536
+7133.jpg,7133,negativo,Coyote,coyote,0,cc3fd28c71ca54a3,True,83.0,2048,1536
+7134.jpg,7134,negativo,Coyote,coyote,0,ca3dd58a718c54ab,True,82.6,2048,1536
+7135.jpg,7135,negativo,Coyote,coyote,0,c43dc39e71ca54a6,True,83.8,2048,1536
+7136.jpg,7136,negativo,Coyote,coyote,0,c83ee79879e66488,True,87.6,2048,1536
+7138.jpg,7138,negativo,Coyote,coyote,0,cc3ef38c6ca2718c,True,87.4,2048,1536
+7139.jpg,7139,negativo,Coyote,coyote,0,c83dd689618e5ce3,True,84.9,2048,1536
+7140.jpg,7140,negativo,Coyote,coyote,0,c83dc79e708057ea,True,84.3,2048,1536
+7141.jpg,7141,negativo,Coyote,coyote,0,ce3cc19f718845ab,True,83.7,2048,1536
+7142.jpg,7142,negativo,Coyote,coyote,0,c83dc39e708057eb,True,84.1,2048,1536
+7143.jpg,7143,negativo,Coyote,coyote,0,ca3dd18e718e54a3,True,82.6,2048,1536
+7144.jpg,7144,negativo,Coyote,coyote,0,ca3dd18e718e50ab,True,82.8,2048,1536
+7146.jpg,7146,negativo,Coyote,coyote,0,ca3dd18e718e54a3,True,82.6,2048,1536
+7150.jpg,7150,negativo,Coyote,coyote,0,c3a7654c4c8e6b0f,True,120.8,2048,1536
+7151.jpg,7151,negativo,Coyote,coyote,0,ca3cd48e638c5ce3,True,88.2,2048,1536
+7152.jpg,7152,negativo,Coyote,coyote,0,ce3dc59e618851ab,True,87.6,2048,1536
+7153.jpg,7153,negativo,Coyote,coyote,0,cc3ff39c6182718c,True,88.7,2048,1536
+7155.jpg,7155,negativo,Coyote,coyote,0,c23dc59e73c865a2,True,89.1,2048,1536
+7156.jpg,7156,negativo,Coyote,coyote,0,c43fc19c71ca59a6,True,88.4,2048,1536
+7157.jpg,7157,negativo,Coyote,coyote,0,cc3cd69c61ca51ab,True,88.0,2048,1536
+7158.jpg,7158,negativo,Coyote,coyote,0,c63dc99e72c865a2,True,88.8,2048,1536
+7159.jpg,7159,negativo,Coyote,coyote,0,ca3dd19e618c55aa,True,85.6,2048,1536
+7160.jpg,7160,negativo,Coyote,coyote,0,c23dc19e72cc5da2,True,86.5,2048,1536
+7162.jpg,7162,negativo,Coyote,coyote,0,cc3ff39c6082738c,True,87.1,2048,1536
+7164.jpg,7164,negativo,Coyote,coyote,0,ca3dc19e718855ab,True,86.0,2048,1536
+7165.jpg,7165,negativo,Coyote,coyote,0,c83dc79c618e55e2,True,86.1,2048,1536
+7166.jpg,7166,negativo,Coyote,coyote,0,c467b159293dba64,True,104.8,2048,1536
+7168.jpg,7168,negativo,Coyote,coyote,0,916ecc9bf04c8d53,True,75.8,2048,1536
+7169.jpg,7169,negativo,Coyote,coyote,0,857ad22df056a963,True,64.8,2048,1536
+7171.jpg,7171,negativo,Coyote,coyote,0,857ae287bc70a30f,True,87.8,2048,1536
+7172.jpg,7172,negativo,Coyote,coyote,0,d16fc21bb1548973,True,59.7,2048,1536
+7173.jpg,7173,negativo,Coyote,coyote,0,d16f8318b0578b75,True,59.6,2048,1536
+7174.jpg,7174,negativo,Coyote,coyote,0,d16fcb1ab0548976,True,62.9,2048,1536
+7176.jpg,7176,negativo,Coyote,coyote,0,c13e9e43b01ceb63,True,74.7,2048,1536
+7177.jpg,7177,negativo,Coyote,coyote,0,d56fc318b0568b74,True,62.7,2048,1536
+7178.jpg,7178,negativo,Coyote,coyote,0,c13eb3c8ac37e944,True,82.1,2048,1536
+7180.jpg,7180,negativo,Coyote,coyote,0,c56fc35830558b76,True,73.0,2048,1536
+7181.jpg,7181,negativo,Coyote,coyote,0,c56fc35a30558976,True,72.7,2048,1536
+7185.jpg,7185,negativo,Coyote,coyote,0,c56f8219b8558b75,True,66.7,2048,1536
+7190.jpg,7190,negativo,Coyote,coyote,0,c56f8318b0558b77,True,60.5,2048,1536
+7191.jpg,7191,negativo,Coyote,coyote,0,d027325fac54ab59,True,140.4,2048,1536
+7192.jpg,7192,negativo,Coyote,coyote,0,956eeb18e459e816,True,96.7,2048,1536
+7193.jpg,7193,negativo,Coyote,coyote,0,d42f6b548b71a847,True,143.4,2048,1536
+7194.jpg,7194,negativo,Coyote,coyote,0,c13e9e43341dca67,True,74.7,2048,1536
+7200.jpg,7200,negativo,Coyote,coyote,0,d56f8358b0178b74,True,56.4,2048,1536
+7201.jpg,7201,negativo,Coyote,coyote,0,c46f8b5cb4158976,True,55.9,2048,1536
+7202.jpg,7202,negativo,Coyote,coyote,0,956f8b18b4558b74,True,64.2,2048,1536
+7204.jpg,7204,negativo,Coyote,coyote,0,916f8319b8568b75,True,64.9,2048,1536
+7205.jpg,7205,negativo,Coyote,coyote,0,956f8b18b4558b74,True,63.9,2048,1536
+7206.jpg,7206,negativo,Coyote,coyote,0,946f8b1ab4558976,True,64.3,2048,1536
+7207.jpg,7207,negativo,Coyote,coyote,0,916fcf1ab0448d73,True,65.1,2048,1536
+7209.jpg,7209,negativo,Coyote,coyote,0,946fcb1cb0478976,True,59.4,2048,1536
+7211.jpg,7211,negativo,Coyote,coyote,0,946e8b1fb0468977,True,58.6,2048,1536
+7212.jpg,7212,negativo,Coyote,coyote,0,946f8b1eb0568976,True,58.6,2048,1536
+7214.jpg,7214,negativo,Coyote,coyote,0,946f8b1cb0568977,True,58.3,2048,1536
+7215.jpg,7215,negativo,Coyote,coyote,0,946e8b0fb0568977,True,58.6,2048,1536
+7216.jpg,7216,negativo,Coyote,coyote,0,946fa30cb837aa5c,True,60.7,2048,1536
+7218.jpg,7218,negativo,Coyote,coyote,0,846bb34efc11ab46,True,60.2,2048,1536
+7219.jpg,7219,negativo,Coyote,coyote,0,946fa30cb837ab4c,True,60.6,2048,1536
+7220.jpg,7220,negativo,Coyote,coyote,0,856aca2d7057a976,True,73.5,2048,1536
+7223.jpg,7223,negativo,Coyote,coyote,0,917fe2863961d616,True,95.9,2048,1536
+7225.jpg,7225,negativo,Coyote,coyote,0,917fe4841b62ec2e,True,97.7,2048,1536
+7228.jpg,7228,negativo,Coyote,coyote,0,917fe0807c65c91f,True,96.6,2048,1536
+7230.jpg,7230,negativo,Coyote,coyote,0,917fe4847b43ec06,True,96.6,2048,1536
+7231.jpg,7231,negativo,Bobcat;Coyote,coyote,0,917fe4847863cc17,True,95.5,2048,1536
+7233.jpg,7233,negativo,Bobcat;Coyote,coyote,0,917fe2827d25ca1a,True,96.2,2048,1536
+7235.jpg,7235,negativo,Coyote,coyote,0,817fae8079469e33,True,96.0,2048,1536
+7236.jpg,7236,negativo,Coyote,coyote,0,817fb880ee47b91a,True,98.2,2048,1536
+7237.jpg,7237,negativo,Coyote,coyote,0,897fe2815c47b233,True,97.5,2048,1536
+7238.jpg,7238,negativo,Coyote,coyote,0,917fe2807d47ca1a,True,93.9,2048,1536
+7242.jpg,7242,negativo,Coyote,coyote,0,917fe0807d67ce12,True,93.5,2048,1536
+7243.jpg,7243,negativo,Coyote,coyote,0,917fe2807d47ca1a,True,93.8,2048,1536
+7244.jpg,7244,negativo,Coyote,coyote,0,917fe4805b43ec3c,True,94.7,2048,1536
+7245.jpg,7245,negativo,Coyote,coyote,0,907eea803d31eb1b,True,95.9,2048,1536
+7246.jpg,7246,negativo,Coyote,coyote,0,917fe0807f47ce12,True,92.5,2048,1536
+7247.jpg,7247,negativo,Coyote,coyote,0,987ee6845961a337,True,96.4,2048,1536
+7248.jpg,7248,negativo,Coyote,coyote,0,917ee6857921da16,True,95.0,2048,1536
+7249.jpg,7249,negativo,Coyote,coyote,0,917ee4843b33e531,True,96.8,2048,1536
+7250.jpg,7250,negativo,Coyote,coyote,0,907ee4867e46ec0e,True,95.6,2048,1536
+7251.jpg,7251,negativo,Coyote,coyote,0,907ee6867c46ce0e,True,95.0,2048,1536
+7252.jpg,7252,negativo,Coyote,coyote,0,907fe5813b46ec0e,True,95.9,2048,1536
+7253.jpg,7253,negativo,Coyote,coyote,0,987fe6855942e60e,True,97.3,2048,1536
+7254.jpg,7254,negativo,Coyote,coyote,0,817ff2834f45b816,True,98.2,2048,1536
+7255.jpg,7255,negativo,Coyote,coyote,0,9e9e84a4a466ca5f,False,147.4,2048,1536
+7256.jpg,7256,negativo,Coyote,coyote,0,917fe6847840d717,True,93.6,2048,1536
+7257.jpg,7257,negativo,Coyote,coyote,0,917fe2823d65ca1a,True,94.9,2048,1536
+7259.jpg,7259,negativo,Coyote,coyote,0,917fe2807d31f81a,True,94.2,2048,1536
+7260.jpg,7260,negativo,Coyote,coyote,0,917fe6867961b818,True,93.8,2048,1536
+7262.jpg,7262,negativo,Coyote,coyote,0,817fae817b279c06,True,96.1,2048,1536
+7263.jpg,7263,negativo,Coyote,coyote,0,857ef0834f61b11e,True,96.8,2048,1536
+7265.jpg,7265,negativo,Coyote,coyote,0,917fe6847961cc16,True,91.4,2048,1536
+7266.jpg,7266,negativo,Coyote,coyote,0,917fe6847863cc16,True,91.3,2048,1536
+7269.jpg,7269,negativo,Coyote,coyote,0,917ee2047c07ea1f,True,84.4,2048,1536
+7272.jpg,7272,negativo,Coyote,coyote,0,917fe68479239c16,True,86.8,2048,1536
+7273.jpg,7273,negativo,Coyote,coyote,0,917fe2847a079c17,True,87.9,2048,1536
+7274.jpg,7274,negativo,Coyote,coyote,0,917eee04b913ca4e,True,107.1,2048,1536
+7278.jpg,7278,negativo,Coyote,coyote,0,817a9e9ce1079f70,True,101.2,2048,1536
+7279.jpg,7279,negativo,Coyote,coyote,0,837f9c9cf0078f41,True,101.2,2048,1536
+7281.jpg,7281,negativo,Coyote,coyote,0,917ee1847a06ed0f,True,90.1,2048,1536
+7282.jpg,7282,negativo,Coyote,coyote,0,917ee6845913e62e,True,91.1,2048,1536
+7284.jpg,7284,negativo,Coyote,coyote,0,817eb084ef61b81f,True,91.7,2048,1536
+7285.jpg,7285,negativo,Coyote,coyote,0,817fb084ef27b816,True,91.7,2048,1536
+7286.jpg,7286,negativo,Coyote,coyote,0,817ff084ce43b91e,True,91.6,2048,1536
+7287.jpg,7287,negativo,Coyote,coyote,0,917fe6847925d816,True,88.6,2048,1536
+7290.jpg,7290,negativo,Coyote,coyote,0,917ee6847923cc17,True,87.8,2048,1536
+7292.jpg,7292,negativo,Coyote,coyote,0,997fe3845c01f316,True,91.1,2048,1536
+7293.jpg,7293,negativo,Coyote,coyote,0,997fe2845c05b317,True,91.4,2048,1536
+7294.jpg,7294,negativo,Coyote,coyote,0,997fe6845903e616,True,90.7,2048,1536
+7296.jpg,7296,negativo,Coyote,coyote,0,917ee6847903f417,True,91.9,2048,1536
+7297.jpg,7297,negativo,Coyote,coyote,0,917ea78478079f1a,True,88.4,2048,1536
+7298.jpg,7298,negativo,Coyote,coyote,0,917fa78478079f12,True,87.8,2048,1536
+7299.jpg,7299,negativo,Coyote,coyote,0,917ee6847903fc16,True,87.1,2048,1536
+7300.jpg,7300,negativo,Coyote,coyote,0,917ee1847e06e90f,True,88.1,2048,1536
+7301.jpg,7301,negativo,Coyote,coyote,0,917ee3847c06e90f,True,88.0,2048,1536
+7302.jpg,7302,negativo,Coyote,coyote,0,917ee3047e06e90f,True,87.9,2048,1536
+7303.jpg,7303,negativo,Coyote,coyote,0,907ee1847a06ed1f,True,88.1,2048,1536
+7305.jpg,7305,negativo,Coyote,coyote,0,917fe6847923d816,True,92.9,2048,1536
+7306.jpg,7306,negativo,Coyote,coyote,0,837ebc84eb07b81c,True,87.4,2048,1536
+7307.jpg,7307,negativo,Coyote,coyote,0,917ee6847926f01e,True,84.3,2048,1536
+7308.jpg,7308,negativo,Coyote,coyote,0,817ebc84eb07b81e,True,87.4,2048,1536
+7309.jpg,7309,negativo,Coyote,coyote,0,817eae84f107bc1e,True,86.7,2048,1536
+7310.jpg,7310,negativo,Coyote,coyote,0,837fbc80e307b85c,True,96.9,2048,1536
+7311.jpg,7311,negativo,Coyote,coyote,0,c467a1592905be7d,True,104.1,2048,1536
+7314.jpg,7314,negativo,Coyote,coyote,0,917fe6847925e816,True,88.7,2048,1536
+7316.jpg,7316,negativo,Coyote,coyote,0,907fe7847823871e,True,92.0,2048,1536
+7318.jpg,7318,negativo,Coyote,coyote,0,907fe68478618f1e,True,95.2,2048,1536
+7319.jpg,7319,negativo,Coyote,coyote,0,847ff381ce44b133,True,98.7,2048,1536
+7320.jpg,7320,negativo,Coyote,coyote,0,917fe6847921871e,True,94.2,2048,1536
+7321.jpg,7321,negativo,Coyote,coyote,0,907fa78478278f16,True,92.4,2048,1536
+7324.jpg,7324,negativo,Coyote,coyote,0,817fe287cd05b217,True,93.8,2048,1536
+7325.jpg,7325,negativo,Coyote,coyote,0,817fe0846f27b81e,True,92.5,2048,1536
+7326.jpg,7326,negativo,Coyote,coyote,0,857ef185ce25b113,True,94.0,2048,1536
+7327.jpg,7327,negativo,Coyote,coyote,0,997fe684d901e626,True,94.0,2048,1536
+7332.jpg,7332,negativo,Coyote,coyote,0,917ee2847d25ca1e,True,90.7,2048,1536
+7334.jpg,7334,negativo,Coyote,coyote,0,c467b11928ed9a75,True,102.5,2048,1536
+7335.jpg,7335,negativo,Coyote,coyote,0,917ee2847d25ca1e,True,90.0,2048,1536
+7336.jpg,7336,negativo,Coyote,coyote,0,c067b11938f59c57,True,102.1,2048,1536
+7337.jpg,7337,negativo,Coyote,coyote,0,917ee68479239c17,True,91.3,2048,1536
+7338.jpg,7338,negativo,Coyote,coyote,0,917ee2867d25c85a,True,91.9,2048,1536
+7340.jpg,7340,negativo,Coyote,coyote,0,907fe68478278f16,True,93.9,2048,1536
+7341.jpg,7341,negativo,Coyote,coyote,0,917ee68479278e16,True,93.6,2048,1536
+7342.jpg,7342,negativo,Coyote,coyote,0,817fb8846b67b816,True,95.6,2048,1536
+7343.jpg,7343,negativo,Coyote,coyote,0,917ee2865c64b317,True,95.1,2048,1536
+7344.jpg,7344,negativo,Coyote,coyote,0,817ebc846b63bc16,True,94.9,2048,1536
+7346.jpg,7346,negativo,Coyote,coyote,0,997fe6845903f306,True,97.1,2048,1536
+7348.jpg,7348,negativo,Coyote,coyote,0,917ea78478278f16,True,91.6,2048,1536
+7349.jpg,7349,negativo,Coyote,coyote,0,817ef2865e45b133,True,93.6,2048,1536
+7351.jpg,7351,negativo,Coyote,coyote,0,917fe6847921ec16,True,90.1,2048,1536
+7352.jpg,7352,negativo,Coyote,coyote,0,917ee4847b03bc1e,True,91.1,2048,1536
+7353.jpg,7353,negativo,Coyote,coyote,0,917ee6847961bc16,True,90.1,2048,1536
+7354.jpg,7354,negativo,Coyote,coyote,0,817ebe8679388c47,True,94.2,2048,1536
+7355.jpg,7355,negativo,Coyote,coyote,0,9772c964d21ba857,True,41.6,2048,1536
+7356.jpg,7356,negativo,Coyote,coyote,0,9630c966b147b83f,True,41.5,2048,1536
+7357.jpg,7357,negativo,Coyote,coyote,0,94860eae6e687f89,False,108.8,2048,1536
+7358.jpg,7358,negativo,Coyote,coyote,0,94860eae6e687d8b,False,108.8,2048,1536
+7359.jpg,7359,negativo,Coyote,coyote,0,94860eae6e687d8b,False,108.7,2048,1536
+7360.jpg,7360,negativo,Coyote,coyote,0,94860fae6e607f89,False,108.7,2048,1536
+7361.jpg,7361,negativo,Coyote,coyote,0,94860fae6e686f89,False,108.5,2048,1536
+7362.jpg,7362,negativo,Coyote,coyote,0,94860fae6e686f89,False,108.6,2048,1536
+7363.jpg,7363,negativo,Coyote,coyote,0,96860eae6e687d83,False,108.5,2048,1536
+7364.jpg,7364,negativo,Coyote,coyote,0,94860fae6e687f81,False,108.4,2048,1536
+7365.jpg,7365,negativo,Coyote,coyote,0,94860eae6e627f89,False,108.4,2048,1536
+7366.jpg,7366,negativo,Coyote,coyote,0,94860fae6e607d8b,False,108.4,2048,1536
+7367.jpg,7367,negativo,Coyote,coyote,0,c567b15909753e45,True,105.5,2048,1536
+7368.jpg,7368,negativo,Coyote,coyote,0,c567b01929c4be75,True,102.4,2048,1536
+7372.jpg,7372,negativo,Coyote,coyote,0,84840dbb7a6c7da3,True,133.9,2048,1536
+7373.jpg,7373,negativo,Coyote,coyote,0,84840e9b7a6e6fa3,True,134.4,2048,1536
+7374.jpg,7374,negativo,Coyote,coyote,0,84840e9b7a6a7da7,True,134.0,2048,1536
+7375.jpg,7375,negativo,Coyote,coyote,0,84840e9b7a6a7da7,True,134.0,2048,1536
+7376.jpg,7376,negativo,Coyote,coyote,0,84840f9a7a6a7da7,True,136.7,2048,1536
+7379.jpg,7379,negativo,Coyote,coyote,0,c4840f8a6e6a7ba7,True,136.4,2048,1536
+7384.jpg,7384,negativo,Coyote,coyote,0,c4840f8a6e6a7ba7,True,135.9,2048,1536
+7386.jpg,7386,negativo,Coyote,coyote,0,996d6693994c6693,True,42.8,2048,1536
+7387.jpg,7387,negativo,Coyote,coyote,0,9f6a709dce60318e,True,45.3,2048,1536
+7388.jpg,7388,negativo,Coyote,coyote,0,c92fd68965d20daa,True,63.1,2048,1536
+7390.jpg,7390,negativo,Coyote,coyote,0,d62bf0c965d24ae4,True,57.0,2048,1536
+7391.jpg,7391,negativo,Coyote,coyote,0,d22ff4c866d449e2,True,56.7,2048,1536
+7392.jpg,7392,negativo,Coyote,coyote,0,d22df4c966d449e2,True,56.9,2048,1536
+7393.jpg,7393,negativo,Coyote,coyote,0,d22bf4c966d249e2,True,57.0,2048,1536
+7394.jpg,7394,negativo,Coyote,coyote,0,d42bf2c965d24ae4,True,57.9,2048,1536
+7395.jpg,7395,negativo,Coyote,coyote,0,d22bf4c9679249e2,True,59.3,2048,1536
+7397.jpg,7397,negativo,Coyote,coyote,0,d42bf08d36da49b4,True,64.2,2048,1536
+7398.jpg,7398,negativo,Coyote,coyote,0,d22ff0c967d04be0,True,60.4,2048,1536
+7400.jpg,7400,negativo,Coyote,coyote,0,d22ff0c966d849e2,True,60.7,2048,1536
+7401.jpg,7401,negativo,Coyote,coyote,0,d32f94c963831cf8,True,64.6,2048,1536
+7402.jpg,7402,negativo,Coyote,coyote,0,cc2bb0cc6cb173cc,True,64.3,2048,1536
+7405.jpg,7405,negativo,Coyote,coyote,0,c6663c886f6a3d89,False,105.2,2048,1536
+7406.jpg,7406,negativo,Coyote,coyote,0,c6663c886f6a3d89,False,105.3,2048,1536
+7409.jpg,7409,negativo,Coyote,coyote,0,d22bf4c926d24be4,True,56.3,2048,1536
+7411.jpg,7411,negativo,Coyote,coyote,0,d62bf0c926d84be4,True,56.6,2048,1536
+7412.jpg,7412,negativo,Coyote,coyote,0,c62bf0c966907be4,True,58.0,2048,1536
+7413.jpg,7413,negativo,Coyote,coyote,0,d32ff4c933c44ce0,True,57.1,2048,1536
+7419.jpg,7419,negativo,Coyote,coyote,0,d22bf4c967d04be0,True,57.6,2048,1536
+7421.jpg,7421,negativo,Coyote,coyote,0,d22bf4c967d04be0,True,58.2,2048,1536
+7422.jpg,7422,negativo,Coyote,coyote,0,c22bf4c966d84be4,True,51.6,2048,1536
+7423.jpg,7423,negativo,Coyote,coyote,0,c22bf4c966d84be4,True,51.8,2048,1536
+7424.jpg,7424,negativo,Coyote,coyote,0,d22bf4c966d84be0,True,52.3,2048,1536
+7425.jpg,7425,negativo,Coyote,coyote,0,dd62845ea05fa857,True,39.4,2048,1536
+7426.jpg,7426,negativo,Coyote,coyote,0,cf70904eb155a675,True,40.4,2048,1536
+7427.jpg,7427,negativo,Coyote,coyote,0,c17e9c60be47e01e,True,41.1,2048,1536
+7428.jpg,7428,negativo,Coyote,coyote,0,d962941ab14fa85f,True,38.9,2048,1536
+7429.jpg,7429,negativo,Coyote,coyote,0,dd62940ab14fa85f,True,38.6,2048,1536
+7430.jpg,7430,negativo,Coyote,coyote,0,dd629409b14fa85f,True,38.5,2048,1536
+7432.jpg,7432,negativo,Coyote,coyote,0,dd62940eb14fa857,True,38.5,2048,1536
+7433.jpg,7433,negativo,Coyote,coyote,0,dd62940cb857a85f,True,38.6,2048,1536
+7434.jpg,7434,negativo,Coyote,coyote,0,d9628419b347b85f,True,38.6,2048,1536
+7436.jpg,7436,negativo,Coyote,coyote,0,d16e9438b947a857,True,46.1,2048,1536
+7438.jpg,7438,negativo,Coyote,coyote,0,c666e91992f4694b,True,111.6,2048,1536
+7439.jpg,7439,negativo,Coyote,coyote,0,c666e91992f42d4b,True,111.6,2048,1536
+7440.jpg,7440,negativo,Coyote,coyote,0,c567b11909f4ba55,True,103.8,2048,1536
+7442.jpg,7442,negativo,Coyote,coyote,0,c567b11929f49a55,True,103.4,2048,1536
+7444.jpg,7444,negativo,Bobcat,bobcat,0,c43faad5842e2ad5,True,112.0,2592,1944
+7445.jpg,7445,negativo,Bobcat,bobcat,0,c03fb2d5883f34c3,True,111.0,2592,1944
+7446.jpg,7446,negativo,Bobcat,bobcat,0,c12fb8572b749847,True,72.4,2048,1536
+7447.jpg,7447,negativo,Bobcat,bobcat,0,d03fa4d59a2d2c53,True,111.9,2592,1944
+7448.jpg,7448,negativo,Bobcat,bobcat,0,c02ff31c38639b5c,True,71.6,2048,1536
+7449.jpg,7449,negativo,Bobcat,bobcat,0,c03ff0578a2fa057,True,111.1,2592,1944
+7452.jpg,7452,negativo,Bobcat,bobcat,0,857bea941ceb2256,True,105.3,2592,1944
+7454.jpg,7454,negativo,Bobcat,bobcat,0,9e909e05844fc57f,False,105.4,2592,1944
+7455.jpg,7455,negativo,Bobcat,bobcat,0,9e909e05844fc57f,False,105.8,2592,1944
+7456.jpg,7456,negativo,Bobcat,bobcat,0,c63bb0c6297d82e5,True,107.4,2592,1944
+7458.jpg,7458,negativo,Bobcat,bobcat,0,c42bb3548c73f22d,True,99.8,2592,1944
+7459.jpg,7459,negativo,Bobcat,bobcat,0,c63ba1c42b77d825,True,102.6,2592,1944
+7466.jpg,7466,negativo,Bobcat,bobcat,0,cbc8bf7275c86224,True,100.7,2048,1536
+7468.jpg,7468,negativo,Bobcat,bobcat,0,cacb3b1675986b24,True,97.6,2048,1536
+7470.jpg,7470,negativo,Bobcat,bobcat,0,cdcfff78383060c0,False,106.1,1920,1080
+7471.jpg,7471,negativo,Bobcat;Eastern Gray Squirrel,bobcat,0,cdcfff78383060c0,False,106.1,1920,1080
+7472.jpg,7472,negativo,Bobcat,bobcat,0,8177f44ba855b10f,True,100.7,2592,1944
+7473.jpg,7473,negativo,Bobcat,bobcat,0,8177f44ba855b30b,True,100.5,2592,1944
+7474.jpg,7474,negativo,Bobcat,bobcat,0,8177f44ba855b30b,True,100.2,2592,1944
+7476.jpg,7476,negativo,Bobcat,bobcat,0,8077f4caa9558d1b,True,100.9,2592,1944
+7478.jpg,7478,negativo,Bobcat,bobcat,0,c02b80f53f47b85e,True,93.2,2048,1536
+7480.jpg,7480,negativo,Bobcat,bobcat,0,d42f80f43f47b05c,True,95.6,2048,1536
+7481.jpg,7481,negativo,Bobcat,bobcat,0,d06aa4cf3a65845f,True,103.4,2592,1944
+7482.jpg,7482,negativo,Bobcat,bobcat,0,c17aa6cf0866865f,True,103.2,2592,1944
+7484.jpg,7484,negativo,Bobcat,bobcat,0,c07ba6cf0867924f,True,102.6,2592,1944
+7487.jpg,7487,negativo,Bobcat,bobcat,0,d83aa1887fc1c7e8,True,54.5,2048,1536
+7488.jpg,7488,negativo,Bobcat,bobcat,0,d83aa3887dc3cec8,True,54.9,2048,1536
+7491.jpg,7491,negativo,Bobcat,bobcat,0,d83ae48979c6c699,True,54.8,2048,1536
+7492.jpg,7492,negativo,Bobcat,bobcat,0,d83ae4897bc4c699,True,54.9,2048,1536
+7493.jpg,7493,negativo,Bobcat,bobcat,0,d838e48b7bc4c699,True,55.1,2048,1536
+7494.jpg,7494,negativo,Bobcat,bobcat,0,d878e58a72cd86b2,True,55.1,2048,1536
+7495.jpg,7495,negativo,Bobcat,bobcat,0,d838e58a72cdccb2,True,55.4,2048,1536
+7497.jpg,7497,negativo,Bobcat,bobcat,0,d838e1847bcd84fa,True,54.6,2048,1536
+7498.jpg,7498,negativo,Bobcat,bobcat,0,d838a4ca7bc4cea9,True,54.3,2048,1536
+7499.jpg,7499,negativo,Bobcat,bobcat,0,84a0ef6f7f9482c1,True,71.1,2048,1536
+7500.jpg,7500,negativo,Bobcat,bobcat,0,80a0fb6f7f9286c1,True,71.9,2048,1536
+7501.jpg,7501,negativo,Bobcat,bobcat,0,84a0ef6f7e86a2c8,True,72.5,2048,1536
+7502.jpg,7502,negativo,Bobcat,bobcat,0,80a0eb6f7f828fc1,True,72.1,2048,1536
+7503.jpg,7503,negativo,Bobcat,bobcat,0,d4b630c85b73e60d,False,89.7,2048,1536
+7504.jpg,7504,negativo,Bobcat,bobcat,0,d4b634c81b73e60d,False,89.2,2048,1536
+7505.jpg,7505,negativo,Bobcat,bobcat,0,d5f5c089153772c6,False,110.0,2048,1536
+7506.jpg,7506,negativo,Bobcat,bobcat,0,95f5c489153772c6,False,110.0,2048,1536
+7508.jpg,7508,negativo,Bobcat,bobcat,0,d5f5c089153772c6,False,110.0,2048,1536
+7509.jpg,7509,negativo,Bobcat,bobcat,0,c4f4c589173e72c6,False,110.0,2048,1536
+7510.jpg,7510,negativo,Bobcat,bobcat,0,85f5d489153f7246,False,110.5,2048,1536
+7511.jpg,7511,negativo,Bobcat,bobcat,0,a55556a9505725eb,False,100.0,2048,1536
+7512.jpg,7512,negativo,Bobcat,bobcat,0,c1201edf6ef819e4,False,129.2,2048,1536
+7513.jpg,7513,negativo,Bobcat,bobcat,0,c1201ecf6ef81de4,False,129.1,2048,1536
+7514.jpg,7514,negativo,Bobcat,bobcat,0,c1201ecf6ef81de4,False,129.1,2048,1536
+7515.jpg,7515,negativo,Bobcat,bobcat,0,c1201ecf6ef819e5,False,128.9,2048,1536
+7516.jpg,7516,negativo,Bobcat,bobcat,0,c1201ecf6ef819e5,False,129.0,2048,1536
+7517.jpg,7517,negativo,Bobcat,bobcat,0,c1203ecf6efa18e4,False,128.0,2048,1536
+7518.jpg,7518,negativo,Bobcat,bobcat,0,c1201edf6ff81985,False,129.1,2048,1536
+7519.jpg,7519,negativo,Bobcat,bobcat,0,d13ec1ce3be06e81,True,62.2,2048,1536
+7520.jpg,7520,negativo,Bobcat,bobcat,0,d12ec1dc3be06ec1,True,62.6,2048,1536
+7522.jpg,7522,negativo,Bobcat,bobcat,0,d13ec1cc3ae06ed1,True,62.4,2048,1536
+7523.jpg,7523,negativo,Bobcat,bobcat,0,d13ec1cc3be06ec1,True,62.4,2048,1536
+7524.jpg,7524,negativo,Bobcat,bobcat,0,d13ec1cc3be06ec1,True,62.5,2048,1536
+7527.jpg,7527,negativo,Bobcat,bobcat,0,9432cb659a6f8275,True,47.3,2048,1536
+7528.jpg,7528,negativo,Bobcat,bobcat,0,9432cb659a6f8875,True,47.3,2048,1536
+7529.jpg,7529,negativo,Bobcat,bobcat,0,9572c964f25ba856,True,41.6,2048,1536
+7530.jpg,7530,negativo,Bobcat,bobcat,0,9770c964b24fb847,True,42.1,2048,1536
+7531.jpg,7531,negativo,Bobcat,bobcat,0,9472cd64b24fb14e,True,42.4,2048,1536
+7534.jpg,7534,negativo,Bobcat,bobcat,0,d515916ea95d8167,True,121.4,2048,1536
+7539.jpg,7539,negativo,Bobcat,bobcat,0,9393774d742829ea,True,143.5,2048,1536
+7542.jpg,7542,negativo,Bobcat,bobcat,0,9393774d742829ea,True,143.1,2048,1536
+7543.jpg,7543,negativo,Bobcat,bobcat,0,9383774d742c29ea,True,143.3,2048,1536
+7547.jpg,7547,negativo,Bobcat,bobcat,0,923b74c1b1ce6ce1,True,68.5,2048,1536
+7548.jpg,7548,negativo,Bobcat,bobcat,0,9a3b74c9b0c86de1,True,68.5,2048,1536
+7549.jpg,7549,negativo,Bobcat,bobcat,0,de5ecc4cd84c9079,False,72.8,2048,1536
+7550.jpg,7550,negativo,Bobcat,bobcat,0,de5ecc4cd84c9079,False,72.9,2048,1536
+7558.jpg,7558,negativo,Bobcat,bobcat,0,c13fc03dbb469847,True,56.8,2048,1536
+7559.jpg,7559,negativo,Bobcat,bobcat,0,c13fc03d9b46984f,True,56.9,2048,1536
+7560.jpg,7560,negativo,Bobcat,bobcat,0,d12fc036ad42b94f,True,57.7,2048,1536
+7561.jpg,7561,negativo,Bobcat,bobcat,0,853ec135da659a65,True,58.4,2048,1536
+7562.jpg,7562,negativo,Bobcat,bobcat,0,d42fc036ab46b947,True,58.0,2048,1536
+7563.jpg,7563,negativo,Bobcat,bobcat,0,8157e09c39d09f3e,False,110.9,2048,1536
+7564.jpg,7564,negativo,Bobcat,bobcat,0,cd49d974b167803e,False,64.5,2048,1536
+7565.jpg,7565,negativo,Bobcat,bobcat,0,cd49d974b167803e,False,64.5,2048,1536
+7567.jpg,7567,negativo,Bobcat,bobcat,0,9670cb64b24fb946,True,43.4,2048,1536
+7568.jpg,7568,negativo,Bobcat,bobcat,0,9462c96cb25da35e,True,43.7,2048,1536
+7569.jpg,7569,negativo,Bobcat,bobcat,0,8571d24ef119ce3c,True,70.9,2048,1536
+7571.jpg,7571,negativo,Bobcat,bobcat,0,85799246f71cc31e,True,71.4,2048,1536
+7572.jpg,7572,negativo,Bobcat,bobcat,0,9018985d995f897f,False,75.9,2048,1536
+7573.jpg,7573,negativo,Bobcat,bobcat,0,901898599b5f897f,False,75.8,2048,1536
+7574.jpg,7574,negativo,Bobcat,bobcat,0,90189859995f997f,False,75.6,2048,1536
+7576.jpg,7576,negativo,Bobcat,bobcat,0,923ae01fb964985f,True,97.7,2048,1536
+7577.jpg,7577,negativo,Bobcat,bobcat,0,923ae00fb954987f,True,98.6,2048,1536
+7578.jpg,7578,negativo,Bobcat,bobcat,0,923ae00fb954987f,True,98.6,2048,1536
+7579.jpg,7579,negativo,Bobcat,bobcat,0,933ae207b9669875,True,99.1,2048,1536
+7580.jpg,7580,negativo,Bobcat,bobcat,0,923ae007b9549c7f,True,98.5,2048,1536
+7581.jpg,7581,negativo,Bobcat,bobcat,0,933ae205b966987d,True,98.4,2048,1536
+7583.jpg,7583,negativo,Bobcat,bobcat,0,923ae117ba6d9856,True,98.5,2048,1536
+7584.jpg,7584,negativo,Bobcat,bobcat,0,923ae2579966985d,True,98.2,2048,1536
+7585.jpg,7585,negativo,Bobcat,bobcat,0,923ae117bb648c57,True,98.3,2048,1536
+7586.jpg,7586,negativo,Bobcat,bobcat,0,923ae1579964985f,True,98.0,2048,1536
+7587.jpg,7587,negativo,Bobcat,bobcat,0,923ae057b964985f,True,97.3,2048,1536
+7588.jpg,7588,negativo,Bobcat,bobcat,0,923ae057b964985f,True,97.3,2048,1536
+7590.jpg,7590,negativo,Bobcat,bobcat,0,807fa3267f14e30e,True,182.3,2048,1536
+7591.jpg,7591,negativo,Bobcat,bobcat,0,c141d736d94db06e,False,81.6,2048,1536
+7592.jpg,7592,negativo,Bobcat,bobcat,0,c141d716f84fb06e,False,82.3,2048,1536
+7593.jpg,7593,negativo,Bobcat,bobcat,0,c141d756b14db86e,False,81.1,2048,1536
+7594.jpg,7594,negativo,Bobcat,bobcat,0,c141d734924db97e,False,81.3,2048,1536
+7595.jpg,7595,negativo,Bobcat,bobcat,0,c141d636d94fb06e,False,87.6,2048,1536
+7596.jpg,7596,negativo,Bobcat,bobcat,0,c141d636d94fb06e,False,87.7,2048,1536
+7597.jpg,7597,negativo,Bobcat,bobcat,0,d213db1a9f4f884a,False,72.7,2048,1536
+7598.jpg,7598,negativo,Bobcat,bobcat,0,c141d636d91fb06e,False,87.7,2048,1536
+7599.jpg,7599,negativo,Bobcat,bobcat,0,d213db1b9f4f8848,False,72.9,2048,1536
+7600.jpg,7600,negativo,Bobcat,bobcat,0,d213db1b9f4f8848,False,72.7,2048,1536
+7601.jpg,7601,negativo,Bobcat,bobcat,0,c1e16ec83b936ee0,False,105.9,1920,1080
+7602.jpg,7602,negativo,Bobcat,bobcat,0,c1e16bc93e927bc0,False,106.5,1920,1080
+7603.jpg,7603,negativo,Bobcat,bobcat,0,c1e167ce3e9262f0,False,106.0,1920,1080
+7604.jpg,7604,negativo,Bobcat,bobcat,0,c1e163ce3f9172c4,False,106.3,1920,1080
+7605.jpg,7605,negativo,Bobcat,bobcat,0,c1e16acf1f927ac0,False,107.2,1920,1080
+7606.jpg,7606,negativo,Bobcat,bobcat,0,c1e16acf1f927ac0,False,107.5,1920,1080
+7607.jpg,7607,negativo,Bobcat,bobcat,0,c1e16ec91f927ec0,False,108.2,1920,1080
+7608.jpg,7608,negativo,Bobcat,bobcat,0,c1e16fc83e937ac0,False,109.2,1920,1080
+7609.jpg,7609,negativo,Bobcat,bobcat,0,c1e16fc81e9b7ac0,False,108.8,1920,1080
+7610.jpg,7610,negativo,Bobcat,bobcat,0,c1e16fc83e927ec0,False,110.0,1920,1080
+7611.jpg,7611,negativo,Bobcat,bobcat,0,c5e16bdc368b6ac0,False,107.0,1920,1080
+7612.jpg,7612,negativo,Bobcat,bobcat,0,c1e16ac83ffb6a80,False,108.4,1920,1080
+7614.jpg,7614,negativo,Bobcat,bobcat,0,9322a338dc75817f,False,50.8,2048,1536
+7615.jpg,7615,negativo,Bobcat,bobcat,0,976cb672c916e815,True,50.4,2048,1536
+7616.jpg,7616,negativo,Bobcat,bobcat,0,9b22b90ed975814f,False,52.6,2048,1536
+7617.jpg,7617,negativo,Bobcat,bobcat,0,ba239a68915e856f,False,49.3,2048,1536
+7618.jpg,7618,negativo,Bobcat,bobcat,0,ddddf868a064815b,False,89.6,2048,1536
+7619.jpg,7619,negativo,Bobcat,bobcat,0,dbddf8689064815b,False,89.3,2048,1536
+7620.jpg,7620,negativo,Bobcat,bobcat,0,ddddf868a064815b,False,89.4,2048,1536
+7621.jpg,7621,negativo,Bobcat,bobcat,0,d9ddf8688074815f,False,89.7,2048,1536
+7622.jpg,7622,negativo,Bobcat,bobcat,0,d9ddf8688074815f,False,89.2,2048,1536
+7623.jpg,7623,negativo,Bobcat,bobcat,0,dbdcbc60903e831b,False,91.0,2048,1536
+7624.jpg,7624,negativo,Bobcat,bobcat,0,c4ede95ec123887c,False,100.8,2048,1536
+7625.jpg,7625,negativo,Bobcat,bobcat,0,c4ede95ec123887c,False,100.8,2048,1536
+7626.jpg,7626,negativo,Bobcat,bobcat,0,dc6ce916f06cc07c,False,55.0,2048,1536
+7627.jpg,7627,negativo,Bobcat,bobcat,0,dc6ce916f06c9874,False,55.9,2048,1536
+7628.jpg,7628,negativo,Bobcat,bobcat,0,dc6ced16f06c807c,False,55.2,2048,1536
+7629.jpg,7629,negativo,Bobcat,bobcat,0,dc6cf916f06c807c,False,56.1,2048,1536
+7630.jpg,7630,negativo,Bobcat,bobcat,0,dc6cf916f06c807c,False,55.9,2048,1536
+7632.jpg,7632,negativo,Bobcat,bobcat,0,d5259a64b85e817e,True,49.0,2048,1536
+7633.jpg,7633,negativo,Bobcat,bobcat,0,c53c8b64b847b867,True,51.2,2048,1536
+7635.jpg,7635,negativo,Bobcat,bobcat,0,d5259a64b85e817e,True,49.0,2048,1536
+7636.jpg,7636,negativo,Bobcat,bobcat,0,e11fc06e8f708f70,True,54.7,2048,1536
+7637.jpg,7637,negativo,Bobcat,bobcat,0,9692b5456cc527ea,True,147.8,2048,1536
+7638.jpg,7638,negativo,Bobcat,bobcat,0,dd2067c72ee07f80,True,148.7,1920,1080
+7639.jpg,7639,negativo,Bobcat,bobcat,0,de2067cb2ee07f80,True,148.2,1920,1080
+7643.jpg,7643,negativo,Bobcat,bobcat,0,de2067cb2ee07f80,True,148.1,1920,1080
+7645.jpg,7645,negativo,Bobcat,bobcat,0,9f96226a6caa7661,False,114.5,1920,1080
+7649.jpg,7649,negativo,Bobcat,bobcat,0,c7711cc731cc3b8c,True,30.5,2048,1536
+7650.jpg,7650,negativo,Bobcat,bobcat,0,c3711c0739c6799e,True,36.1,2048,1536
+7651.jpg,7651,negativo,Bobcat,bobcat,0,cd6f6bc4164450fa,False,138.0,2048,1536
+7652.jpg,7652,negativo,Bobcat,bobcat,0,d2780d8747e8fc92,True,73.3,2048,1536
+7654.jpg,7654,negativo,Bobcat,bobcat,0,cdfb7a4634a0688e,False,135.9,2048,1536
+7655.jpg,7655,negativo,Bobcat,bobcat,0,95606a8c3ac5efc9,True,31.1,1920,1080
+7656.jpg,7656,negativo,Bobcat,bobcat,0,c74f7ce814b1618e,False,143.1,1920,1080
+7657.jpg,7657,negativo,Bobcat,bobcat,0,c74f6ce831b36286,False,142.5,1920,1080
+7658.jpg,7658,negativo,Bobcat,bobcat,0,c74f6ce831b96286,False,141.7,1920,1080
+7659.jpg,7659,negativo,Bobcat,bobcat,0,c74f6ce818b3638a,False,141.7,1920,1080
+7660.jpg,7660,negativo,Bobcat,bobcat,0,c74f6ce833b1608e,False,142.0,1920,1080
+7661.jpg,7661,negativo,Bobcat,bobcat,0,d8349547c13d986f,False,103.5,2048,1536
+7662.jpg,7662,negativo,Bobcat,bobcat,0,d83c9543e13c986f,False,103.8,2048,1536
+7663.jpg,7663,negativo,Bobcat,bobcat,0,9a70954fe13c986d,False,102.6,2048,1536
+7664.jpg,7664,negativo,Bobcat,bobcat,0,d272fa50d87c983c,False,59.0,2048,1536
+7665.jpg,7665,negativo,Bobcat,bobcat,0,d272fa50d87c983c,False,59.1,2048,1536
+7667.jpg,7667,negativo,Bobcat,bobcat,0,946e831bec15bb64,True,62.6,2048,1536
+7670.jpg,7670,negativo,Bobcat,bobcat,0,966dc916e90d926d,True,66.6,2048,1536
+7671.jpg,7671,negativo,Bobcat,bobcat,0,946e831be417ba66,True,62.7,2048,1536
+7672.jpg,7672,negativo,Bobcat,bobcat,0,946acb35ea0db44e,True,70.7,2048,1536
+7673.jpg,7673,negativo,Bobcat,bobcat,0,8476c32dd64ba956,True,71.5,2048,1536
+7674.jpg,7674,negativo,Bobcat,bobcat,0,966ccd12ed0d926d,True,62.2,2048,1536
+7675.jpg,7675,negativo,Bobcat,bobcat,0,847ac335da0fb44e,True,69.7,2048,1536
+7676.jpg,7676,negativo,Bobcat,bobcat,0,9e75831be40bd12e,True,61.2,2048,1536
+7678.jpg,7678,negativo,Bobcat,bobcat,0,9476831be40fdb64,True,60.4,2048,1536
+7681.jpg,7681,negativo,Bobcat,bobcat,0,d2daf87cb9288368,False,94.6,2048,1536
+7682.jpg,7682,negativo,Bobcat,bobcat,0,cc3b8177994ca25d,True,68.3,2048,1536
+7683.jpg,7683,negativo,Bobcat,bobcat,0,d2daf87dac288368,False,93.9,2048,1536
+7684.jpg,7684,negativo,Bobcat,bobcat,0,dacaf83cad288369,False,93.4,2048,1536
+7686.jpg,7686,negativo,Bobcat,bobcat,0,807fe0c69b37c04f,True,93.8,2048,1536
+7687.jpg,7687,negativo,Bobcat,bobcat,0,807fe1c69a37c04f,True,93.8,2048,1536
+7689.jpg,7689,negativo,Bobcat,bobcat,0,807fe0ce9937c04f,True,93.7,2048,1536
+7691.jpg,7691,negativo,Bobcat,bobcat,0,807fe1ceaa75c00f,True,93.8,2048,1536
+7693.jpg,7693,negativo,Bobcat,bobcat,0,da57815ca63cb463,False,159.7,2048,1536
+7694.jpg,7694,negativo,Bobcat,bobcat,0,da568959867cb546,False,160.0,2048,1536
+7696.jpg,7696,negativo,Bobcat,bobcat,0,da568953a47cb546,False,160.7,2048,1536
+7697.jpg,7697,negativo,Bobcat,bobcat,0,d476b65eca569054,True,106.1,2048,1536
+7699.jpg,7699,negativo,Bobcat,bobcat,0,d476b65ec3569054,True,105.6,2048,1536
+7700.jpg,7700,negativo,Bobcat,bobcat,0,d476b65ec2369056,True,105.6,2048,1536
+7703.jpg,7703,negativo,Bobcat,bobcat,0,d43eb6d29e569054,True,105.9,2048,1536
+7704.jpg,7704,negativo,Bobcat,bobcat,0,d436b6f69e469054,True,105.9,2048,1536
+7707.jpg,7707,negativo,Bobcat,bobcat,0,c436f657ba469454,True,107.7,2048,1536
+7708.jpg,7708,negativo,Bobcat,bobcat,0,9476b6ee5a968454,True,117.7,2048,1536
+7709.jpg,7709,negativo,Bobcat,bobcat,0,c436f65fb8469454,True,106.7,2048,1536
+7710.jpg,7710,negativo,Bobcat,bobcat,0,c47ebcc65b34d450,True,126.7,2048,1536
+7714.jpg,7714,negativo,Bobcat,bobcat,0,c766b05d0f74c907,True,102.8,2048,1536
+7716.jpg,7716,negativo,Bobcat,bobcat,0,cf67b05d0f70c807,True,103.9,2048,1536
+7717.jpg,7717,negativo,Bobcat,bobcat,0,cf67b05d0f70c807,True,103.6,2048,1536
+7719.jpg,7719,negativo,Bobcat,bobcat,0,c72fb07f0ff0e010,True,107.0,2048,1536
+7720.jpg,7720,negativo,Bobcat,bobcat,0,c76fb04f2fd0c830,True,104.1,2048,1536
+7728.jpg,7728,negativo,Bobcat,bobcat,0,dbd3813ea827d82c,False,179.5,2048,1536
+7729.jpg,7729,negativo,Bobcat,bobcat,0,dbd3813ea827d82c,False,179.3,2048,1536
+7731.jpg,7731,negativo,Bobcat,bobcat,0,c52dad25a06b837b,False,81.3,2048,1536
+7732.jpg,7732,negativo,Bobcat,bobcat,0,9d45852dac6a837b,False,79.4,2048,1536
+7733.jpg,7733,negativo,Bobcat,bobcat,0,da4eca449257833f,False,91.2,2048,1536
+7734.jpg,7734,negativo,Bobcat,bobcat,0,da4eca449257913f,False,91.2,2048,1536
+7735.jpg,7735,negativo,Bobcat,bobcat,0,d04ece40925f917f,False,91.1,2048,1536
+7736.jpg,7736,negativo,Bobcat,bobcat,0,cc5aca44927f8177,False,89.3,2048,1536
+7737.jpg,7737,negativo,Bobcat,bobcat,0,c856ca44925f917f,False,89.4,2048,1536
+7738.jpg,7738,negativo,Bobcat,bobcat,0,ca46ca40965f917f,False,90.2,2048,1536
+7739.jpg,7739,negativo,Bobcat,bobcat,0,d235d926a55ea417,False,101.5,2048,1536
+7740.jpg,7740,negativo,Bobcat,bobcat,0,d774d935a01cb417,False,102.2,2048,1536
+7741.jpg,7741,negativo,Bobcat,bobcat,0,d774d815a11cf507,False,102.5,2048,1536
+7745.jpg,7745,negativo,Bobcat,bobcat,0,8a9ed57bb8548139,True,143.8,2048,1536
+7748.jpg,7748,negativo,Bobcat,bobcat,0,8a9ed57fb8548170,True,143.4,2048,1536
+7750.jpg,7750,negativo,Bobcat,bobcat,0,8a9ed57fb8548170,True,143.6,2048,1536
+7751.jpg,7751,negativo,Bobcat,bobcat,0,86609d2af29d6a9e,True,48.2,2048,1536
+7754.jpg,7754,negativo,Bobcat,bobcat,0,c56a9f40e6a9709e,True,48.7,2048,1536
+7756.jpg,7756,negativo,Bobcat,bobcat,0,d7629d7cc681708e,True,48.9,2048,1536
+7758.jpg,7758,negativo,Bobcat,bobcat,0,d7629d7cc681708e,True,49.1,2048,1536
+7759.jpg,7759,negativo,Bobcat,bobcat,0,c02bc1153b678f5d,True,79.7,2048,1536
+7760.jpg,7760,negativo,Bobcat,bobcat,0,c02f96553b469f51,True,73.3,2048,1536
+7764.jpg,7764,negativo,Bobcat,bobcat,0,c02f96553b469f51,True,73.1,2048,1536
+7765.jpg,7765,negativo,Bobcat,bobcat,0,c02fc31539479b5d,True,72.3,2048,1536
+7766.jpg,7766,negativo,Bobcat,bobcat,0,c02fc1153b479b57,True,71.7,2048,1536
+7767.jpg,7767,negativo,Bobcat,bobcat,0,c02fc5153b459d57,True,72.1,2048,1536
+7768.jpg,7768,negativo,Bobcat,bobcat,0,c12fb0192ee71b55,True,111.2,2048,1536
+7876.jpg,7876,negativo,American Crow,otras,0,c0de9a372165c53d,False,200.2,2048,1536
+7899.jpg,7899,negativo,American Crow,otras,0,9224a1659d77827f,False,57.2,2048,1536
+7941.jpg,7941,negativo,White_Tailed_Deer,deer,0,cd31cb5b812f906e,False,86.4,2048,1536
+7942.jpg,7942,negativo,White_Tailed_Deer,deer,0,cd31db59802f916e,False,86.3,2048,1536
+7943.jpg,7943,negativo,White_Tailed_Deer,deer,0,d9318b5b852d906f,False,86.3,2048,1536
+7944.jpg,7944,negativo,White_Tailed_Deer,deer,0,cd31ab5b802f916e,False,86.9,2048,1536
+7945.jpg,7945,negativo,White_Tailed_Deer,deer,0,cd31ab5b803f906e,False,87.2,2048,1536
+7946.jpg,7946,negativo,White_Tailed_Deer,deer,0,cd318b5b843f906e,False,87.5,2048,1536
+7952.jpg,7952,negativo,American Crow,otras,0,c931cf5b902f906d,False,86.8,2048,1536
+8398.jpg,8398,negativo,American Crow,otras,0,d2946986256377e3,False,93.2,1920,1080
+850.jpg,850,negativo,Eastern Cottontail,otras,0,8e6c708d73c46ee1,True,68.0,2048,1536
+8622.jpg,8622,negativo,American Crow,otras,0,d41061bc29c37fec,False,94.0,1920,1080
+8718.jpg,8718,negativo,American Crow,otras,0,857d788066ec692f,True,121.4,1920,1080
+8784.jpg,8784,positivo,American Black Bear,,1,84bcbece260e6768,False,129.1,2048,1536
+8785.jpg,8785,positivo,American Black Bear,,1,94bc8ccc372b6768,False,129.4,2048,1536
+8786.jpg,8786,positivo,American Black Bear,,1,c1c06739561e3dda,True,103.8,2048,1536
+8787.jpg,8787,positivo,American Black Bear,,1,94bc84ce3a2b676c,False,129.2,2048,1536
+8788.jpg,8788,positivo,American Black Bear,,1,94bc8cce3e2b6760,False,129.2,2048,1536
+8789.jpg,8789,positivo,American Black Bear,,1,9cbc86ce3e1c6760,False,129.2,2048,1536
+8790.jpg,8790,positivo,American Black Bear,,1,9ebca0c83f0f6760,False,128.7,2048,1536
+8791.jpg,8791,positivo,American Black Bear,,1,96bc9ccc26267369,False,127.2,2048,1536
+8792.jpg,8792,positivo,American Black Bear,,1,9cbce18c3e47632c,False,124.6,2048,1536
+8793.jpg,8793,positivo,American Black Bear,,1,c1c06739561e3dda,True,103.5,2048,1536
+8794.jpg,8794,positivo,American Black Bear,,1,d1c067395e1e35d8,True,102.9,2048,1536
+8795.jpg,8795,positivo,American Black Bear,,1,9132e993556b6ca9,False,133.3,2048,1536
+8796.jpg,8796,positivo,American Black Bear,,1,d1c06739563e2dca,True,102.2,2048,1536
+8797.jpg,8797,positivo,American Black Bear,,1,d1c26339563a2dda,True,101.8,2048,1536
+8798.jpg,8798,positivo,American Black Bear,,1,d3c867335c1c273a,True,96.3,2048,1536
+8799.jpg,8799,positivo,American Black Bear,,1,c3d8692f761b1d60,True,90.9,2048,1536
+8800.jpg,8800,positivo,American Black Bear,,1,c3c821bf33364d69,True,86.8,2048,1536
+8801.jpg,8801,positivo,American Black Bear,,1,92ba13d1694c6dec,True,114.3,2048,1536
+8802.jpg,8802,positivo,American Black Bear,,1,d2b233c9496c6de4,True,111.9,2048,1536
+8803.jpg,8803,positivo,American Black Bear,,1,d236b5cb4a29658b,False,145.1,2048,1536
+8804.jpg,8804,positivo,American Black Bear,,1,d132a993556b6c99,False,131.9,2048,1536
+8805.jpg,8805,positivo,American Black Bear,,1,c81393e46db374a9,False,141.4,2048,1536
+8806.jpg,8806,positivo,American Black Bear,,1,b241c9b261cf7cb1,False,138.3,2048,1536
+8807.jpg,8807,positivo,American Black Bear,,1,91329b856d7a65aa,False,130.1,2048,1536
+8808.jpg,8808,positivo,American Black Bear,,1,91369b97697a648a,False,132.7,2048,1536
+8809.jpg,8809,positivo,American Black Bear,,1,93369997697a648a,False,134.6,2048,1536
+8810.jpg,8810,positivo,American Black Bear,,1,9236b9966b78658a,False,138.2,2048,1536
+8811.jpg,8811,positivo,American Black Bear,,1,80ff0fc8566c6b0e,False,136.2,2048,1536
+8812.jpg,8812,positivo,American Black Bear,,1,80ff0fc8566c6b0e,False,136.8,2048,1536
+8813.jpg,8813,positivo,American Black Bear,,1,81fd6fc916286b0e,False,135.0,2048,1536
+8814.jpg,8814,positivo,American Black Bear,,1,81ff6fc816286b0e,False,135.5,2048,1536
+8815.jpg,8815,positivo,American Black Bear,,1,81ff4fc816686b0e,False,135.2,2048,1536
+8816.jpg,8816,positivo,American Black Bear,,1,81fd7fc914286b0e,False,132.8,2048,1536
+8817.jpg,8817,positivo,American Black Bear,,1,80ff0fc8166d6b0e,False,136.9,2048,1536
+8818.jpg,8818,positivo,American Black Bear,,1,9cf36f9840692f0e,False,126.2,2048,1536
+8819.jpg,8819,positivo,American Black Bear,,1,81ff6f8916286b0e,False,133.6,2048,1536
+8820.jpg,8820,positivo,American Black Bear,,1,91df7f89502c6f08,False,138.7,2048,1536
+8821.jpg,8821,positivo,American Black Bear,,1,80ff4f88566c6b0e,False,134.8,2048,1536
+8822.jpg,8822,positivo,American Black Bear,,1,f41959e866996b26,False,138.3,2048,1536
+8823.jpg,8823,positivo,American Black Bear,,1,81f87ec9562d6a0e,False,129.5,2048,1536
+8824.jpg,8824,positivo,American Black Bear,,1,9dc0ff89560f620e,False,112.8,2048,1536
+8825.jpg,8825,positivo,American Black Bear,,1,bfc0e69b1867680e,False,119.5,2048,1536
+8826.jpg,8826,positivo,American Black Bear,,1,e499d9e936286b0e,False,133.5,2048,1536
+8827.jpg,8827,positivo,American Black Bear,,1,cd1396c9652c7b0e,False,139.0,2048,1536
+8828.jpg,8828,positivo,American Black Bear,,1,cd1996c96d69720e,False,137.4,2048,1536
+8829.jpg,8829,positivo,American Black Bear,,1,cd1b96c965497a0e,False,137.0,2048,1536
+8830.jpg,8830,positivo,American Black Bear,,1,e41999e964992b6e,False,137.6,2048,1536
+8831.jpg,8831,positivo,American Black Bear,,1,f11d4ce337cc6a22,False,139.0,2048,1536
+8832.jpg,8832,positivo,American Black Bear,,1,911f4ed916cc6b2a,False,140.7,2048,1536
+8833.jpg,8833,positivo,American Black Bear,,1,9c1367d816e16b1e,False,140.0,2048,1536
+8834.jpg,8834,positivo,American Black Bear,,1,9c1367d816e56b0e,False,140.3,2048,1536
+8835.jpg,8835,positivo,American Black Bear,,1,9c1747d914c76b0e,False,140.1,2048,1536
+8836.jpg,8836,positivo,American Black Bear,,1,951d7cc9167c2b0e,False,140.8,2048,1536
+8837.jpg,8837,positivo,American Black Bear,,1,9577fd805d7e0228,False,137.6,2048,1536
+8838.jpg,8838,positivo,American Black Bear,,1,9577fd8255fe0220,False,135.3,2048,1536
+8839.jpg,8839,positivo,American Black Bear,,1,9d73f88745f00f03,False,134.6,2048,1536
+8840.jpg,8840,positivo,American Black Bear,,1,9947ceb259ce2638,False,132.2,2048,1536
+8841.jpg,8841,positivo,American Black Bear,,1,dd57d2a34d700f28,False,132.6,2048,1536
+8842.jpg,8842,positivo,American Black Bear,,1,f557d9a264d81a29,False,130.4,2048,1536
+8843.jpg,8843,positivo,American Black Bear,,1,f74dd9a644720e83,False,137.9,2048,1536
+8844.jpg,8844,positivo,American Black Bear,,1,cc57dba445722e89,False,144.8,2048,1536
+8845.jpg,8845,positivo,American Black Bear,,1,d42fcad629782f42,False,116.2,2048,1536
+8846.jpg,8846,positivo,American Black Bear,,1,bf00f8ef00fc07e8,False,42.3,2048,1536
+8847.jpg,8847,positivo,American Black Bear,,1,9be4cd927e527803,False,120.2,2048,1536
+8848.jpg,8848,positivo,American Black Bear,,1,be02f8ff01f007e8,False,49.5,2048,1536
+8849.jpg,8849,positivo,American Black Bear,,1,d22bedd229782f42,False,129.4,2048,1536
+8850.jpg,8850,positivo,American Black Bear,,1,d56bda96087a2f42,False,124.4,2048,1536
+8851.jpg,8851,positivo,American Black Bear,,1,d965ecc8267427d2,False,107.7,2048,1536
+8852.jpg,8852,positivo,American Black Bear,,1,cd2666c13a7c1bc9,False,94.5,2048,1536
+8853.jpg,8853,positivo,American Black Bear,,1,d937ecd22c742760,False,116.5,2048,1536
+8854.jpg,8854,positivo,American Black Bear,,1,cc26fbe419781bc1,False,89.6,2048,1536
+8855.jpg,8855,positivo,American Black Bear,,1,c933ecc12c7c3764,False,107.6,2048,1536
+8856.jpg,8856,positivo,American Black Bear,,1,cd9b6bc822743764,True,117.5,2048,1536
+8857.jpg,8857,positivo,American Black Bear,,1,d2b548d6266c2fe4,True,138.5,2048,1536
+8858.jpg,8858,positivo,American Black Bear,,1,d993e4c936642f64,True,125.1,2048,1536
+8859.jpg,8859,positivo,American Black Bear,,1,dd957dc01e704f18,True,131.8,2048,1536
+8860.jpg,8860,positivo,American Black Bear,,1,ddd555407e32620f,True,97.6,2048,1536
+8861.jpg,8861,positivo,American Black Bear,,1,9137694c6e9833d6,True,65.3,2048,1536
+8862.jpg,8862,positivo,American Black Bear,,1,9f68e08d78877f80,True,62.9,2048,1536
+8863.jpg,8863,positivo,American Black Bear,,2,ff7c059f030768c2,True,78.6,2048,1536
+8864.jpg,8864,positivo,American Black Bear,,1,ccc436333f363233,True,57.2,2048,1536
+8865.jpg,8865,positivo,American Black Bear,,1,c9cd24f432707736,True,61.8,2048,1536
+8866.jpg,8866,positivo,American Black Bear,,1,ccc637333b3c3231,True,49.1,2048,1536
+8867.jpg,8867,positivo,American Black Bear,,1,cccd76f033760e18,True,64.0,2048,1536
+8868.jpg,8868,positivo,American Black Bear,,1,d8d8fcdc3e302a07,True,38.6,2048,1536
+8869.jpg,8869,positivo,American Black Bear,,2,994a6699cb225fa9,True,55.7,2048,1536
+8870.jpg,8870,positivo,American Black Bear,,1,cc4338c769361bec,True,62.6,2048,1536
+8871.jpg,8871,positivo,American Black Bear,,1,916ce0b36f207bcc,True,54.6,2048,1536
+8872.jpg,8872,positivo,American Black Bear,,1,855871837c2739ed,True,58.9,2048,1536
+8873.jpg,8873,positivo,American Black Bear,,2,9c4364877b2467b9,True,53.9,2048,1536
+8874.jpg,8874,positivo,American Black Bear,,2,94602ef34f2c738e,True,52.9,2048,1536
+8875.jpg,8875,positivo,American Black Bear,,1,916ce0b369a07fca,True,55.1,2048,1536
+8876.jpg,8876,positivo,American Black Bear,,1,9960e6b162257ce7,True,53.5,2048,1536
+8877.jpg,8877,positivo,American Black Bear,,1,9860e6b36ea17cca,True,53.9,2048,1536
+8878.jpg,8878,positivo,American Black Bear,,1,8460e2977b817ee3,True,55.3,2048,1536
+8879.jpg,8879,positivo,American Black Bear,,1,9064e6b17b847be8,True,55.8,2048,1536
+8880.jpg,8880,positivo,American Black Bear,,1,8468e8a663897fe6,True,55.5,2048,1536
+8881.jpg,8881,positivo,American Black Bear,,1,8468e8a663897fe6,True,55.5,2048,1536
+8882.jpg,8882,positivo,American Black Bear,,1,9068e0b36b8c7fa3,True,56.5,2048,1536
+8883.jpg,8883,positivo,American Black Bear,,1,8468e8a663897fe6,True,55.6,2048,1536
+8884.jpg,8884,positivo,American Black Bear,,1,8468e8a663897fe6,True,55.7,2048,1536
+8885.jpg,8885,positivo,American Black Bear,,1,8068e4b36d227fce,True,59.8,2048,1536
+8886.jpg,8886,positivo,American Black Bear,,1,916ce4b36c217dca,True,59.3,2048,1536
+8887.jpg,8887,positivo,American Black Bear,,1,916ce4b36e217cca,True,59.6,2048,1536
+8888.jpg,8888,positivo,American Black Bear,,1,816ce2b36e217cce,True,60.0,2048,1536
+8889.jpg,8889,positivo,American Black Bear,,1,883066cb75627ecb,True,65.3,2048,1536
+8890.jpg,8890,positivo,American Black Bear,,1,8068e4334f247fcf,True,59.3,2048,1536
+8891.jpg,8891,positivo,American Black Bear,,1,847864b379247fcc,True,60.8,2048,1536
+8892.jpg,8892,positivo,American Black Bear,,1,8c7264937b247ec9,True,61.3,2048,1536
+8893.jpg,8893,positivo,American Black Bear,,1,883064c373647fed,True,61.0,2048,1536
+8894.jpg,8894,positivo,American Black Bear,,1,8830668b73657ecb,True,60.9,2048,1536
+8895.jpg,8895,positivo,American Black Bear,,1,883066db3b617ec9,True,62.0,2048,1536
+8896.jpg,8896,positivo,American Black Bear,,1,883066cb75627fc9,True,63.8,2048,1536
+8897.jpg,8897,positivo,American Black Bear,,1,88b064cb73626dee,True,74.1,2048,1536
+8898.jpg,8898,positivo,American Black Bear,,1,88b066c97b626de6,True,75.5,2048,1536
+8899.jpg,8899,positivo,American Black Bear,,1,88b066cb73626de6,True,74.7,2048,1536
+8900.jpg,8900,positivo,American Black Bear,,1,84d260c77e217fcc,True,75.7,2048,1536
+8901.jpg,8901,positivo,American Black Bear,,1,84d070c37e217fce,True,75.9,2048,1536
+8902.jpg,8902,positivo,American Black Bear,,1,84c278c36f307ec7,True,79.1,2048,1536
+8903.jpg,8903,positivo,American Black Bear,,1,84c97cc36f306cc7,True,80.3,2048,1536
+8904.jpg,8904,positivo,American Black Bear,,1,84c278c26f307ecf,True,78.9,2048,1536
+8905.jpg,8905,positivo,American Black Bear,,1,84c97cc36f306dc6,True,79.8,2048,1536
+8906.jpg,8906,positivo,American Black Bear,,1,80e47ae363a47f83,True,84.9,2048,1536
+8907.jpg,8907,positivo,American Black Bear,,1,80e87cc36f307cc7,True,81.9,2048,1536
+8908.jpg,8908,positivo,American Black Bear,,1,84e871cb6e307bc6,True,85.6,2048,1536
+8909.jpg,8909,positivo,American Black Bear,,1,80e47fc07f017ce3,True,84.3,2048,1536
+8910.jpg,8910,positivo,American Black Bear,,1,90047af323a47fab,True,90.4,2048,1536
+8911.jpg,8911,positivo,American Black Bear,,1,80246ef33f8176ec,True,93.5,2048,1536
+8912.jpg,8912,positivo,American Black Bear,,1,c42a1fc0739d4fe2,True,92.0,2048,1536
+8913.jpg,8913,positivo,American Black Bear,,1,d0d2f8d83e0f2723,True,54.8,2048,1536
+8914.jpg,8914,positivo,American Black Bear,,1,d4d14d67630e3e29,True,89.1,2048,1536
+8915.jpg,8915,positivo,American Black Bear,,1,96129a169b5e827f,False,41.8,2048,1536
+8916.jpg,8916,positivo,American Black Bear,,1,92129e46da5e827f,False,40.4,2048,1536
+8917.jpg,8917,positivo,American Black Bear,,1,9213d352da5ec353,False,46.4,2048,1536
+8918.jpg,8918,positivo,American Black Bear,,1,936c9b34c933807f,True,19.0,2048,1536
+8919.jpg,8919,positivo,American Black Bear,,1,d7579a128253c373,False,52.2,2048,1536
+8920.jpg,8920,positivo,American Black Bear,,1,921293139b37c27f,False,37.1,2048,1536
+8921.jpg,8921,positivo,American Black Bear,,1,9213d346c357c373,False,41.8,2048,1536
+8922.jpg,8922,positivo,American Black Bear,,1,9312d347ca57c85b,False,43.9,2048,1536
+8923.jpg,8923,positivo,American Black Bear,,1,9216df43c373c073,False,42.6,2048,1536
+8924.jpg,8924,positivo,American Black Bear,,1,d7579a128252c37b,False,52.0,2048,1536
+8925.jpg,8925,positivo,American Black Bear,,1,996c7118e6d36e98,True,58.2,2048,1536
+8926.jpg,8926,positivo,American Black Bear,,1,d7579a128253c373,False,52.4,2048,1536
+8927.jpg,8927,positivo,American Black Bear,,1,c22479993bc26ee6,True,65.0,2048,1536
+8928.jpg,8928,positivo,American Black Bear,,1,c22279d93dc266e6,True,64.6,2048,1536
+8929.jpg,8929,positivo,American Black Bear,,1,c22279d93dc266e6,True,64.4,2048,1536
+8930.jpg,8930,positivo,American Black Bear,,1,cf61780ff09c6f80,True,63.2,2048,1536
+8931.jpg,8931,positivo,American Black Bear,,1,c22279d93dc266e6,True,64.3,2048,1536
+8932.jpg,8932,positivo,American Black Bear,,1,c3237cc835d367c4,True,64.5,2048,1536
+8933.jpg,8933,positivo,American Black Bear,,1,d04b61369be13ef0,True,55.0,2048,1536
+8934.jpg,8934,positivo,American Black Bear,,1,c219786397ca67cc,True,57.8,2048,1536
+8935.jpg,8935,positivo,American Black Bear,,1,c129715037d66fc6,True,67.8,2048,1536
+8936.jpg,8936,positivo,American Black Bear,,1,c0297c5336c26fc7,True,64.9,2048,1536
+8937.jpg,8937,positivo,American Black Bear,,1,ce2961533ec263c7,True,64.3,2048,1536
+8938.jpg,8938,positivo,American Black Bear,,1,ce2961533ec863c7,True,64.2,2048,1536
+8939.jpg,8939,positivo,American Black Bear,,1,ca2961533eca63c7,True,64.1,2048,1536
+8940.jpg,8940,positivo,American Black Bear,,1,cf2970523fc368c6,True,64.3,2048,1536
+8941.jpg,8941,positivo,American Black Bear,,1,c82961533ecae3c7,True,64.5,2048,1536
+8942.jpg,8942,positivo,American Black Bear,,1,c32970523fc36cce,True,64.4,2048,1536
+8943.jpg,8943,positivo,American Black Bear,,1,c329705237c26ecf,True,64.7,2048,1536
+8944.jpg,8944,positivo,American Black Bear,,1,c329785237c26ec7,True,64.9,2048,1536
+8945.jpg,8945,positivo,American Black Bear,,1,c129785237c27ec7,True,65.3,2048,1536
+8946.jpg,8946,positivo,American Black Bear,,1,cf21701a3fc06e8f,True,64.3,2048,1536
+8947.jpg,8947,positivo,American Black Bear,,1,d82361383ec3799e,True,62.7,2048,1536
+8948.jpg,8948,positivo,American Black Bear,,1,c3296c3333cc76a3,True,61.6,2048,1536
+8949.jpg,8949,positivo,American Black Bear,,1,d12d64313cc63fb8,True,61.8,2048,1536
+8950.jpg,8950,positivo,American Black Bear,,1,c4297964b6996ec6,True,62.4,2048,1536
+8951.jpg,8951,positivo,American Black Bear,,2,c97c3649b6826d87,True,61.3,2048,1536
+8952.jpg,8952,positivo,American Black Bear,,2,db403619e6936dc6,True,55.4,2048,1536
+8953.jpg,8953,positivo,American Black Bear,,2,c9613c0bf19e6f84,True,58.2,2048,1536
+8954.jpg,8954,positivo,American Black Bear,,2,c00f346b9f36cb8c,True,55.1,2048,1536
+8955.jpg,8955,positivo,American Black Bear,,1,c229707337d22fc6,True,64.9,2048,1536
+8956.jpg,8956,positivo,American Black Bear,,2,c9326c49b6c63bc6,True,59.8,2048,1536
+8957.jpg,8957,positivo,American Black Bear,,1,c9247049b6cb6fc6,True,64.0,2048,1536
+8958.jpg,8958,positivo,American Black Bear,,1,cb247049b6ca6fc6,True,63.5,2048,1536
+8959.jpg,8959,positivo,American Black Bear,,1,ca25704bb4cb2ec7,True,62.9,2048,1536
+8960.jpg,8960,positivo,American Black Bear,,1,c2257851b6cb2ecb,True,63.2,2048,1536
+8961.jpg,8961,positivo,American Black Bear,,1,cb607902f19c6f8e,True,60.5,2048,1536
+8962.jpg,8962,positivo,American Black Bear,,1,83687318e693ef83,True,55.7,2048,1536
+8963.jpg,8963,positivo,American Black Bear,,1,cf406d3ae0c20ffc,True,53.1,2048,1536
+8964.jpg,8964,positivo,American Black Bear,,1,cc336468b3e46bc6,True,58.7,2048,1536
+8965.jpg,8965,positivo,American Black Bear,,1,8962a54af4ab6f85,True,35.2,2048,1536
+8966.jpg,8966,positivo,American Black Bear,,1,c229703137d26fce,True,64.8,2048,1536
+8967.jpg,8967,positivo,American Black Bear,,1,8c73a54af5a47b84,True,35.1,2048,1536
+8968.jpg,8968,positivo,American Black Bear,,1,8c73a54af5ac7384,True,34.8,2048,1536
+8969.jpg,8969,positivo,American Black Bear,,1,8c72a54af5a86f85,True,34.8,2048,1536
+8970.jpg,8970,positivo,American Black Bear,,1,8c72a54af5a86f85,True,34.8,2048,1536
+8971.jpg,8971,positivo,American Black Bear,,1,8872a54af5a86f8d,True,34.9,2048,1536
+8972.jpg,8972,positivo,American Black Bear,,1,9343b350e936c86f,False,40.6,2048,1536
+8973.jpg,8973,positivo,American Black Bear,,1,8962a54af58b6f85,True,35.3,2048,1536
+8974.jpg,8974,positivo,American Black Bear,,1,9343b350e936c86f,False,40.6,2048,1536
+8975.jpg,8975,positivo,American Black Bear,,1,9343b350e936c86f,False,40.6,2048,1536
+8976.jpg,8976,positivo,American Black Bear,,1,c8bd856a4ab5996a,True,208.9,2048,1536
+8977.jpg,8977,positivo,American Black Bear,,1,9343b352e236c86f,False,40.5,2048,1536
+8978.jpg,8978,positivo,American Black Bear,,1,8343b352e236d86f,False,40.4,2048,1536
+8979.jpg,8979,positivo,American Black Bear,,1,8343b352e636d86e,False,40.5,2048,1536
+8980.jpg,8980,positivo,American Black Bear,,1,99ccc73bc0c73968,True,202.0,2048,1536
+8981.jpg,8981,positivo,American Black Bear,,1,b1cd8d3388cf3c62,True,204.2,2048,1536
+8982.jpg,8982,positivo,American Black Bear,,1,c9b7966b01d6896a,True,208.1,2048,1536
+8983.jpg,8983,positivo,American Black Bear,,1,a59d893788db3562,True,204.8,2048,1536
+8984.jpg,8984,positivo,American Black Bear,,1,c9bd946b0bb4896a,True,208.5,2048,1536
+8985.jpg,8985,positivo,American Black Bear,,1,9dbdaa3f51ea8840,True,211.3,2048,1536
+8986.jpg,8986,positivo,American Black Bear,,1,9dbdaa3f51e28a40,True,211.2,2048,1536
+8987.jpg,8987,positivo,American Black Bear,,1,9dbdaa7f40ea8844,True,211.2,2048,1536
+8988.jpg,8988,positivo,American Black Bear,,1,9d0d992fa177806e,False,60.0,2048,1536
+8989.jpg,8989,positivo,American Black Bear,,1,9d0d992fa177806e,False,60.1,2048,1536
+8990.jpg,8990,positivo,American Black Bear,,1,9d0d9d2fa166816b,False,60.2,2048,1536
+8991.jpg,8991,positivo,American Black Bear,,1,9d0d992fa356816b,False,60.2,2048,1536
+8992.jpg,8992,positivo,American Black Bear,,1,9d0d992fa176816b,False,58.0,2048,1536
+8993.jpg,8993,positivo,American Black Bear,,1,9d0d9d2fa166816b,False,60.2,2048,1536
+8994.jpg,8994,positivo,American Black Bear,,1,899d852fca55956a,True,165.7,2048,1536
+8995.jpg,8995,positivo,American Black Bear,,1,8d9d872fc2569869,True,165.7,2048,1536
+8996.jpg,8996,positivo,American Black Bear,,1,8d9d832fc1569969,True,165.6,2048,1536
+8997.jpg,8997,positivo,American Black Bear,,1,9d9d8d3fa05c9123,True,164.4,2048,1536
+8998.jpg,8998,positivo,American Black Bear,,1,9d9d8f3fa0469921,True,164.0,2048,1536
+8999.jpg,8999,positivo,American Black Bear,,1,8dbd8b2fa0569b60,True,162.2,2048,1536
+9000.jpg,9000,positivo,American Black Bear,,1,8dbd8b2fa0569b60,True,162.4,2048,1536
+9001.jpg,9001,positivo,American Black Bear,,1,9d9d8e3fa0569921,True,164.2,2048,1536
+9002.jpg,9002,positivo,American Black Bear,,1,9d1d8b3fa0579960,True,159.4,2048,1536
+9003.jpg,9003,positivo,American Black Bear,,1,8dbd8b2fa0529b61,True,161.9,2048,1536
+9004.jpg,9004,positivo,American Black Bear,,1,9d1d8b3fa0579960,True,159.1,2048,1536
+9005.jpg,9005,positivo,American Black Bear,,1,c17f9495b9216a4b,True,184.9,2048,1536
+9006.jpg,9006,positivo,American Black Bear,,1,9d1d8b3fa0579960,True,158.7,2048,1536
+9007.jpg,9007,positivo,American Black Bear,,1,c96f969e9830b037,True,177.0,2048,1536
+9008.jpg,9008,positivo,American Black Bear,,1,c96f969e9818b233,True,175.0,2048,1536
+9009.jpg,9009,positivo,American Black Bear,,1,d57cb035a54723a5,True,199.7,2048,1536
+9010.jpg,9010,positivo,American Black Bear,,1,c94b6d34a656d227,True,188.8,2048,1536
+9011.jpg,9011,positivo,American Black Bear,,1,c96f301dcf6f3011,True,138.9,2048,1536
+9012.jpg,9012,positivo,American Black Bear,,1,cd6e26f71b49a054,True,190.4,2048,1536
+9013.jpg,9013,positivo,American Black Bear,,1,915a4a2b5d6d3d4c,True,198.1,2048,1536
+9014.jpg,9014,positivo,American Black Bear,,1,c968329f896f301f,True,144.4,2048,1536
+9015.jpg,9015,positivo,American Black Bear,,1,b8f1e80ca03f9337,False,67.5,2048,1536
+9016.jpg,9016,positivo,American Black Bear,,1,d570f03db8618277,False,76.6,2048,1536
+9017.jpg,9017,positivo,American Black Bear,,1,9ce0e138b8389e77,False,74.3,2048,1536
+9018.jpg,9018,positivo,American Black Bear,,1,8178f828bc61d377,False,79.6,2048,1536
+9019.jpg,9019,positivo,American Black Bear,,1,c16be2c78f0e3c54,True,178.4,2048,1536
+9020.jpg,9020,positivo,American Black Bear,,1,cd7f3ed4c868b810,True,156.5,2048,1536
+9021.jpg,9021,positivo,American Black Bear,,1,cd693297c10ef817,True,146.3,2048,1536
+9022.jpg,9022,positivo,American Black Bear,,1,c1683097df4f3817,True,147.4,2048,1536
+9023.jpg,9023,positivo,American Black Bear,,1,cd6f2611c84ef155,True,140.1,2048,1536
+9024.jpg,9024,positivo,American Black Bear,,1,c16930d7c3679b16,True,154.6,2048,1536
+9025.jpg,9025,positivo,American Black Bear,,1,c16930d7c7671b16,True,154.7,2048,1536
+9026.jpg,9026,positivo,American Black Bear,,1,8363f0b43c7ed286,True,137.9,2048,1536
+9027.jpg,9027,positivo,American Black Bear,,1,c16938d6c07d1b97,True,154.8,2048,1536
+9028.jpg,9028,positivo,American Black Bear,,1,8363f0943c7eda86,True,138.0,2048,1536
+9029.jpg,9029,positivo,American Black Bear,,1,8363f0b41c7e5a96,True,138.8,2048,1536
+9030.jpg,9030,positivo,American Black Bear,,1,8363f0b43c7ed286,True,138.0,2048,1536
+9031.jpg,9031,positivo,American Black Bear,,1,8363f0b41c7ed287,True,137.8,2048,1536
+9032.jpg,9032,positivo,American Black Bear,,1,8363f0b4387eda86,True,138.3,2048,1536
+9033.jpg,9033,positivo,American Black Bear,,1,d2709518f817b85f,True,120.0,2048,1536
+9034.jpg,9034,positivo,American Black Bear,,1,8363f0b41c7cf287,True,137.5,2048,1536
+9035.jpg,9035,positivo,American Black Bear,,1,c2609d18f117b87f,True,117.8,2048,1536
+9036.jpg,9036,positivo,American Black Bear,,1,c263951ce217995f,True,112.9,2048,1536
+9037.jpg,9037,positivo,American Black Bear,,1,de3fa542895ca271,True,97.3,2048,1536
+9038.jpg,9038,positivo,American Black Bear,,1,d23ea563991da370,True,97.0,2048,1536
+9039.jpg,9039,positivo,American Black Bear,,1,de3ea543385c8971,True,96.7,2048,1536
+9040.jpg,9040,positivo,American Black Bear,,1,8c6cb35b61d87ae0,True,34.7,2048,1536
+9041.jpg,9041,positivo,American Black Bear,,1,9c6cb33361c87ae2,True,34.4,2048,1536
+9042.jpg,9042,positivo,American Black Bear,,1,9c6cb31b61d07ae2,True,34.7,2048,1536
+9043.jpg,9043,positivo,American Black Bear,,1,dc6c977361ca66c0,True,34.2,2048,1536
+9044.jpg,9044,positivo,American Black Bear,,1,cc2cb36373d86ce0,True,34.5,2048,1536
+9045.jpg,9045,positivo,American Black Bear,,1,cc2cb36370d96bb0,True,35.3,2048,1536
+9046.jpg,9046,positivo,American Black Bear,,1,cc2cb35b60da6be0,True,35.4,2048,1536
+9047.jpg,9047,positivo,American Black Bear,,1,9832634c78e94deb,True,65.1,2048,1536
+9048.jpg,9048,positivo,American Black Bear,,1,942c6d595ae66ec2,True,67.4,2048,1536
+9049.jpg,9049,positivo,American Black Bear,,1,9b8a746467674ccc,True,65.0,2048,1536
+9050.jpg,9050,positivo,American Black Bear,,1,9ea9616d65e448d9,True,65.9,2048,1536
+9051.jpg,9051,positivo,American Black Bear,,1,cd6632d9c3c86665,True,50.5,2048,1536
+9052.jpg,9052,positivo,American Black Bear,,1,c7783843e398673c,True,36.3,2048,1536
+9053.jpg,9053,positivo,American Black Bear,,1,9c60bf70619c66e6,True,31.8,2048,1536
+9054.jpg,9054,positivo,American Black Bear,,1,8c68b373619e72e4,True,31.6,2048,1536
+9055.jpg,9055,positivo,American Black Bear,,1,cc2cb37361ca66e8,True,31.7,2048,1536
+9056.jpg,9056,positivo,American Black Bear,,1,dc2cb37367d822c4,True,31.6,2048,1536
+9057.jpg,9057,positivo,American Black Bear,,1,cc2cb37360d366cc,True,31.6,2048,1536
+9058.jpg,9058,positivo,American Black Bear,,1,cc2cb37361ce66e0,True,31.8,2048,1536
+9059.jpg,9059,positivo,American Black Bear,,1,cc2cb37362d86ae4,True,31.9,2048,1536
+9060.jpg,9060,positivo,American Black Bear,,1,cc2cb37362dc62e4,True,31.8,2048,1536
+9061.jpg,9061,positivo,American Black Bear,,1,cc2cb37360da63e4,True,32.2,2048,1536
+9062.jpg,9062,positivo,American Black Bear,,1,cc2cb36362da63e4,True,32.0,2048,1536
+9063.jpg,9063,positivo,American Black Bear,,1,cc2cb37360ce66e4,True,32.4,2048,1536
+9064.jpg,9064,positivo,American Black Bear,,1,cc2cb37360ce66e4,True,32.5,2048,1536
+9065.jpg,9065,positivo,American Black Bear,,1,cc2cb37360ce66e4,True,33.0,2048,1536
+9066.jpg,9066,positivo,American Black Bear,,1,986f358a43b50aed,True,67.0,2048,1536
+9067.jpg,9067,positivo,American Black Bear,,1,886f358a4bb50aed,True,66.2,2048,1536
+9068.jpg,9068,positivo,American Black Bear,,1,8663318a67b51aed,True,64.4,2048,1536
+9069.jpg,9069,positivo,American Black Bear,,1,8a63358a6ab51aed,True,65.4,2048,1536
+9070.jpg,9070,positivo,American Black Bear,,1,8663398a66b51aed,True,65.0,2048,1536
+9071.jpg,9071,positivo,American Black Bear,,1,8663398a66b51aed,True,65.0,2048,1536
+9072.jpg,9072,positivo,American Black Bear,,1,86633d8a66b50aed,True,65.6,2048,1536
+9073.jpg,9073,positivo,American Black Bear,,1,8663358a67b50aed,True,66.0,2048,1536
+9074.jpg,9074,positivo,American Black Bear,,1,866b358a66b50aed,True,65.9,2048,1536
+9075.jpg,9075,positivo,American Black Bear,,1,866b358a63b50aed,True,62.7,2048,1536
+9076.jpg,9076,positivo,American Black Bear,,1,886b358a63b54aed,True,62.6,2048,1536
+9077.jpg,9077,positivo,American Black Bear,,1,8c63358a63b54aed,True,62.6,2048,1536
+9078.jpg,9078,positivo,American Black Bear,,1,9863358a79b54ae5,True,63.8,2048,1536
+9079.jpg,9079,positivo,American Black Bear,,1,886b358a63b54aed,True,62.5,2048,1536
+9080.jpg,9080,positivo,American Black Bear,,1,8d72a5ca56a95ab4,True,61.9,2048,1536
+9081.jpg,9081,positivo,American Black Bear,,1,8d72a5ca56a956a5,True,61.0,2048,1536
+9082.jpg,9082,positivo,American Black Bear,,1,8d72b5ca74a952a5,True,60.2,2048,1536
+9083.jpg,9083,positivo,American Black Bear,,1,8d72a5ca76a956a4,True,60.7,2048,1536
+9084.jpg,9084,positivo,American Black Bear,,1,d0703f8f6d91338c,True,77.2,2048,1536
+9085.jpg,9085,positivo,American Black Bear,,1,c0703b8767995b8e,True,75.8,2048,1536
+9086.jpg,9086,positivo,American Black Bear,,1,d0702f8f6789598e,True,76.1,2048,1536
+9087.jpg,9087,positivo,American Black Bear,,1,8666889d897d7333,True,210.0,2048,1536
+9088.jpg,9088,positivo,American Black Bear,,1,8666899999597b33,True,209.3,2048,1536
+9089.jpg,9089,positivo,American Black Bear,,1,a666999999791939,True,207.8,2048,1536
+9090.jpg,9090,positivo,American Black Bear,,1,dab7b456a456a452,True,175.6,2048,1536
+9091.jpg,9091,positivo,American Black Bear,,1,dbd6965da454a950,True,176.1,2048,1536
+9092.jpg,9092,positivo,American Black Bear,,1,dba5b4d6a556a052,True,181.3,2048,1536
+9093.jpg,9093,positivo,American Black Bear,,1,d5af14bd8855a954,True,210.1,2048,1536
+9094.jpg,9094,positivo,American Black Bear,,1,d7af0ad5a15aa451,True,203.8,2048,1536
+9095.jpg,9095,positivo,American Black Bear,,1,d5aa15be8855aa55,True,211.0,2048,1536
+9096.jpg,9096,positivo,American Black Bear,,1,8ce59e26669e7198,False,97.3,2048,1536
+9097.jpg,9097,positivo,American Black Bear,,1,adc4656e463e7318,False,86.2,2048,1536
+9098.jpg,9098,positivo,American Black Bear,,1,8ce59c26669a7599,False,98.8,2048,1536
+9099.jpg,9099,positivo,American Black Bear,,1,accd262e66367b18,False,85.3,2048,1536
+9100.jpg,9100,positivo,American Black Bear,,1,ec8de7662a661839,False,95.0,2048,1536
+9101.jpg,9101,positivo,American Black Bear,,1,ec857663467a5338,False,93.2,2048,1536
+9102.jpg,9102,positivo,American Black Bear,,1,cda4d3662ed27099,False,105.1,2048,1536
+9103.jpg,9103,positivo,American Black Bear,,1,8a28f8cb66a1cbbc,True,43.3,2048,1536
+9104.jpg,9104,positivo,American Black Bear,,1,8a28f8cb66a1cafc,True,43.4,2048,1536
+9105.jpg,9105,positivo,American Black Bear,,1,82647c9621addf5a,False,89.1,2048,1536
+9106.jpg,9106,positivo,American Black Bear,,1,83647c9223adde5a,False,89.0,2048,1536
+9107.jpg,9107,positivo,American Black Bear,,1,dbf624da09d83865,True,90.0,2048,1536
+9108.jpg,9108,positivo,American Black Bear,,1,daf424dc19d83c65,True,90.3,2048,1536
+9109.jpg,9109,positivo,American Black Bear,,1,dae52d9515d03867,True,96.3,2048,1536
+9110.jpg,9110,positivo,American Black Bear,,1,daed2c8c29d03967,True,95.7,2048,1536
+9111.jpg,9111,positivo,American Black Bear,,1,c9ec36da09d83867,True,84.8,2048,1536
+9112.jpg,9112,positivo,American Black Bear,,1,daaa288a29d87d6d,True,96.7,2048,1536
+9113.jpg,9113,positivo,American Black Bear,,1,866e70f83c9c5b43,True,102.6,2048,1536
+9114.jpg,9114,positivo,American Black Bear,,1,c9f636cc1a883de2,True,85.9,2048,1536
+9115.jpg,9115,positivo,American Black Bear,,1,cbf4369a19d83865,True,85.8,2048,1536
+9116.jpg,9116,positivo,American Black Bear,,1,eef419898ce856d2,True,92.4,2048,1536
+9117.jpg,9117,positivo,American Black Bear,,1,e0f2de8c39e05b4a,True,95.5,2048,1536
+9118.jpg,9118,positivo,American Black Bear,,1,fe78c1861ee07c4a,True,95.7,2048,1536
+9119.jpg,9119,positivo,American Black Bear,,1,9c6a60fc3db8184f,True,96.3,2048,1536
+9120.jpg,9120,positivo,American Black Bear,,1,89e6f11c0c895f79,False,74.1,2048,1536
+9121.jpg,9121,positivo,American Black Bear,,1,c0787cfe0f8d5868,True,107.0,2048,1536
+9122.jpg,9122,positivo,American Black Bear,,1,c0ea1f8c0c9d597b,False,91.7,2048,1536
+9123.jpg,9123,positivo,American Black Bear,,1,de91987970a04eee,False,145.5,2048,1536
+9124.jpg,9124,positivo,American Black Bear,,1,de91997970a046ee,False,145.3,2048,1536
+9125.jpg,9125,positivo,American Black Bear,,1,c0ea1f9c08985f7b,False,92.7,2048,1536
+9126.jpg,9126,positivo,American Black Bear,,1,de91987970a04eee,False,145.8,2048,1536
+9127.jpg,9127,positivo,American Black Bear,,1,c1c50fc178bc4fe2,True,133.2,2048,1536
+9128.jpg,9128,positivo,American Black Bear,,1,df91987970a046ee,False,145.0,2048,1536
+9129.jpg,9129,positivo,American Black Bear,,1,f3908c7f72a04cce,False,137.3,2048,1536
+9130.jpg,9130,positivo,American Black Bear,,1,e19718c9743d27e2,True,122.6,2048,1536
+9131.jpg,9131,positivo,American Black Bear,,1,c1cd0ec338bc4fe2,True,131.0,2048,1536
+9132.jpg,9132,positivo,American Black Bear,,1,c1a51dc87c6e27e4,True,116.6,2048,1536
+9133.jpg,9133,positivo,American Black Bear,,1,c18a2da57a5e0ee5,True,127.4,2048,1536
+9134.jpg,9134,positivo,American Black Bear,,1,c1ad24d27a4f4fe0,True,119.5,2048,1536
+9135.jpg,9135,positivo,American Black Bear,,1,c1c52ee87c950fe2,True,134.0,2048,1536
+9136.jpg,9136,positivo,American Black Bear,,1,e1031fe1fc1e0fe0,True,28.4,2048,1536
+9137.jpg,9137,positivo,American Black Bear,,1,e1431ee1fc1e0fe0,True,27.8,2048,1536
+9138.jpg,9138,positivo,American Black Bear,,1,e1031fe1fc1e0fe0,True,28.0,2048,1536
+9139.jpg,9139,positivo,American Black Bear,,1,e1431ee1fc1e0fe0,True,27.9,2048,1536
+9140.jpg,9140,positivo,American Black Bear,,1,e1431ee1fc1e0fe0,True,28.2,2048,1536
+9141.jpg,9141,positivo,American Black Bear,,1,e1431ee1fc1e0fe0,True,28.6,2048,1536
+9142.jpg,9142,positivo,American Black Bear,,1,e1431ee1fc1e0fe0,True,28.8,2048,1536
+9143.jpg,9143,positivo,American Black Bear,,1,c7bd198061f26e4e,False,129.3,2048,1536
+9144.jpg,9144,positivo,American Black Bear,,1,c1b43f8070e36e4f,False,108.2,2048,1536
+9145.jpg,9145,positivo,American Black Bear,,1,95e078dc65b1664b,True,132.3,2048,1536
+9146.jpg,9146,positivo,American Black Bear,,1,c5b03fc930666747,True,124.8,2048,1536
+9147.jpg,9147,positivo,American Black Bear,,1,d5ca061c1aac7bb5,True,120.2,2048,1536
+9148.jpg,9148,positivo,American Black Bear,,1,d1d83e3660e06e2f,True,128.5,2048,1536
+9149.jpg,9149,positivo,American Black Bear,,1,ddde092b24e1246f,True,124.6,2048,1536
+9150.jpg,9150,positivo,American Black Bear,,1,dfde093a3960242f,True,125.3,2048,1536
+9151.jpg,9151,positivo,American Black Bear,,1,dbd26f44682a2eac,True,115.7,2048,1536
+9152.jpg,9152,positivo,American Black Bear,,1,ddd746682a567429,True,105.5,2048,1536
+9153.jpg,9153,positivo,American Black Bear,,1,c8c466b33b5d6c32,True,126.9,2048,1536
+9154.jpg,9154,positivo,American Black Bear,,1,d4ad17c162c76f44,False,136.5,2048,1536
+9155.jpg,9155,positivo,American Black Bear,,1,d4d40f0760787e67,True,131.5,2048,1536
+9156.jpg,9156,positivo,American Black Bear,,1,ccb63d6873c22e4c,False,121.4,2048,1536
+9157.jpg,9157,positivo,American Black Bear,,1,e59a0d6172cf4e2c,False,123.6,2048,1536
+9158.jpg,9158,positivo,American Black Bear,,1,c34f2ee0780e6ef0,True,106.5,2048,1536
+9159.jpg,9159,positivo,American Black Bear,,1,98ef076878a34ec6,False,134.5,2048,1536
+9160.jpg,9160,positivo,American Black Bear,,1,c30f32e3dc0e33f0,True,91.3,2048,1536
+9161.jpg,9161,positivo,American Black Bear,,1,c30f2ee0782e6ef0,True,103.7,2048,1536
+9162.jpg,9162,positivo,American Black Bear,,1,c3c6278b19bc6ce8,True,128.6,2048,1536
+9163.jpg,9163,positivo,American Black Bear,,1,d52faa9c885aa956,True,147.1,2048,1536
+9164.jpg,9164,positivo,American Black Bear,,1,d42fae9ca85aa954,True,136.0,2048,1536
+9165.jpg,9165,positivo,American Black Bear,,1,d627ae9ca85aa952,True,133.7,2048,1536
+9166.jpg,9166,positivo,American Black Bear,,1,d635ad9ca878a952,True,133.4,2048,1536
+9167.jpg,9167,positivo,American Black Bear,,1,d225addaa878a95a,True,128.1,2048,1536
+9168.jpg,9168,positivo,American Black Bear,,1,d637ad9ea069a059,True,132.2,2048,1536
+9169.jpg,9169,positivo,American Black Bear,,1,d62fac5aa878a952,True,127.6,2048,1536
+9170.jpg,9170,positivo,American Black Bear,,1,da37ad4ad07c9815,True,129.9,2048,1536
+9171.jpg,9171,positivo,American Black Bear,,1,d936b54daa78a868,True,120.4,2048,1536
+9172.jpg,9172,positivo,American Black Bear,,1,d22dad5a8878b13e,True,129.5,2048,1536
+9173.jpg,9173,positivo,American Black Bear,,1,da35ad5a94789135,True,128.5,2048,1536
+9174.jpg,9174,positivo,American Black Bear,,1,c34f2fe0780e6ee0,True,106.3,2048,1536
+9175.jpg,9175,positivo,American Black Bear,,1,c34f0ce0781f6ef0,True,104.5,2048,1536
+9176.jpg,9176,positivo,American Black Bear,,1,c30f0de0780e6ef9,True,102.6,2048,1536
+9177.jpg,9177,positivo,American Black Bear,,1,c3873fc0780f6af0,True,102.7,2048,1536
+9178.jpg,9178,positivo,American Black Bear,,1,c3873be0780f66f0,True,101.8,2048,1536
+9179.jpg,9179,positivo,American Black Bear,,1,c30f3dc0780f6ef0,True,105.0,2048,1536
+9180.jpg,9180,positivo,American Black Bear,,1,c3d62e666c1d6ce0,True,110.6,2048,1536
+9181.jpg,9181,positivo,American Black Bear,,1,c32f67e06c9c28f1,True,110.9,2048,1536
+9182.jpg,9182,positivo,American Black Bear,,1,c7cc3e66783c64e0,True,108.6,2048,1536
+9183.jpg,9183,positivo,American Black Bear,,1,e49b196571626f4a,False,110.5,2048,1536
+9184.jpg,9184,positivo,American Black Bear,,1,c79c2c63603e6fe0,True,115.7,2048,1536
+9185.jpg,9185,positivo,American Black Bear,,1,c38c3e61701e6ff0,True,114.9,2048,1536
+9186.jpg,9186,positivo,American Black Bear,,1,cdbf19a161e36342,False,126.5,2048,1536
+9187.jpg,9187,positivo,American Black Bear,,1,9cbf01e17ca36343,False,123.8,2048,1536
+9188.jpg,9188,positivo,American Black Bear,,1,9cbc47e178a66643,False,119.9,2048,1536
+9189.jpg,9189,positivo,American Black Bear,,1,99fccfa178a06343,False,116.3,2048,1536
+9190.jpg,9190,positivo,American Black Bear,,1,f3dd0c2071e36f42,False,115.5,2048,1536
+9191.jpg,9191,positivo,American Black Bear,,1,e5990d6471e3674c,False,112.6,2048,1536
+9192.jpg,9192,positivo,American Black Bear,,1,e69b196471e26e49,False,114.4,2048,1536
+9193.jpg,9193,positivo,American Black Bear,,1,ccb71d4061697e27,False,104.0,2048,1536
+9194.jpg,9194,positivo,American Black Bear,,1,ccba95416b656e07,False,101.4,2048,1536
+9195.jpg,9195,positivo,American Black Bear,,1,d18e2d5966666b43,False,117.8,2048,1536
+9196.jpg,9196,positivo,American Black Bear,,1,cdba3d6479436e01,False,101.1,2048,1536
+9197.jpg,9197,positivo,American Black Bear,,1,d6ad1a5161626f4b,False,119.7,2048,1536
+9198.jpg,9198,positivo,American Black Bear,,1,d75a2b8960a76f05,True,139.9,2048,1536
+9199.jpg,9199,positivo,American Black Bear,,1,e3fcff6180854346,False,63.9,2048,1536
+9200.jpg,9200,positivo,American Black Bear,,1,d49603e07e4f6c6c,True,118.0,2048,1536
+9201.jpg,9201,positivo,American Black Bear,,1,df8018fe77632134,True,128.9,2048,1536
+9202.jpg,9202,positivo,American Black Bear,,1,f78704e457696c68,True,137.4,2048,1536
+9203.jpg,9203,positivo,American Black Bear,,1,cd805f67216c786d,True,120.7,2048,1536
+9204.jpg,9204,positivo,American Black Bear,,1,cd907f22392c266f,True,112.3,2048,1536
+9205.jpg,9205,positivo,American Black Bear,,1,ce9477303d263369,True,112.8,2048,1536
+9206.jpg,9206,positivo,American Black Bear,,1,c4de1bc83bf13321,True,104.9,2048,1536
+9207.jpg,9207,positivo,American Black Bear,,1,c39d2ce479c52e26,True,111.1,2048,1536
+9208.jpg,9208,positivo,American Black Bear,,1,ccd53e4e32703363,True,103.8,2048,1536
+9209.jpg,9209,positivo,American Black Bear,,1,c9db36dc3ae03384,True,105.3,2048,1536
+9210.jpg,9210,positivo,American Black Bear,,1,cddd3e4911626723,True,102.4,2048,1536
+9211.jpg,9211,positivo,American Black Bear,,1,c8b0324e43d76d5d,False,108.4,2048,1536
+9212.jpg,9212,positivo,American Black Bear,,1,dca4324b67c73a58,True,100.4,2048,1536
+9213.jpg,9213,positivo,American Black Bear,,1,d0a83a56274f4c7d,False,118.6,2048,1536
+9214.jpg,9214,positivo,American Black Bear,,1,d4e8395646ad4c5e,False,120.9,2048,1536
+9215.jpg,9215,positivo,American Black Bear,,1,d4a83a5667af48b4,False,120.3,2048,1536
+9216.jpg,9216,positivo,American Black Bear,,1,d0a9528767556d5a,True,128.7,2048,1536
+9217.jpg,9217,positivo,American Black Bear,,1,c6997647234c5c67,True,128.0,2048,1536
+9218.jpg,9218,positivo,American Black Bear,,1,d49124c9636f6d6c,True,139.1,2048,1536
+9219.jpg,9219,positivo,American Black Bear,,1,c49136c5636f2d6c,True,134.5,2048,1536
+9220.jpg,9220,positivo,American Black Bear,,1,e3b134644ccf199b,True,128.1,2048,1536
+9221.jpg,9221,positivo,American Black Bear,,1,e48858656bcd796c,True,140.4,2048,1536
+9222.jpg,9222,positivo,American Black Bear,,1,a5b96e741594715a,True,105.9,2048,1536
+9223.jpg,9223,positivo,American Black Bear,,1,c49126cd6b6e2c6e,True,127.3,2048,1536
+9224.jpg,9224,positivo,American Black Bear,,1,d49124c96b6e6c6e,True,125.0,2048,1536
+9225.jpg,9225,positivo,American Black Bear,,1,c49126cb634e6d7c,True,130.1,2048,1536
+9226.jpg,9226,positivo,American Black Bear,,1,c49136c9636e6c6e,True,127.8,2048,1536
+9227.jpg,9227,positivo,American Black Bear,,1,f0f83c87030f0fc7,False,45.9,2048,1536
+9228.jpg,9228,positivo,American Black Bear,,1,c3b8ac9b8b474c56,True,105.6,2048,1536
+9229.jpg,9229,positivo,American Black Bear,,1,fa1f435005fdaae0,False,29.6,2048,1536
+9230.jpg,9230,positivo,American Black Bear,,1,bcb49253524d4d4f,False,62.0,2048,1536
+9231.jpg,9231,positivo,American Black Bear,,1,ceb17946274d445e,False,117.2,2048,1536
+9232.jpg,9232,positivo,American Black Bear,,1,ce91394e46cf0d6c,False,106.2,2048,1536
+9233.jpg,9233,positivo,American Black Bear,,1,cc91724c6757596c,False,114.1,2048,1536
+9234.jpg,9234,positivo,American Black Bear,,1,d2ac729666574c56,False,127.6,2048,1536
+9235.jpg,9235,positivo,American Black Bear,,1,cadab266254d6d94,False,100.5,2048,1536
+9236.jpg,9236,positivo,American Black Bear,,1,c7c7702963cc5c39,True,131.6,2048,1536
+9237.jpg,9237,positivo,American Black Bear,,1,c3c77701638f1c39,True,131.4,2048,1536
+9238.jpg,9238,positivo,American Black Bear,,1,c3c7700b63e81c3f,True,131.2,2048,1536
+9239.jpg,9239,positivo,American Black Bear,,1,c3c7740163ec1c3f,True,131.0,2048,1536
+9240.jpg,9240,positivo,American Black Bear,,1,c3c77e0163ed1c29,True,130.1,2048,1536
+9241.jpg,9241,positivo,American Black Bear,,1,c1c77e0063ef1c39,True,130.2,2048,1536
+9242.jpg,9242,positivo,American Black Bear,,1,c9c1939127c63c3f,False,78.3,2048,1536
+9243.jpg,9243,positivo,American Black Bear,,1,969a6a694eec6c89,True,128.5,2048,1536
+9244.jpg,9244,positivo,American Black Bear,,1,defff449608241a3,True,115.4,2048,1536
+9245.jpg,9245,positivo,American Black Bear,,1,fec9e35040d63d86,True,119.9,2048,1536
+9246.jpg,9246,positivo,American Black Bear,,1,f4c3a55c1c3d4bb0,True,130.0,2048,1536
+9247.jpg,9247,positivo,American Black Bear,,1,e6c9b1c153a7183e,False,70.5,2048,1536
+9248.jpg,9248,positivo,American Black Bear,,1,c9c1a3e233ae1c3e,False,73.7,2048,1536
+9249.jpg,9249,positivo,American Black Bear,,1,c5c9a1e353a7183e,False,72.4,2048,1536
+9250.jpg,9250,positivo,American Black Bear,,1,c9d1a3e2338e3c3c,False,75.2,2048,1536
+9251.jpg,9251,positivo,American Black Bear,,1,e1e3ece1831e3c1c,False,41.0,2048,1536
+9252.jpg,9252,positivo,American Black Bear,,1,c6c1c9e13367383e,False,64.5,2048,1536
+9253.jpg,9253,positivo,American Black Bear,,1,d7c06bc1638b3c39,False,106.5,2048,1536
+9254.jpg,9254,positivo,American Black Bear,,1,d7c163d0628f3c39,False,105.0,2048,1536
+9255.jpg,9255,positivo,American Black Bear,,1,d7c1abc2238d3c39,False,106.0,2048,1536
+9256.jpg,9256,positivo,American Black Bear,,1,c3c7622967815d3d,True,131.7,2048,1536
+9257.jpg,9257,positivo,American Black Bear,,1,d5c1aaa0638f3c3d,False,108.0,2048,1536
+9258.jpg,9258,positivo,American Black Bear,,1,d5c162d1638f3c3a,False,110.2,2048,1536
+9259.jpg,9259,positivo,American Black Bear,,2,c3c763b963871c38,True,132.8,2048,1536
+9260.jpg,9260,positivo,American Black Bear,,1,c3c7702b63891fb8,True,131.3,2048,1536
+9261.jpg,9261,positivo,American Black Bear,,2,9ec7e3e163815c38,True,128.1,2048,1536
+9262.jpg,9262,positivo,American Black Bear,,2,c3c76339638f1c38,True,132.8,2048,1536
+9263.jpg,9263,positivo,American Black Bear,,2,c3c766a9638d5c38,True,132.9,2048,1536
+9264.jpg,9264,positivo,American Black Bear,,2,c1c76728678d5c39,True,131.7,2048,1536
+9265.jpg,9265,positivo,American Black Bear,,2,d7c1e12926e15d3c,True,130.1,2048,1536
+9266.jpg,9266,positivo,American Black Bear,,3,d6c5e3e163851c3c,True,128.7,2048,1536
+9267.jpg,9267,positivo,American Black Bear,,1,d6c3e3293e855538,True,130.2,2048,1536
+9268.jpg,9268,positivo,American Black Bear,,1,d4c3e3283a8d5f38,True,130.2,2048,1536
+9269.jpg,9269,positivo,American Black Bear,,1,d5c3e33822c75d38,True,131.2,2048,1536
+9270.jpg,9270,positivo,American Black Bear,,2,d3c7633863c35c38,True,133.4,2048,1536
+9271.jpg,9271,positivo,American Black Bear,,2,c7c3613963e15c3c,True,133.2,2048,1536
+9272.jpg,9272,positivo,American Black Bear,,2,c7c3613963e15c3c,True,133.3,2048,1536
+9273.jpg,9273,positivo,American Black Bear,,3,c7c3e13963e11d38,True,132.4,2048,1536
+9274.jpg,9274,positivo,American Black Bear,,3,c7c3613963e11d3c,True,132.8,2048,1536
+9275.jpg,9275,positivo,American Black Bear,,3,c3c7e33867c11c3c,True,131.6,2048,1536
+9276.jpg,9276,positivo,American Black Bear,,1,d5c3e33863c71c38,True,131.6,2048,1536
+9277.jpg,9277,positivo,American Black Bear,,2,c7a7b06d23c93c29,True,110.8,2048,1536
+9278.jpg,9278,positivo,American Black Bear,,3,d0c7e33863c31c3d,True,131.4,2048,1536
+9279.jpg,9279,positivo,American Black Bear,,3,d0c7e33863c71c39,True,131.5,2048,1536
+9280.jpg,9280,positivo,American Black Bear,,1,d0c7c73863875c39,True,130.4,2048,1536
+9281.jpg,9281,positivo,American Black Bear,,1,e1c7d32947a41f29,True,110.8,2048,1536
+9282.jpg,9282,positivo,American Black Bear,,2,e385916a0fe91d3c,True,108.0,2048,1536
+9283.jpg,9283,positivo,American Black Bear,,2,c781b0634bec397c,True,104.2,2048,1536
+9284.jpg,9284,positivo,American Black Bear,,2,d3a5a24927c42d7b,True,117.4,2048,1536
+9285.jpg,9285,positivo,American Black Bear,,2,d3a5b24963c02d7b,True,115.5,2048,1536
+9286.jpg,9286,positivo,American Black Bear,,2,d3a5b24963c02d7b,True,116.2,2048,1536
+9287.jpg,9287,positivo,American Black Bear,,2,d3a5a24963c42d7b,True,116.7,2048,1536
+9288.jpg,9288,positivo,American Black Bear,,2,c7a1b26933a42d5b,True,113.8,2048,1536
+9289.jpg,9289,positivo,American Black Bear,,2,c3a7a24933c53c79,True,114.0,2048,1536
+9290.jpg,9290,positivo,American Black Bear,,2,c3a5b24963e52d78,True,114.2,2048,1536
+9291.jpg,9291,positivo,American Black Bear,,1,c3c7702963ec1d39,True,134.0,2048,1536
+9292.jpg,9292,positivo,American Black Bear,,2,d5e2745123ed1c39,True,129.7,2048,1536
+9293.jpg,9293,positivo,American Black Bear,,1,c3c7702963ec1d39,True,134.0,2048,1536
+9294.jpg,9294,positivo,American Black Bear,,1,c3c7702963ad1d39,True,133.8,2048,1536
+9295.jpg,9295,positivo,American Black Bear,,1,c3c7760163ed1c39,True,133.1,2048,1536
+9296.jpg,9296,positivo,American Black Bear,,1,93e365c10b0e5d7c,True,104.5,2048,1536
+9297.jpg,9297,positivo,American Black Bear,,1,c3c7770067ad1c39,True,133.4,2048,1536
+9298.jpg,9298,positivo,American Black Bear,,1,c3c7770063af1c39,True,133.3,2048,1536
+9299.jpg,9299,positivo,American Black Bear,,1,c1c7770063ed5c39,True,132.8,2048,1536
+9300.jpg,9300,positivo,American Black Bear,,1,83c7318b630d5f39,True,126.3,2048,1536
+9301.jpg,9301,positivo,American Black Bear,,1,d3e3674e58913236,True,105.4,2048,1536
+9302.jpg,9302,positivo,American Black Bear,,1,d3e3634f0b9b3230,True,102.3,2048,1536
+9303.jpg,9303,positivo,American Black Bear,,1,ddc3634f59183332,True,110.3,2048,1536
+9304.jpg,9304,positivo,American Black Bear,,1,d3d36c6d61c51c25,True,122.3,2048,1536
+9305.jpg,9305,positivo,American Black Bear,,1,d8c161a707a22fbe,True,108.1,2048,1536
+9306.jpg,9306,positivo,American Black Bear,,1,c1c3666c19fb3a94,True,117.7,2048,1536
+9307.jpg,9307,positivo,American Black Bear,,1,c3c16d6853d61eb4,True,118.2,2048,1536
+9308.jpg,9308,positivo,American Black Bear,,1,d3c27265696b2c3a,True,119.5,2048,1536
+9309.jpg,9309,positivo,American Black Bear,,1,d3c3626664c93c3d,True,121.3,2048,1536
+9310.jpg,9310,positivo,American Black Bear,,1,d5c36b6646c83e38,True,121.6,2048,1536
+9311.jpg,9311,positivo,American Black Bear,,1,c5c16b66666a3c3c,True,119.3,2048,1536
+9312.jpg,9312,positivo,American Black Bear,,1,d3c3627226673a3c,True,115.9,2048,1536
+9313.jpg,9313,positivo,American Black Bear,,1,c3c3616163673f1c,True,119.5,2048,1536
+9314.jpg,9314,positivo,American Black Bear,,1,c3c3616963663f1c,True,120.7,2048,1536
+9315.jpg,9315,positivo,American Black Bear,,1,d1c3676943b6263c,True,117.3,2048,1536
+9316.jpg,9316,positivo,American Black Bear,,1,cba3656d63451c5a,True,130.9,2048,1536
+9317.jpg,9317,positivo,American Black Bear,,1,d5916262656d2c7e,True,132.5,2048,1536
+9318.jpg,9318,positivo,American Black Bear,,1,cba26959634e3c3a,True,129.0,2048,1536
+9319.jpg,9319,positivo,American Black Bear,,1,c1c26c6963cf1e3a,True,130.6,2048,1536
+9320.jpg,9320,positivo,American Black Bear,,1,a5a5564a634d1c7b,True,142.2,2048,1536
+9321.jpg,9321,positivo,American Black Bear,,1,d3c66aa963c43c39,True,126.0,2048,1536
+9322.jpg,9322,positivo,American Black Bear,,1,d5c561b063ad3c3a,True,133.1,2048,1536
+9323.jpg,9323,positivo,American Black Bear,,1,c393676d63443e19,True,123.4,2048,1536
+9324.jpg,9324,positivo,American Black Bear,,1,d6936361616c3c6e,True,130.1,2048,1536
+9325.jpg,9325,positivo,American Black Bear,,1,d393636d61643e58,True,124.6,2048,1536
+9326.jpg,9326,positivo,American Black Bear,,1,c5916569636a3e3a,True,127.9,2048,1536
+9327.jpg,9327,positivo,American Black Bear,,1,c3c3666823c63c7d,True,117.0,2048,1536
+9328.jpg,9328,positivo,American Black Bear,,1,d3c3656823863c7d,True,117.0,2048,1536
+9329.jpg,9329,positivo,American Black Bear,,1,c3c3626863873c7e,True,120.4,2048,1536
+9330.jpg,9330,positivo,American Black Bear,,1,c3c3676823a63c79,True,117.1,2048,1536
+9331.jpg,9331,positivo,American Black Bear,,1,d7936367624e2e0c,True,105.0,2048,1536
+9332.jpg,9332,positivo,American Black Bear,,1,d9d3332d4c667624,True,103.4,2048,1536
+9333.jpg,9333,positivo,American Black Bear,,1,c3c9656267e3692c,True,124.7,2048,1536
+9334.jpg,9334,positivo,American Black Bear,,1,c7ca63612dcc3715,True,128.2,2048,1536
+9335.jpg,9335,positivo,American Black Bear,,1,c28a3b7a2cec7465,True,102.3,2048,1536
+9336.jpg,9336,positivo,American Black Bear,,1,c5c225671f9c3237,True,129.7,2048,1536
+9337.jpg,9337,positivo,American Black Bear,,1,87c371ea3f214c2d,True,118.5,2048,1536
+9338.jpg,9338,positivo,American Black Bear,,1,c7e361cf26217e0c,True,131.2,2048,1536
+9339.jpg,9339,positivo,American Black Bear,,1,87e305f06307791f,True,117.3,2048,1536
+9340.jpg,9340,positivo,American Black Bear,,1,c3e305f067a37d12,True,120.3,2048,1536
+9341.jpg,9341,positivo,American Black Bear,,1,c3c740b9632b6c1f,True,119.6,2048,1536
+9342.jpg,9342,positivo,American Black Bear,,1,c1ef608177a27f12,True,120.6,2048,1536
+9343.jpg,9343,positivo,American Black Bear,,1,c3e301fb63277d10,True,119.8,2048,1536
+9344.jpg,9344,positivo,American Black Bear,,1,c7c365b063e32d38,True,127.0,2048,1536
+9345.jpg,9345,positivo,American Black Bear,,1,87e107f863277d12,True,119.4,2048,1536
+9346.jpg,9346,positivo,American Black Bear,,1,d3c365b063e62f30,True,126.8,2048,1536
+9347.jpg,9347,positivo,American Black Bear,,1,c7c3d0b2676c191b,True,117.1,2048,1536
+9348.jpg,9348,positivo,American Black Bear,,1,d7c3e0a863ea3d30,True,120.8,2048,1536
+9349.jpg,9349,positivo,American Black Bear,,1,c3c3b4b5676b1a12,True,117.6,2048,1536
+9350.jpg,9350,positivo,American Black Bear,,1,d3c3a4a163ea3a36,True,117.6,2048,1536
+9351.jpg,9351,positivo,American Black Bear,,1,d1c3c7b831e24f16,True,117.9,2048,1536
+9352.jpg,9352,positivo,American Black Bear,,1,d3c3c5b873e20f18,True,117.5,2048,1536
+9353.jpg,9353,positivo,American Black Bear,,1,d7c3c1b83ee30b18,True,119.6,2048,1536
+9354.jpg,9354,positivo,American Black Bear,,1,d5c3c7b078ae0f30,True,118.7,2048,1536
+9355.jpg,9355,positivo,American Black Bear,,1,d5c3c7b078ae0f30,True,118.7,2048,1536
+9356.jpg,9356,positivo,American Black Bear,,1,d1c3c7b07b8e0f30,True,119.2,2048,1536
+9357.jpg,9357,positivo,American Black Bear,,1,d5c3c7b078ae0f30,True,118.5,2048,1536
+9358.jpg,9358,positivo,American Black Bear,,1,c7c3e48067e21d3e,True,120.5,2048,1536
+9359.jpg,9359,positivo,American Black Bear,,1,d1c3c7b873c60f30,True,119.6,2048,1536
+9360.jpg,9360,positivo,American Black Bear,,1,c7c3e48067e21d3e,True,120.3,2048,1536
+9361.jpg,9361,positivo,American Black Bear,,1,c3c3f40067ea197e,True,120.1,2048,1536
+9362.jpg,9362,positivo,American Black Bear,,1,c3c7e48067a21d7e,True,120.1,2048,1536
+9363.jpg,9363,positivo,American Black Bear,,1,c3c3e4a067a23d3e,True,120.4,2048,1536
+9364.jpg,9364,positivo,American Black Bear,,1,c3e744b077037c17,True,116.6,2048,1536
+9365.jpg,9365,positivo,American Black Bear,,1,c3e704f067037c1f,True,116.6,2048,1536
+9366.jpg,9366,positivo,American Black Bear,,1,cc28e3c96cc27fa4,True,53.5,2048,1536
+9367.jpg,9367,positivo,American Black Bear,,1,cc28e3c968c27fac,True,53.4,2048,1536
+9368.jpg,9368,positivo,American Black Bear,,1,dc28e5cb63c06da5,True,53.0,2048,1536
+9369.jpg,9369,positivo,American Black Bear,,1,dc28e3c969c07da5,True,53.2,2048,1536
+9370.jpg,9370,positivo,American Black Bear,,1,dc28e3c968c27fa4,True,53.5,2048,1536
+9371.jpg,9371,positivo,American Black Bear,,1,de38e94331c26f94,True,51.9,2048,1536
+9372.jpg,9372,positivo,American Black Bear,,1,dc28e3c968c27fa4,True,53.6,2048,1536
+9373.jpg,9373,positivo,American Black Bear,,1,cd68e14b6ec279c4,True,52.9,2048,1536
+9374.jpg,9374,positivo,American Black Bear,,1,d928e4696ec67c8c,True,51.8,2048,1536
+9375.jpg,9375,positivo,American Black Bear,,2,8d8cdc5b02c477a7,False,125.6,2048,1536
+9376.jpg,9376,positivo,American Black Bear,,1,cc38e34b64c27fa4,True,52.8,2048,1536
+9377.jpg,9377,positivo,American Black Bear,,1,dc28e3cb68c26da6,True,53.4,2048,1536
+9378.jpg,9378,positivo,American Black Bear,,1,9a65d91ae05af156,True,59.4,2048,1536
+9379.jpg,9379,positivo,American Black Bear,,2,8dad895a4a857747,False,125.0,2048,1536
+9380.jpg,9380,positivo,American Black Bear,,1,8dad425c6cc33e87,False,128.0,2048,1536
+9381.jpg,9381,positivo,American Black Bear,,1,8d8d4c724cce7387,False,126.8,2048,1536
+9382.jpg,9382,positivo,American Black Bear,,1,9468d912e05ef976,True,59.1,2048,1536
+9383.jpg,9383,positivo,American Black Bear,,1,8dad425c6cc33e87,False,128.0,2048,1536
+9384.jpg,9384,positivo,American Black Bear,,2,8d8d525c6cc23f87,False,127.8,2048,1536
+9385.jpg,9385,positivo,American Black Bear,,1,8dad2ad82a9257a7,False,140.9,2048,1536
+9386.jpg,9386,positivo,American Black Bear,,2,8f8d405e3ec03e8f,False,127.2,2048,1536
+9387.jpg,9387,positivo,American Black Bear,,2,8d8d425c6cc33e8f,False,127.4,2048,1536
+9388.jpg,9388,positivo,American Black Bear,,1,8dad4ac86ad275a3,False,141.4,2048,1536
+9389.jpg,9389,positivo,American Black Bear,,1,8dad7ec800de7781,False,141.3,2048,1536
+9390.jpg,9390,positivo,American Black Bear,,1,8dad78ca0ad27687,False,140.8,2048,1536
+9391.jpg,9391,positivo,American Black Bear,,2,8dad085a5a8a77c7,False,142.0,2048,1536
+9392.jpg,9392,positivo,American Black Bear,,2,8dad2a585a8a57c7,False,141.4,2048,1536
+9393.jpg,9393,positivo,American Black Bear,,1,dfff68e042026707,True,133.3,2048,1536
+9394.jpg,9394,positivo,American Black Bear,,2,8dad0a587a8a57c7,False,140.9,2048,1536
+9395.jpg,9395,positivo,American Black Bear,,2,8dad0a587a8a57c7,False,140.4,2048,1536
+9396.jpg,9396,positivo,American Black Bear,,1,a8d53dc27f0a652a,False,68.2,2048,1536
+9397.jpg,9397,positivo,American Black Bear,,1,bdd850a16f0b46b5,True,134.8,2048,1536
+9398.jpg,9398,positivo,American Black Bear,,1,bdcd664818365727,False,118.1,2048,1536
+9399.jpg,9399,positivo,American Black Bear,,1,85edff4000d27787,False,120.2,2048,1536
+9400.jpg,9400,positivo,American Black Bear,,1,8defe248780617c7,False,104.8,2048,1536
+9401.jpg,9401,positivo,American Black Bear,,1,d73f28c27ec86ac0,True,51.6,2048,1536
+9402.jpg,9402,positivo,American Black Bear,,1,d73f29c27ac86e80,True,51.4,2048,1536
+9403.jpg,9403,positivo,American Black Bear,,1,df37284976c86c92,True,53.8,2048,1536
+9404.jpg,9404,positivo,American Black Bear,,1,963660c03f3a2bf9,True,139.0,2048,1536
+9405.jpg,9405,positivo,American Black Bear,,1,971660c03f332bf9,True,139.1,2048,1536
+9406.jpg,9406,positivo,American Black Bear,,1,963667c13c382bcb,True,139.0,2048,1536
+9407.jpg,9407,positivo,American Black Bear,,1,8b78a9c26664fbc1,True,33.8,2048,1536
+9408.jpg,9408,positivo,American Black Bear,,1,943667c33c382bcb,True,138.8,2048,1536
+9409.jpg,9409,positivo,American Black Bear,,1,953666c639312bcb,True,138.7,2048,1536
+9410.jpg,9410,positivo,American Black Bear,,1,8978a5c2666cfbc1,True,34.0,2048,1536
+9411.jpg,9411,positivo,American Black Bear,,1,8378a9c2666cf9e1,True,34.0,2048,1536
+9412.jpg,9412,positivo,American Black Bear,,1,9dc66418a6f66b49,False,112.7,2048,1536
+9413.jpg,9413,positivo,American Black Bear,,1,9b60e79ce0c778c4,True,32.1,2048,1536
+9414.jpg,9414,positivo,American Black Bear,,1,9b62e49863c679e1,True,32.3,2048,1536
+9415.jpg,9415,positivo,American Black Bear,,1,d7876c68aa32624f,False,117.6,2048,1536
+9416.jpg,9416,positivo,American Black Bear,,1,9fc430ede8324e4b,False,129.7,2048,1536
+9417.jpg,9417,positivo,American Black Bear,,1,97c5368ce8334f4a,False,128.2,2048,1536
+9418.jpg,9418,positivo,American Black Bear,,1,9cc7641ce6376b09,False,115.5,2048,1536
+9419.jpg,9419,positivo,American Black Bear,,1,93c4cc31b9864e7b,False,123.7,2048,1536
+9420.jpg,9420,positivo,American Black Bear,,1,91c64c31aeb24e7b,False,121.2,2048,1536
+9421.jpg,9421,positivo,American Black Bear,,1,9587c63838e64e79,False,125.9,2048,1536
+9422.jpg,9422,positivo,American Black Bear,,1,979560cc3eb2626b,False,128.9,2048,1536
+9423.jpg,9423,positivo,American Black Bear,,1,9587c6b838a64e79,False,126.2,2048,1536
+9424.jpg,9424,positivo,American Black Bear,,1,9c95c3cc3cb2436b,False,126.9,2048,1536
+9425.jpg,9425,positivo,American Black Bear,,1,9c85c7ac38a2477b,False,125.5,2048,1536
+9426.jpg,9426,positivo,American Black Bear,,1,9f9560cc3eb2606b,False,128.3,2048,1536
+9427.jpg,9427,positivo,American Black Bear,,1,9f9560c43eb26279,False,129.0,2048,1536
+9428.jpg,9428,positivo,American Black Bear,,1,9f9561c43e324b69,False,129.7,2048,1536
+9429.jpg,9429,positivo,American Black Bear,,1,9f9561e43e324a69,False,129.3,2048,1536
+9430.jpg,9430,positivo,American Black Bear,,1,966ae48b7f606a86,True,47.7,2048,1536
+9431.jpg,9431,positivo,American Black Bear,,1,966ae48a7ee1638c,True,47.5,2048,1536
+9432.jpg,9432,positivo,American Black Bear,,1,846afa846c99dbe4,True,45.8,2048,1536
+9433.jpg,9433,positivo,American Black Bear,,1,906be69938e36798,True,47.2,2048,1536
+9434.jpg,9434,positivo,American Black Bear,,1,d268e4ca7aa476ca,True,47.0,2048,1536
+9435.jpg,9435,positivo,American Black Bear,,1,966ae4c27ea16fc0,True,47.7,2048,1536
+9436.jpg,9436,positivo,American Black Bear,,1,956ae4837f606fc0,True,48.5,2048,1536
+9437.jpg,9437,positivo,American Black Bear,,1,970d9d44c966817f,False,29.2,2048,1536
+9438.jpg,9438,positivo,American Black Bear,,1,d86cad46aa56835e,False,41.7,2048,1536
+9439.jpg,9439,positivo,American Black Bear,,1,c66ea752b954815e,False,38.5,2048,1536
+9440.jpg,9440,positivo,American Black Bear,,1,da3835caa5c86ab5,True,73.6,2048,1536
+9441.jpg,9441,positivo,American Black Bear,,1,de3879c426c96ce4,True,73.9,2048,1536
+9442.jpg,9442,positivo,American Black Bear,,1,cc3a72cd23d26de0,True,73.4,2048,1536
+9443.jpg,9443,positivo,American Black Bear,,2,db287cc123c86df2,True,73.3,2048,1536
+9444.jpg,9444,positivo,American Black Bear,,2,c93274cdb6ca6d90,True,72.0,2048,1536
+9445.jpg,9445,positivo,American Black Bear,,1,da3874cd27c86cd1,True,74.5,2048,1536
+9446.jpg,9446,positivo,American Black Bear,,1,da3875cd23c86cd1,True,74.7,2048,1536
+9447.jpg,9447,positivo,American Black Bear,,2,de2a75cc23c86cd1,True,73.2,2048,1536
+9448.jpg,9448,positivo,American Black Bear,,2,dd2a75cd23c86cd0,True,73.7,2048,1536
+9449.jpg,9449,positivo,American Black Bear,,1,da2974caa5ca6dd0,True,72.4,2048,1536
+9450.jpg,9450,positivo,American Black Bear,,1,ce3879c466c96ce4,True,72.8,2048,1536
+9451.jpg,9451,positivo,American Black Bear,,1,c93236c937d26dd0,True,71.8,2048,1536
+9452.jpg,9452,positivo,American Black Bear,,1,db387ccc23c96cd0,True,73.6,2048,1536
+9453.jpg,9453,positivo,American Black Bear,,1,db387ccc33c96cc0,True,73.9,2048,1536
+9454.jpg,9454,positivo,American Black Bear,,3,d460e1cd630e66f6,True,136.0,2048,1536
+9455.jpg,9455,positivo,American Black Bear,,3,d060e1cf670e64f6,True,135.9,2048,1536
+9456.jpg,9456,positivo,American Black Bear,,3,c060e7ce010377ff,True,136.0,2048,1536
+9457.jpg,9457,positivo,American Black Bear,,3,c060e3ce620b67f7,True,136.5,2048,1536
+9458.jpg,9458,positivo,American Black Bear,,2,d060e0cc2f0f63f7,True,136.5,2048,1536
+9459.jpg,9459,positivo,American Black Bear,,2,d160e0ce2f0f61f6,True,136.5,2048,1536
+9460.jpg,9460,positivo,American Black Bear,,2,d060e3cf201c6ef7,True,136.6,2048,1536
+9461.jpg,9461,positivo,American Black Bear,,1,d060e3cf231c6ce7,True,136.7,2048,1536
+9462.jpg,9462,positivo,American Black Bear,,2,c060e3cf01087fff,True,136.6,2048,1536
+9463.jpg,9463,positivo,American Black Bear,,1,d060e3cf231c6ce7,True,136.8,2048,1536
+9464.jpg,9464,positivo,American Black Bear,,1,cd917348b36671aa,True,127.2,2048,1536
+9465.jpg,9465,positivo,American Black Bear,,1,c9b26d5a264972ec,True,130.1,2048,1536
+9466.jpg,9466,positivo,American Black Bear,,1,94c93f204fb364b3,True,127.6,2048,1536
+9467.jpg,9467,positivo,American Black Bear,,1,9dc0133a66337ee2,True,126.3,2048,1536
+9468.jpg,9468,positivo,American Black Bear,,1,e9b9f0e90e460f19,False,104.6,2048,1536
+9469.jpg,9469,positivo,American Black Bear,,1,eb99f1e31c41271c,False,105.7,2048,1536
+9470.jpg,9470,positivo,American Black Bear,,1,f8d9d1e00f462717,False,111.5,2048,1536
+9471.jpg,9471,positivo,American Black Bear,,1,c9f1f3c36d461609,False,132.6,2048,1536
+9472.jpg,9472,positivo,American Black Bear,,1,fbf171e80c462f11,False,113.7,2048,1536
+9473.jpg,9473,positivo,American Black Bear,,1,c07e1f69740b636c,False,104.6,2048,1536
+9474.jpg,9474,positivo,American Black Bear,,1,f8e1e3b82c471e19,False,130.8,2048,1536
+9475.jpg,9475,positivo,American Black Bear,,1,d80b866d7c0b07ed,False,93.5,2048,1536
+9476.jpg,9476,positivo,American Black Bear,,1,857bf06c060b63ed,False,97.5,2048,1536
+9477.jpg,9477,positivo,American Black Bear,,1,d01b0ced7e0f0769,False,97.1,2048,1536
+9478.jpg,9478,positivo,American Black Bear,,1,c70f6ad29565c05e,False,160.3,2048,1536
+9479.jpg,9479,positivo,American Black Bear,,1,c93db3472874835e,True,82.2,2048,1536
+9480.jpg,9480,positivo,American Black Bear,,1,d11a0ced7a0f07e9,False,95.6,2048,1536
+9481.jpg,9481,positivo,American Black Bear,,1,c93db3472876834e,True,82.2,2048,1536
+9482.jpg,9482,positivo,American Black Bear,,1,d93db34728748b4c,True,82.2,2048,1536
+9483.jpg,9483,positivo,American Black Bear,,1,a47fca50b4a778c2,False,133.0,2048,1536
+9484.jpg,9484,positivo,American Black Bear,,1,8c7ec2539ca568cb,False,136.3,2048,1536
+9485.jpg,9485,positivo,American Black Bear,,1,a55ec247b5a168ce,False,134.5,2048,1536
+9486.jpg,9486,positivo,American Black Bear,,1,c70f6ad29165c15e,False,160.4,2048,1536
+9487.jpg,9487,positivo,American Black Bear,,1,c70f6ad29165c15e,False,160.3,2048,1536
+9488.jpg,9488,positivo,American Black Bear,,1,c72f6ad39464c11e,False,161.5,2048,1536
+9489.jpg,9489,positivo,American Black Bear,,1,c70f6ad29065c35e,False,161.0,2048,1536
+9490.jpg,9490,positivo,American Black Bear,,1,890dfd768166a07e,False,53.5,2048,1536
+9491.jpg,9491,positivo,American Black Bear,,1,c72f6ad29775804a,False,162.8,2048,1536
+9492.jpg,9492,positivo,American Black Bear,,1,db0dbd569126807e,False,53.0,2048,1536
+9493.jpg,9493,positivo,American Black Bear,,1,8f0df1768162b07e,False,53.2,2048,1536
+9494.jpg,9494,positivo,American Black Bear,,1,ca0db576a167807e,False,53.5,2048,1536
+9495.jpg,9495,positivo,American Black Bear,,1,d8789f1ec01f8167,True,81.1,2048,1536
+9496.jpg,9496,positivo,American Black Bear,,1,d684e968d81e945f,False,91.0,2048,1536
+9497.jpg,9497,positivo,American Black Bear,,1,8a82e56c9a1e9c5f,False,97.3,2048,1536
+9498.jpg,9498,positivo,American Black Bear,,1,8aa2f464da1b947e,False,92.1,2048,1536
+9499.jpg,9499,positivo,American Black Bear,,1,948ce868d41f9c7e,False,93.8,2048,1536
+9500.jpg,9500,positivo,American Black Bear,,1,dac2a06cda5a965e,False,85.1,2048,1536
+9501.jpg,9501,positivo,American Black Bear,,1,8a92f46c9a1e947e,False,96.2,2048,1536
+9502.jpg,9502,positivo,American Black Bear,,1,8e4ce1649a1b9c3f,False,85.4,2048,1536
+9503.jpg,9503,positivo,American Black Bear,,1,8aaae1649a1e9c7e,False,100.4,2048,1536
+9504.jpg,9504,positivo,American Black Bear,,1,8a92e46c9a1e947f,False,97.5,2048,1536
+9505.jpg,9505,positivo,American Black Bear,,1,8aaae164da1b9c5e,False,100.6,2048,1536
+9506.jpg,9506,positivo,American Black Bear,,1,9eaae164d81a9c5e,False,99.9,2048,1536
+9507.jpg,9507,positivo,American Black Bear,,1,8e4ec1649e1b8c3f,False,86.2,2048,1536
+9508.jpg,9508,positivo,American Black Bear,,1,8e48e1649a1f993f,False,85.0,2048,1536
+9509.jpg,9509,positivo,American Black Bear,,1,d604e96a9a1a9c7d,False,83.0,2048,1536
+9510.jpg,9510,positivo,American Black Bear,,1,8e4ac1649a1b9d7e,False,84.2,2048,1536
+9511.jpg,9511,positivo,American Black Bear,,1,de04a96a9a4b945f,False,80.4,2048,1536
+9512.jpg,9512,positivo,American Black Bear,,1,ce4ca06ada1d943f,False,84.4,2048,1536
+9513.jpg,9513,positivo,American Black Bear,,1,8a8ee164f41b9a5e,False,98.7,2048,1536
+9514.jpg,9514,positivo,American Black Bear,,1,8e8ee164f419da1e,False,98.6,2048,1536
+9515.jpg,9515,positivo,American Black Bear,,1,8a8ee170f4199b5e,False,98.3,2048,1536
+9516.jpg,9516,positivo,American Black Bear,,1,8a8ee160fc339a5e,False,96.5,2048,1536
+9517.jpg,9517,positivo,American Black Bear,,1,8e8ae164f41bda1e,False,98.6,2048,1536
+9518.jpg,9518,positivo,American Black Bear,,1,868ee164dc339a5e,False,95.9,2048,1536
+9519.jpg,9519,positivo,American Black Bear,,1,8aa6e164f41b927e,False,83.6,2048,1536
+9520.jpg,9520,positivo,American Black Bear,,1,8aa6e164f41b9a5e,False,81.5,2048,1536
+9521.jpg,9521,positivo,American Black Bear,,1,c496b64c9367896d,False,77.6,2048,1536
+9522.jpg,9522,positivo,American Black Bear,,1,c767fc18996f8148,False,72.8,2048,1536
+9523.jpg,9523,positivo,American Black Bear,,1,c494b64c9b67896d,False,76.7,2048,1536
+9524.jpg,9524,positivo,American Black Bear,,1,c767fc18996f8148,False,72.8,2048,1536
+9525.jpg,9525,positivo,American Black Bear,,1,c767fc18996f8148,False,72.8,2048,1536
+9526.jpg,9526,positivo,American Black Bear,,1,c767f81c9969814b,False,72.1,2048,1536
+9527.jpg,9527,positivo,American Black Bear,,1,d747c739983c814b,False,66.4,2048,1536
+9528.jpg,9528,positivo,American Black Bear,,1,f347cf1cb8398143,False,63.5,2048,1536
+9529.jpg,9529,positivo,American Black Bear,,1,f347cf4e8c38814b,False,66.6,2048,1536
+9530.jpg,9530,positivo,American Black Bear,,1,f977e14387798068,False,38.1,2048,1536
+9531.jpg,9531,positivo,American Black Bear,,1,c1419b4ebc6d815f,False,60.6,2048,1536
+9532.jpg,9532,positivo,American Black Bear,,1,c153d5049df7807e,True,202.6,2048,1536
+9533.jpg,9533,positivo,American Black Bear,,1,c0419d4f9967817f,False,52.9,2048,1536
+9534.jpg,9534,positivo,American Black Bear,,1,d051ad4ead69817d,False,67.3,2048,1536
+9535.jpg,9535,positivo,American Black Bear,,1,d161b54ead41835f,False,66.9,2048,1536
+9536.jpg,9536,positivo,American Black Bear,,1,c151b64cbd69817d,False,63.8,2048,1536
+9537.jpg,9537,positivo,American Black Bear,,1,d1fa00afa9f51554,True,238.0,2048,1536
+9538.jpg,9538,positivo,American Black Bear,,1,c151dd0499ff817c,True,202.1,2048,1536
+9539.jpg,9539,positivo,American Black Bear,,1,90c3c33c80e7b97e,True,196.5,2048,1536
+9540.jpg,9540,positivo,American Black Bear,,1,d151c01fc1f18f7c,True,200.5,2048,1536
+9541.jpg,9541,positivo,American Black Bear,,1,d151c11ec1f1987f,True,199.2,2048,1536
+9542.jpg,9542,positivo,American Black Bear,,1,d490295b946d937e,True,193.7,2048,1536
+9543.jpg,9543,positivo,American Black Bear,,1,c149b25c9a768d73,True,182.4,2048,1536
+9544.jpg,9544,positivo,American Black Bear,,1,d1638556aa758a5d,True,195.7,2048,1536
+9545.jpg,9545,positivo,American Black Bear,,1,9481b66dcb36897a,True,197.3,2048,1536
+9546.jpg,9546,positivo,American Black Bear,,1,d563a8548af5817d,True,196.9,2048,1536
+9547.jpg,9547,positivo,American Black Bear,,1,d186a84b967d817e,True,199.6,2048,1536
+9548.jpg,9548,positivo,American Black Bear,,1,81dc3e07f836c13e,True,193.3,2048,1536
+9549.jpg,9549,positivo,American Black Bear,,1,85d83e07f927c934,True,193.0,2048,1536
+9550.jpg,9550,positivo,American Black Bear,,1,87d83627f036893e,True,189.3,2048,1536
+9551.jpg,9551,positivo,American Black Bear,,1,b6c1b34ec139c83b,True,177.9,2048,1536
+9552.jpg,9552,positivo,American Black Bear,,1,91c1c01fcd3df233,True,168.1,2048,1536
+9553.jpg,9553,positivo,American Black Bear,,1,a1d0d92df43bc04f,True,163.0,2048,1536
+9554.jpg,9554,positivo,American Black Bear,,1,91c0c739cc73f80f,True,182.8,2048,1536
+9555.jpg,9555,positivo,American Black Bear,,1,81f1f106bc01ff71,True,193.0,2048,1536
+9556.jpg,9556,positivo,American Black Bear,,1,81f1d50ee177b807,True,189.2,2048,1536
+9557.jpg,9557,positivo,American Black Bear,,1,8090d51f9b579d35,False,127.8,2048,1536
+9558.jpg,9558,positivo,American Black Bear,,1,9987c173f070fc34,False,94.8,2048,1536
+9559.jpg,9559,positivo,American Black Bear,,1,9319dd4ada56c435,False,76.6,2048,1536
+9560.jpg,9560,positivo,American Black Bear,,1,f3dddd329a508825,False,108.0,2048,1536
+9561.jpg,9561,positivo,American Black Bear,,1,d3ffdd1e9a748000,False,111.3,2048,1536
+9562.jpg,9562,positivo,American Black Bear,,1,d870dc0cec7c887e,False,50.1,2048,1536
+9563.jpg,9563,positivo,American Black Bear,,1,f3dddd269a588025,False,108.2,2048,1536
+9564.jpg,9564,positivo,American Black Bear,,1,dbf5d51a9a758005,False,111.2,2048,1536
+9565.jpg,9565,positivo,American Black Bear,,1,9171b53ed254b546,False,101.6,2048,1536
+9566.jpg,9566,positivo,American Black Bear,,1,d0fc8944ff40b876,True,143.4,2048,1536
+9567.jpg,9567,positivo,American Black Bear,,1,f858d8649c7cc47c,False,50.1,2048,1536
+9568.jpg,9568,positivo,American Black Bear,,1,f858dc7ccc7c8074,False,49.1,2048,1536
+9569.jpg,9569,positivo,American Black Bear,,1,ad149b129336927f,False,32.8,2048,1536
+9570.jpg,9570,positivo,American Black Bear,,1,d6c9e378ac728166,True,173.9,2048,1536
+9571.jpg,9571,positivo,American Black Bear,,1,98c9a736d936d826,True,190.0,2048,1536
+9572.jpg,9572,positivo,American Black Bear,,1,9341e363c15ac17f,False,56.1,2048,1536
+9573.jpg,9573,positivo,American Black Bear,,1,80b7c06fb958af1a,True,204.9,2048,1536
+9574.jpg,9574,positivo,American Black Bear,,1,80cc24f6df26d927,True,208.1,2048,1536
+9575.jpg,9575,positivo,American Black Bear,,1,88a3eb5ef644e149,True,154.7,2048,1536
+9576.jpg,9576,positivo,American Black Bear,,1,cf4cbe648157a05b,True,100.7,2048,1536
+9577.jpg,9577,positivo,American Black Bear,,1,8c902b27d33cd769,True,167.3,2048,1536
+9578.jpg,9578,positivo,American Black Bear,,1,cf6cba66ac39a112,True,109.2,2048,1536
+9579.jpg,9579,positivo,American Black Bear,,1,8ac6ac23d52e956e,True,156.3,2048,1536
+9580.jpg,9580,positivo,American Black Bear,,1,89973d0cc238d66f,True,165.2,2048,1536
+9581.jpg,9581,positivo,American Black Bear,,1,ff748922917e807c,False,21.9,2048,1536
+9582.jpg,9582,positivo,American Black Bear,,1,cc4cc84cc91f976e,False,62.2,2048,1536
+9583.jpg,9583,positivo,American Black Bear,,1,8544bf36c236907f,False,42.4,2048,1536
+9584.jpg,9584,positivo,American Black Bear,,1,c342e347d256817f,False,64.3,2048,1536
+9585.jpg,9585,positivo,American Black Bear,,1,c342e346d256837f,False,65.1,2048,1536
+9586.jpg,9586,positivo,American Black Bear,,1,cc4cc84cc91f976e,False,62.1,2048,1536
+9587.jpg,9587,positivo,American Black Bear,,1,e4df996d09668d60,True,226.9,2048,1536
+9588.jpg,9588,positivo,American Black Bear,,1,e4db926f006c99e6,True,230.4,2048,1536
+9589.jpg,9589,positivo,American Black Bear,,1,cc5ea52bd32cba44,True,142.2,2048,1536
+9590.jpg,9590,positivo,American Black Bear,,1,9699992ecb26c936,True,177.8,2048,1536
+9591.jpg,9591,positivo,American Black Bear,,1,c55aa71fba259846,True,136.3,2048,1536
+9592.jpg,9592,positivo,American Black Bear,,1,9dc6e331e038e03f,True,197.3,2048,1536
+9593.jpg,9593,positivo,American Black Bear,,1,cdfea155824d9a49,True,198.1,2048,1536
+9594.jpg,9594,positivo,American Black Bear,,1,cdaea155a24dba49,True,196.7,2048,1536
+9595.jpg,9595,positivo,American Black Bear,,1,c94cb753b376804b,False,98.8,2048,1536
+9596.jpg,9596,positivo,American Black Bear,,1,ccbea84da16db544,True,184.2,2048,1536
+9597.jpg,9597,positivo,American Black Bear,,1,cdfea155a25c9249,True,194.9,2048,1536
+9598.jpg,9598,positivo,American Black Bear,,1,c4f6a0579b4cab4c,True,181.2,2048,1536
+9599.jpg,9599,positivo,American Black Bear,,1,ccb6916da24e955c,True,207.8,2048,1536
+9600.jpg,9600,positivo,American Black Bear,,1,c4ef9966249b9964,True,221.1,2048,1536
+9601.jpg,9601,positivo,American Black Bear,,1,c4ef9176209b9966,True,222.2,2048,1536
+9602.jpg,9602,positivo,American Black Bear,,1,c4ef9176209b9966,True,222.0,2048,1536
+9603.jpg,9603,positivo,American Black Bear,,1,d0502f4bb67e8157,False,119.5,2048,1536
+9604.jpg,9604,positivo,American Black Bear,,1,c94cb743b766804f,False,97.4,2048,1536
+9605.jpg,9605,positivo,American Black Bear,,1,9956ca31b06ba47e,False,61.4,2048,1536
+9606.jpg,9606,positivo,American Black Bear,,1,c966a6199876817f,False,41.6,2048,1536
+9607.jpg,9607,positivo,American Black Bear,,1,e2391f0f9967f060,False,70.2,2048,1536
+9608.jpg,9608,positivo,American Black Bear,,1,d1ff115f00df2146,True,235.1,2048,1536
+9609.jpg,9609,positivo,American Black Bear,,1,9952de31b27da03c,False,74.1,2048,1536
+9610.jpg,9610,positivo,American Black Bear,,1,9952d731b26da03e,False,74.4,2048,1536
+9611.jpg,9611,positivo,American Black Bear,,1,9952de31b27da03c,False,74.1,2048,1536
+9612.jpg,9612,positivo,American Black Bear,,1,9952da31b07aa47e,False,61.2,2048,1536
+9613.jpg,9613,positivo,American Black Bear,,1,855ac7349a6d887e,False,70.5,2048,1536
+9614.jpg,9614,positivo,American Black Bear,,1,8b12d629b06ea97e,False,67.7,2048,1536
+9615.jpg,9615,positivo,American Black Bear,,1,915ada31b279a87c,False,70.8,2048,1536
+9616.jpg,9616,positivo,American Black Bear,,1,955aea159279a87c,False,68.3,2048,1536
+9617.jpg,9617,positivo,American Black Bear,,1,d137aa52b075a07e,False,63.5,2048,1536
+9618.jpg,9618,positivo,American Black Bear,,1,d97ccc2b9647e02c,False,65.4,2048,1536
+9619.jpg,9619,positivo,American Black Bear,,1,dd5acb31b064a476,False,66.6,2048,1536
+9620.jpg,9620,positivo,American Black Bear,,1,d5be0b7f8c558860,True,225.5,2048,1536
+9621.jpg,9621,positivo,American Black Bear,,1,dd6ee530b061a07e,False,57.5,2048,1536
+9622.jpg,9622,positivo,American Black Bear,,1,d1ae03578676aa71,True,222.2,2048,1536
+9623.jpg,9623,positivo,American Black Bear,,1,b618c94ccc3eda3c,False,51.7,2048,1536
+9624.jpg,9624,positivo,American Black Bear,,1,da14a565a95b985d,False,58.3,2048,1536
+9625.jpg,9625,positivo,American Black Bear,,1,d18e03558273b977,True,217.8,2048,1536
+9626.jpg,9626,positivo,American Black Bear,,1,9c46fb40c01fd93d,False,69.2,2048,1536
+9627.jpg,9627,positivo,American Black Bear,,1,c939c15fb16c9962,False,76.3,2048,1536
+9628.jpg,9628,positivo,American Black Bear,,1,c135c15fb16e9962,False,76.0,2048,1536
+9629.jpg,9629,positivo,American Black Bear,,1,c931c35fb16c9962,False,75.7,2048,1536
+9630.jpg,9630,positivo,American Black Bear,,1,e396d3693c167270,False,104.8,2048,1536
+9631.jpg,9631,positivo,American Black Bear,,1,e8a7a5d515177258,False,108.2,2048,1536
+9632.jpg,9632,positivo,American Black Bear,,1,d4c94de63e1b7130,False,123.2,2048,1536
+9633.jpg,9633,positivo,American Black Bear,,1,ccc633c33b0f31f0,False,94.6,2048,1536
+9634.jpg,9634,positivo,American Black Bear,,1,ea9a91f75c2a6071,False,106.7,2048,1536
+9635.jpg,9635,positivo,American Black Bear,,1,e39c96532a2f7470,False,93.9,2048,1536
+9636.jpg,9636,positivo,American Black Bear,,1,f3ce4cb23b0e7064,False,116.2,2048,1536
+9637.jpg,9637,positivo,American Black Bear,,1,d2ce5cb33b0e6231,False,128.9,2048,1536
+9638.jpg,9638,positivo,American Black Bear,,1,d3ce4cb33b0e6630,False,127.7,2048,1536
+9639.jpg,9639,positivo,American Black Bear,,1,c2ca5eb33b0e6631,False,129.5,2048,1536
+9640.jpg,9640,positivo,American Black Bear,,1,c2ce5bb33e0e7130,False,130.9,2048,1536
+9641.jpg,9641,positivo,American Black Bear,,1,c2ca57b33e0e7170,False,130.8,2048,1536
+9642.jpg,9642,positivo,American Black Bear,,1,b38d4d6378284cf9,True,121.6,2048,1536
+9643.jpg,9643,positivo,American Black Bear,,1,979749c9762849d9,True,130.7,2048,1536
+9644.jpg,9644,positivo,American Black Bear,,1,959761e974284bf1,True,132.2,2048,1536
+9645.jpg,9645,positivo,American Black Bear,,1,9797496172886bf1,True,131.0,2048,1536
+9646.jpg,9646,positivo,American Black Bear,,1,9797cd6372884ce1,True,127.7,2048,1536
+9647.jpg,9647,positivo,American Black Bear,,1,b79d49617e2849e8,True,117.9,2048,1536
+9648.jpg,9648,positivo,American Black Bear,,1,d7a541413c4a6df3,True,125.0,2048,1536
+9649.jpg,9649,positivo,American Black Bear,,1,c79db56178883b61,True,101.2,2048,1536
+9650.jpg,9650,positivo,American Black Bear,,1,a79d496172a84f69,True,110.3,2048,1536
+9651.jpg,9651,positivo,American Black Bear,,1,d5af61c17a006bd3,True,130.2,2048,1536
+9652.jpg,9652,positivo,American Black Bear,,1,d58731616a485bf3,True,139.2,2048,1536
+9653.jpg,9653,positivo,American Black Bear,,1,959f352179686e4a,True,111.8,2048,1536
+9654.jpg,9654,positivo,American Black Bear,,1,d5af61c57a0069d3,True,129.9,2048,1536
+9655.jpg,9655,positivo,American Black Bear,,1,d79561c9722429eb,True,115.8,2048,1536
+9656.jpg,9656,positivo,American Black Bear,,1,d5b769d374082a59,True,122.6,2048,1536
+9657.jpg,9657,positivo,American Black Bear,,1,fd97736971300a68,True,105.1,2048,1536
+9658.jpg,9658,positivo,American Black Bear,,1,959761e17a106bd3,True,108.2,2048,1536
+9659.jpg,9659,positivo,American Black Bear,,1,ddb7294b722009eb,True,143.4,2048,1536
+9660.jpg,9660,positivo,American Black Bear,,1,95917f2d69367640,True,107.2,2048,1536
+9661.jpg,9661,positivo,American Black Bear,,1,958761e97a8469d3,True,111.2,2048,1536
+9662.jpg,9662,positivo,American Black Bear,,1,dfa76bc170280ec3,True,130.3,2048,1536
+9663.jpg,9663,positivo,American Black Bear,,1,d58f274979202eda,True,130.3,2048,1536
+9664.jpg,9664,positivo,American Black Bear,,1,d58f235973242ed8,True,123.1,2048,1536
+9665.jpg,9665,positivo,American Black Bear,,1,d58f235963202ef9,True,119.9,2048,1536
+9666.jpg,9666,positivo,American Black Bear,,1,b587616b73204df2,True,116.1,2048,1536
+9667.jpg,9667,positivo,American Black Bear,,1,b38f4d6374284bca,True,121.7,2048,1536
+9668.jpg,9668,positivo,American Black Bear,,1,b78f4d6373304cc8,True,121.1,2048,1536
+9669.jpg,9669,positivo,American Black Bear,,1,b38f4d6378224e78,True,122.3,2048,1536
+9670.jpg,9670,positivo,American Black Bear,,1,b78f496354306b63,True,122.4,2048,1536
+9671.jpg,9671,positivo,American Black Bear,,1,979fc96374280bc3,True,129.2,2048,1536
+9672.jpg,9672,positivo,American Black Bear,,1,979fc96376880bc1,True,130.3,2048,1536
+9673.jpg,9673,positivo,American Black Bear,,1,979769c974206bc9,True,135.5,2048,1536
+9674.jpg,9674,positivo,American Black Bear,,1,979749c376280bd3,True,133.2,2048,1536
+9675.jpg,9675,positivo,American Black Bear,,1,95973bcb74200bd3,True,133.5,2048,1536
+9676.jpg,9676,positivo,American Black Bear,,1,979769c974206bc3,True,135.5,2048,1536

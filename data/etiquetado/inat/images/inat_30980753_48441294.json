@@ -1,0 +1,38 @@
+{
+  "version": "4.0.6",
+  "flags": {},
+  "checked": false,
+  "shapes": [
+    {
+      "label": "oso",
+      "shape_type": "rectangle",
+      "flags": {},
+      "points": [
+        [
+          629.175296,
+          334.0953695
+        ],
+        [
+          796.449792,
+          334.0953695
+        ],
+        [
+          796.449792,
+          460.3548784999999
+        ],
+        [
+          629.175296,
+          460.3548784999999
+        ]
+      ],
+      "group_id": null,
+      "description": null,
+      "difficult": false,
+      "attributes": {}
+    }
+  ],
+  "imagePath": "inat_30980753_48441294.jpg",
+  "imageData": null,
+  "imageHeight": 653,
+  "imageWidth": 1024
+}
