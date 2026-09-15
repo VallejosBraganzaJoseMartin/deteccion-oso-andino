@@ -11,3 +11,139 @@ Este documento registra las decisiones técnicas y metodológicas clave tomadas 
 - **Alternativas consideradas**: Opciones evaluadas.
 - **Decisión tomada**: Justificación de la alternativa seleccionada.
 - **Consecuencias**: Impacto positivo, limitaciones o compromisos asumidos.
+
+Cuando una decisión se modifica después, la ficha original se conserva tal como se escribió y se le añade un bloque de revisión con la fecha. Así queda a la vista qué se pensó primero y por qué cambió, que es justamente lo que interesa mostrar en el Capítulo 2.
+
+---
+
+## Nota sobre este registro
+
+Las decisiones con ficha completa son las que habrá que sostener ante el tribunal o que resultarían costosas de revertir. Las de menor alcance se agrupan al final en la tabla de decisiones operativas. Todas las decisiones de septiembre de 2026 se tomaron durante el periodo de vacaciones, sin posibilidad de consultar al director, y quedan pendientes de validación al iniciar Titulación 2.
+
+---
+
+## [2026-09-01] Iteración 1 de CRISP-DM con dataset proxy
+
+- **Contexto**: El ingeniero responsable en la comunidad de Angochagua renunció y no quedó nadie que entregue el material de las 15 cámaras trampa. El director indicó que la solución tomará tiempo y que, mientras tanto, se entrenen los modelos con imágenes de internet para luego hacer ajuste fino con el material real.
+- **Alternativas consideradas**:
+  1. Esperar el material real y dedicar las vacaciones solo a redacción.
+  2. Entrenar con un dataset proxy de fuentes públicas y ajustar después (indicación del director).
+  3. Buscar imágenes de oso andino en otra organización que fototrampee en Ecuador.
+- **Decisión tomada**: Se adopta la opción 2, estructurada como dos iteraciones de CRISP-DM. La iteración 1 usa el dataset proxy y la iteración 2 incorpora el material de Angochagua mediante ajuste fino. La opción 1 desperdiciaría tres semanas de trabajo. La opción 3 queda como plan de contingencia y requiere gestiones que no pueden hacerse en vacaciones. CRISP-DM contempla explícitamente el carácter cíclico del proceso, así que la estructura en dos iteraciones es coherente con la metodología declarada en el anteproyecto. La referencia [16] del marco teórico (Shepley et al.) respalda el enfoque: entrenó detectores con imágenes de Flickr e iNaturalist y obtuvo buen desempeño al evaluarlos sobre cámaras trampa, con mejoras adicionales al inyectar datos del dominio real.
+- **Consecuencias**: Permite avanzar sin depender de la logística. Las métricas de la iteración 1 no son los resultados del trabajo y deben presentarse siempre como preliminares. Obliga a explicar la estrategia en el Capítulo 2 y a documentar la situación que la motivó. Abre además una posibilidad: medir la caída de desempeño entre dominio proxy y dominio real, y cuánto la recupera el ajuste fino, lo que constituye un resultado propio.
+
+## [2026-09-01] Fuentes con licencia rastreable
+
+- **Contexto**: El dataset proxy necesita imágenes de oso andino y de cámaras trampa. La forma rápida sería descargar resultados de un buscador de imágenes.
+- **Alternativas consideradas**: descarga masiva desde buscadores, frente a fuentes con licencia explícita y API documentada.
+- **Decisión tomada**: Solo se usan fuentes con licencia verificable. Para el oso andino, iNaturalist vía su API pública, filtrando por licencias CC0, CC BY y CC BY-NC, con grado de investigación y excluyendo observaciones marcadas como cautivas. Para el dominio de cámara trampa, ENA24 de LILA BC. Se guarda licencia, atribución, usuario, fecha y coordenadas de cada fotografía en `registro_licencias.csv`.
+- **Consecuencias**: El origen de cada imagen es defendible ante una pregunta del tribunal y el registro sirve como anexo. El costo es que el volumen disponible es menor que con descarga indiscriminada. Las licencias CC BY-NC restringen el uso comercial, lo que no afecta a un trabajo académico pero conviene mencionarlo.
+
+**Revisión del 2026-09-09.** La descarga de negativos de otras especies (ver ficha del 2026-09-09) mantiene el mismo criterio y genera su propio `registro_licencias.csv`, con una columna adicional para el taxón. Una diferencia: para las especies domésticas se levantó el filtro de grado de investigación y el de cautividad, porque iNaturalist marca como cautivas casi todas las observaciones de perros, vacas, caballos y ovejas, y con el filtro puesto no habría material. Esa excepción solo aplica a los negativos, donde el interés es el fondo y el animal que no es un oso. Queda pendiente anotar la licencia exacta de ENA24, que sigue sin verificarse en lila.science.
+
+## [2026-09-03] Exclusión de rastros, imágenes sin oso y casos dudosos
+
+- **Contexto**: La revisión manual de 670 fotografías de iNaturalist encontró 118 registros de rastros (huellas, excrementos, restos), 68 imágenes sin oso, 108 casos donde no se pudo decidir y 1 de cautiverio evidente. El anteproyecto define la detección del oso, no de sus rastros.
+- **Alternativas consideradas**:
+  1. Excluir todo lo que no sea un oso visible.
+  2. Incluir los rastros como clase adicional.
+  3. Usar las imágenes dudosas como positivas de baja confianza.
+- **Decisión tomada**: Opción 1. Los rastros no entran porque el objetivo declarado es detectar al animal, y una clase adicional ampliaría el alcance sin respaldo en el anteproyecto. Las dudas no se usan ni como positivas ni como negativas: una imagen donde un revisor humano no puede decidir no aporta señal para entrenar y contamina la evaluación.
+- **Consecuencias**: El dataset queda más limpio a costa de unas 295 imágenes. Los archivos siguen disponibles en `data/revisar`, así que revertir es barato. Los rastros podrían recuperarse más adelante como negativos si el modelo confunde troncos y sombras con osos. Queda pendiente una segunda pasada sobre las 108 dudas si sobra tiempo.
+
+**Revisión del 2026-09-09.** La decisión se mantiene en lo que respecta a las clases del modelo, que sigue teniendo una sola, pero se revierte la parte de la exclusión. Los rastros y las imágenes sin oso vuelven al dataset como negativos, es decir, con archivo de etiquetas vacío. El motivo aparece en la ficha de negativos de iNaturalist del mismo día: con todos los positivos viniendo de una fuente y todos los negativos de otra, el modelo puede aprender a distinguir el estilo fotográfico en lugar del animal. Entraron 118 rastros y 63 paisajes. Quedan fuera las 111 dudas, la imagen de cautiverio y las que resultaron ser fotos de pantallas de monitor o collages, porque contienen un oso aunque sea de forma indirecta y como negativos enseñarían justo lo contrario de lo que se busca. Lo que ya se había anticipado aquí —que los rastros podrían recuperarse como negativos— es lo que terminó ocurriendo, solo que por un motivo distinto del previsto.
+
+## [2026-09-03] División de datos por grupo y no por imagen
+
+- **Contexto**: En iNaturalist, 253 observaciones tienen más de una fotografía del mismo encuentro, con un máximo de 20. En ENA24 el análisis por hash perceptual encontró 994 grupos de imágenes casi idénticas, uno de ellos con 55, que corresponden a ráfagas de una misma activación del sensor. Una división aleatoria por imagen pondría fotografías casi iguales en entrenamiento y en prueba.
+- **Alternativas consideradas**: división aleatoria simple, división por grupo, o eliminación de duplicados antes de dividir.
+- **Decisión tomada**: La unidad de división es el grupo. En iNaturalist el grupo es `observacion_id`, y los fotogramas extraídos de GIF heredan el de su archivo original. En ENA24, como el JSON no incluye campos de secuencia ni ubicación, el grupo es el hash perceptual calculado por `describir_dataset.py`. No se eliminan los duplicados porque las ráfagas aportan variación real de pose dentro del mismo evento.
+- **Consecuencias**: Evita la fuga entre conjuntos, que inflaría las métricas y produciría resultados no defendibles. Obliga a mantener la trazabilidad del grupo en todo el pipeline. El agrupamiento por hash solo captura coincidencias exactas del hash y puede refinarse con distancia de Hamming si hay tiempo. Si esta decisión se revirtiera después de entrenar, habría que repetir el entrenamiento.
+
+**Revisión del 2026-09-10.** El refinamiento que aquí quedaba como opcional resultó ser necesario, y tiene ficha propia más abajo. Con la primera división construida se midieron las fugas que el agrupamiento por hash exacto no llegó a evitar: 1999 pares de imágenes casi idénticas repartidos entre conjuntos distintos, que afectaban a 408 de las 963 imágenes de validación y prueba. Casi todas eran de ENA24. La unidad de división pasa a ser el grupo formado por unión transitiva de hashes a distancia de Hamming menor o igual a 12, y en iNaturalist esa unión se suma a la agrupación por observación en lugar de sustituirla.
+
+## [2026-09-01] Límite de tiempo para la implementación oficial de RT-DETRv3
+
+- **Contexto**: El director dispuso añadir RT-DETRv3 al trabajo para comparar arquitecturas. La implementación oficial está en PaddlePaddle, un framework distinto de Ultralytics, que es el previsto en el anteproyecto para YOLO. No hay confirmación de que Ultralytics soporte la versión 3.
+- **Alternativas consideradas**:
+  1. Montar el entorno de PaddlePaddle en la nube y usar la implementación oficial.
+  2. Usar una reimplementación no oficial en PyTorch, cuya fidelidad al artículo no está garantizada.
+  3. Comparar contra la variante de RT-DETR que Ultralytics sí soporta.
+- **Decisión tomada**: Se intenta la opción 1 con un límite de dos días de trabajo. Si a ese plazo el entorno no funciona, se pasa a la opción 3 documentando el error exacto que impidió la primera vía, y se consulta al director al retomar clases. La opción 2 queda descartada salvo que se identifique una reimplementación con evidencia de reproducir los resultados publicados.
+- **Consecuencias**: Acota el riesgo de perder la vacación en problemas de instalación. Si se acaba usando la opción 3, la comparación deja de ser estrictamente contra RT-DETRv3 y eso debe declararse en la redacción. Por otro lado, RT-DETRv3-R18 tiene alrededor de 20 millones de parámetros frente a los 2.4 de YOLO26n, así que en cualquier escenario la comparación debe emparejar presupuestos computacionales o declarar explícitamente que el eje es precisión frente a costo.
+
+**Nota del 2026-09-10.** Si la implementación oficial exige anotaciones en formato COCO, la conversión desde los archivos de texto que produce `dividir_dataset.py` es corta de escribir, porque `division.csv` ya guarda el conjunto y las cajas de cada imagen. Ese trabajo no debe contarse dentro del límite de dos días, que se reserva para el entorno.
+
+## [2026-09-04] Entrenamiento en Kaggle en lugar de Google Colaboratory
+
+- **Contexto**: El anteproyecto y el marco teórico establecen Google Colaboratory como entorno de entrenamiento. Durante la preparación del trabajo se optó por Kaggle.
+- **Alternativas consideradas**: Colaboratory en su versión gratuita, Colaboratory de pago, y Kaggle.
+- **Decisión tomada**: El entrenamiento se realiza en Kaggle, por la cuota de GPU. En un proyecto anterior trabajé con la versión gratuita de Colaboratory y las interrupciones por límite de uso impidieron terminar sesiones de entrenamiento, que es la razón por la que probé Kaggle y me quedé ahí. La cuota semanal de GPU que Kaggle ofrece en su plan gratuito (alrededor de 30 horas, dato que hay que verificar en la documentación vigente antes de citarlo en la memoria) da margen suficiente para entrenar dos arquitecturas y repetir corridas. No es una decisión de fondo del trabajo y no cambia nada de la metodología. Si en algún momento la cuota gratuita se queda corta, la alternativa prevista es pasar a Colaboratory de pago.
+- **Consecuencias**: Obliga a corregir el anteproyecto, el marco teórico y cualquier documento que mencione Colab, y a informarlo al director. Cambia la forma de cargar los datos, que pasan a subirse como Kaggle Dataset en lugar de montarse desde Google Drive. Hay que verificar en la documentación vigente de Kaggle los límites de sesión, la cuota semanal de GPU, el tamaño máximo de un dataset y la necesidad de habilitar el acceso a internet en el cuaderno para instalar dependencias, porque esas restricciones condicionan la planificación del entrenamiento y el intento con PaddlePaddle. El `dataset.yaml` que genera `dividir_dataset.py` lleva una ruta absoluta del equipo local, así que en el cuaderno hay que reemplazar el campo `path`.
+
+## [2026-09-07] Una sola clase para oso andino y oso negro americano
+
+- **Contexto**: El dataset proxy combina fotografías de oso andino de iNaturalist con imágenes de oso negro americano de ENA24. Son especies distintas, y el objetivo del trabajo es detectar únicamente la primera. Había que decidir si el modelo distingue entre ambas o si las trata como una sola categoría.
+- **Alternativas consideradas**:
+  1. Una clase única, `oso`, que agrupe las dos especies.
+  2. Dos clases, `oso_andino` y `oso_negro`, y quedarse con la primera al evaluar.
+  3. Usar solo iNaturalist como positivo y ENA24 únicamente como fuente de negativos.
+- **Decisión tomada**: Opción 1. El oso negro no está en el dataset porque interese detectarlo, sino porque aporta lo que iNaturalist no tiene: un animal grande de pelaje oscuro visto por una cámara trampa, de noche y en infrarrojo, que es la condición donde el modelo final tendrá que trabajar. Separar las especies obligaría al modelo a aprender una distinción que no sirve para nada en Angochagua, donde no hay osos negros, y repartiría los ejemplos entre dos clases con menos datos cada una. La opción 3 desperdicia 893 imágenes de cámara trampa con cajas ya anotadas, que es el recurso más escaso del proyecto.
+- **Consecuencias**: El modelo de la iteración 1 detecta osos en general y no oso andino en particular, y eso debe decirse en el Capítulo 3 sin rodeos. En la iteración 2, el ajuste fino con material de Angochagua especializa el modelo hacia la especie real, y como en la zona no hay otros úrsidos, la clase única deja de ser una aproximación y pasa a ser exacta. Si en la evaluación el modelo confunde con oso a otros animales oscuros, habrá que revisar si la clase única contribuyó a esa confusión. El archivo `dataset.yaml` declara `nc: 1` y `names: ['oso']`, así que cambiar de criterio implica volver a generar todas las etiquetas y repetir el entrenamiento.
+
+## [2026-09-07] Herramienta de anotación: X-AnyLabeling
+
+- **Contexto**: El anteproyecto menciona LabelImg como herramienta de etiquetado, anotada en su momento como tentativa. Había que corregir a mano las 1091 cajas propuestas por el modelo preentrenado y dibujar las que faltaban, sobre 1138 imágenes.
+- **Alternativas consideradas**:
+  1. LabelImg, la herramienta prevista.
+  2. Una plataforma de anotación en la nube con etiquetado asistido.
+  3. X-AnyLabeling, aplicación de escritorio con soporte de formato YOLO y trazado asistido por SAM.
+- **Decisión tomada**: Opción 3. LabelImg quedó descartada por un motivo técnico: el proyecto no recibe mantenimiento desde hace años y la versión que se instala desde pip falla al crear una caja en versiones recientes de Python, por un error de tipos en la capa de PyQt. Las soluciones que circulan pasan por volver a Python 3.9 o editar el código de la librería a mano, y ninguna de las dos parece razonable para una herramienta que iba a usarse durante horas. La opción 2 se descartó por licencias: la mayoría de las imágenes son CC BY-NC y los planes gratuitos de esas plataformas suelen publicar los proyectos, lo que abriría una discusión que con una herramienta local no existe. X-AnyLabeling funciona en local, se mantiene activo, lee y escribe etiquetas en formato YOLO e incorpora trazado asistido. Se instaló la versión 4.0.6 desde el paquete `x-anylabeling-cvhub` sobre Python 3.14.2, en un entorno virtual separado para que su dependencia de OpenCV no interfiera con la de Ultralytics.
+- **Consecuencias**: Hay que corregir la mención a LabelImg en el anteproyecto y en el marco teórico. La herramienta guarda su trabajo en archivos JSON propios junto a las imágenes y exporta a formato YOLO en un paso aparte, lo que obliga a mantener separadas las cajas propuestas y las revisadas, algo que además resultó útil para medir cuánto corrigió el revisor. El entorno virtual `venv_etiquetado` no se versiona.
+
+## [2026-09-09] Negativos de iNaturalist para romper la correlación entre fuente y etiqueta
+
+- **Contexto**: Con la primera versión del dataset, todas las imágenes de iNaturalist eran positivas y todos los negativos venían de ENA24. Un detector puede aprovechar esa correlación y aprender a reconocer el estilo fotográfico de cada fuente en lugar del animal, y como la correlación se repite en validación y prueba, las métricas no lo delatarían.
+- **Alternativas consideradas**:
+  1. Dejarlo así y declararlo como limitación.
+  2. Recuperar como negativos los rastros y paisajes de iNaturalist que ya estaban en disco.
+  3. Descargar además fotografías de otras especies del mismo hábitat, con los mismos criterios de licencia.
+- **Decisión tomada**: Se aplican las opciones 2 y 3 juntas. La 2 sola no basta, porque los rastros son primeros planos de suelo y de troncos, un subestilo tan reconocible que el modelo podría seguir resolviendo la tarea sin mirar animales. La 3 es la que de verdad obliga a distinguir un oso de otro animal dentro del mismo estilo de fotografía. Se descargaron 70 fotos de cada una de ocho especies, dentro del recuadro geográfico de Ecuador continental: lobo de páramo, tapir de montaña, puma y venado por ser fauna que comparte hábitat con el oso, y perro, vaca, caballo y oveja por ser los animales que una cámara trampa en zona de conflicto ganadero va a captar con más frecuencia. De las 560 descargadas se descartaron 171 tras revisarlas a ojo: 128 en entornos urbanos o interiores, que no se parecen en nada a lo que verá el modelo, 2 fotografías de pantallas de cámara y 41 archivos que resultaron ser GIF, sustituidos cada uno por un fotograma. El dataset queda con 611 negativos de iNaturalist frente a 1128 positivos de la misma fuente.
+- **Consecuencias**: El atajo deja de ser perfecto, aunque no desaparece: la proporción dentro de iNaturalist sigue inclinada hacia los positivos. Por eso la mitigación se completa del lado de la evaluación, con métricas separadas por fuente. Se añade una fuente más de imágenes al proyecto, con su propio registro de licencias que debe ir al anexo. Queda como trabajo opcional un experimento de ablación, entrenando solo con iNaturalist, solo con ENA24 y con ambas fuentes, y evaluando las tres sobre el conjunto de prueba de ENA24, que respondería con números si la combinación ayudó.
+
+## [2026-09-10] Agrupamiento por distancia de Hamming con umbral 12
+
+- **Contexto**: La división por hash exacto dejaba pasar fugas. El diagnóstico sobre la primera versión del dataset encontró 1999 pares de imágenes casi idénticas repartidas entre conjuntos distintos a distancia de Hamming menor o igual a 8, que implicaban a 408 de las 963 imágenes de validación y prueba. Al subir el umbral a 8 quedaban todavía casos claros: dos fotografías de la cámara PR6 tomadas a las 06:35:42 y 06:35:43 del mismo día, con el mismo venado, una en entrenamiento y otra en prueba, y dos de la cámara Cam1 separadas por nueve segundos con la misma cabalgata pasando.
+- **Alternativas consideradas**: umbrales de 0 (equivalente al hash exacto), 4, 8, 12 y 16 para la unión de grupos.
+- **Decisión tomada**: Umbral 12. Con 8 seguían apareciendo pares de la misma activación del sensor separados por segundos, comprobados uno a uno abriendo las imágenes y leyendo la marca de tiempo que la cámara graba sobre la fotografía. Con 12 desaparecen por completo. No se sube a 16 porque a esa distancia empiezan a emparejarse 216 pares de fotografías de iNaturalist que solo se parecen de lejos, señal de que el hash deja de discriminar y de que la unión arrastraría imágenes sin relación real.
+- **Consecuencias**: El conjunto de prueba ya no contiene ninguna imagen casi idéntica a una de entrenamiento, verificado con el mismo script que midió el problema. Las dos tablas, antes y después, sirven como evidencia en el Capítulo 2. El costo es que la unión es transitiva y forma algunos grupos grandes: el mayor reúne 391 imágenes nocturnas de ENA24, casi todas negativas, y cae entero en entrenamiento. Eso desequilibra un poco el reparto, aunque validación y prueba conservan 104 y 86 positivos nocturnos, suficientes para medir. Queda una fuga que ninguna agrupación por hash resuelve y que hay que declarar como limitación: la misma cámara de ENA24 aparece en entrenamiento y en prueba con el mismo fondo fijo, de modo que las métricas de la iteración 1 no miden generalización a cámaras nuevas. La referencia [15] del marco teórico documenta esa caída.
+
+## [2026-09-10] Evaluación con métricas separadas por fuente
+
+- **Contexto**: Ultralytics evalúa un conjunto completo y devuelve un número por métrica. El conjunto de prueba mezcla 260 imágenes de iNaturalist con 318 de ENA24, que son dos problemas distintos: fotografía con cámara en mano frente a cámara trampa fija, día frente a infrarrojo nocturno. Un promedio de los dos no describe bien ninguno.
+- **Alternativas consideradas**: reportar solo la métrica global, reportar solo la de ENA24 por ser el dominio de interés, o reportar las tres.
+- **Decisión tomada**: Se reportan las tres. La métrica sobre ENA24 es el resultado principal de la iteración 1, porque el dominio de cámara trampa es el del trabajo. La de iNaturalist se presenta como complementaria y optimista, ya que la correlación entre fuente y etiqueta la favorece. La global se incluye por comparabilidad con la literatura. Se añade además una métrica a nivel de imagen, que mide si el modelo pone al menos una detección por encima del umbral en una imagen que contiene oso, porque es la que corresponde al uso real de la aplicación, donde el investigador quiere saber qué carpetas revisar y no cuán ajustada quedó la caja.
+- **Consecuencias**: Obliga a preparar listas de rutas separadas por fuente y a correr la validación tres veces por modelo, lo que alarga poco el trabajo. El conjunto de prueba de ENA24 con oso tiene 145 imágenes, así que las cifras por fuente llevan un margen de error de varios puntos y deben presentarse como indicativas. Los criterios de éxito quedan formulados sobre la métrica de ENA24 y no sobre la global.
+
+---
+
+## Decisiones operativas
+
+Decisiones de menor alcance, registradas para trazabilidad. Ninguna requiere justificación extensa.
+
+| Fecha | Decisión | Motivo | Costo de revertir |
+|---|---|---|---|
+| 2026-09-03 | Las 761 imágenes con detección de confianza mayor o igual a 0.5 del modelo COCO se aceptan provisionalmente como positivas | Todas pasarán por revisión humana durante el etiquetado, así que la verificación no se omite, solo se difiere | Ninguno |
+| 2026-09-03 | Los fotogramas extraídos de archivos GIF se nombran `inat_<observacion>_<foto>_frame_NNN.jpg` y se tratan como fotografías de la misma observación | Conserva el vínculo con el registro de licencias y con la agrupación para la división de datos | Ninguno |
+| 2026-09-03 | Los negativos de la iteración 1 provienen de ENA24, priorizando perro, caballo y otras especies de tamaño medio y pelaje oscuro | Son negativos difíciles del mismo dominio de cámara trampa, comparables a los confusores esperados en Angochagua | Bajo |
+| 2026-09-03 | La carpeta `data/raw` se mantiene intacta tal como se descargó de cada fuente y todo lo derivado vive en otras carpetas | Trazabilidad del origen de cada imagen | Ninguno |
+| 2026-09-03 | Se usa el hash perceptual (`imagehash.phash`) para detectar imágenes casi idénticas | Identifica ráfagas de cámara trampa que el JSON de ENA24 no marca | Ninguno |
+| 2026-09-07 | Se toman 1200 negativos de ENA24, repartidos en cuota igual entre perro, coyote, lince rojo, venado, gato doméstico y caballo, con mitad nocturnas y un máximo de dos por ráfaga | Diversidad de especies y de condiciones de luz sin llenar la muestra con fotos casi iguales | Bajo, hay unos 5600 candidatos sin usar |
+| 2026-09-07 | El pre-etiquetado con el modelo COCO se corre con umbral de confianza 0.2 | Borrar una caja sobrante durante la revisión es más rápido que dibujar una que falta | Ninguno |
+| 2026-09-07 | Las cajas propuestas por el modelo se conservan en `labels_pre` y las revisadas se exportan a `labels_rev` | Permite medir cuántas cajas se corrigieron, se borraron y se dibujaron de nuevo, y da una copia de seguridad del trabajo manual | Ninguno |
+| 2026-09-09 | De cada GIF encontrado entre los negativos se conserva un solo fotograma, el central | Un negativo aporta la misma información en todos sus fotogramas, a diferencia de un positivo donde cada pose es un ejemplo nuevo | Ninguno |
+| 2026-09-09 | Entre los negativos de otras especies se excluyen los entornos urbanos e interiores y se conservan los rurales y naturales | Un perro dentro de un auto no se parece a nada de lo que verá una cámara trampa en Angochagua | Bajo |
+| 2026-09-09 | Los archivos de ENA24 se renombran con el prefijo `ena24_` al construir el dataset | La procedencia de cada imagen se lee en el nombre, sin consultar ninguna tabla | Ninguno |
+| 2026-09-10 | La división usa semilla fija 42 y queda registrada imagen por imagen en `division.csv` | Reproducibilidad, y las dos arquitecturas se comparan sobre exactamente la misma partición | Ninguno |
+| 2026-09-10 | Las etiquetas revisadas se copian a `docs/preparacion_datos/` para que entren en el control de versiones | Son horas de trabajo manual y `data/` está excluido del repositorio | Ninguno |
+| 2026-09-10 | Tras cada construcción del dataset se dibujan las cajas sobre una muestra de imágenes de cada fuente y se revisan a ojo | Una conversión de coordenadas mal hecha produce cajas válidas en formato pero en el lugar equivocado, y solo se detecta mirando | Ninguno |

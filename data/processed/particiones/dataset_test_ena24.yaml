@@ -1,0 +1,9 @@
+# Particion de evaluacion: conjunto 'test', fuente 'ena24'.
+# Generado por particiones_por_fuente.py a partir de division.csv.
+# En Kaggle, regenerar con --base o cambiar 'path' a mano.
+path: C:/Users/Martin/Desktop/8vo Semestre/Titulacion/Deteccion de Oso Andino/data/processed
+train: images/train
+val: particiones/listas/test_ena24.txt
+test: particiones/listas/test_ena24.txt
+nc: 1
+names: ['oso']
