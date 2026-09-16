@@ -54,3 +54,4 @@ venv_etiquetado/
 # OS specific files
 .DS_Store
 Thumbs.db
+data/dataset_proxy_v1.zip

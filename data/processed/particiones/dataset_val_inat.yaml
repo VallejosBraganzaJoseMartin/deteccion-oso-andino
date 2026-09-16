@@ -3,7 +3,7 @@
 # En Kaggle, regenerar con --base o cambiar 'path' a mano.
 path: C:/Users/Martin/Desktop/8vo Semestre/Titulacion/Deteccion de Oso Andino/data/processed
 train: images/train
-val: particiones/listas/val_inat.txt
-test: particiones/listas/val_inat.txt
+val: val_inat.txt
+test: val_inat.txt
 nc: 1
 names: ['oso']
