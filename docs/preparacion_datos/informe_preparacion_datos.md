@@ -57,6 +57,13 @@ Durante el etiquetado se descartaron 10 imágenes que habían entrado como posit
 Entre los negativos recién descargados se descartaron las 171 ya mencionadas.
 
 Un caso que conviene dejar escrito porque justifica una decisión metodológica: tres imágenes del lote de confianza baja se habían borrado de la carpeta de revisión durante la fase anterior, antes de quedar clasificadas, porque no encajaban con claridad en ninguna categoría. Como `data/raw` nunca se modifica, se recuperaron desde ahí y se registraron como duda, que es lo que corresponde cuando un revisor no puede decidir. Sin esa regla, el conteo habría quedado con un agujero sin explicación.
+### 3.1 Corrección posterior: imágenes con formato falso (15 de septiembre)
+ 
+Al verificar el dataset con Ultralytics, ya en la fase de modelado, apareció un problema que había pasado todas las etapas anteriores. La validación sobre la partición de prueba de iNaturalist descartó cinco imágenes con el aviso de que eran GIF, aunque su extensión era `.jpg`. El script `formatos_processed.py` abrió las 3832 imágenes de `data/processed` y encontró 35 que no eran JPEG por dentro, todas de iNaturalist: 14 GIF animados, de 2 a 117 fotogramas, y 21 PNG. Por conjunto: 23 en entrenamiento, 6 en validación y 6 en prueba. 11 de los 14 GIF tienen cajas de oso. El resto son negativos.
+ 
+No se habían detectado porque PIL y OpenCV abren el primer fotograma de un GIF sin dar ningún aviso, de modo que la detección zero-shot, el pre-etiquetado y X-AnyLabeling trabajaron sobre ese fotograma. Los 8 GIF de la fase de comprensión y los 41 de los negativos sí se habían detectado en revisiones anteriores. Ultralytics, en cambio, comprueba el formato real y descarta los GIF al escanear el dataset, sin detener el entrenamiento. Sin la corrección se habría entrenado y evaluado con 14 imágenes menos de las declaradas.
+ 
+Los 35 archivos se reescribieron como JPEG con el mismo nombre y las mismas dimensiones. En los GIF se conservó el primer fotograma, que es el que muestran por defecto las herramientas con que se trazaron las cajas (no se verificó a ojo caja por caja). Las etiquetas siguen valiendo y las cifras del dataset no cambian. `data/raw` no se tocó. No se extrajeron más fotogramas de estos GIF, a diferencia de los 8 de la fase de comprensión, porque serían casi duplicados de una imagen ya etiquetada. El inventario está en `docs/preparacion_datos/formatos_no_jpeg.txt`.
 
 ## 4. Construcción de los datos: etiquetado
 
@@ -168,6 +175,7 @@ Aunque la evaluación pertenece a una fase posterior, dos decisiones se tomaron 
 La primera es que cada modelo se evaluará tres veces: sobre el conjunto de prueba completo, sobre su parte de ENA24 y sobre su parte de iNaturalist. Las cifras de ENA24 son el resultado principal, porque el dominio de la cámara trampa es el del trabajo; las de iNaturalist se presentan como complementarias y optimistas, dado que la correlación entre fuente y etiqueta las favorece. Las listas de rutas para cada partición salen directamente de `division.csv`.
 
 La segunda es que, además de las métricas habituales de detección, se calculará el recall a nivel de imagen: la proporción de imágenes con oso donde el modelo pone al menos una detección por encima del umbral, sin importar cuán ajustada quede la caja. Es la métrica que corresponde al uso real de la aplicación, donde el investigador quiere saber qué archivos revisar.
+> **Nota posterior (fase de modelado).** Las listas de rutas por fuente se guardan en la raíz de `data/processed`, porque Ultralytics resuelve las rutas de una lista respecto de la carpeta donde está el archivo. En validación, iNaturalist no resultó optimista sino más difícil que ENA24 (revisión de D15 en `registro_decisiones.md`).
 
 ## 9. Limitaciones del dataset resultante
 
@@ -195,3 +203,4 @@ Los scripts de esta fase están escritos para reutilizarse en la iteración 2 ca
 - `docs/preparacion_datos/muestra_cajas/`, las imágenes con las cajas dibujadas encima.
 - `protocolo_anotacion.md`, las reglas con las que se trazaron las cajas.
 - Este informe.
+- `docs/preparacion_datos/formatos_no_jpeg.txt`, el inventario de las 35 imágenes con formato falso corregidas el 15 de septiembre.

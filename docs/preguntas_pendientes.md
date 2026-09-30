@@ -2,7 +2,7 @@
 
 Listado y seguimiento de dudas, preguntas de investigación, requerimientos por clarificar y bloqueantes.
 
-Última actualización: 10 de septiembre de 2026, al cerrar la fase de preparación de los datos.
+Última actualización: 30 de septiembre de 2026, al cerrar la conversación de modelado de YOLO26.
 
 ---
 
@@ -31,7 +31,11 @@ Estados posibles: Pendiente, En curso, Resuelta, Descartada. Las preguntas dirig
 | 19 | La misma cámara de ENA24 aparece en entrenamiento y en prueba con el mismo fondo fijo, así que las métricas de la iteración 1 no miden generalización a cámaras nuevas. En la iteración 2, ¿se reserva alguna cámara completa de Angochagua para el conjunto de prueba, aun a costa de tener menos eventos de oso para entrenar? | Metodología | Pendiente | Director | Depende de la respuesta a la pregunta 7 |
 | 20 | ¿Un modelo entrenado con imágenes bajo licencia CC BY-NC hereda la restricción de uso no comercial? No afecta al uso académico del trabajo, pero sí a una eventual publicación del modelo o del dataset | Legal / Redacción | Pendiente | Director | El estudiante no puede responderlo; es una consulta legal |
 | 21 | ¿Se acepta que los criterios numéricos de éxito se lean sobre la partición de ENA24 y no sobre la métrica global del conjunto de prueba? | Metodología | Pendiente | Director | Ver `criterios_exito_provisional.md`, apartado 1.0 |
-| 22 | ¿Conviene correr el experimento de ablación (entrenar solo con iNaturalist, solo con ENA24 y con ambas fuentes, evaluando las tres sobre el conjunto de prueba de ENA24)? Respondería con números si la combinación de fuentes ayudó | Técnica | Pendiente | Estudiante | Opcional, depende de las horas de GPU disponibles |
+| 22 | ¿Conviene correr el experimento de ablación (entrenar solo con iNaturalist, solo con ENA24 y con ambas fuentes, evaluando las tres sobre el conjunto de prueba de ENA24)? Respondería con números si la combinación de fuentes ayudó | Técnica | Pendiente | Estudiante | Prioritaria en la siguiente conversación: en validación, iNaturalist resultó más difícil que ENA24, así que ya no es obvio que la combinación ayude |
+| 23 | ¿Se acepta la revisión de la regla del umbral de confianza: fijarlo por el recall por imagen de 0.95, con las falsas alarmas como restricción, en lugar de por el recall de cajas de 0.90? | Metodología | Pendiente | Director | Ficha del 30 de septiembre en `registro_decisiones.md` y `criterios_exito_provisional.md`, apartado 1.1 |
+| 24 | ¿Se acepta YOLO26n (E1) como modelo de la aplicación, dado que en validación los tres tamaños empatan y nano es el pensado para equipos sin GPU? | Metodología | Pendiente | Director | Ficha del 30 de septiembre en `registro_decisiones.md` |
+| 25 | El anteproyecto compromete rotaciones como aumento de datos. La ablación mostró que empeoran el ajuste de las cajas y se descartaron. ¿Se acepta esa desviación documentada? | Metodología / Redacción | Pendiente | Director | `experimentos.md`, sección 1.4, y ficha del 16 de septiembre |
+| 26 | YOLO26m no convergió en 100 épocas. ¿Hay que entrenarlo más tiempo para compararlo con RT-DETR? | Técnica | Pendiente | Estudiante | Decidir al ver cómo se comporta RT-DETR |
 
 ## Resueltas
 

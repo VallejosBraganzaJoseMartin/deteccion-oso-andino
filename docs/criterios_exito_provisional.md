@@ -34,6 +34,8 @@ Cada modelo se evalúa tres veces, con listas de rutas separadas:
 
 Advertencia de tamaño muestral: el conjunto de prueba de ENA24 con oso tiene 145 imágenes. Un recall estimado sobre esa cantidad lleva un margen de varios puntos porcentuales, así que las cifras por fuente son indicativas y no se deben presentar con dos decimales como si fueran precisas.
 
+> **Nota 2026-09-30.** En validación, iNaturalist resultó más difícil que ENA24 para los seis modelos: con el mismo umbral, el recall por imagen fue de 0.88 a 0.93 en iNaturalist y de 0.955 en ENA24. La previsión de este apartado, que presentaba iNaturalist como la partición optimista, no se cumplió. Se revisa con el conjunto de prueba antes de redactar el capítulo 3.
+
 ### 1.1 Métricas
 
 - **Precisión (Precision) / Recall / F1-Score**:
@@ -53,10 +55,13 @@ Advertencia de tamaño muestral: el conjunto de prueba de ENA24 con oso tiene 14
   - Se mide por separado sobre los negativos del conjunto de prueba. En la iteración 1 hay dos grupos con carácter distinto: los de ENA24 (perro, coyote, lince rojo, venado, gato doméstico y caballo, en el mismo dominio de cámara trampa) y los de iNaturalist (lobo de páramo, tapir de montaña, puma, venado, perro, vaca, caballo y oveja, más rastros y paisajes). En la iteración 2, lo que aparezca en Angochagua, en particular ganado y perros ferales.
   - Meta provisional: menos del 10 % de esos negativos genera una detección por encima del umbral elegido.
   - Se reporta también el desempeño separando día y noche, porque el infrarrojo es la condición donde la literatura reporta más caídas y donde el dataset proxy es más débil para el oso andino.
+  
 
 - **Elección del umbral de confianza**:
   - No se usa el valor por defecto de la librería. Se elige recorriendo la curva de precisión contra recall sobre el conjunto de validación y tomando el umbral más alto que aún conserve un recall de 0.90.
   - El valor elegido se documenta, se usa en la evaluación de prueba y se fija como valor por defecto de la aplicación, donde el usuario podrá ajustarlo.
+  > **Revisión 2026-09-30.** La regla anterior (el umbral más alto que conserve un recall de cajas de 0.90 en validación) se aplicó a los seis modelos de YOLO26 de la iteración 1. En ENA24 dejó el recall por imagen entre 0.91 y 0.94, por debajo de la meta de 0.95 de este mismo apartado, con falsas alarmas de apenas 1 a 4 %. Es decir, la regla fijaba el umbral con una métrica secundaria y dejaba sin cumplir la principal, aunque había margen para cumplirla. Se sustituye por esta: sobre ENA24 de validación, el umbral más alto que cumpla a la vez un recall por imagen de 0.95 o más y un recall de cajas de 0.90 o más, siempre que las falsas alarmas queden por debajo del 10 % en los negativos de ENA24 y en los de iNaturalist, medidos por separado. Si esa condición no se cumple, se sube el umbral hasta el valor más bajo que la cumpla y se informa que el modelo no alcanza la meta de recall. El cambio se decidió sobre validación, sin haber tocado el conjunto de prueba.
+
 
 ## 2. Métricas de Eficiencia y Despliegue
 
@@ -110,3 +115,4 @@ Los tres criterios de este apartado ya se pueden contrastar con el dataset const
 4. ¿Cuántas imágenes de Angochagua se esperan y en qué proporción de día y noche? Sin ese dato, las metas de la iteración 2 son una conjetura.
 5. ¿Hay un requisito de tiempo de procesamiento por parte del usuario final (por ejemplo, revisar el material de una campaña completa en una jornada)?
 6. ¿Se acepta que los criterios numéricos se lean sobre la partición de ENA24 y no sobre la cifra global, con la justificación del apartado 1.0?
+7. ¿Se acepta la revisión del 30 de septiembre de la regla del umbral, que lo fija por el recall por imagen (0.95) y deja las falsas alarmas como restricción?
