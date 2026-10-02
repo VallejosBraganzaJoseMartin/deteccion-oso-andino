@@ -12,7 +12,8 @@ Se usaron dos fuentes, cada una para cubrir una parte del problema.
 
 **iNaturalist.** Fotografías de *Tremarctos ornatus* descargadas a través de la API pública (v1), con los filtros de grado de investigación, observaciones no marcadas como cautivas y licencias CC0, CC BY o CC BY-NC. Aporta los rasgos visuales de la especie, sobre todo la máscara facial y el pelaje, en entornos naturales. Por cada foto se guardó la licencia, la atribución que exige iNaturalist, el usuario, la fecha y las coordenadas en `registro_licencias.csv`.
 
-**ENA24 (LILA BC).** Dataset de cámaras trampa del este de Norteamérica con cajas delimitadoras ya anotadas en formato COCO Camera Traps. No contiene oso andino. Se incluye porque aporta lo que iNaturalist no tiene: el dominio de la cámara trampa, con más de la mitad de las imágenes en infrarrojo nocturno, y una especie de pelaje oscuro (oso negro americano) que sirve como aproximación visual. Aporta además negativos difíciles del mismo dominio, en particular perros y coyotes.
+**ENA24 (LILA BC).** Dataset de cámaras trampa del este de Norteamérica con cajas delimitadoras ya anotadas en formato COCO Camera Traps. No contiene oso andino. Se incluye porque aporta lo que iNaturalist no tiene: el dominio de la cámara trampa, con más de la mitad de las imágenes en infrarrojo nocturno, y una especie de pelaje oscuro (oso negro americano) que sirve como aproximación visual. Aporta además negativos difíciles del mismo dominio, en particular perros y coyotes. 
+*(Nota del 1 de octubre: en validación, los negativos de ENA24 que más falsas alarmas dieron fueron felinos y cuervos, no perros ni coyotes. El detalle está en `experimentos.md`.)*
 
 En la fase de preparación se añadió una tercera fuente, que no existía cuando se escribió este informe: fotografías de otras especies descargadas del mismo iNaturalist para usarlas como negativos. El motivo y el detalle están en `informe_preparacion_datos.md` y en la ficha del 9 de septiembre del registro de decisiones.
 
@@ -39,6 +40,8 @@ La categoría "American Black Bear" tiene 893 imágenes y 959 cajas, y todas est
 Los conteos por categoría del JSON no coinciden con lo que hay en disco, y la diferencia importa a la hora de elegir negativos. Una imagen puede tener anotaciones de dos categorías, así que las que contienen una persona se excluyeron de la descarga aunque también aparezca otro animal. El caso extremo es el caballo: el JSON declara 338 imágenes y en disco quedan 60, porque casi siempre hay alguien montándolo. Las cifras reales disponibles para negativos son perro 703, gato doméstico 482, venado 350, coyote 334, lince rojo 328 y caballo 60. No hay imágenes sin anotación, así que ENA24 no aporta imágenes vacías de cámara trampa.
 
 El JSON no incluye campos de ubicación, secuencia ni fecha, solo nombre de archivo y dimensiones. Esto se compensa con los grupos de duplicados descritos en la exploración.
+
+Licencia. ENA24 se distribuye bajo el Community Data License Agreement en su variante permisiva, versión 1.0 (CDLA-Permissive-1.0), según su ficha en lila.science, consultada el 30 de septiembre de 2026. La licencia permite usar, copiar, adaptar y analizar los datos, y no impone obligaciones sobre los resultados que se obtengan de procesarlos, como un modelo entrenado o sus métricas. Si se publicaran las imágenes, habría que incluir el nombre o el enlace de la licencia, avisar de las modificaciones (el cambio de nombre de los archivos y la conversión de las cajas) y conservar la atribución. LILA BC pide citar el artículo de Yousif, Kays y He (2019) en *IEEE Transactions on Circuits and Systems for Video Technology*.
 
 ## 4. Exploración
 
@@ -106,7 +109,17 @@ Un último detalle que apareció al revisar: hay observaciones cuyas fotos son c
 - El proxy no tiene imágenes vacías de cámara trampa (fondo sin animal), que son la mayoría del material real según el marco teórico. La decisión que se tomó en la fase de preparación fue no resolverlo ahora: las vacías son muy específicas de cada cámara y su fondo fijo, así que quinientas vacías de Norteamérica enseñan bastante menos que quinientas de Angochagua. La consecuencia es que en la iteración 1 no se puede medir la tasa de falsos positivos sobre escena vacía, que es el número que más le importará al investigador. Queda cubierto por el umbral de confianza ajustable y por la iteración 2.
 - Casi no hay fotos nocturnas de oso andino (4 en escala de grises). Las nocturnas del dataset son todas de oso negro americano.
 - ENA24 no trae metadatos de secuencia ni ubicación, lo que obliga al agrupamiento por hash. Ninguna agrupación por hash evita que la misma cámara aparezca en entrenamiento y en prueba con el mismo fondo, de modo que las métricas de la iteración 1 no miden generalización a cámaras nuevas. La referencia [15] documenta esa caída y hay que declararla como limitación.
-- Falta confirmar la licencia exacta de ENA24 en lila.science.
+- Licencia de ENA24: resuelto el 30 de septiembre (CDLA-Permissive-1.0, ver sección 3).
+
+**ENA24-detection (LILA BC)**
+ 
+- Fuente: https://lila.science/datasets/ena24detection
+- Licencia: Community Data License Agreement – Permissive, versión 1.0 (CDLA-Permissive-1.0), https://cdla.dev/permissive-1-0/
+- Imágenes usadas: 893 con oso negro americano (959 cajas) y 1200 negativos de otras especies; 2093 en total.
+- Modificaciones: archivos renombrados con el prefijo `ena24_`; cajas convertidas del formato COCO Camera Traps (píxeles, esquina y tamaño) al formato YOLO (normalizado, centro y tamaño). Detalle en `informe_preparacion_datos.md`.
+- Exclusión hecha por la fuente: LILA retira de la descarga las imágenes con personas.
+- Cita: Yousif, H., Kays, R. y He, Z. (2019). Dynamic Programming Selection of Object Proposals for Sequence-Level Animal Species Classification in the Wild. *IEEE Transactions on Circuits and Systems for Video Technology*. [Volumen y páginas: completar desde IEEE Xplore.]
+ 
 
 ## 9. Siguiente fase
 

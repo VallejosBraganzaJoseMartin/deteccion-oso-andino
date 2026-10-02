@@ -52,9 +52,10 @@ Advertencia de tamaño muestral: el conjunto de prueba de ENA24 con oso tiene 14
   - Estas cifras se comparan entre YOLO26 y RT-DETR bajo el protocolo de comparación justa descrito en `PLAN_FASES_SIGUIENTES.md`, sección 2.1.
 
 - **Tasa de falsos positivos en especies similares o fondos complejos**:
-  - Se mide por separado sobre los negativos del conjunto de prueba. En la iteración 1 hay dos grupos con carácter distinto: los de ENA24 (perro, coyote, lince rojo, venado, gato doméstico y caballo, en el mismo dominio de cámara trampa) y los de iNaturalist (lobo de páramo, tapir de montaña, puma, venado, perro, vaca, caballo y oveja, más rastros y paisajes). En la iteración 2, lo que aparezca en Angochagua, en particular ganado y perros ferales.
+  - Se mide por separado sobre los negativos del conjunto de prueba. En la iteración 1 hay dos grupos con carácter distinto: los de ENA24 (perro, coyote, lince rojo, venado y gato doméstico, con unas 225 imágenes cada uno; caballo, con 54; y 24 de otras especies, como cuervo americano y ardillas; todas en el mismo dominio de cámara trampa) y los de iNaturalist (lobo de páramo, tapir de montaña, puma, venado, perro, vaca, caballo y oveja, más rastros y paisajes). En la iteración 2, lo que aparezca en Angochagua, en particular ganado y perros ferales.
   - Meta provisional: menos del 10 % de esos negativos genera una detección por encima del umbral elegido.
   - Se reporta también el desempeño separando día y noche, porque el infrarrojo es la condición donde la literatura reporta más caídas y donde el dataset proxy es más débil para el oso andino.
+  > **Nota 2026-10-01.** En validación, con la regla B, las falsas alarmas se concentraron en animales oscuros y de cuerpo macizo: tapir de montaña (3 de 5 fotos con alarma en algún modelo), cuervo americano (2 de 2), un gato negro (una ráfaga de 3 fotos) y una vaca negra con blanco. Perros (1 de 34) y coyotes (0 de 17) casi no dispararon. Detalle en `experimentos.md`.
   
 
 - **Elección del umbral de confianza**:
@@ -68,12 +69,12 @@ Advertencia de tamaño muestral: el conjunto de prueba de ENA24 con oso tiene 14
 El alcance del anteproyecto descarta el procesamiento dentro de las cámaras y el tiempo real. La eficiencia importa por otra razón: la aplicación se ejecuta localmente en el equipo del investigador, que puede no tener GPU.
 
 - **Latencia de inferencia por imagen/frame**:
-  - Referencia medida: YOLO26n preentrenado en COCO procesó 1424 imágenes en unos 15 minutos en el equipo de desarrollo sin GPU, alrededor de 0.6 segundos por imagen. Es una medición aproximada, tomada del tiempo total de un script que además copiaba archivos, y sirve solo como punto de partida.
+  - Referencia medida el 30 de septiembre de 2026, de forma limpia, con `medir_velocidad_cpu.py`: en el equipo de desarrollo sin GPU, YOLO26n entrenado (E1) tarda 52 ms por foto (mediana, incluida la lectura del archivo; 73 ms en el percentil 95), YOLO26s 82 ms y YOLO26m 183 ms. La referencia anterior, de unos 0.6 s por imagen, salía del tiempo total de un script que además copiaba archivos, y queda sustituida.
   - Meta provisional: menos de 1 segundo por imagen en CPU con el modelo elegido para la aplicación. Se mide de forma limpia, sin contar carga del modelo ni escritura de resultados.
   - Para MP4 se mide el tiempo por minuto de video, que depende del intervalo de extracción de fotogramas.
 
 - **Consumo de recursos (RAM / GPU / CPU)**:
-  - La aplicación debe funcionar en un equipo de gama media sin GPU dedicada. Meta provisional: menos de 4 GB de RAM durante el procesamiento.
+  - La aplicación debe funcionar en un equipo de gama media sin GPU dedicada. Meta provisional: menos de 4 GB de RAM durante el procesamiento. Medido el 30 de septiembre: 412 MB de pico con E1 y 597 MB con medium.
   - El entrenamiento sí usa GPU en la nube (Kaggle) y no entra en este criterio.
   - Si el modelo con mejor mAP resulta demasiado pesado para la aplicación, se usan dos: el mejor para reportar resultados en el Capítulo 3 y una variante liviana para el despliegue. En ese caso hay que reportar las métricas de ambos y justificar la elección.
 

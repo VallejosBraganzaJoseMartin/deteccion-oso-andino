@@ -84,6 +84,8 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 
 > **Revisión 2026-09-16, tras E0.** Tiempo medido: YOLO26n tarda 31.7 s por época en T4 con validación incluida, unos 55 minutos por corrida de 100 épocas. Para s y m sigue sin haber medida; estimación corregida, 1.5 y 3 horas. Orden de ejecución: E1, E2 y E1b pueden correr en paralelo; E3 y E4 después, con el `degrees` que resulte.
 
+> **Revisión 2026-10-01.** E5 (resolución de 800 o 960 px) se descarta sin correrse (D20): el análisis de errores sobre validación mostró que casi ningún oso perdido es pequeño (ver "Análisis de errores sobre validación" en la parte 2). Se añaden tres corridas que no estaban en el plan, para la ablación por fuente (pregunta 22), con el protocolo 1.3 sin más cambio que los datos de entrenamiento: A1 y A1b (nano solo con ENA24, semillas 0 y 1) y A2 (nano solo con iNaturalist, semilla 0). Nombres: `a<N>[b]_<tamaño>_<fuente>_s<semilla>`.
+
 ### 1.6 Evaluación
 
 - Selección de modelo y de umbrales: solo sobre validación. El conjunto de prueba se usa una vez por modelo final, al terminar. Ninguna decisión de configuración se toma mirando prueba.
@@ -319,5 +321,153 @@ GPU consumida en la iteración hasta aquí: unas 11.5 horas.
 ### Modelo de la aplicación (2026-09-30)
  
 Se fija sobre validación, antes de tocar el conjunto de prueba: **E1 (YOLO26n, semilla 0) con umbral 0.363** (regla B). Motivos y alternativas en la ficha correspondiente de `registro_decisiones.md` (D19). Queda por medir su velocidad en CPU, que es el primer paso de la siguiente conversación.
+
+> **Revisión 2026-09-30.** Velocidad medida en el equipo local: 52 ms por foto y 412 MB de RAM como máximo (ver "Velocidad en CPU"). La decisión se mantiene.
  
+### Velocidad en CPU (2026-09-30)
+ 
+- **Herramienta**: `scripts/medir_velocidad_cpu.py`, en el equipo local: AMD Ryzen 5 3600 (6 núcleos, 12 hilos), Windows, Python 3.14.2, torch 2.12.1+cpu, Ultralytics 8.4.138. Ultralytics usó 8 hilos de PyTorch y el formato de memoria channels_last, lo que hace por su cuenta en CPU (verificado en el código; ver `ESTADO_PROYECTO.md`, sección 7).
+- **Protocolo**: un modelo por ejecución, para que la memoria de uno no se sume a la del otro. 100 fotos fijas de validación (50 de ENA24 y 50 de iNaturalist, semilla 0), después de 10 de calentamiento; 640 px; una foto por vez; umbral de la regla B de cada modelo. "Total" es el reloj alrededor de `predict` e incluye leer el JPEG; "red" es el tiempo de inferencia que guarda Ultralytics en `Results.speed`, que no incluye la lectura.
+
+| Modelo | Total, mediana | Total, p95 | Total, máximo | Red, mediana | Red, p95 | RAM con el modelo cargado | Pico de RAM |
+|---|---|---|---|---|---|---|---|
+| E1 nano | 51.9 ms | 73.1 ms | 85.5 ms | 34.4 ms | 60.3 ms | 240 MB | 412 MB |
+| E3 small | 81.8 ms | 108.4 ms | 127.2 ms | 67.6 ms | 96.7 ms | 273 MB | 492 MB |
+| E4 medium | 183.1 ms | 225.8 ms | 265.6 ms | 169.3 ms | 218.5 ms | 324 MB | 597 MB |
+ 
+- Por fuente (total, mediana y p95): E1, ENA24 53.6 y 70.4 ms, iNaturalist 50.0 y 79.2 ms; E3, 83.6 y 89.5 ms, 77.7 y 116.0 ms; E4, 184.6 y 195.1 ms, 178.3 y 240.6 ms. Carga del modelo: de 0.08 a 0.11 s. Primera foto, que prepara el predictor: de 0.17 a 0.33 s.
+- **Lectura**: los tres tamaños cumplen las metas de los criterios (menos de 1 s por foto y menos de 4 GB) con mucho margen. Con la misma precisión, nano es unas 3.5 veces más rápido que medium en tiempo total y unas 4.9 veces en tiempo de red. Confirma D19.
+- **Salvedad**: E1 se midió primero y su "resto" (lectura del JPEG y llamada) salió unos 4 ms mayor que en E3 y E4. Lo más probable es la caché de disco de Windows con las mismas fotos; no está verificado. Para comparar tamaños, la columna limpia es la de red.
+- **Coherencia**: la referencia del plan, 9 ms de red a 320 px, equivale a unos 36 ms a 640 px (cuatro veces los píxeles). Medido: 34.4 ms.
+- **Pendiente**: fotos de mayor resolución (las de Angochagua pueden pasar de 3 MP) y MP4.
+- **Archivos**: `docs/modelado/velocidad_cpu_e1_n_deg0_s0.csv`, `velocidad_cpu_e3_s_deg0_s0.csv` y `velocidad_cpu_e4_m_deg0_s0.csv`.
+
+### Análisis de errores sobre validación (2026-09-30 y 2026-10-01)
+ 
+- **Herramienta**: `scripts/listar_errores.py`, con el umbral de la regla B de cada modelo y la misma comparación que `calcular_umbral.py` (los conteos coinciden con `umbral_opcion_b.csv`). Salida: `docs/modelado/errores_val.csv`, con 79 fotos, y copias con las cajas dibujadas y mosaicos en `data/errores_val/`. Los mosaicos se revisaron a ojo con el estudiante. La especie de los negativos de ENA24 sale de `ena24.json` y la de los de iNaturalist, de la columna `taxon` de su `registro_licencias.csv`.
+
+Fotos con oso sin aviso, por modelo:
+ 
+| | E1 | E1b | E3 | E3b | E4 | E4b |
+|---|---|---|---|---|---|---|
+| ENA24 de día (52) | 5 | 4 | 3 | 5 | 6 | 3 |
+| ENA24 de noche (104) | 2 | 3 | 4 | 2 | 1 | 4 |
+| iNaturalist (170) | 15 | 21 | 12 | 17 | 17 | 20 |
+ 
+Falsas alarmas, por modelo:
+ 
+| | E1 | E1b | E3 | E3b | E4 | E4b |
+|---|---|---|---|---|---|---|
+| ENA24 de día (62) | 2 | 4 | 6 | 3 | 3 | 0 |
+| ENA24 de noche (120) | 1 | 2 | 3 | 1 | 1 | 2 |
+| iNaturalist (90) | 3 | 4 | 6 | 4 | 4 | 5 |
+ 
+Fotos distintas con error, según en cuántos de los seis modelos fallan:
+ 
+| | 1 | 2 | 3 | 4 | 5 | 6 | Total |
+|---|---|---|---|---|---|---|---|
+| Con oso, ENA24 de día | 7 | 2 | 1 | 0 | 0 | 2 | 12 |
+| Con oso, ENA24 de noche | 7 | 1 | 1 | 1 | 0 | 0 | 10 |
+| Con oso, iNaturalist | 12 | 5 | 2 | 6 | 4 | 5 | 34 |
+| Sin oso, ENA24 de día | 4 | 2 | 2 | 1 | 0 | 0 | 9 |
+| Sin oso, ENA24 de noche | 2 | 0 | 1 | 0 | 1 | 0 | 4 |
+| Sin oso, iNaturalist | 6 | 1 | 0 | 0 | 0 | 3 | 10 |
+ 
+Tamaño del oso: lado menor de la caja más pequeña de la foto, en píxeles tal como lo ve la red a 640 (el lado mayor de la foto pasa a 640):
+ 
+| | < 16 | 16–32 | 32–64 | ≥ 64 |
+|---|---|---|---|---|
+| ENA24, todas las fotos con oso | 0 | 0 | 18 | 138 |
+| ENA24, perdidas por algún modelo | 0 | 0 | 2 | 20 |
+| ENA24, perdidas por E1 | 0 | 0 | 1 | 6 |
+| iNaturalist, todas las fotos con oso | 2 | 4 | 27 | 137 |
+| iNaturalist, perdidas por algún modelo | 2 | 1 | 1 | 30 |
+| iNaturalist, perdidas por E1 | 2 | 1 | 0 | 12 |
+ 
+En las fotos con varios osos se mide el más pequeño, lo que exagera lo pequeño; solo 3 de las 56 fotos perdidas tienen más de un oso.
+ 
+- **Causas** (clasificación a ojo sobre los mosaicos):
+  - ENA24, 22 fotos: oso muy cerca de la cámara o cortado por el borde 14 (en 8 el oso ocupa más de un cuarto de la foto y 6 están cortados por el borde); mancha de luz en el lente y oso movido 1 (9472); oso completo a pleno sol en una ráfaga de 3 fotos, cada una perdida por un modelo distinto, 3 (9483 a 9485); lejanos 2 (9000 y 9002, misma escena al anochecer); otros 2. En todo ENA24, 312 de las 959 cajas ocupan más de un cuarto de la foto, así que 8 de 22 no es desproporcionado: describe cómo son los fallos, no prueba que los primeros planos sean más difíciles. Fallan en los seis modelos la 9472 y la 9618 (solo asoma el hocico).
+  - iNaturalist, 34 fotos: tapados por vegetación u objetos 13, poca visibilidad (contraluz, niebla, sombra o foto borrosa) 8, lejanos 5, primer plano 3, nadando 1, sin causa evidente 4. De las 15 que fallan en 4 modelos o más: tapados 7, poca visibilidad 4, lejanos 3, nadando 1. Hay dos observaciones con dos fotos cada una entre los fallos (268470121 y 351866524). El caso más llamativo es `inat_48660817_77200359`: un oso bien visible en la hierba al que los seis modelos dan casi 0.
+  - E1: en ENA24, 7 (primer plano o cortado 5, mancha de luz 1, lejano 1); en iNaturalist, 15 (tapados 6, poca visibilidad 4, lejanos 3, nadando 1, sin causa evidente 1).
+
+Falsas alarmas por tipo de negativo (fotos de validación):
+ 
+| Negativo | Fotos | Con alarma en algún modelo | Con alarma en E1 |
+|---|---|---|---|
+| Tapir de montaña (iNat) | 5 | 3 | 2 |
+| Cuervo americano (ENA24) | 2 | 2 | 1 |
+| Vaca (iNat) | 9 | 1 | 1 |
+| Gato doméstico (ENA24) | 22 | 3 | 1 |
+| Lince rojo (ENA24) | 73 | 7 | 1 |
+| Lobo de páramo (iNat) | 13 | 3 | 0 |
+| Perro (ENA24 34, iNat 3) | 37 | 2 | 0 |
+| Rastros y paisajes (iNat) | 23 | 1 | 0 |
+| Coyote, venado, caballo, puma, oveja y otras | 88 | 1 | 0 |
+ 
+- **Lectura de las falsas alarmas**: se concentran en animales oscuros y de cuerpo macizo. Las dos fotos de tapir de la misma observación (345028290) disparan en los seis modelos, con confianza de hasta 0.96; también dispara en los seis una vaca negra con blanco. Las 3 de gato son el mismo gato negro en una ráfaga (6621 a 6623). Tres alarmas no caen sobre un animal: una roca oscura, un zapato junto a un excremento y unas nubes. Los linces son 73 de los 182 negativos de ENA24 en validación (40 %), por el reparto por grupos, y en proporción no destacan. Perros (1 de 34) y coyotes (0 de 17), que el informe de comprensión anticipaba como negativos difíciles, casi no disparan.
+- **Umbral de E1 y sensibilidad**: fotos con alguna caja por encima del umbral (aunque la caja no caiga sobre el oso):
+
+| Umbral | Con oso, ENA24 | Con oso, iNat | Con oso, total | Falsas alarmas ENA24 | Falsas alarmas iNat |
+|---|---|---|---|---|---|
+| 0.363 (regla B) | 149/156 | 155/170 | 304/326 | 3/182 | 3/90 |
+| 0.20 | 151/156 | 158/170 | 309/326 | 3/182 | 4/90 |
+| 0.10 | 154/156 | 162/170 | 316/326 | 4/182 | 4/90 |
+| 0.05 | 154/156 | 165/170 | 319/326 | 6/182 | 5/90 |
+| 0.01 | 154/156 | 167/170 | 321/326 | 10/182 | 8/90 |
+ 
+  En la mayoría de las fotos perdidas el modelo pone una caja débil, y en los mosaicos esa caja suele caer sobre el oso. No se cambia el umbral: el proxy no tiene fotos vacías y con ellas las falsas alarmas reales pueden subir. Se revisa en la iteración 2.
+- **Etiquetas revisadas**: `inat_190412124_333788182_frame_000` (oso trepado y tapado por el tronco; la detección de la izquierda es una rama) e `inat_268470424_482568294` (oso tras unas barandas, no cautivo según su observación en iNaturalist). Las dos etiquetas se mantienen.
+- **Decisión**: D20, no se corre el experimento de resolución.
+- **Para la iteración 2**: incluir como negativos los animales oscuros que aparezcan en las cámaras de Angochagua.
+
+### Ablación por fuente: A1, A1b y A2 (2026-09-30 y 2026-10-01)
+ 
+- **Objetivo**: pregunta 22. Si las fotos de iNaturalist ayudan a detectar osos en cámara trampa, y qué datos conservar en el fine-tuning de la iteración 2.
+- **Cuaderno**: `notebooks/entrenar_yolo26.ipynb`, versión 2, con el parámetro `FUENTE`. Entorno igual que en septiembre: Kaggle, Tesla T4, Python 3.12.13, torch 2.10.0+cu128, Ultralytics 8.4.138, albumentations 2.0.8.
+- **Argumentos**: protocolo 1.3 con `degrees=0` y 100 épocas. Solo cambian los datos de entrenamiento. Validación durante el entrenamiento y elección de `best.pt` con la validación completa (598 imágenes), como en E1.
+- **Escaneo**: A1 y A1b, entrenamiento 1437 imágenes, 845 de fondo; A2, 1219 imágenes, 429 de fondo; validación 598 (272 de fondo), ENA24 338 (182), iNaturalist 260 (90). Cero corruptas. Optimizador elegido por `auto` en las tres: AdamW, lr 0.002, momentum 0.9 (iteraciones nominales 2300 y 2000, por debajo de 10000).
+
+| Corrida | Entrenado con | s/época | Minutos de entrenamiento | Mejor época (mAP50-95 global) | Última época |
+|---|---|---|---|---|---|
+| A1 `a1_n_ena24_s0` | ENA24, semilla 0 | 17.5 | 29.1 | 66 (0.5308) | 0.4917 |
+| A1b `a1b_n_ena24_s1` | ENA24, semilla 1 | 17.7 | 29.5 | 57 (0.5188) | 0.4930 |
+| A2 `a2_n_inat_s0` | iNaturalist, semilla 0 | 15.9 | 26.4 | 94 (0.6216) | 0.6112 |
+ 
+Validación con `best.pt` (celda 5):
+ 
+| Corrida | Partición | P | R | mAP50 | mAP50-95 |
+|---|---|---|---|---|---|
+| A1 | Global (598) | 0.836 | 0.668 | 0.743 | 0.532 |
+| A1 | ENA24 (338) | 0.887 | 0.918 | 0.942 | 0.730 |
+| A1 | iNaturalist (260) | 0.694 | 0.508 | 0.532 | 0.331 |
+| A1b | Global (598) | 0.890 | 0.670 | 0.745 | 0.519 |
+| A1b | ENA24 (338) | 0.927 | 0.920 | 0.932 | 0.716 |
+| A1b | iNaturalist (260) | 0.712 | 0.522 | 0.564 | 0.330 |
+| A2 | Global (598) | 0.862 | 0.709 | 0.791 | 0.622 |
+| A2 | ENA24 (338) | 0.739 | 0.612 | 0.637 | 0.470 |
+| A2 | iNaturalist (260) | 0.923 | 0.841 | 0.914 | 0.746 |
+ 
+Comparación con E1 y E1b (mismo protocolo, ambas fuentes):
+ 
+| Entrenado con | Corridas | ENA24 mAP50 | ENA24 mAP50-95 | iNat mAP50 | iNat mAP50-95 |
+|---|---|---|---|---|---|
+| Ambas fuentes | E1, E1b | 0.933–0.955 | 0.762–0.786 | 0.908–0.922 | 0.732–0.758 |
+| Solo ENA24 | A1, A1b | 0.932–0.942 | 0.716–0.730 | 0.532–0.564 | 0.330–0.331 |
+| Solo iNaturalist | A2 | 0.637 | 0.470 | 0.914 | 0.746 |
+ 
+- **Lectura provisional**:
+  - Sin fotos de cámara trampa, el modelo no sirve en cámara trampa: A2 cae a 0.64 de mAP50 en ENA24. Hipótesis sin verificar: 104 de las 156 fotos con oso de ENA24 en validación son nocturnas, e iNaturalist casi no tiene fotos de noche (4 en escala de grises en total).
+  - Sin iNaturalist, en ENA24 la detección (mAP50) queda dentro del rango de E1 y E1b, pero el ajuste de las cajas (mAP50-95) baja unos 0.05: por encima de la regla de ruido de 0.03 de las particiones por fuente, y sin que los rangos se toquen.
+  - Ninguna fuente estorba a la otra: en iNaturalist, entrenar con ambas da lo mismo que entrenar solo con iNaturalist.
+  - A la inversa, sin fotos de iNaturalist el modelo no sirve en iNaturalist: A1 y A1b caen a 0.33 de mAP50-95 en esa partición.
+- **Salvedades**:
+  - A1 y A1b eligieron su mejor época con la validación completa, que incluye las fotos de iNaturalist donde fallan. Sus mejores épocas (66 y 57) llegan mucho antes que las de E1 y E1b (99 y 95), y después la métrica global baja. Puede que una época elegida mirando solo ENA24 acortara la diferencia en mAP50-95. Se puede comprobar evaluando su `last.pt`.
+  - Cada modelo de la ablación entrena con cerca de la mitad de las imágenes de E1, con otra proporción de negativos (1.43 negativos por positivo con ENA24, 0.54 con iNaturalist, 0.92 en E1), y A2 tiene una sola semilla.
+  - Las P y R de Ultralytics están en el umbral de máximo F1 de cada modelo y no se comparan entre modelos.
+- **Respuesta provisional a la pregunta 22**: conservar ambas fuentes en el fine-tuning de la iteración 2. ENA24 no se puede quitar, porque sin ella se pierde la cámara trampa, e iNaturalist no cuesta nada, aporta la especie y probablemente mejora el ajuste de las cajas.
+- **Pendiente**: evaluación por imagen con la regla B, con ENA24 de día y de noche (siguiente conversación).
+- **GPU**: unos 85 minutos de entrenamiento entre las tres corridas.
+- **Archivos**: `docs/modelado/a1_n_ena24_s0_*`, `a1b_n_ena24_s1_*` y `a2_n_inat_s0_*` (`results.csv`, `args.yaml`, `val_por_particion.csv`). Pesos `*_best.pt` (5.4 MB cada uno) y `*_run.zip` fuera del repositorio.
+
 ---
