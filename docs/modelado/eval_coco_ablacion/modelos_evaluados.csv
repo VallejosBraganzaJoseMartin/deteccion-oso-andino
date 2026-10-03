@@ -1,0 +1,7 @@
+run_id,tipo,tamano,entrenado_con,degrees,semilla,pesos,ruta,clases
+coco_n_sinentrenar,coco,nano,"nada (pesos COCO, clase bear)",0,-1,COCO,yolo26n.pt,[21]
+e1_n_deg0_s0,yolo26,nano,ENA24 + iNaturalist,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e1_n_deg0_s0/e1_n_deg0_s0_best.pt,None
+e1b_n_deg0_s1,yolo26,nano,ENA24 + iNaturalist,0,1,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e1b_n_deg0_s1/e1b_n_deg0_s1_best.pt,None
+a1_n_ena24_s0,ablacion,nano,solo ENA24,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/a1_n_ena24_s0/a1_n_ena24_s0_best.pt,None
+a1b_n_ena24_s1,ablacion,nano,solo ENA24,0,1,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/a1b_n_ena24_s1/a1b_n_ena24_s1_best.pt,None
+a2_n_inat_s0,ablacion,nano,solo iNaturalist,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/a2_n_inat_s0/a2_n_inat_s0_best.pt,None

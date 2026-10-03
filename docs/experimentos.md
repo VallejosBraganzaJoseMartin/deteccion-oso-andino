@@ -22,6 +22,8 @@ Este documento tiene dos partes. La primera es el diseño de pruebas, escrito el
 
 > **Revisión 2026-09-16, tras E0.** Entorno real de Kaggle: Tesla T4 (el cuaderno ofrece dos, se usa una con `device=0`), Python 3.12.13, torch 2.10.0+cu128, Ultralytics 8.4.138. La ruta del dataset en el cuaderno es `/kaggle/input/datasets/josemartinvallejos/deteccionoso`. `/kaggle/input` es de solo lectura, así que Ultralytics no puede guardar la caché de etiquetas y lo avisa en cada corrida; no afecta. Kaggle trae instalado el paquete `albumentations`, ver revisión de 1.4.
 
+> **Revisión 2026-10-02.** Se añade como línea base el modelo COCO sin entrenar (`coco_n_sinentrenar`, pesos `yolo26n.pt`, solo la clase `bear` con `classes=[21]`). No se entrena: se evalúa con el mismo cuaderno y la misma regla de umbral que los demás modelos.
+
 ### 1.3 Protocolo común a todas las corridas de YOLO26
 
 Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, comprobados el 16 de septiembre. Solo se listan los que condicionan la comparación. Todo lo que no aparece aquí queda en su valor por defecto.
@@ -466,8 +468,84 @@ Comparación con E1 y E1b (mismo protocolo, ambas fuentes):
   - Cada modelo de la ablación entrena con cerca de la mitad de las imágenes de E1, con otra proporción de negativos (1.43 negativos por positivo con ENA24, 0.54 con iNaturalist, 0.92 en E1), y A2 tiene una sola semilla.
   - Las P y R de Ultralytics están en el umbral de máximo F1 de cada modelo y no se comparan entre modelos.
 - **Respuesta provisional a la pregunta 22**: conservar ambas fuentes en el fine-tuning de la iteración 2. ENA24 no se puede quitar, porque sin ella se pierde la cámara trampa, e iNaturalist no cuesta nada, aporta la especie y probablemente mejora el ajuste de las cajas.
-- **Pendiente**: evaluación por imagen con la regla B, con ENA24 de día y de noche (siguiente conversación).
+- **Evaluación por imagen:** hecha el 2 de octubre (sección siguiente). La respuesta provisional se confirma.
 - **GPU**: unos 85 minutos de entrenamiento entre las tres corridas.
 - **Archivos**: `docs/modelado/a1_n_ena24_s0_*`, `a1b_n_ena24_s1_*` y `a2_n_inat_s0_*` (`results.csv`, `args.yaml`, `val_por_particion.csv`). Pesos `*_best.pt` (5.4 MB cada uno) y `*_run.zip` fuera del repositorio.
+
+### Evaluación con la regla B del modelo COCO sin entrenar y de la ablación (2026-10-02)
+ 
+- **Herramientas:**
+  - `notebooks/evaluar_umbral_yolo26.ipynb`, versión 2, corrido en Kaggle (Tesla T4, Ultralytics 8.4.138).
+  - `scripts/calcular_umbral.py`, versión 2, en local.
+  - Archivos en `docs/modelado/eval_coco_ablacion/`.
+- **Modelos:** el COCO sin entrenar, E1 y E1b (control), y A1, A1b y A2. Los `last.pt` de A1 y A1b no se subieron, así que no se evaluaron.
+- **Control:** E1 y E1b repiten exactamente las cifras del 30 de septiembre:
+  - Umbrales A de 0.496 y 0.611.
+  - Umbrales B de 0.363 y 0.461.
+  - Los mismos conteos en las cinco particiones.
+  La versión 2 del cuaderno no cambió los resultados.
+- **Control de mAP50** (este cuaderno frente a Ultralytics):
+  - E1 y E1b: igual que en septiembre (hasta 0.0065 en global y en ENA24, y hasta −0.015 en iNaturalist).
+  - Ablación: difiere más: −0.013 y −0.014 en global para A1 y A1b; −0.017, −0.035 y −0.019 en iNaturalist para A1, A1b y A2; +0.0145 en ENA24 para A2.
+  - Las referencias de la ablación tienen 3 decimales. Hipótesis sin verificar: en particiones donde el modelo es malo, cambios pequeños de caja mueven más el AP (pregunta 30).
+  - No afecta al recall por imagen ni a las falsas alarmas.
+**Umbrales:**
+ 
+| Modelo | Umbral A | Umbral por recall de imagen | Umbral mínimo por falsas alarmas | Umbral B | Estado |
+|---|---|---|---|---|---|
+| COCO sin entrenar | 0.0014 | inalcanzable | 0.1688 | 0.1688 | Recall por imagen de 0.95 inalcanzable |
+| E1 | 0.4960 | 0.3629 | 0.0071 | 0.3629 | Cumple |
+| E1b | 0.6108 | 0.4608 | 0.0111 | 0.4608 | Cumple |
+| A1 | 0.4436 | 0.1931 | 0.7380 | 0.7380 | No cumple: falsas alarmas en iNaturalist |
+| A1b | 0.3294 | 0.1824 | 0.6419 | 0.6419 | No cumple: falsas alarmas en iNaturalist |
+| A2 | inalcanzable | inalcanzable | 0.0212 | 0.0212 | Ninguna meta de recall alcanzable |
+ 
+En el modelo COCO, el recall de cajas máximo en ENA24 con confianza de 0.001 o más es 0.914.
+ 
+**Regla B** (fotos con oso detectadas · falsas alarmas):
+ 
+| Modelo | ENA24 | iNaturalist | ENA24 de día | ENA24 de noche | P y R de cajas en ENA24 |
+|---|---|---|---|---|---|
+| COCO sin entrenar | 103/156 (0.66) · 18/182 | 135/170 (0.79) · 8/90 | 41/52 · 16/62 | 62/104 · 2/120 | 0.780 · 0.636 |
+| E1 | 149/156 (0.96) · 3/182 | 155/170 (0.91) · 3/90 | 47/52 · 2/62 | 102/104 · 1/120 | 0.950 · 0.932 |
+| E1b | 149/156 (0.96) · 6/182 | 149/170 (0.88) · 4/90 | 48/52 · 4/62 | 101/104 · 2/120 | 0.919 · 0.914 |
+| A1 | 126/156 (0.81) · 1/182 | 51/170 (0.30) · 8/90 | 37/52 · 1/62 | 89/104 · 0/120 | 0.977 · 0.796 |
+| A1b | 137/156 (0.88) · 4/182 | 74/170 (0.44) · 8/90 | 40/52 · 3/62 | 97/104 · 1/120 | 0.933 · 0.858 |
+| A2 | 110/156 (0.71) · 18/182 | 163/170 (0.96) · 6/90 | 32/52 · 11/62 | 78/104 · 7/120 | 0.629 · 0.660 |
+ 
+**mAP50 calculado por el cuaderno** (global · ENA24 · iNaturalist):
+- COCO: 0.789 · 0.737 · 0.846
+- E1: 0.926 · 0.960 · 0.892
+- E1b: 0.922 · 0.934 · 0.912
+- A1: 0.730 · 0.944 · 0.515
+- A1b: 0.731 · 0.933 · 0.529
+- A2: 0.785 · 0.652 · 0.895
+
+**Recall por imagen igualado** (`--max-falsas 1.0`: el umbral sale solo de las metas de recall en ENA24; archivo `umbral_solo_recall.csv`):
+ 
+| Modelo | Umbral | ENA24 · falsas alarmas | P · R de cajas en ENA24 | iNaturalist · falsas alarmas | ENA24 de día | ENA24 de noche |
+|---|---|---|---|---|---|---|
+| E1 | 0.3629 | 149/156 · 3/182 | 0.950 · 0.932 | 155/170 (0.91) · 3/90 | 47/52 · 2/62 | 102/104 · 1/120 |
+| E1b | 0.4608 | 149/156 · 6/182 | 0.919 · 0.914 | 149/170 (0.88) · 4/90 | 48/52 · 4/62 | 101/104 · 2/120 |
+| A1 | 0.1931 | 149/156 · 9/182 | 0.831 · 0.938 | 90/170 (0.53) · 18/90 | 45/52 · 5/62 | 104/104 · 4/120 |
+| A1b | 0.1824 | 149/156 · 8/182 | 0.857 · 0.926 | 100/170 (0.59) · 21/90 | 45/52 · 5/62 | 104/104 · 3/120 |
+ 
+Con el umbral mínimo (0.0001), ni el COCO ni A2 llegan a 0.95 en ENA24:
+- COCO: 146/156 con 112/182 falsas alarmas. No pone ninguna caja de oso en 10 fotos con oso.
+- A2: 132/156 (0.85) con 66/182 falsas alarmas, igual de día (44/52) que de noche (88/104).
+
+**Lectura:**
+ 
+- **Lo que aporta el entrenamiento.** Frente al modelo COCO, E1 pasa de 0.66 a 0.96 de recall por imagen en ENA24 y de 18 a 3 falsas alarmas de 182. La mayor diferencia está de noche (0.60 frente a 0.98). En iNaturalist la ganancia es menor (0.79 frente a 0.91, y 8 frente a 3 falsas alarmas de 90): el modelo COCO ya reconoce osos en fotografías comunes, pero no en el infrarrojo de cámara trampa.
+- **Sin cámaras trampa (A2):** no se alcanza la meta en cámara trampa, ni de día ni de noche. La hipótesis de que A2 fallaba sobre todo de noche no se sostiene.
+- **Sin iNaturalist (A1, A1b), en cámara trampa:** con el mismo recall por imagen, da algo más de falsas alarmas (8 y 9 frente a 3 y 6 de 182, con intervalos solapados) y cajas menos precisas (0.83 y 0.86 frente a 0.95 y 0.92). Coincide con la caída de mAP50-95 vista el 1 de octubre, pero la diferencia en falsas alarmas no está demostrada.
+- **Sin iNaturalist, en fotos comunes:** detecta 0.53 y 0.59 de los osos andinos y da 20 y 23 % de falsas alarmas con otras especies. Con la regla B completa, eso obliga a subir el umbral a 0.64–0.74, y el recall en ENA24 cae a 0.81–0.88.
+- **Lo que no separa la ablación:** cuánto se debe a las fotos de oso de iNaturalist y cuánto a las de otras especies.
+- **Respuesta a la pregunta 22:** conservar las dos fuentes en el fine-tuning de la iteración 2 (D21). ENA24 aporta la cámara trampa y la noche. iNaturalist aporta la especie y las otras especies andinas, que son las que verá el modelo en Angochagua.
+- **Salvedades:**
+  - La elección de época de A1 y A1b sigue sin comprobarse, aunque con el recall igualado su diferencia con E1 en ENA24 ya es pequeña.
+  - A2 tiene una sola semilla.
+  - Todo es sobre validación, y el umbral de cada modelo se eligió con esos mismos datos.
+ 
 
 ---

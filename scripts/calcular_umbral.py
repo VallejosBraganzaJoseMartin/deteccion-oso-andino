@@ -15,15 +15,27 @@ negativos de ENA24 y en los de iNaturalist, por separado. Si no se cumple, se
 sube el umbral hasta el valor más bajo que la cumpla y se informa que la meta
 de recall no se alcanza con ese modelo.
 
+Si un modelo no alcanza alguna de las dos metas de recall ni con la confianza
+mínima, se informa cuál falla y se reporta con el umbral más bajo que deja las
+falsas alarmas por debajo del 10 %: es el mayor recall que ese modelo da sin
+pasarse de falsas alarmas.
+
 No usa GPU ni imágenes: trabaja sobre los tres archivos que deja la celda 7 del
 cuaderno evaluar_umbral_yolo26.ipynb.
 
 Uso (desde la raíz del proyecto):
-    python scripts/umbral_opcion_b.py
-    python scripts/umbral_opcion_b.py --dir docs/modelado
+    python scripts\\calcular_umbral.py
+    python scripts\\calcular_umbral.py --dir docs\\modelado\\eval_coco_ablacion
 
-Probado solo con datos sintéticos de la misma estructura, no con los archivos
-reales.
+Versión 2 (2 oct 2026): distingue si lo inalcanzable es el recall de cajas, el
+recall por imagen o los dos (antes, cuando fallaba el de cajas, el mensaje
+culpaba al recall por imagen), y redondea hacia abajo el umbral de la regla A a
+los 4 decimales con que el cuaderno guarda las confianzas, para que la detección
+que lo define no se pierda por el redondeo. Las cifras de la regla B del 30 de
+septiembre no cambian: en los seis modelos el umbral B quedó por debajo del A y
+salió de las confianzas ya redondeadas. Solo la columna umbral_regla_A sale
+ahora con 4 decimales. El texto del estado usa los valores de --max-falsas y
+--recall-imagen. Probado con datos sintéticos.
 """
 
 import argparse
@@ -112,6 +124,25 @@ def por_particion(img, det, rid, t):
     return filas
 
 
+def decidir(t_a, t_img, t_fa, max_falsas=0.10, recall_imagen=0.95):
+    """Umbral final y estado, según qué metas de recall se pueden alcanzar."""
+    fa, ri = f"{100 * max_falsas:g} %", f"{recall_imagen:g}"
+    falla_cajas, falla_imagen = math.isnan(t_a), math.isnan(t_img)
+    if falla_cajas and falla_imagen:
+        return t_fa, (f"inalcanzables el recall de cajas de 0.90 y el recall por imagen de {ri} en ENA24; "
+                      f"se informa con el umbral mínimo que deja las falsas alarmas < {fa}")
+    if falla_cajas:
+        return t_fa, ("inalcanzable el recall de cajas de 0.90 en ENA24 (ni con la confianza mínima); "
+                      f"se informa con el umbral mínimo que deja las falsas alarmas < {fa}")
+    if falla_imagen:
+        return t_fa, (f"inalcanzable el recall por imagen de {ri} en ENA24: hay fotos con oso sin ninguna "
+                      f"detección; se informa con el umbral mínimo que deja las falsas alarmas < {fa}")
+    t_rec = min(t_a, t_img)
+    if t_rec >= t_fa:
+        return t_rec, f"cumple las dos metas de recall con falsas alarmas < {fa}"
+    return t_fa, f"no cumple: para bajar de {fa} de falsas alarmas hay que perder recall"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="docs/modelado", help="Carpeta con los archivos de la celda 7")
@@ -154,22 +185,25 @@ def main():
         col = "maxconf_" + rid
         fila_a = met[(met.run_id == rid) & (met.conjunto == args.conjunto) & (met.particion == "ena24")]
         t_a = float(fila_a.umbral.iloc[0])
+        if not math.isnan(t_a):
+            # Las confianzas de umbral_imagenes.csv y umbral_detecciones.csv.gz vienen con 4 decimales y el
+            # umbral A con todos los suyos: sin esto, la detección que define el umbral (p. ej. 0.376121,
+            # guardada como 0.3761) quedaría por debajo de él y se perdería una foto o una caja.
+            t_a = math.floor(t_a * 1e4 + 1e-9) / 1e4
         t_img = umbral_recall_imagen(e_pos[col].values, args.recall_imagen)
-        t_rec = min(t_a, t_img) if not math.isnan(t_img) else float("nan")
         t_fa = max(umbral_min_falsas(g[col].values, args.max_falsas) for g in negativos.values())
-        if math.isnan(t_rec):
-            t_final, estado = t_fa, "recall por imagen inalcanzable: hay fotos con oso sin ninguna detección"
-        elif t_rec >= t_fa:
-            t_final, estado = t_rec, "cumple las dos metas de recall con falsas alarmas < 10 %"
-        else:
-            t_final, estado = t_fa, "no cumple: para bajar de 10 % de falsas alarmas hay que perder recall"
+        t_final, estado = decidir(t_a, t_img, t_fa, args.max_falsas, args.recall_imagen)
         resumen.append({"run_id": rid, "umbral_regla_A": t_a, "umbral_recall_imagen": t_img,
                         "umbral_min_falsas": t_fa, "umbral_regla_B": t_final, "estado": estado})
         filas += por_particion(img, det, rid, t_final)
 
     res = pd.DataFrame(resumen)
-    print("Umbrales (regla A = recall de cajas 0.90; regla B = la de esta revisión):")
-    print(res.round(4).to_string(index=False))
+    print("Umbrales (regla A = recall de cajas 0.90; regla B = la de esta revisión; NaN = inalcanzable):")
+    with pd.option_context("display.max_colwidth", 200, "display.width", 250):
+        print(res.drop(columns="estado").round(4).to_string(index=False))
+    print("\nEstado de cada modelo:")
+    for r in res.itertuples():
+        print(f"   {r.run_id:<22} {r.estado}")
 
     tabla = pd.DataFrame(filas)
     def frac(k, n, lo, hi):
