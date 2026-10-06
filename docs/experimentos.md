@@ -24,6 +24,8 @@ Este documento tiene dos partes. La primera es el diseño de pruebas, escrito el
 
 > **Revisión 2026-10-02.** Se añade como línea base el modelo COCO sin entrenar (`coco_n_sinentrenar`, pesos `yolo26n.pt`, solo la clase `bear` con `classes=[21]`). No se entrena: se evalúa con el mismo cuaderno y la misma regla de umbral que los demás modelos.
 
+> **Revisión 2026-10-05.** Desde el 3 de octubre la imagen de Kaggle es otra: Python 3.13.15, torch 2.11.0+cu128, numpy 2.1.3 y controlador con CUDA 13.0. Todo lo que se corra con Ultralytics desde ahora usará esa imagen, y todavía no se ha comprobado que Ultralytics 8.4.138 dé lo mismo en ella: E1 y E1b como control en cada evaluación lo dirán. RT-DETRv3 corre con PaddlePaddle 3.3.0 en un entorno virtual aparte, con Python 3.12.13 (sección de RT-DETRv3 en la parte 2). Para medir RT-DETRv3 en CPU hará falta otro Python en el equipo local, porque PaddlePaddle no tiene versión para Python 3.14.
+
 ### 1.3 Protocolo común a todas las corridas de YOLO26
 
 Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, comprobados el 16 de septiembre. Solo se listan los que condicionan la comparación. Todo lo que no aparece aquí queda en su valor por defecto.
@@ -42,6 +44,11 @@ Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, compro
 | `amp` | True | Precisión mixta |
 
 > **Revisión 2026-09-16, tras E0.** Con `optimizer=auto` Ultralytics ignora `lr0` y `momentum` y elige el optimizador según las iteraciones nominales, `ceil(n_train / nbs) × epochs` con `nbs=64` (regla en `ultralytics/engine/trainer.py`, versión 8.4.138): AdamW con `lr=0.002 × 5 / (4 + nc)` si son 10000 o menos, MuSGD con lr 0.01 si son más. Para este dataset son 42 × 100 = 4200, así que **todas las corridas de 100 épocas usan AdamW con lr 0.002 y momentum 0.9**, lo mismo que E0. Se añade `cache="ram"` al protocolo: guarda las imágenes reescaladas en memoria (2.2 GB para train) y no altera el resultado, aunque Ultralytics avisa de que puede hacer el entrenamiento no determinista. En lugar de perseguir un determinismo que en GPU no está garantizado ni con `deterministic=True`, se mide el ruido entre corridas con una repetición de la línea base con otra semilla (E1b). Ultralytics usa 2 procesos de carga de datos en la configuración T4 x2 de Kaggle (4 CPU repartidas entre 2 GPU), lo que probablemente limita la velocidad del modelo nano; queda anotado por si conviene probar la configuración P100 (1 GPU, 4 procesos) para los tamaños mayores.
+
+> **Revisión 2026-10-05.** Tres datos de Ultralytics 8.4.138, verificados en el código, que importan para comparar con RT-DETRv3:
+> - Con `batch=16`, Ultralytics acumula los gradientes de 4 lotes y actualiza los pesos cada 64 fotos (`nbs=64`; `engine/trainer.py`, línea 302).
+> - La mejor época (`best.pt`) se elige solo por mAP50-95: `fitness` le da peso 1 y 0 a las demás métricas (`utils/metrics.py`). Es el mismo criterio con que PaddleDetection elige `best_model`.
+> - Con 200 épocas, `optimizer=auto` seguiría eligiendo AdamW con lr 0.002 (42 × 200 = 8400 iteraciones nominales, por debajo de 10 000). Con 239 épocas o más pasaría a MuSGD.
 
 
 ### 1.4 Aumento de datos
@@ -66,6 +73,8 @@ El sobremuestreo de la clase rara que menciona el marco teórico (1.3.3) no se a
 
 > **Revisión 2026-09-16, tras E0.** En Kaggle está instalado `albumentations`, y cuando Ultralytics lo detecta añade cuatro transformaciones al pipeline de entrenamiento: `Blur`, `MedianBlur`, `ToGray` y `CLAHE`, cada una con probabilidad 0.01 (lo imprime al inicio como `albumentations: ...`). En el equipo local no ocurre porque el paquete no está instalado. Se conservan, porque su efecto es marginal y quitarlas exigiría desinstalar el paquete en cada sesión, pero forman parte del protocolo y se declaran. Versión de `albumentations` en Kaggle: 2.0.8.
 
+> **Revisión 2026-10-05.** RT-DETRv3 usa el aumento de datos de su receta oficial (`configs/rtdetrv3/_base_/rtdetr_reader.yml`), no el de Ultralytics: cambios de color con probabilidad 0.8, expansión del lienzo, recorte aleatorio con probabilidad 0.8, volteo horizontal y una escala por lote elegida al azar entre 480 y 800 px, sin conservar la proporción. No usa Mosaic ni rotación. Se deja como viene, porque cambiarlo sería modificar el método (D23), y la diferencia se declara.
+
 ### 1.5 Corridas planificadas
 
 | ID | Modelo | `degrees` | Épocas | Propósito | Estado |
@@ -88,6 +97,8 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 
 > **Revisión 2026-10-01.** E5 (resolución de 800 o 960 px) se descarta sin correrse (D20): el análisis de errores sobre validación mostró que casi ningún oso perdido es pequeño (ver "Análisis de errores sobre validación" en la parte 2). Se añaden tres corridas que no estaban en el plan, para la ablación por fuente (pregunta 22), con el protocolo 1.3 sin más cambio que los datos de entrenamiento: A1 y A1b (nano solo con ENA24, semillas 0 y 1) y A2 (nano solo con iNaturalist, semilla 0). Nombres: `a<N>[b]_<tamaño>_<fuente>_s<semilla>`.
 
+> **Revisión 2026-10-05.** RT-DETRv3-R18 se registra como E6 (semilla 0) y E6b (semilla 1), con una corrida corta de verificación, E6v. No sigue el protocolo 1.3: usa la receta oficial de RT-DETRv3 con los cambios de D23. Lo común con YOLO26 son los datos y la división, los pesos de partida COCO, las 100 épocas, la mejor época por mAP50-95 de validación y la evaluación. Su apartado en el plan es el 2.2, no el 2.3 que dice el párrafo de esta sección que empieza "RT-DETRv3 tiene su propio apartado". Detalle en la parte 2.
+
 ### 1.6 Evaluación
 
 - Selección de modelo y de umbrales: solo sobre validación. El conjunto de prueba se usa una vez por modelo final, al terminar. Ninguna decisión de configuración se toma mirando prueba.
@@ -95,6 +106,8 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 - Recall a nivel de imagen (D15): proporción de imágenes con oso en las que el modelo pone al menos una detección por encima del umbral de operación, y proporción de negativos con alguna detección (falsas alarmas). El umbral de operación se elige sobre validación. Requiere un script propio a partir de las predicciones, pendiente de escribir.
 - Además: número de parámetros, tiempo de inferencia por imagen en CPU local, y ruta de los pesos.
 - Las métricas de la iteración 1 son preliminares (D1). El resultado principal es el de ENA24 (D15). Limitación declarada: la misma cámara de ENA24 aparece en entrenamiento y prueba con el mismo fondo, así que no se mide generalización a cámaras nuevas (D13).
+
+> **Revisión 2026-10-05.** RT-DETRv3 no se valida con Ultralytics. Sus detecciones de validación se exportan desde PaddleDetection y el cuaderno de evaluación las procesa igual que las de YOLO26: mismo emparejamiento, misma regla B y mismas particiones. Para comparar el mAP entre arquitecturas se usa el que calcule el cuaderno con el mismo código para todos los modelos (pregunta 32). El de cada librería queda como control.
 
 ### 1.7 Qué se anota por corrida
 
@@ -547,5 +560,109 @@ Con el umbral mínimo (0.0001), ni el COCO ni A2 llegan a 0.95 en ENA24:
   - A2 tiene una sola semilla.
   - Todo es sobre validación, y el umbral de cada modelo se eligió con esos mismos datos.
  
+ ### RT-DETRv3-R18 con la implementación oficial (2026-10-03 a 2026-10-05)
+
+- **Objetivo:** la comparación de arquitecturas que dispuso el director (D9). El par emparejado en parámetros es RT-DETRv3-R18 frente a YOLO26m (E4 y E4b).
+- **Fuentes verificadas el 3 de octubre:**
+  - Repositorio oficial `clxia12/RT-DETRv3`, implementación del artículo de WACV 2025, licencia Apache-2.0, último commit `349e7d99a5065e7b684118912e6a74178d4f4625` del 18 de marzo de 2025. Es PaddlePaddle, con una copia de PaddleDetection dentro. No hay versión en PyTorch (issue #6, abierto).
+  - Configuración `configs/rtdetrv3/rtdetrv3_r18vd_6x_coco.yml` y sus bases (`optimizer_6x.yml`, `rtdetrv3_r50vd.yml` y `rtdetr_reader.yml`). Según el README, R18 tiene 20 M de parámetros, 60 GFLOPs y 48.1 AP en COCO.
+  - `requirements.txt` no fija la versión de Paddle. En PyPI, `paddlepaddle-gpu` llega hasta la 2.6.2. La 3.3.0 está en el índice propio de Paddle, para Python 3.9 a 3.13.
+  - Ultralytics 8.4.138 solo trae el RT-DETR original (`rtdetr-l`, `rtdetr-x`, `rtdetr-resnet50` y `rtdetr-resnet101`), con pesos para L y X. No hizo falta usarlo (D22).
+- **Receta oficial, E6 y YOLO26** (verificado en las configuraciones de RT-DETRv3 y en el código de Ultralytics 8.4.138):
+
+| Aspecto | Receta oficial de RT-DETRv3-R18 | E6 | YOLO26 (protocolo 1.3) |
+|---|---|---|---|
+| Pesos de partida | ImageNet (ResNet18-vd) | COCO (RT-DETRv3-R18 del README) | COCO |
+| Épocas | 72 | 100 | 100 |
+| Fotos por actualización de pesos | 64 (4 GPU × 16) | 8 (2 T4 × 4) | 64 (lotes de 16, gradientes acumulados) |
+| Optimizador | AdamW, lr 0.0004, weight decay 0.0001, recorte del gradiente a norma 0.1 | Igual, con lr 0.00005 (0.0004 × 8 / 64) | AdamW, lr 0.002, elegido por `optimizer=auto` |
+| Tasa de aprendizaje | Calentamiento lineal de 2000 pasos y después constante | Igual: 2000 pasos son unas 6 épocas | Calentamiento de 3 épocas y bajada lineal hasta el 1 % |
+| EMA de los pesos | Sí, 0.9999 | Igual | Sí, el de Ultralytics |
+| Normalización | BatchNorm sincronizada entre GPU | Sincronizada entre las 2 T4 (8 fotos) | BatchNorm por lote (16 fotos) |
+| Precisión | Completa | Completa | Mixta |
+| Aumento de datos | Color (p 0.8), expansión, recorte (p 0.8), volteo, escala de 480 a 800 px | Igual | Sección 1.4 |
+| Evaluación | Foto reescalada a 640 × 640 sin conservar la proporción | Igual | 640 conservando la proporción, con bordes |
+| Mejor época | mAP50-95 de validación (pycocotools), pesos EMA | Igual, elegida entre sesiones | mAP50-95 de validación (`fitness`) |
+| Fotos sin oso | Descartadas salvo con `allow_empty: true` | Incluidas | Incluidas |
+
+- **Entorno en Kaggle:** T4 x2, entorno virtual con Python 3.12.13 (instalado con `uv`), PaddlePaddle 3.3.0 para CUDA 12.6 desde el índice de Paddle y 67 paquetes con versión fija (`requisitos_rtdetrv3.txt`). Paddle funciona en la T4: su lista de arquitecturas compiladas incluye la 7.5. Detalle en `ESTRUCTURA_Y_SCRIPTS.md`, sección 3.
+- **Problemas resueltos para que corriera:**
+
+| # | Problema | Dónde apareció | Arreglo |
+|---|---|---|---|
+| 1 | PaddlePaddle instalado en el Python de Kaggle reemplaza las librerías de CUDA y cuDNN de torch por versiones que pip marca como incompatibles | Kaggle, 3 oct | Paddle va siempre en un entorno virtual aparte |
+| 2 | El código necesita numpy anterior a 2 (`imgaug` usa `np.sctypes`), y la imagen nueva de Kaggle trae Python 3.13 con numpy 2.1.3. numpy 1.26 no tiene versión para Python 3.13 | CPU y Kaggle, 3 oct | Entorno virtual con Python 3.12.13 y numpy 1.26.4 |
+| 3 | setuptools 81 o posterior ya no trae `pkg_resources`, que PaddleDetection importa | CPU, 3 oct | setuptools 80.10.2 |
+| 4 | El `sklearn==0.0` de `requirements.txt` instala un paquete vacío, y el código hace `import sklearn` | CPU, 3 oct | scikit-learn 1.9.1 |
+| 5 | El enlace de Baidu a los pesos COCO de R18 da 404 | Kaggle, 3 oct | Enlace de Google Drive del README, con el md5 anotado |
+| 6 | El entorno virtual hereda el `MPLBACKEND` que Kaggle fija para el cuaderno, y matplotlib no lo reconoce | Kaggle, 3 oct | `MPLBACKEND=Agg` en cada llamada |
+| 7 | `--enable_ce` necesita un valor y solo fija la semilla 0 | CPU, 3 oct | Lanzador propio `entrenar_con_semilla.py` |
+| 8 | `print_params=True` falla con Paddle 3 (`IndexError`) | CPU, 3 oct | Parámetros contados aparte |
+| 9 | `infer.py` baja una fuente tipográfica de Baidu para dibujar las cajas, y la configuración de prueba pide el `instances_val2017.json` de COCO | CPU, 3 oct | Script propio que imprime las cajas sin dibujarlas |
+| 10 | El lector COCO descarta las imágenes sin cajas | Lectura del código, 3 oct | `allow_empty: true`. El registro confirma 2656 imágenes válidas y 0 descartadas |
+| 11 | Un lote sin ninguna caja hace fallar al modelo (`paddle.concat` con `None` en `rtdetr_transformerv3.py`) | CPU, 3 oct | Parche versión 1 (saltar el lote) y, desde el 5 de octubre, versión 2 (entrenarlo sin denoising, D24) |
+| 12 | Con memoria compartida, las fotos sin oso tumban la carga de datos (`Tensor holds no memory`) | Kaggle, 5 oct | `use_shared_memory: false` |
+| 13 | Sin memoria con 16 fotos por GPU: pidió 2.86 GiB con 12.55 GiB ocupados | Kaggle, 5 oct | 8 fotos |
+| 14 | Sin memoria con 8 fotos por GPU: pidió 1.43 GiB con 13.82 GiB ocupados | Kaggle, 5 oct | 4 fotos por GPU |
+| 15 | En las opciones `-o`, `5e-05` se lee como texto (YAML 1.1) | CPU, 5 oct | Tasa escrita con decimales fijos |
+
+  Seis aparecieron solo en Kaggle, siete solo en las pruebas previas en CPU, uno en los dos sitios y uno leyendo el código. Paddle imprime la memoria en "GB", pero son GiB: 16 fotos × 8 cabezas × 2450 × 2450 consultas × 4 bytes dan exactamente 2.862215 GiB, la cifra del error.
+
+- **Prueba con los pesos COCO sin entrenar** (3 de octubre, 1 T4, tres fotos de entrenamiento): en la foto de iNaturalist detecta `bear` (0.86 la caja más alta). En la de ENA24 con oso, ninguna de las 5 cajas de mayor puntaje es `bear` (la primera es `elephant`, con 0.26). En la de ENA24 sin oso, `bear` con 0.54, una falsa alarma. Es el mismo patrón de YOLO26n sin entrenar: los modelos COCO no conocen la cámara trampa.
+- **Parámetros** (configuración de una clase, contados en CPU con PaddleDetection): 22.214 M al entrenar. ResNet18-vd 11.200 M, codificador híbrido 4.965 M, transformer 4.781 M y rama auxiliar (`aux_o2m_head`) 1.268 M. Al detectar se usan unos 20.1 M, porque la rama auxiliar y las cabezas del codificador de los grupos extra de consultas (unos 0.8 M) solo existen en el entrenamiento. Emparejado con YOLO26m (20.35 M).
+
+#### E6v. Corrida corta de verificación (2026-10-05)
+
+- Cuaderno interactivo `rtdetrv3_entorno` en Kaggle. 1 T4, 4 fotos por paso, lr 0.000025 (0.0004 × 4 / 64), precisión completa, semilla 0 con el lanzador y parche versión 1. 3 épocas, con validación en cada una.
+- Comando: `entrenar_con_semilla.py RT-DETRv3 0 -c rtdetrv3_r18vd_oso.yml --eval -o epoch=3 save_dir=… log_iter=20`.
+- Carga: 2656 imágenes de entrenamiento válidas y 0 descartadas; 598 de validación.
+- 664 pasos por época. Las 3 épocas (1992 pasos) caen dentro del calentamiento de 2000 pasos.
+- El parche saltó 106 lotes sin cajas en 3 épocas, unos 35 por época: cerca del 11 % de las fotos sin oso de cada época. Por eso se escribió la versión 2.
+- Pérdida total: de 52.3 en el primer registro a 19.0 en el último, sin NaN.
+- Tiempo: 719 y 710 s por época con la validación; 36.1 minutos en total.
+- Memoria: 10 641 MiB como máximo según nvidia-smi (la T4 tiene 15 360). Según PaddleDetection, 10 134 MiB reservados y 8 372 MiB ocupados como máximo (su registro dice "MB", pero divide entre 1024²).
+- Validación según PaddleDetection, época por época:
+
+| Época | mAP50-95 | mAP50 | AR (100 detecciones) |
+|---|---|---|---|
+| 1 | 0.088 | 0.111 | 0.665 |
+| 2 | 0.365 | 0.475 | 0.863 |
+| 3 | 0.544 | 0.681 | 0.883 |
+
+- Detecciones exportadas: 179 400 con confianza ≥ 0.001 (300 por foto, las 598 fotos). Confianza máxima por foto: mediana 0.32 y máximo 0.69, todavía en calentamiento.
+- La evaluación de PaddleDetection dio 23.5 fotos por segundo en la T4, con lotes de 16. No se compara con la velocidad en CPU.
+- **Lectura:** solo comprueba que el entorno entrena, evalúa y exporta. No es un resultado: la tasa seguía en calentamiento y el parche era el de la versión 1. Cumple el criterio de "corre" fijado de antemano (D22).
+- **Archivos:** no se conservaron. La sesión interactiva se cerró y estas cifras salen de la salida que se copió en la conversación.
+
+#### Sondeo de velocidad (2026-10-05)
+
+- Cuaderno `notebooks/rtdetrv3_sondeo.ipynb`, T4 x2, parche versión 2. Cada configuración entrena 6 minutos, sin validación, con 4 fotos por GPU y la tasa oficial escalada al lote total. Del registro se toman los segundos por paso y la espera de datos, sin los dos primeros registros. La memoria se mide con nvidia-smi cada 15 segundos. Los minutos por época suman 40 s de validación, medidos en E6v.
+- Regla fijada antes de ver los números: la configuración más fiel a la receta oficial con la que 100 épocas quepan en 11 horas. Orden de fidelidad: 2 GPU en precisión completa, 1 GPU en precisión completa, 2 GPU en precisión mixta y 1 GPU en precisión mixta.
+
+| Configuración | Lote total | Pasos por época | s por paso | Espera de datos | Fotos por s | min por época | h para 100 épocas | NaN | Memoria máx. (MiB) |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 GPU, precisión completa | 4 | 664 | 1.034 | 0 % | 3.9 | 12.1 | 20.2 | No | 10 511 |
+| 2 GPU, precisión completa | 8 | 332 | 1.465 | 0 % | 5.5 | 8.8 | 14.6 | No | 11 081 y 10 899 |
+| 1 GPU, precisión mixta | 4 | 664 | 0.872 | 0 % | 4.6 | 10.3 | 17.2 | No | 11 069 |
+| 2 GPU, precisión mixta | 8 | 332 | 1.330 | 0 % | 6.0 | 8.0 | 13.4 | No | 11 801 y 11 235 |
+
+- **Lectura:**
+  - Lo que limita es la GPU: la espera de datos es 0 % en las cuatro.
+  - Con dos GPU cada época tarda 1.38 veces menos, no la mitad. Cada paso con dos GPU dura unos 0.43 s más que con una, porque las dos se coordinan después de cada paso (pérdidas, gradientes y BatchNorm sincronizada).
+  - La precisión mixta acelera poco: 1.19 veces con una GPU y 1.10 con dos. Tampoco ahorra memoria: la softmax de la atención sigue en precisión completa (`paddle/amp/amp_lists.py`).
+  - Ninguna configuración cabe en 11 horas, así que la regla no se puede cumplir tal cual. El cuaderno propuso la más rápida (2 GPU, precisión mixta, 13.4 h). Como las dos más rápidas necesitan de todos modos dos sesiones y se diferencian en 1.2 horas, se eligió la más fiel: 2 GPU en precisión completa (D23).
+- **GPU:** unos 35 minutos de sondeo más unos 10 de preparación.
+- **Archivos:** `docs/modelado/rtdetrv3/sondeo_rtdetrv3.csv` y `sondeo_registros.zip`.
+
+#### E6. RT-DETRv3-R18, semilla 0 (en curso)
+
+- `RUN_ID = e6_rtdetrv3r18_s0`. Cuaderno `notebooks/rtdetrv3_entrenar.ipynb`, T4 x2.
+- Configuración (D23): 2 T4 × 4 fotos, lr 0.00005, precisión completa, BatchNorm sincronizada, 100 épocas con validación en cada una, semilla 0 con el lanzador, parche versión 2 y pesos COCO.
+- Comando: `python -m paddle.distributed.launch --devices 0,1 --log_dir <RUN_ID>/entreno/log entrenar_con_semilla.py /tmp/RT-DETRv3 0 -c rtdetrv3_r18vd_oso.yml --eval -o epoch=100 save_dir=<RUN_ID>/entreno log_iter=50`.
+- Sesión 1: lanzada el 5 de octubre hacia las 16:15 (hora de Ecuador). La preparación tardó 565.8 s. A las 0.40 h de sesión iba por la segunda época (el registro numera desde 0), paso 200 de 332, con la pérdida en 38.8. El tiempo restante que mostraba PaddleDetection (13:02:43) es el de las 100 épocas sin la validación, a unos 1.44 s por paso. Con la validación, la corrida completa sale en unas 14.5 horas, en línea con las 14.6 del sondeo.
+- Se espera que la sesión 1 se detenga sola hacia las 11 horas con unas 72 a 75 épocas, y que la sesión 2 haga el resto en unas 4 horas (estimación).
+- **Pendiente de completar al terminar:** épocas por sesión, mejor época y su mAP50-95 de PaddleDetection, curva por época, tiempo total, memoria máxima, NaN y la evaluación con la regla B.
+
+GPU consumida en RT-DETRv3 hasta el lanzamiento de E6: unas 4 horas (entorno, E6v y sondeo). E6 sumará unas 15. Son estimaciones; el dato exacto está en la página de cuota de Kaggle.
 
 ---

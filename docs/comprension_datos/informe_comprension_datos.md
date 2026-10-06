@@ -133,4 +133,4 @@ El listado completo está en `preguntas_pendientes.md`. Las que nacen de esta fa
 - ¿Qué modelo de cámara se usa? Define si la fecha y hora vienen en EXIF o grabadas sobre la imagen, y qué metadatos traen los MP4.
 - ¿Existe la tabla de código de cámara con sus coordenadas?
 - ¿Se valida el uso del dataset proxy y la estrategia de dos iteraciones?
-- ¿Qué implementación de RT-DETRv3 se acepta para la comparación? [[completar cuando se haya probado]]
+- ¿Qué implementación de RT-DETRv3 se acepta para la comparación? *(Actualización del 5 de octubre: la implementación oficial, en PaddlePaddle, corre en Kaggle, así que no hizo falta buscar otra. Lo que queda por validar con el director es la configuración con que se entrena en dos GPU T4. Detalle en `registro_decisiones.md`, D22 a D24, y en `preguntas_pendientes.md`, pregunta 31.)*

@@ -1,0 +1,7 @@
+{
+ "run_id": "e6b_rtdetrv3r18_s1",
+ "epoca": 44,
+ "mAP50_95_paddle": 0.8269511623039295,
+ "de": "mejor_s1",
+ "epocas_completas": 100
+}

@@ -42,6 +42,24 @@ venv_etiquetado/
 *.onnx
 *.weights
 
+# PaddlePaddle weights
+*.pdparams
+*.pdopt
+*.pdmodel
+*.pdiparams
+
+# Compressed archives and datasets
+*.zip
+*.gz
+*.tar
+*.tar.gz
+*.tar.bz2
+
+# Videos
+*.mp4
+*.avi
+*.mov
+
 # Imágenes / datasets de imágenes (no van al repo; solo sus registros CSV)
 *.jpg
 *.jpeg

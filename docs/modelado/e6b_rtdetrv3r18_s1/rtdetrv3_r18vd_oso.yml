@@ -1,0 +1,34 @@
+# RT-DETRv3-R18 para la detección de oso (iteración 1, dataset proxy). Hereda la receta oficial.
+_BASE_: [
+  'rtdetrv3_r18vd_6x_coco.yml',
+]
+
+num_classes: 1
+metric: COCO
+
+TrainDataset:
+  name: COCODataSet
+  dataset_dir: /kaggle/input/datasets/josemartinvallejos/deteccionoso
+  image_dir: images/train
+  anno_path: /tmp/coco/train.json
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+  allow_empty: true            # sin esto se descartan las fotos sin oso
+
+EvalDataset:
+  name: COCODataSet
+  dataset_dir: /kaggle/input/datasets/josemartinvallejos/deteccionoso
+  image_dir: images/val
+  anno_path: /tmp/coco/val.json
+  allow_empty: true
+
+TestDataset:
+  name: ImageFolder
+  anno_path: /tmp/coco/val.json
+
+epoch: 100                     # protocolo común con YOLO26 (la receta oficial usa 72)
+LearningRate:
+  base_lr: 0.00005000            # oficial: 0.0004 para lote total 64; escalada al lote total
+TrainReader:
+  batch_size: 4                # por GPU; con 8 y 16 no cabe en una T4 de 15 GB
+  use_shared_memory: false     # con memoria compartida, las fotos sin oso tumban el lector de datos (Paddle 3.3.0)
+pretrain_weights: /tmp/pesos/rtdetrv3_r18vd_6x_coco.pdparams

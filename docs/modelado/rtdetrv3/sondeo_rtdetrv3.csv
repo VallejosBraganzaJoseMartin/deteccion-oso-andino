@@ -1,0 +1,5 @@
+sondeo,gpu,lote_total,precision,registros,nan,memoria_max_MiB,estado,pasos_por_epoca,s_por_paso,espera_datos_pct,img_por_s,min_por_epoca,horas_100_epocas
+1gpu_fp32,1,4,completa,33,False,GPU0: 10511 / GPU1: 0,ok,664,1.034,0,3.9,12.1,20.2
+2gpu_fp32,2,8,completa,21,False,GPU0: 11081 / GPU1: 10899,ok,332,1.465,0,5.5,8.8,14.6
+1gpu_amp,1,4,mixta,38,False,GPU0: 11069 / GPU1: 0,ok,664,0.872,0,4.6,10.3,17.2
+2gpu_amp,2,8,mixta,23,False,GPU0: 11801 / GPU1: 11235,ok,332,1.33,0,6.0,8.0,13.4
