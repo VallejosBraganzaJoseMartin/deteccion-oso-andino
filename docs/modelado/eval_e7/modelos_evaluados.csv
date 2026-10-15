@@ -1,0 +1,8 @@
+run_id,tipo,tamano,entrenado_con,degrees,semilla,pesos,ruta,clases,mejor_epoca,map5095_libreria
+e1_n_deg0_s0,yolo26,nano,ENA24 + iNaturalist,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e1_n_deg0_s0/e1_n_deg0_s0_best.pt,None,,
+e1b_n_deg0_s1,yolo26,nano,ENA24 + iNaturalist,0,1,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e1b_n_deg0_s1/e1b_n_deg0_s1_best.pt,None,,
+e4_m_deg0_s0,yolo26,medium,ENA24 + iNaturalist,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e4_m_deg0_s0/e4_m_deg0_s0_best.pt,None,,
+e4b_m_deg0_s1,yolo26,medium,ENA24 + iNaturalist,0,1,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e4b_m_deg0_s1/e4b_m_deg0_s1_best.pt,None,,
+e7_m_deg0_s0,yolo26,medium,ENA24 + iNaturalist,0,0,best,/kaggle/input/datasets/josemartinvallejos/yolodeteccionoso/e7_m_deg0_s0/e7_m_deg0_s0_best.pt,None,,
+e6_rtdetrv3r18_s0,externo,r18,ENA24 + iNaturalist,0,0,detecciones exportadas (PaddleDetection),{'val': PosixPath('/kaggle/input/datasets/josemartinvallejos/rtdetrv3deteccionoso/e6_rtdetrv3r18_s0_detecciones_val.csv')},None,85.0,0.8307429499200533
+e6b_rtdetrv3r18_s1,externo,r18,ENA24 + iNaturalist,0,1,detecciones exportadas (PaddleDetection),{'val': PosixPath('/kaggle/input/datasets/josemartinvallejos/rtdetrv3deteccionoso/e6b_rtdetrv3r18_s1_detecciones_val.csv')},None,44.0,0.8269511623039295

@@ -64,6 +64,8 @@ Las decisiones con ficha completa son las que habrá que sostener ante el tribun
 
 **Revisión del 2026-09-10.** El refinamiento que aquí quedaba como opcional resultó ser necesario, y tiene ficha propia más abajo. Con la primera división construida se midieron las fugas que el agrupamiento por hash exacto no llegó a evitar: 1999 pares de imágenes casi idénticas repartidos entre conjuntos distintos, que afectaban a 408 de las 963 imágenes de validación y prueba. Casi todas eran de ENA24. La unidad de división pasa a ser el grupo formado por unión transitiva de hashes a distancia de Hamming menor o igual a 12, y en iNaturalist esa unión se suma a la agrupación por observación en lugar de sustituirla.
 
+**Nota del 2026-10-07.** El director, en su respuesta por correo al pedido de reunión, pidió dividir el dataset en 70/15/15 u 80/10/10 y dejar el conjunto de prueba exclusivamente para reportar las métricas finales, sin usarlo antes para nada. La división vigente ya es 70/15/15 por grupo: 2656, 598 y 578 imágenes (69.3, 15.6 y 15.1 %). No sale exacta porque las fotos de una misma observación y las casi idénticas van juntas al mismo conjunto. El conjunto de prueba no se ha usado para nada, como fija la decisión operativa del 16 de septiembre.
+
 ## [2026-09-01] Límite de tiempo para la implementación oficial de RT-DETRv3
 
 - **Contexto**: El director dispuso añadir RT-DETRv3 al trabajo para comparar arquitecturas. La implementación oficial está en PaddlePaddle, un framework distinto de Ultralytics, que es el previsto en el anteproyecto para YOLO. No hay confirmación de que Ultralytics soporte la versión 3.
@@ -173,6 +175,8 @@ Las decisiones con ficha completa son las que habrá que sostener ante el tribun
 
 **Revisión del 2026-09-30.** Velocidad medida en el equipo local: E1 tarda 52 ms por foto (mediana con la lectura del JPEG; 73 ms en el percentil 95) y usa 412 MB de RAM como máximo, frente a 82 ms y 492 MB de small y 183 ms y 597 MB de medium. Cumple las metas de los criterios con margen. La decisión se mantiene.
 
+**Revisión del 2026-10-07.** RT-DETRv3 era la otra candidata (pregunta 24). En validación da más mAP50-95 (0.83 frente a 0.75, con pycocotools) y, con la regla B, empata en ENA24, con un indicio a favor en iNaturalist. En el equipo local tarda 1.41 s por foto (mediana; 614 MB de pico), así que no cumple la meta de menos de 1 s, y necesita un Python aparte (3.12) con PaddlePaddle. E1 tarda 52 ms. La decisión se mantiene y RT-DETRv3 queda como arquitectura de comparación. La velocidad se midió con la librería de cada modelo en su modo por defecto; un formato optimizado podría acelerar a los dos, y no se probó. Pendiente de validar con el director.
+
 ## [2026-10-01] Sin experimento de resolución mayor (D20)
  
 - **Contexto**: El plan dejaba como condicional entrenar a 800 o 960 px (E5 en `experimentos.md`), solo si el análisis de errores mostraba que se escapaban osos pequeños o lejanos. El análisis se hizo sobre validación con los seis modelos y la regla B.
@@ -243,6 +247,9 @@ Las decisiones con ficha completa son las que habrá que sostener ante el tribun
   - La sesión 2 depende de una reanudación probada en CPU y no en GPU.
   - Revertir cuesta otras 15 horas de GPU.
 
+  
+**Resultado del 2026-10-06.** Las dos semillas se entrenaron en paralelo desde el 5 de octubre, en dos sesiones cada una: E6 con 73 y 27 épocas, y E6b con 68 y 32. La reanudación funcionó en GPU: la sesión 2 retomó optimizador, tasa y EMA. Sin NaN, con 12 055 MiB de memoria como máximo. Unas 15.4 horas de GPU en E6 y 16.1 en E6b. Mejores épocas: la 85 y la 44, con las curvas planas desde la 57 y la 43. No hizo falta reportar una sola semilla. Detalle en `experimentos.md`.
+
 ## [2026-10-05] Lotes sin cajas: parche versión 2 al código oficial (D24)
 
 - **Contexto:**
@@ -263,6 +270,8 @@ Las decisiones con ficha completa son las que habrá que sostener ante el tribun
   - El parche queda en `scripts/parche_lotes_sin_cajas_v2.py` y el `git diff` de cada sesión, en `entorno_s<N>.txt`.
   - Revertirlo obliga a reentrenar.
 
+**Resultado del 2026-10-06.** E6 y E6b completaron sus 100 épocas con 2 GPU sin fallar ni congelarse. Por la proporción de negativos, cada corrida debió pasar por unos 3 500 lotes sin cajas (estimación: cerca del 5 % de los lotes de 4 fotos, en 332 pasos por época, 2 GPU y 100 épocas). El parche no los cuenta.
+
 ## [2026-10-03] Regla para entrenar YOLO26m con más épocas (D25)
 
 - **Contexto:** YOLO26m (E4 y E4b) tuvo su mejor época en la 100 con las dos semillas, con las pérdidas de validación todavía bajando: no había convergido. Si RT-DETRv3 converge antes de 100 épocas y supera a YOLO26m, la comparación puede leerse como sesgada a su favor. El plan dejaba la decisión para cuando se viera RT-DETR, y decidir después de ver los resultados permite elegir la opción que convenga.
@@ -280,6 +289,60 @@ Las decisiones con ficha completa son las que habrá que sostener ante el tribun
 **Precisiones pendientes (2026-10-05), a confirmar antes de evaluar E6 con el cuaderno versión 3.** La regla no dice qué hacer en dos casos. Propuesta:
 1. Si al evaluar E6 todavía no hay E6b, la regla se aplica con E6 sola, de forma provisional, y se revisa cuando llegue E6b. Si E6b no llega a entrenarse, la decisión tomada con E6 queda como definitiva y se declara.
 2. "Supera" significa que el mAP50-95 global de validación de RT-DETRv3 queda por encima de la media de E4 y E4b por más de 0.015, la regla de lectura de esta iteración. Dentro de ese margen se leen como empate y se comparan a 100 épocas.
+
+
+**Precisiones fijadas (2026-10-06), antes de correr el cuaderno de evaluación versión 3.**
+1. La precisión 1 ya no hace falta: E6 y E6b terminaron a la vez.
+2. "Supera" significa que la media del mAP50-95 global de validación de E6 y E6b queda por encima de la media de E4 y E4b por más de 0.015. Las cuatro cifras las calcula pycocotools 2.0.11 en el cuaderno (D26), con las detecciones de confianza ≥ 0.001 (hasta 300 por foto) y las cajas recortadas al borde en los dos modelos. Se mantiene lo que se escribió el 5 de octubre, cuando todavía no había resultados de RT-DETRv3: la métrica global, la media de E4 y E4b y el margen de 0.015. Solo se añade cómo se usan las dos semillas y con qué código se calcula.
+3. La regla solo se aplica si pasan dos controles: E1 y E1b repiten septiembre, y pycocotools repite el mAP50-95 de PaddleDetection de E6 y E6b (de −0.001 a +0.010).
+
+Estos parámetros se escribieron en la celda 0 del cuaderno antes de correrlo.
+
+**Aplicación (2026-10-06).** Los dos controles pasaron. Condición 1: mejores épocas 85 (E6) y 44 (E6b). Condición 2: la media de RT-DETRv3 es 0.8289 y la de YOLO26m 0.7451, una diferencia de +0.0838. Se cumplen las dos, así que se entrena YOLO26m con 200 épocas (E7, semilla 0).
+
+Nota sobre la condición 1: con una curva plana, la mejor época se decide por el cuarto decimal. En E6, la época 85 ganó a la 96 y a la 98 por menos de 0.0003. Si hubiera ganado una de esas, la condición habría fallado por la letra con la misma curva. Aquí la letra y la intención coinciden, porque las dos curvas se aplanan desde la época 57 y la 43. En reglas futuras conviene definir la convergencia por la meseta y no por la mejor época.
+
+**Después de E7 (2026-10-07), fijado antes de revisar E7.**
+1. E7 se evalúa igual que las demás: cuaderno versión 3 y `calcular_umbral.py`, con E1 y E1b de control.
+2. Se compara el mAP50-95 global de validación (pycocotools) de E7 con la media de E6 y E6b (0.8289), con el margen de 0.015. Si E7 queda a 0.015 o menos, se lee que con 200 épocas YOLO26m alcanza a RT-DETRv3. Si queda más abajo, que la ventaja de RT-DETRv3 no venía solo de que medium no había convergido. También se compara con la media de E4 y E4b (0.7451), para medir lo que ganó medium con 100 épocas más.
+3. E7b (YOLO26m, 200 épocas, semilla 1) solo se entrena si E7 queda a menos de 0.03 de la media de RT-DETRv3. La lectura cambia en 0.015, y la mayor diferencia entre dos semillas vista en la iteración fue 0.014: cerca de ese punto, otra semilla podría cambiar la conclusión. Si E7 queda a 0.03 o más, una semilla basta y se declara.
+4. Medium no se entrena más de 200 épocas en esta iteración, aunque la mejor época de E7 vuelva a ser la última. Si pasa, se declara. Con 239 épocas o más, `optimizer=auto` pasaría a MuSGD y cambiaría la receta.
+5. El protocolo principal sigue siendo de 100 épocas. E7 es un punto de comparación adicional.
+
+**Resultado después de E7 (2026-10-07).** Los controles pasaron: E1 y E1b repiten septiembre, RT-DETRv3 repite PaddleDetection (+0.0001) y los seis modelos del 6 de octubre repiten sus cifras.
+1. E7 se evaluó igual que los demás modelos.
+2. mAP50-95 global de validación (pycocotools): E7, 0.7478. Frente a la media de RT-DETRv3 (0.8289), −0.0811: la ventaja de RT-DETRv3 no venía solo de que medium no hubiera convergido. Frente a la media de E4 y E4b (0.7451), +0.0027: 100 épocas más no dan una ganancia que se distinga del azar.
+3. E7b no se entrena: E7 queda a 0.081 de RT-DETRv3, más del límite de 0.03.
+4. La mejor época de E7 fue la 165, no la última. Medium se estabiliza desde la época 160, más o menos, al nivel en que terminaron E4 y E4b.
+5. El protocolo principal sigue en 100 épocas.
+
+La mejor época de E7 sobresale 0.009 sobre su meseta. Si eso fue suerte, E7 estaría todavía más lejos de RT-DETRv3, así que no cambia la lectura. Las recetas siguen siendo distintas: E7 descarta la falta de convergencia, pero no separa arquitectura y receta. Detalle en `experimentos.md`.
+
+
+## [2026-10-06] mAP común entre arquitecturas calculado con pycocotools (D26)
+
+- **Contexto:** YOLO26 y RT-DETRv3 vienen de librerías que calculan el mAP de forma distinta. Ultralytics valida en lotes con un borde extra y usa su propia integración de la curva. PaddleDetection usa pycocotools, con hasta 100 detecciones por foto y las cajas sin recortar. Comparar la cifra de cada librería mezclaría la diferencia entre arquitecturas con la diferencia entre cálculos (pregunta 32). La regla de D25 pedía un mAP50-95 calculado por el cuaderno, igual para todos.
+- **Alternativas consideradas:**
+  1. Reportar la cifra de cada librería.
+  2. Calcularlo con el código del cuaderno: el emparejamiento que ya usa para el mAP50, repetido en los 10 umbrales de IoU, con `compute_ap` de Ultralytics.
+  3. Calcularlo con pycocotools sobre las detecciones de todos los modelos.
+- **Decisión tomada:** la opción 3, con pycocotools 2.0.11 y sus parámetros estándar (IoU de 0.50 a 0.95, 101 puntos de recall y hasta 100 detecciones por foto).
+  - Es el evaluador oficial de COCO, el que usan los artículos de RT-DETRv3 y de YOLO, y es más fácil de defender que un cálculo propio.
+  - Es el mismo con que PaddleDetection eligió la mejor época de RT-DETRv3, así que sirve de control: sobre las detecciones exportadas repite su cifra (+0.0001).
+  - Aplica el mismo código a todos. Entran las detecciones con confianza ≥ 0.001 (hasta 300 por foto) y las cajas recortadas al borde, como hace Ultralytics con las de YOLO26.
+  - La opción 2 se calcula igual, como cruce. Sale entre 0.0024 y 0.0032 por encima, con el mismo signo en los seis modelos.
+- **Consecuencias:**
+  - El mAP50-95 de YOLO26 con pycocotools sale entre 0.008 y 0.019 por debajo del de Ultralytics. En la tesis, las tablas de septiembre (comparación de tamaños) y la comparación de arquitecturas usan cifras distintas, y hay que decirlo.
+  - Cierra la pregunta 32.
+  - El cuaderno instala pycocotools 2.0.11 en cada sesión de Kaggle.
+  - Si hiciera falta, se recalcula en minutos con el cuaderno.
+  - Pendiente de validar con el director.
+
+**Comprobación pendiente (2026-10-07), con la lectura fijada antes de calcularla.** RT-DETRv3 produce 300 cajas por foto (con confianza ≥ 0.001 quedan entre 261 y 298 de media) y pycocotools usa hasta 100 por foto, las de mayor confianza. YOLO26 da unas 2 por foto. En el mAP de COCO, las cajas de confianza baja pueden sumar aciertos al final de la curva y casi no restan, porque solo bajan la precisión de los aciertos de confianza todavía menor. Un modelo que entrega muchas cajas puede salir favorecido.
+- Se recalcula el mAP de cada modelo con las k detecciones de mayor confianza por foto, k = 1, 3, 10 y 100 (pregunta 33).
+- Control: con k = 100 tiene que acercarse a las cifras de `map_comun.csv`.
+- Lectura: con k = 3, YOLO26 conserva casi todas sus cajas y los dos modelos compiten con un número parecido. Si la media de E6 y E6b en mAP50-95 global sigue por encima de la de E4 y E4b por más de 0.015, la ventaja de RT-DETRv3 no viene del número de cajas. Si queda a 0.015 o menos, la comparación de mAP entre arquitecturas se reporta con el mismo k para todos y se declara. E7 se informa aparte.
+- No afecta a la regla B ni a D19.
 
 ---
 ## Decisiones operativas
@@ -326,3 +389,11 @@ Decisiones de menor alcance, registradas para trazabilidad. Ninguna requiere jus
 | 2026-10-05 | Solo se conservan los puntos de control de la última época completa y del mejor modelo | Cada época ocupa unos 356 MB; 100 serían unos 36 GB | Ninguno |
 | 2026-10-05 | Una sesión de Kaggle no empieza una época que no termine antes de 11 horas. La corrida sigue en otra sesión desde el último punto de control, y el mejor modelo se elige entre las épocas de todas las sesiones (en empate, la más tardía) | 100 épocas de RT-DETRv3 no caben en una sesión de 12 horas | Ninguno |
 | 2026-10-05 | Las detecciones de validación de RT-DETRv3 se exportan desde la evaluación de PaddleDetection (300 por foto) al formato del cuaderno de evaluación, con confianza ≥ 0.001 | Evaluar las dos arquitecturas con el mismo emparejamiento y la misma regla B | Ninguno |
+| 2026-10-06 | Las detecciones exportadas de RT-DETRv3 y sus `_best.json` se suben como Kaggle Dataset (`rtdetrv3deteccionoso`), y el cuaderno de evaluación las lee como modelos de tipo `externo` | Evaluar las dos arquitecturas en el mismo cuaderno sin depender de las salidas de otras cuentas | Ninguno |
+| 2026-10-06 | El control frente a PaddleDetection acepta de −0.001 a +0.010 | La exportación recorta al borde las cajas que PaddleDetection evaluó sin recortar, y eso solo puede subir el mAP. El control busca errores gruesos, como un archivo de otra corrida | Ninguno |
+| 2026-10-06 | `entrenar_yolo26.ipynb` versión 3 pasa `patience=EPOCHS` | Con más de 100 épocas, el `patience=100` por defecto permitiría una parada temprana, y el protocolo es sin parada temprana | Ninguno: con 100 épocas no cambia nada |
+| 2026-10-06 | E7 se llama `e7_m_deg0_s0` y su segunda semilla, si se entrena, `e7b_m_deg0_s1` | El patrón de YOLO26 | Ninguno |
+| 2026-10-07 | La velocidad de RT-DETRv3 en CPU se mide con su propia librería (PaddlePaddle 3.3.0 en modo dinámico, sin exportar), con 8 hilos como YOLO26 y lo demás en la configuración por defecto de Paddle (oneDNN sin activar), con las mismas 100 fotos y el mismo protocolo del 30 de septiembre y un control frente a las confianzas de la evaluación en GPU | Medir cada arquitectura como la entrega su librería, sin perjudicar a ninguna por los hilos. Exportar las dos a un formato común sería otro experimento | Ninguno |
+| 2026-10-07 | Paddle va en el equipo local en un entorno virtual aparte (`C:\Users\Martin\venv_paddle`, Python 3.12.9) con las 67 versiones de Kaggle, y el código oficial en `C:\Users\Martin\RT-DETRv3`, fuera del proyecto | PaddlePaddle no tiene versión para Python 3.14, y usar las mismas versiones que produjeron los pesos evita diferencias | Ninguno |
+| 2026-10-07 | E7b no se entrena | Regla de D25: E7 queda a 0.081 de RT-DETRv3, más del límite de 0.03 | Ninguno |
+| 2026-10-07 | El resumen para el director se actualiza el día anterior a la reunión, o antes si la reunión se adelanta | Que recoja todo lo hecho hasta la reunión | Ninguno |

@@ -26,6 +26,8 @@ Este documento tiene dos partes. La primera es el diseño de pruebas, escrito el
 
 > **Revisión 2026-10-05.** Desde el 3 de octubre la imagen de Kaggle es otra: Python 3.13.15, torch 2.11.0+cu128, numpy 2.1.3 y controlador con CUDA 13.0. Todo lo que se corra con Ultralytics desde ahora usará esa imagen, y todavía no se ha comprobado que Ultralytics 8.4.138 dé lo mismo en ella: E1 y E1b como control en cada evaluación lo dirán. RT-DETRv3 corre con PaddlePaddle 3.3.0 en un entorno virtual aparte, con Python 3.12.13 (sección de RT-DETRv3 en la parte 2). Para medir RT-DETRv3 en CPU hará falta otro Python en el equipo local, porque PaddlePaddle no tiene versión para Python 3.14.
 
+> **Revisión 2026-10-07.** La evaluación de E7 corrió en la imagen nueva de Kaggle (Python 3.13.15, torch 2.11.0+cu128, numpy 2.1.3, pandas 2.3.3 y pycocotools 2.0.11) y repitió al cuarto decimal las cifras de septiembre (E1, E1b, E4 y E4b) y del 6 de octubre (también E6 y E6b): la imagen nueva no cambia la evaluación. Para el entrenamiento no hay comparación, porque E7 corrió en la imagen de septiembre. RT-DETRv3 se midió en la CPU local con Python 3.12.9, PaddlePaddle 3.3.0 para CPU y las mismas 67 versiones que en Kaggle (parte 2, "Velocidad de RT-DETRv3 en CPU").
+
 ### 1.3 Protocolo común a todas las corridas de YOLO26
 
 Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, comprobados el 16 de septiembre. Solo se listan los que condicionan la comparación. Todo lo que no aparece aquí queda en su valor por defecto.
@@ -49,6 +51,9 @@ Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, compro
 > - Con `batch=16`, Ultralytics acumula los gradientes de 4 lotes y actualiza los pesos cada 64 fotos (`nbs=64`; `engine/trainer.py`, línea 302).
 > - La mejor época (`best.pt`) se elige solo por mAP50-95: `fitness` le da peso 1 y 0 a las demás métricas (`utils/metrics.py`). Es el mismo criterio con que PaddleDetection elige `best_model`.
 > - Con 200 épocas, `optimizer=auto` seguiría eligiendo AdamW con lr 0.002 (42 × 200 = 8400 iteraciones nominales, por debajo de 10 000). Con 239 épocas o más pasaría a MuSGD.
+
+
+> **Revisión 2026-10-06.** Para E7 (200 épocas, regla de D25) se añade `patience=EPOCHS` (versión 3 de `entrenar_yolo26.ipynb`). Hasta ahora `patience=100` era igual a `epochs`. Con 200 épocas, Ultralytics 8.4.138 cortaría el entrenamiento tras 100 épocas sin mejora (`utils/torch_utils.py`, `EarlyStopping`). Con 100 épocas el cambio no altera nada.
 
 
 ### 1.4 Aumento de datos
@@ -99,6 +104,10 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 
 > **Revisión 2026-10-05.** RT-DETRv3-R18 se registra como E6 (semilla 0) y E6b (semilla 1), con una corrida corta de verificación, E6v. No sigue el protocolo 1.3: usa la receta oficial de RT-DETRv3 con los cambios de D23. Lo común con YOLO26 son los datos y la división, los pesos de partida COCO, las 100 épocas, la mejor época por mAP50-95 de validación y la evaluación. Su apartado en el plan es el 2.2, no el 2.3 que dice el párrafo de esta sección que empieza "RT-DETRv3 tiene su propio apartado". Detalle en la parte 2.
 
+> **Revisión 2026-10-06.** Se añade E7 (`e7_m_deg0_s0`): YOLO26m con 200 épocas y semilla 0, como corrida adicional, porque se cumplió la regla de D25. El protocolo principal sigue siendo de 100 épocas. Una segunda semilla (E7b) solo se entrena si E7 queda a menos de 0.03 de la media de RT-DETRv3 (ficha D25).
+
+> **Revisión 2026-10-07.** E7 se evaluó y queda 0.081 por debajo de RT-DETRv3 en mAP50-95 global de pycocotools, más del límite de 0.03, así que E7b no se entrena (ficha D25). E7 queda con una sola semilla.
+
 ### 1.6 Evaluación
 
 - Selección de modelo y de umbrales: solo sobre validación. El conjunto de prueba se usa una vez por modelo final, al terminar. Ninguna decisión de configuración se toma mirando prueba.
@@ -108,6 +117,10 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 - Las métricas de la iteración 1 son preliminares (D1). El resultado principal es el de ENA24 (D15). Limitación declarada: la misma cámara de ENA24 aparece en entrenamiento y prueba con el mismo fondo, así que no se mide generalización a cámaras nuevas (D13).
 
 > **Revisión 2026-10-05.** RT-DETRv3 no se valida con Ultralytics. Sus detecciones de validación se exportan desde PaddleDetection y el cuaderno de evaluación las procesa igual que las de YOLO26: mismo emparejamiento, misma regla B y mismas particiones. Para comparar el mAP entre arquitecturas se usa el que calcule el cuaderno con el mismo código para todos los modelos (pregunta 32). El de cada librería queda como control.
+
+> **Revisión 2026-10-06.** El mAP que se compara entre arquitecturas lo calcula pycocotools 2.0.11 con sus parámetros estándar (D26), en el cuaderno de evaluación versión 3. El cálculo propio del cuaderno (el emparejamiento en 10 umbrales de IoU y `compute_ap`) y las cifras de Ultralytics y de PaddleDetection quedan como control.
+
+> **Revisión 2026-10-07.** RT-DETRv3 produce 300 cajas por foto y YOLO26 unas 2. Antes de la evaluación final se comprueba si la ventaja de RT-DETRv3 en mAP50-95 depende de eso, recalculando el mAP con las k cajas de mayor confianza por foto (pregunta 33; lectura fijada en la ficha D26).
 
 ### 1.7 Qué se anota por corrida
 
@@ -356,6 +369,8 @@ Se fija sobre validación, antes de tocar el conjunto de prueba: **E1 (YOLO26n, 
 - **Coherencia**: la referencia del plan, 9 ms de red a 320 px, equivale a unos 36 ms a 640 px (cuatro veces los píxeles). Medido: 34.4 ms.
 - **Pendiente**: fotos de mayor resolución (las de Angochagua pueden pasar de 3 MP) y MP4.
 - **Archivos**: `docs/modelado/velocidad_cpu_e1_n_deg0_s0.csv`, `velocidad_cpu_e3_s_deg0_s0.csv` y `velocidad_cpu_e4_m_deg0_s0.csv`.
+
+> **Revisión 2026-10-07.** RT-DETRv3 se midió con el mismo protocolo y las mismas 100 fotos: 1.41 s por foto (ver "Velocidad de RT-DETRv3 en CPU", al final de la sección de RT-DETRv3).
 
 ### Análisis de errores sobre validación (2026-09-30 y 2026-10-01)
  
@@ -654,15 +669,228 @@ Con el umbral mínimo (0.0001), ni el COCO ni A2 llegan a 0.95 en ENA24:
 - **GPU:** unos 35 minutos de sondeo más unos 10 de preparación.
 - **Archivos:** `docs/modelado/rtdetrv3/sondeo_rtdetrv3.csv` y `sondeo_registros.zip`.
 
-#### E6. RT-DETRv3-R18, semilla 0 (en curso)
+#### E6 y E6b. RT-DETRv3-R18, semillas 0 y 1 (2026-10-05 y 2026-10-06)
 
-- `RUN_ID = e6_rtdetrv3r18_s0`. Cuaderno `notebooks/rtdetrv3_entrenar.ipynb`, T4 x2.
-- Configuración (D23): 2 T4 × 4 fotos, lr 0.00005, precisión completa, BatchNorm sincronizada, 100 épocas con validación en cada una, semilla 0 con el lanzador, parche versión 2 y pesos COCO.
-- Comando: `python -m paddle.distributed.launch --devices 0,1 --log_dir <RUN_ID>/entreno/log entrenar_con_semilla.py /tmp/RT-DETRv3 0 -c rtdetrv3_r18vd_oso.yml --eval -o epoch=100 save_dir=<RUN_ID>/entreno log_iter=50`.
-- Sesión 1: lanzada el 5 de octubre hacia las 16:15 (hora de Ecuador). La preparación tardó 565.8 s. A las 0.40 h de sesión iba por la segunda época (el registro numera desde 0), paso 200 de 332, con la pérdida en 38.8. El tiempo restante que mostraba PaddleDetection (13:02:43) es el de las 100 épocas sin la validación, a unos 1.44 s por paso. Con la validación, la corrida completa sale en unas 14.5 horas, en línea con las 14.6 del sondeo.
-- Se espera que la sesión 1 se detenga sola hacia las 11 horas con unas 72 a 75 épocas, y que la sesión 2 haga el resto en unas 4 horas (estimación).
-- **Pendiente de completar al terminar:** épocas por sesión, mejor época y su mAP50-95 de PaddleDetection, curva por época, tiempo total, memoria máxima, NaN y la evaluación con la regla B.
+- `RUN_ID`: `e6_rtdetrv3r18_s0` y `e6b_rtdetrv3r18_s1`. Cuaderno `notebooks/rtdetrv3_entrenar.ipynb`, T4 x2, en dos cuentas de Kaggle. Entre las dos solo cambian `RUN_ID` y `SEMILLA`.
+- Configuración (D23): 2 T4 × 4 fotos, lr 0.00005, precisión completa, BatchNorm sincronizada, 100 épocas con validación en cada una, semilla fijada con el lanzador, parche versión 2 y pesos COCO.
+- Comando: `python -m paddle.distributed.launch --devices 0,1 --log_dir <RUN_ID>/entreno/log entrenar_con_semilla.py /tmp/RT-DETRv3 <SEMILLA> -c rtdetrv3_r18vd_oso.yml --eval -o epoch=100 save_dir=<RUN_ID>/entreno log_iter=50`, con `-r …/ultimo/ultimo` en la sesión 2.
+- Lanzadas en paralelo el 5 de octubre hacia las 16:15 (hora de Ecuador). La sesión 2 de cada una corrió el 6 de octubre.
 
-GPU consumida en RT-DETRv3 hasta el lanzamiento de E6: unas 4 horas (entorno, E6v y sondeo). E6 sumará unas 15. Son estimaciones; el dato exacto está en la página de cuota de Kaggle.
+| | Sesión 1 | Sesión 2 | Horas de entrenamiento (registro) | min por época, mediana por sesión (rango) | Mejor época (mAP50-95 de PaddleDetection) |
+|---|---|---|---|---|---|
+| E6 | épocas 1–73 | 74–100 | 10.81 + 4.16 = 14.97 | 8.8 y 9.2 (8.5–9.7) | 85 (0.8307), de la sesión 2 |
+| E6b | épocas 1–68 | 69–100 | 10.71 + 4.92 = 15.63 | 9.5 y 9.1 (8.9–9.9) | 44 (0.8270), de la sesión 1 |
+
+- **Fin de cada sesión.** Las sesiones 1 se detuvieron por tiempo antes de las 11 horas. Las sesiones 2 terminaron las 100 épocas (`model_final`). Las tres líneas de error del registro de cada sesión 1 (`C++ Traceback`, `Error Message Summary` y `FatalError: Termination signal is detected by the operating system`) son el aviso de Paddle al recibir la señal de parada que manda el cuaderno. El texto está en `libpaddle.so` de Paddle 3.3.0. En las sesiones 2 no hay ninguna.
+- **Reanudación**, verificada en `train_s2.log`. La sesión 2 carga pesos, EMA y optimizador ("Exchange model and ema_model to load" … "Finish resuming model weights", `ppdet/utils/checkpoint.py`, `load_weight`) y empieza desde el paso 0 la época en que se cortó la sesión 1 (la 73 en E6 y la 68 en E6b, contadas desde 0). La tasa sigue en 0.000050, así que no repite el calentamiento. En el CSV no hay salto entre sesiones: 0.828 y 0.828 en E6, y 0.825 y 0.825 en E6b.
+- **NaN:** ninguno. El único valor vacío del CSV es `min_epoca` de la época 100, que no tiene una época siguiente con la que medirse.
+- **Memoria máxima** (nvidia-smi, sesión 2): 12 055 y 11 135 MiB (E6) y 11 321 y 11 135 MiB (E6b), de 15 360.
+- **Curva** (`<RUN_ID>_epocas.csv`, métricas de PaddleDetection):
+  - Sube rápido: 0.79 de mAP50-95 en la época 8. Después se aplana. E6 queda entre 0.828 y 0.831 desde la época 57, y E6b entre 0.821 y 0.827 desde la 43.
+  - El mAP50 llega antes a su máximo (0.970 en la época 30 de E6 y 0.971 en la 23 de E6b) y termina en 0.962 y 0.963. Con más épocas las cajas ajustan algo mejor y la detección baja un poco. La mejor época se elige por mAP50-95, como en YOLO26.
+  - En E6, la época 85 ganó a la 96 y a la 98 por menos de 0.0003. Con una curva plana, la mejor época se decide por el cuarto decimal.
+  - La mejor época queda unos 0.002 por encima del promedio de la meseta (0.8307 frente a 0.8291 en E6, y 0.8270 frente a 0.8246 en E6b).
+- **GPU:** E6, unas 15.4 horas. E6b, unas 16.1. Son las horas de entrenamiento más unos 13 minutos por sesión de preparación y cierre, estimados.
+- **Archivos:** `docs/modelado/rtdetrv3/<RUN_ID>_epocas.csv`, `_best.json` y `_detecciones_val.csv.gz`, y los registros de cada sesión en `docs/modelado/rtdetrv3/<RUN_ID>/`. Los pesos `<RUN_ID>_best.pdparams` (unos 89 MB), fuera del repositorio.
+
+#### Evaluación de E6 y E6b sobre validación (2026-10-06)
+
+- **Herramientas:** `notebooks/evaluar_umbral_yolo26.ipynb` versión 3 (Kaggle, Tesla T4, Ultralytics 8.4.138 y pycocotools 2.0.11) y `scripts/calcular_umbral.py` versión 2 (local, sin cambios). Archivos en `docs/modelado/eval_rtdetrv3/`.
+- **Modelos:** E1 y E1b (control), E4 y E4b (YOLO26m, el par emparejado en parámetros) y E6 y E6b (detecciones exportadas, tipo `externo`).
+- **Fijado en la celda 0 antes de correrlo:** la regla de D25 con su precisión del 6 de octubre (media de E6 y E6b frente a la de E4 y E4b, en mAP50-95 global de pycocotools, con un margen de 0.015).
+- **Detecciones:** YOLO26, de 1018 a 1340 por modelo con confianza ≥ 0.001. RT-DETRv3, 156 160 y 178 231 (hasta 300 por foto). Recall de cajas máximo en ENA24: de 0.969 a 0.988 en YOLO26 y 1.000 en RT-DETRv3.
+- **Controles:**
+  - Conteos de imágenes, cajas, fuentes y particiones iguales a los del informe de preparación. Para pycocotools, 351 cajas reales, ninguna recortada ni descartada, y ninguna foto con orientación EXIF.
+  - E1, E1b, E4 y E4b repiten exactamente septiembre: el umbral A (0.496, 0.611, 0.498 y 0.679) y, con él, las fotos con oso detectadas y las falsas alarmas en ENA24. Con `calcular_umbral.py`, también los umbrales B (0.3629, 0.4608, 0.2559 y 0.5009) y los conteos de las cinco particiones.
+  - mAP50 del cuaderno frente a Ultralytics: igual que en septiembre (de −0.0065 a +0.0054 en global y en ENA24, y hasta −0.0152 en iNaturalist).
+  - pycocotools sobre las detecciones exportadas frente a PaddleDetection: 0.8308 frente a 0.8307 (E6) y 0.8270 frente a 0.8270 (E6b). +0.0001 en las dos.
+
+**mAP común (pycocotools, y entre paréntesis el cálculo propio del cuaderno):**
+
+| Modelo | mAP50-95 global | mAP50 global | mAP50-95 ENA24 | mAP50-95 iNat | mAP50-95 de la librería |
+|---|---|---|---|---|---|
+| E1 (YOLO26n) | 0.7494 (0.7519) | 0.9218 | 0.7763 | 0.7290 | 0.759 (Ultralytics) |
+| E1b (YOLO26n) | 0.7388 (0.7412) | 0.9178 | 0.7483 | 0.7375 | 0.758 (Ultralytics) |
+| E4 (YOLO26m) | 0.7434 (0.7461) | 0.9274 | 0.7526 | 0.7439 | 0.752 (Ultralytics) |
+| E4b (YOLO26m) | 0.7468 (0.7495) | 0.9291 | 0.7605 | 0.7446 | 0.755 (Ultralytics) |
+| E6 (RT-DETRv3) | 0.8308 (0.8339) | 0.9616 | 0.8318 | 0.8293 | 0.8307 (PaddleDetection) |
+| E6b (RT-DETRv3) | 0.8270 (0.8302) | 0.9631 | 0.8237 | 0.8291 | 0.8270 (PaddleDetection) |
+
+- El cálculo propio sale entre 0.0024 y 0.0032 por encima de pycocotools en los seis modelos, porque integra la curva de otra forma y no corta en 100 detecciones por foto. La diferencia es parecida entre arquitecturas, algo mayor en RT-DETRv3, que da más detecciones por foto.
+- El de Ultralytics sale entre 0.008 y 0.019 por encima del de pycocotools en YOLO26. Por eso, en la tesis, las cifras de YOLO26 de septiembre y las de la comparación de arquitecturas no se mezclan.
+
+**Regla B** con `calcular_umbral.py` (fotos con oso detectadas · falsas alarmas):
+
+| Modelo | Umbral B | ENA24 | P · R de cajas en ENA24 | iNaturalist | Global | ENA24 de día | ENA24 de noche |
+|---|---|---|---|---|---|---|---|
+| E1 | 0.3629 | 149/156 · 3/182 | 0.950 · 0.932 | 155/170 · 3/90 | 304/326 · 6/272 | 47/52 · 2/62 | 102/104 · 1/120 |
+| E1b | 0.4608 | 149/156 · 6/182 | 0.919 · 0.914 | 149/170 · 4/90 | 298/326 · 10/272 | 48/52 · 4/62 | 101/104 · 2/120 |
+| E4 | 0.2559 | 149/156 · 4/182 | 0.899 · 0.932 | 153/170 · 4/90 | 302/326 · 8/272 | 46/52 · 3/62 | 103/104 · 1/120 |
+| E4b | 0.5009 | 149/156 · 2/182 | 0.943 · 0.926 | 150/170 · 5/90 | 299/326 · 7/272 | 49/52 · 0/62 | 100/104 · 2/120 |
+| E6 | 0.8420 | 149/156 · 3/182 | 0.968 · 0.938 | 161/170 · 1/90 | 310/326 · 4/272 | 48/52 · 3/62 | 101/104 · 0/120 |
+| E6b | 0.8213 | 149/156 · 4/182 | 0.962 · 0.938 | 155/170 · 2/90 | 304/326 · 6/272 | 48/52 · 3/62 | 101/104 · 1/120 |
+
+Las dos semillas de RT-DETRv3 cumplen las dos metas de recall con falsas alarmas por debajo del 10 %. Su umbral mínimo por falsas alarmas es 0.075 y 0.119, muy por debajo del elegido.
+
+**Lectura:**
+- **mAP50-95:** RT-DETRv3 supera a YOLO26m por 0.084 (medias de 0.8289 y 0.7451), más de cinco veces el margen de lectura, y en las dos fuentes (+0.07 en ENA24 y +0.085 en iNaturalist). Sus dos semillas difieren en 0.004.
+- **mAP50:** la distancia es menor (0.962 frente a 0.928). RT-DETRv3 detecta algo más, pero sobre todo ajusta mejor las cajas.
+- **Regla B en ENA24:** empate. Con el recall por imagen que fija la regla (149/156), las falsas alarmas de RT-DETRv3 (3 y 4 de 182) quedan dentro del rango de los seis YOLO26 de septiembre (de 2 a 9). Lo mismo de día (48/52) y de noche (101/104). Las cajas son más precisas: 0.96 y 0.97, frente a 0.90 a 0.95.
+- **Regla B en iNaturalist:** indicio a favor de RT-DETRv3. E6 detecta 161 de 170 con 1 falsa alarma, más que cualquiera de los seis YOLO26 (de 149 a 158, con 3 a 6). E6b detecta 155, con 2. Los intervalos se solapan. Es la partición donde YOLO26 fallaba con osos tapados o con poca visibilidad.
+- **Umbral:** el de RT-DETRv3 (0.82 y 0.84) es mucho más alto que el de YOLO26 (de 0.26 a 0.50). Las confianzas de las dos arquitecturas no se comparan, y cada modelo lleva su umbral.
+- **Modelo de la aplicación:** D19 no cambia por ahora. En la métrica principal RT-DETRv3 empata, falta su velocidad en CPU y necesitaría otro Python en el equipo del usuario. Se decide con el director (pregunta 24).
+- **Regla de D25:** se cumple. Condición 1: mejores épocas 85 y 44. Condición 2: +0.0838 frente a un mínimo de 0.015. Se entrena E7.
+- **Salvedades:**
+  - Todo es validación: el umbral y la mejor época de cada modelo se eligieron con estas mismas fotos.
+  - Las recetas son distintas. En 100 épocas, RT-DETRv3 actualizó sus pesos unas 33 200 veces, con lotes de 8 fotos. YOLO26m, unas 4 200, con 64 fotos por actualización, porque Ultralytics acumula gradientes (`engine/trainer.py`).
+  - La mejor época de RT-DETRv3 salió de una meseta, lo que le da una ventaja de unos 0.002 sobre su promedio. YOLO26m casi no la tiene, porque su mejor época fue la última.
+  - YOLO26m no había convergido a las 100 épocas. Para eso es E7.
+
+#### E7. YOLO26m con 200 épocas (`e7_m_deg0_s0`, regla de D25)
+
+- Cuaderno `notebooks/entrenar_yolo26.ipynb` versión 3: `MODEL = yolo26m.pt`, `DEGREES = 0`, `SEED = 0`, `EPOCHS = 200`, `FUENTE = "ambas"` y `patience=EPOCHS`. El resto, como E4.
+- Entorno: Kaggle, Tesla T4 (una de dos), Python 3.12.13, torch 2.10.0+cu128, Ultralytics 8.4.138 y albumentations 2.0.8. Es el entorno de septiembre, no la imagen que vio el cuaderno de RT-DETRv3 el 3 de octubre.
+- Optimizador elegido por `auto`: AdamW, lr 0.002, momentum 0.9 (8400 iteraciones nominales).
+- 200 épocas hechas. 98.6 s por época, 328.5 minutos de entrenamiento y 335.6 minutos la celda. GPU: unas 5.7 horas.
+- Terminó el 7 de octubre. Revisada y evaluada esa noche (las tres secciones siguientes).
+
+#### E7: curva, mejor época y tiempo (2026-10-07)
+
+- Archivos: `docs/modelado/e7_m_deg0_s0_results.csv`, `_args.yaml` y `_val_por_particion.csv`. Pesos `e7_m_deg0_s0_best.pt` en `yolodeteccionoso` (carpeta `e7_m_deg0_s0/`).
+- 200 épocas sin incidentes. Tiempo: la primera época, 128.9 s; las demás, de 96.6 a 100.5 s (98.4 de mediana; 96.8 con Mosaic apagado). 328.5 minutos de entrenamiento.
+- Tasa de aprendizaje: baja en línea recta desde 0.002 hasta 0.00003 en la época 200, y desde la época 4 coincide exactamente con la fórmula de Ultralytics. En la época 100, E7 tenía 0.00102, mientras que E4 terminaba con 0.00004.
+- **Mejor época: la 165** (mAP50-95 0.7631, mAP50 0.9468). Última: 0.7531. El mAP50 máximo, 0.9479, está en la 164.
+- mAP50-95 medio por tramos de 20 épocas:
+
+| Épocas | 81–100 | 101–120 | 121–140 | 141–160 | 161–180 | 181–200 |
+|---|---|---|---|---|---|---|
+| mAP50-95 | 0.720 | 0.733 | 0.738 | 0.747 | 0.754 | 0.754 |
+
+- **Meseta:** de la época 166 a la 200, media de 0.754 (entre 0.750 y 0.758). Desde la 157, todas las épocas quedan a 0.015 o menos de la mejor.
+- La época 165 queda 0.009 por encima de la media de sus diez vecinas (0.754). Es una ventaja de elección mayor que la de RT-DETRv3 (0.002).
+- **Pérdidas de validación:** la de caja toca su mínimo en la época 169 (0.758) y la L1 en la 172 (0.0128), y después quedan planas. La de clasificación toca su mínimo en la 134 (0.490) y sube hasta 0.589 en la 200, mientras la de entrenamiento sigue bajando. Es la señal leve de sobreajuste en la clasificación que ya se vio en E1 y E1b, algo más marcada, y el mAP no se resiente.
+- **Mosaic apagado** (épocas 191 a 200): las pérdidas de entrenamiento caen de golpe (caja de 0.587 a 0.464 y clasificación de 0.346 a 0.193, en medias de diez épocas), pero la validación no mejora: el mAP50-95 queda igual (0.754), el mAP50 baja 0.004 y las pérdidas de validación suben un poco.
+- Tres caídas puntuales al principio (épocas 13, 23 y 45), cada una recuperada en la época siguiente.
+- En la época 100, E7 da 0.743 y E4 terminó en 0.752. No se comparan: por la tasa de aprendizaje, son momentos distintos del entrenamiento.
+- Validación con `best.pt` (celda 5, Ultralytics):
+
+| Partición | P | R | mAP50 | mAP50-95 | mAP50-95 de E4 / E4b |
+|---|---|---|---|---|---|
+| Global (598) | 0.954 | 0.883 | 0.944 | 0.763 | 0.752 / 0.755 |
+| ENA24 (338) | 0.956 | 0.936 | 0.958 | 0.784 | 0.767 / 0.765 |
+| iNaturalist (260) | 0.913 | 0.887 | 0.924 | 0.743 | 0.746 / 0.755 |
+
+- Frente a la media de E4 y E4b: +0.0095 en global, +0.018 en ENA24 y −0.007 en iNaturalist. Ninguna diferencia se interpreta (márgenes de 0.015 en global y de 0.03 por fuente).
+- **Lectura:** medium se estabiliza con 200 épocas. Su meseta (0.754) está al nivel en que terminaron E4 y E4b, así que entrenar el doble no subió el techo de una forma que se distinga del azar. Lo que le da algo más a E7 es sobre todo la época 165.
+- Verificado en el código de Ultralytics 8.4.138 (`ESTADO_PROYECTO.md`, sección 7): `best.pt` se elige solo por mAP50-95 y, si dos épocas empatan, se queda con la más tardía; la tasa baja en línea recta a lo largo de las épocas configuradas; Mosaic se apaga en la época 191; `time` es acumulado e incluye la validación; `l1_loss` aparece porque YOLO26 no usa DFL.
+
+#### Evaluación de E7 sobre validación y reglas de después de E7 (2026-10-07)
+
+- **Herramientas:** `notebooks/evaluar_umbral_yolo26.ipynb` versión 3 (Kaggle, Tesla T4, imagen nueva: Python 3.13.15, torch 2.11.0+cu128, Ultralytics 8.4.138, pycocotools 2.0.11) y `scripts/calcular_umbral.py` versión 2 (local). Archivos en `docs/modelado/eval_e7/`.
+- **Modelos:** E1 y E1b (control), E4 y E4b, E7 (de la versión nueva de `yolodeteccionoso`) y E6 y E6b (detecciones exportadas).
+- **Controles:**
+  - E1 y E1b repiten septiembre: umbral A de 0.496 y 0.611, con 144 y 147 fotos con oso y 3 y 5 falsas alarmas en ENA24. E4 y E4b, también.
+  - RT-DETRv3 frente a PaddleDetection: +0.0001 en las dos semillas.
+  - Los seis modelos del 6 de octubre repiten al cuarto decimal su mAP común (global, ENA24 e iNaturalist) y los umbrales y conteos de la regla B en las cinco particiones.
+  - E7 frente a Ultralytics, comparado a mano con `e7_m_deg0_s0_val_por_particion.csv`: mAP50 −0.0063 en global, +0.0080 en ENA24 y −0.0109 en iNaturalist. El +0.0080 pasa un poco el máximo visto hasta ahora en global y ENA24 (0.0065), con el mismo patrón. En mAP50-95, pycocotools da 0.0152 menos que Ultralytics (el rango de YOLO26 es de 0.008 a 0.019) y el cálculo propio del cuaderno, 0.0028 más (rango de 0.0024 a 0.0032).
+- **Umbrales de E7:** regla A 0.7191 (recall de cajas máximo en ENA24: 0.981), regla B 0.4552 (la fija el recall por imagen) y umbral mínimo por falsas alarmas 0.0510. Cumple las dos metas de recall con falsas alarmas por debajo del 10 %.
+
+**mAP común (pycocotools; entre paréntesis, el cálculo propio del cuaderno):**
+
+| Modelo | mAP50-95 global | mAP50 global | mAP50-95 ENA24 | mAP50-95 iNat | mAP50-95 de la librería |
+|---|---|---|---|---|---|
+| E4 (YOLO26m, 100 épocas) | 0.7434 (0.7461) | 0.9274 | 0.7526 | 0.7439 | 0.752 (Ultralytics) |
+| E4b (YOLO26m, 100 épocas) | 0.7468 (0.7495) | 0.9291 | 0.7605 | 0.7446 | 0.755 (Ultralytics) |
+| E7 (YOLO26m, 200 épocas) | 0.7478 (0.7506) | 0.9335 | 0.7656 | 0.7400 | 0.763 (Ultralytics) |
+| E6 (RT-DETRv3) | 0.8308 (0.8339) | 0.9616 | 0.8318 | 0.8293 | 0.8307 (PaddleDetection) |
+| E6b (RT-DETRv3) | 0.8270 (0.8302) | 0.9631 | 0.8237 | 0.8291 | 0.8270 (PaddleDetection) |
+
+ENA24 de día y de noche (pycocotools):
+
+| Modelo | mAP50-95 de día | mAP50-95 de noche | mAP50 de día | mAP50 de noche |
+|---|---|---|---|---|
+| E4 | 0.747 | 0.758 | 0.943 | 0.957 |
+| E4b | 0.781 | 0.755 | 0.990 | 0.952 |
+| E7 | 0.748 | 0.778 | 0.943 | 0.975 |
+| E6 | 0.813 | 0.843 | 0.978 | 0.974 |
+| E6b | 0.806 | 0.836 | 0.966 | 0.975 |
+
+**Regla B** (fotos con oso detectadas · falsas alarmas):
+
+| Modelo | Umbral B | ENA24 | P · R de cajas en ENA24 | iNaturalist | Global | ENA24 de día | ENA24 de noche |
+|---|---|---|---|---|---|---|---|
+| E4 | 0.2559 | 149/156 · 4/182 | 0.899 · 0.932 | 153/170 · 4/90 | 302/326 · 8/272 | 46/52 · 3/62 | 103/104 · 1/120 |
+| E4b | 0.5009 | 149/156 · 2/182 | 0.943 · 0.926 | 150/170 · 5/90 | 299/326 · 7/272 | 49/52 · 0/62 | 100/104 · 2/120 |
+| E7 | 0.4552 | 149/156 · 4/182 | 0.956 · 0.944 | 153/170 · 4/90 | 302/326 · 8/272 | 47/52 · 3/62 | 102/104 · 1/120 |
+| E6 | 0.8420 | 149/156 · 3/182 | 0.968 · 0.938 | 161/170 · 1/90 | 310/326 · 4/272 | 48/52 · 3/62 | 101/104 · 0/120 |
+| E6b | 0.8213 | 149/156 · 4/182 | 0.962 · 0.938 | 155/170 · 2/90 | 304/326 · 6/272 | 48/52 · 3/62 | 101/104 · 1/120 |
+
+**Reglas de después de E7 (ficha D25), aplicadas tal como se fijaron:**
+1. E7 se evaluó igual que los demás modelos, con E1 y E1b de control, y los controles pasaron.
+2. E7 frente a la media de RT-DETRv3 (0.8289): 0.0811 por debajo, más que el margen de 0.015. Se lee que la ventaja de RT-DETRv3 no venía solo de que medium no hubiera convergido. Frente a la media de E4 y E4b (0.7451): +0.0027, por debajo del margen; 100 épocas más no dan una ganancia que se distinga del azar. La distancia con RT-DETRv3 pasa de 0.0838 a 0.0811.
+3. **E7b no se entrena:** E7 queda a 0.081 de RT-DETRv3, más del límite de 0.03. Se declara que E7 tiene una sola semilla.
+4. La mejor época fue la 165, no la última, así que no hay nada que declarar sobre la convergencia.
+5. El protocolo principal sigue en 100 épocas, y E7 es un punto de comparación adicional.
+
+**Lectura:**
+- Con la regla B, E7 se comporta como E4 en las cinco particiones. Sus cajas son algo más precisas que las de E4 y E4b (P de cajas en ENA24 de 0.956, frente a 0.899 y 0.943) y se acercan a las de RT-DETRv3 (0.962 y 0.968).
+- En iNaturalist sigue el indicio a favor de RT-DETRv3 (161 y 155 fotos, frente a 153 de E7), con intervalos solapados.
+- D19 no cambia. E7 no se midió en CPU: tiene la misma red que E4 (183 ms por foto).
+- **¿Es el resultado esperado?** Está bien medido (mismos datos, misma división, mismo evaluador y controles que pasan), pero no es el que predecían las fuentes:
+  - En COCO, YOLO26m (53.1 de mAP50-95, Tabla 2 del marco) supera a RT-DETRv3-R18 (48.1 según su README).
+  - El estudio [39] del apartado 1.5.2 encontró a RT-DETR (el original) por debajo de YOLOv8 en mAP50 (0.84 frente a 0.89) y sin ninguna detección en una escena nocturna. Aquí RT-DETRv3 tiene más mAP50 (0.962 frente a valores de 0.927 a 0.934 en YOLO26m). De noche, en ENA24, empata en detección por imagen (101 de 104 fotos, frente a 100 a 103) y tiene más mAP50-95 (0.84 frente a valores de 0.755 a 0.778).
+  - No indica un error: son otras versiones y otros datos, y en [39] el caso nocturno es una sola escena. El capítulo 3 tiene que discutirlo.
+- **Comprobación pendiente** (pregunta 33): RT-DETRv3 produce 300 cajas por foto (con confianza ≥ 0.001 quedan entre 261 y 298 de media) y pycocotools usa hasta 100, las de mayor confianza. YOLO26 da unas 2 por foto. En el mAP de COCO, las cajas de confianza baja pueden sumar aciertos al final de la curva y casi no restan: solo bajan la precisión de los aciertos con confianza todavía menor. No se sabe cuánta de la ventaja de 0.08 viene de ahí. No afecta a la regla B, que solo usa las cajas por encima del umbral.
+- **Salvedades:**
+  - Todo es validación.
+  - E7 tiene una sola semilla, y su mejor época sobresale 0.009 sobre su meseta. Si esa época tuvo algo de suerte, E7 estaría todavía más lejos de RT-DETRv3.
+  - Las recetas siguen siendo distintas: E7 actualizó sus pesos unas 8 400 veces, con 64 fotos por actualización; RT-DETRv3, unas 33 200 en 100 épocas, con 8 fotos. E7 responde a la duda de la convergencia, no a la de la receta.
+
+#### Velocidad de RT-DETRv3 en CPU (2026-10-07)
+
+- **Herramienta:** `scripts/medir_velocidad_cpu_rtdetrv3.py` (nuevo), en el equipo local (AMD Ryzen 5 3600, 6 núcleos y 12 hilos, Windows), con el Python 3.12.9 de `C:\Users\Martin\venv_paddle`: PaddlePaddle 3.3.0 para CPU y las 67 versiones de `requisitos_rtdetrv3.txt`. Código oficial en el commit `349e7d9`, con el parche de D24, que no actúa al detectar.
+- **Entorno local:** creado con `py -3.12 -m venv` y `pip install --only-binary=:all: -r docs\modelado\rtdetrv3\requisitos_rtdetrv3.txt paddlepaddle==3.3.0`. Todo tenía rueda para Windows en PyPI y `pip check` salió limpio.
+- **Protocolo**, el de YOLO26 del 30 de septiembre:
+  - Las mismas 100 fotos, tomadas de `velocidad_cpu_e1_n_deg0_s0.csv` en su orden (el sorteo con la semilla 0 dio las mismas), tras 10 de calentamiento, una por una.
+  - Con la librería de RT-DETRv3, en modo dinámico y sin exportar el modelo: el mismo código que produjo las detecciones de validación. Preproceso del `TestReader` oficial (640 × 640 sin conservar la proporción).
+  - 8 hilos, como Ultralytics con YOLO26. Paddle trae 1 por defecto, y `libiomp5md.dll` pasó de 1 a 8. oneDNN sin activar, que es como viene Paddle (activarlo no cambió el tiempo de una convolución en una prueba en Linux).
+  - Umbral de la regla B de E6: 0.842.
+- **Control:** la confianza máxima de cada foto coincide con la de la evaluación en GPU (`eval_e7/umbral_imagenes.csv`): diferencia mediana de 0.0000 y máxima de 0.0003, sin ninguna foto por encima de 0.01. Los pesos y el preproceso son los de la evaluación.
+- **Resultados** (E6, `e6_rtdetrv3r18_s0_best.pdparams`):
+
+| Tiempo por foto (ms) | Mediana | p95 | Máximo |
+|---|---|---|---|
+| Total, ENA24 | 1417.7 | 1458.9 | 1490.4 |
+| Total, iNaturalist | 1398.0 | 1444.1 | 1449.8 |
+| Total, todas | 1410.0 | 1450.1 | 1490.4 |
+| Lectura del JPEG | 22.6 | 36.5 | 81.0 |
+| Preproceso | 5.0 | 6.1 | 7.1 |
+| Red, sin posproceso | 1378.0 | 1420.7 | 1454.3 |
+| Posproceso | 0.7 | 0.8 | 1.0 |
+
+  - Carga del modelo: 1.49 s; primera foto: 1.52 s.
+  - RAM (RSS): 21 MB al arrancar, 327 tras importar, 427 con el modelo cargado y 460 como máximo durante la medición. Pico del proceso (Windows): 614 MB.
+  - 56 de las 100 fotos tienen alguna detección con confianza ≥ 0.842. La red entrega siempre 300 cajas.
+
+Comparación con YOLO26 (mismas fotos, mismo protocolo):
+
+| Modelo | Total, mediana (p95) | Red, mediana | Pico de RAM |
+|---|---|---|---|
+| E1 YOLO26n | 51.9 ms (73.1) | 34.4 ms | 412 MB |
+| E3 YOLO26s | 81.8 ms (108.4) | 67.6 ms | 492 MB |
+| E4 YOLO26m | 183.1 ms (225.8) | 169.3 ms | 597 MB |
+| E6 RT-DETRv3-R18 | 1410.0 ms (1450.1) | 1378.0 ms | 614 MB |
+
+- **Lectura:**
+  - No cumple la meta de menos de 1 s por foto: las 100 fotos pasan de 1.33 s. Cumple la de RAM, con un pico casi igual al de YOLO26m.
+  - Frente a YOLO26m, con los mismos parámetros, es unas 8 veces más lento (7.7 en el total y 8.1 en la red). Frente a E1, unas 27 veces en el total.
+  - Una carpeta de 10 000 fotos tardaría unas 3.9 horas con RT-DETRv3 y unos 9 minutos con E1.
+  - Casi todo el tiempo es la red: la lectura y el preproceso suman unos 28 ms.
+- **Salvedad:** la diferencia mezcla arquitectura y librería (Paddle en modo dinámico frente a PyTorch con Ultralytics, que además prepara la red: fusiona capas y elige el formato de memoria). Los GFLOPs publicados son del mismo orden (60 de RT-DETRv3-R18 según su README y 68.1 de YOLO26m según Ultralytics), aunque puede que no se cuenten igual. Ninguno de los dos se midió en un formato optimizado (exportado, ONNX u OpenVINO). Se declara así.
+- **Indicio, sin confirmar en el equipo del estudiante:** en el entorno de Claude (2 núcleos, 2 hilos, pesos aleatorios), el tiempo de RT-DETRv3 se reparte así: backbone ResNet18, 57 %; codificador híbrido, 22 %; decodificador, 21 %; cabeza y posproceso, 0.1 %. Lo más lento es la parte convolucional, no la atención. Si se confirma con 8 hilos en el Ryzen, buena parte de la diferencia con YOLO26m vendría de cómo Paddle ejecuta las convoluciones en CPU en modo dinámico.
+- **Decisión:** D19 se mantiene (revisión del 7 de octubre de la ficha). RT-DETRv3 queda como arquitectura de comparación.
+- **Archivos:** `docs/modelado/velocidad_cpu_e6_rtdetrv3r18_s0.csv`.
+
+GPU consumida en RT-DETRv3: unas 4 horas hasta el lanzamiento de E6 (entorno, E6v y sondeo), unas 15.4 en E6 y unas 16.1 en E6b. En E7, unas 5.7. E7b no se entrenó.
 
 ---

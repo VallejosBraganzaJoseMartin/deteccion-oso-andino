@@ -1,0 +1,4 @@
+corrida,partición,P,R,mAP50,mAP50-95
+e7_m_deg0_s0,global,0.9538,0.8831,0.9442,0.763
+e7_m_deg0_s0,val_ena24,0.9559,0.9363,0.9579,0.7838
+e7_m_deg0_s0,val_inat,0.9128,0.8867,0.9235,0.7432

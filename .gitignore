@@ -47,6 +47,8 @@ venv_etiquetado/
 *.pdopt
 *.pdmodel
 *.pdiparams
+*.pdstates
+*.pdema
 
 # Compressed archives and datasets
 *.zip
