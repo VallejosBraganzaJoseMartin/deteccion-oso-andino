@@ -20,6 +20,8 @@ Cuando una decisión se modifica después, la ficha original se conserva tal com
 
 Las decisiones con ficha completa son las que habrá que sostener ante el tribunal o que resultarían costosas de revertir. Las de menor alcance se agrupan al final en la tabla de decisiones operativas. Todas las decisiones de septiembre de 2026 se tomaron durante el periodo de vacaciones, sin posibilidad de consultar al director, y quedan pendientes de validación al iniciar Titulación 2.
 
+**Nota del 15 de noviembre de 2026.** En la reunión del 16 de octubre y en las conversaciones siguientes, el director le dijo al estudiante que tome las decisiones que crea mejores para el proyecto. La única instrucción explícita sigue siendo la de su correo del 7 de octubre: el conjunto de prueba solo al final, para reportar las métricas finales, sin usarlo antes para nada. Las fichas de este registro, escritas como pendientes de validar con el director, quedan como decisiones del estudiante tomadas con esa delegación. No se reescriben: se conservan como se escribieron.
+
 ---
 
 ## [2026-09-01] Iteración 1 de CRISP-DM con dataset proxy
@@ -344,6 +346,14 @@ La mejor época de E7 sobresale 0.009 sobre su meseta. Si eso fue suerte, E7 est
 - Lectura: con k = 3, YOLO26 conserva casi todas sus cajas y los dos modelos compiten con un número parecido. Si la media de E6 y E6b en mAP50-95 global sigue por encima de la de E4 y E4b por más de 0.015, la ventaja de RT-DETRv3 no viene del número de cajas. Si queda a 0.015 o menos, la comparación de mAP entre arquitecturas se reporta con el mismo k para todos y se declara. E7 se informa aparte.
 - No afecta a la regla B ni a D19.
 
+**Resultado (2026-11-15).** La comprobación se hizo con la regla tal como se fijó el 7 de octubre.
+- **Datos.** La lectura necesita las mismas detecciones con que el cuaderno calcula el mAP (confianza ≥ 0.001). `umbral_detecciones.csv.gz` guarda solo las de confianza ≥ 0.01, y con él el control no pasaba: YOLO26 salía hasta 0.010 por debajo en mAP50-95. Antes de calcular nada por k, el cuaderno pasó a la versión 4, que guarda todas las detecciones, y se volvió a correr: repitió la evaluación del 7 de octubre sin diferencias. El cambio de datos no toca la regla, que pide leer el mismo mAP del cuaderno.
+- **Controles.** Con k = 100, el script repite `map_comun.csv` en los siete modelos y las tres particiones (diferencia 0). La variante con solo las cajas ≥ 0.01 para todos y las tolerancias de los controles (0.0005) se fijaron antes de ver ninguna cifra por k.
+- **Resultado.** Con k = 3, mAP50-95 global de 0.8232 (E6), 0.8195 (E6b), 0.7391 (E4) y 0.7429 (E4b). Media de RT-DETRv3 0.8214 y de YOLO26m 0.7410: **+0.0804**, más que el margen de 0.015. La variante da +0.0854: la misma lectura.
+- **Lectura.** La ventaja de RT-DETRv3 no viene del número de cajas por foto: con una sola caja por foto sigue en +0.071. La comparación de arquitecturas se reporta con el mAP estándar de pycocotools, y esta comprobación como prueba de robustez.
+- E7, aparte: 0.7441 con k = 3; RT-DETRv3 queda +0.0773.
+- No cambia la regla B ni D19. Detalle en `experimentos.md`, sección "Comprobación de las cajas por foto (pregunta 33, 2026-11-15)".
+
 ---
 ## Decisiones operativas
 
@@ -397,3 +407,7 @@ Decisiones de menor alcance, registradas para trazabilidad. Ninguna requiere jus
 | 2026-10-07 | Paddle va en el equipo local en un entorno virtual aparte (`C:\Users\Martin\venv_paddle`, Python 3.12.9) con las 67 versiones de Kaggle, y el código oficial en `C:\Users\Martin\RT-DETRv3`, fuera del proyecto | PaddlePaddle no tiene versión para Python 3.14, y usar las mismas versiones que produjeron los pesos evita diferencias | Ninguno |
 | 2026-10-07 | E7b no se entrena | Regla de D25: E7 queda a 0.081 de RT-DETRv3, más del límite de 0.03 | Ninguno |
 | 2026-10-07 | El resumen para el director se actualiza el día anterior a la reunión, o antes si la reunión se adelanta | Que recoja todo lo hecho hasta la reunión | Ninguno |
+| 2026-11-15 | El cuaderno de evaluación versión 4 guarda todas las detecciones de los modelos de Ultralytics, desde 0.001 y sin redondear (`detecciones_completas.csv.gz`). La segunda corrida va en `docs/modelado/eval_p33/` y `eval_e7/` queda como estaba | Con `umbral_detecciones.csv.gz` (≥ 0.01, 4 decimales) no se repite el mAP del cuaderno: en YOLO26 faltan hasta 0.010 de mAP50-95 | Ninguno |
+| 2026-11-15 | La pregunta 33 se lee con las detecciones completas de todos los modelos; como variante, todos con solo las cajas ≥ 0.01. Si no coinciden, no se concluye. Tolerancias de los dos controles: 0.0005 | Fijado antes de ver ninguna cifra por k, para que el resultado no decida el método | Ninguno |
+| 2026-11-15 | Las cifras de mAP con k < 100 cajas por foto solo sirven para la comprobación. La comparación de arquitecturas se reporta con el mAP estándar de pycocotools | Es el que usan los artículos y el que fija D26 | Ninguno |
+| 2026-11-15 | Las preguntas metodológicas que ya tenían ficha se cierran con ella, como decisiones del estudiante con la delegación del director | El director delegó las decisiones; si él o el tribunal plantean otra cosa, se reabren | Ninguno |

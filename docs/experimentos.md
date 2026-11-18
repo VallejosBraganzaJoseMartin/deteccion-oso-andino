@@ -28,6 +28,8 @@ Este documento tiene dos partes. La primera es el diseño de pruebas, escrito el
 
 > **Revisión 2026-10-07.** La evaluación de E7 corrió en la imagen nueva de Kaggle (Python 3.13.15, torch 2.11.0+cu128, numpy 2.1.3, pandas 2.3.3 y pycocotools 2.0.11) y repitió al cuarto decimal las cifras de septiembre (E1, E1b, E4 y E4b) y del 6 de octubre (también E6 y E6b): la imagen nueva no cambia la evaluación. Para el entrenamiento no hay comparación, porque E7 corrió en la imagen de septiembre. RT-DETRv3 se midió en la CPU local con Python 3.12.9, PaddlePaddle 3.3.0 para CPU y las mismas 67 versiones que en Kaggle (parte 2, "Velocidad de RT-DETRv3 en CPU").
 
+> **Revisión 2026-11-15.** El cuaderno de evaluación versión 4 se corrió en Kaggle el 15 de noviembre con los siete modelos de la evaluación de E7 y repitió exactamente su mAP común (35 cifras) y los controles de septiembre y de PaddleDetection. El entorno de esa corrida no se anotó (está en la celda 1 de la versión de Kaggle). La comprobación de la pregunta 33 corrió en el equipo local con el Python de `venv_paddle` (3.12.9), numpy 1.26.4 y pycocotools 2.0.11.
+
 ### 1.3 Protocolo común a todas las corridas de YOLO26
 
 Valores tomados de `ultralytics/cfg/default.yaml` de la versión 8.4.138, comprobados el 16 de septiembre. Solo se listan los que condicionan la comparación. Todo lo que no aparece aquí queda en su valor por defecto.
@@ -121,6 +123,8 @@ RT-DETRv3 tiene su propio apartado en el plan (2.3, límite de dos días, D9) y 
 > **Revisión 2026-10-06.** El mAP que se compara entre arquitecturas lo calcula pycocotools 2.0.11 con sus parámetros estándar (D26), en el cuaderno de evaluación versión 3. El cálculo propio del cuaderno (el emparejamiento en 10 umbrales de IoU y `compute_ap`) y las cifras de Ultralytics y de PaddleDetection quedan como control.
 
 > **Revisión 2026-10-07.** RT-DETRv3 produce 300 cajas por foto y YOLO26 unas 2. Antes de la evaluación final se comprueba si la ventaja de RT-DETRv3 en mAP50-95 depende de eso, recalculando el mAP con las k cajas de mayor confianza por foto (pregunta 33; lectura fijada en la ficha D26).
+
+> **Revisión 2026-11-15.** La comprobación de las cajas por foto (pregunta 33) se hizo: con k = 3, RT-DETRv3 sigue 0.080 por encima de YOLO26m en mAP50-95 global, así que la comparación de arquitecturas se reporta con el mAP estándar de pycocotools (detalle al final de la parte 2). Desde la versión 4, el cuaderno guarda además todas las detecciones de los modelos de Ultralytics desde 0.001 (`detecciones_completas.csv.gz`). `umbral_detecciones.csv.gz` sigue guardando solo las de confianza ≥ 0.01, y con él no se puede repetir el mAP del cuaderno.
 
 ### 1.7 Qué se anota por corrida
 
@@ -892,5 +896,93 @@ Comparación con YOLO26 (mismas fotos, mismo protocolo):
 - **Archivos:** `docs/modelado/velocidad_cpu_e6_rtdetrv3r18_s0.csv`.
 
 GPU consumida en RT-DETRv3: unas 4 horas hasta el lanzamiento de E6 (entorno, E6v y sondeo), unas 15.4 en E6 y unas 16.1 en E6b. En E7, unas 5.7. E7b no se entrenó.
+
+### Comprobación de las cajas por foto (pregunta 33, 2026-11-15)
+
+- **Objetivo:** saber si la ventaja de RT-DETRv3 en mAP50-95 de validación (+0.084 sobre YOLO26m, pycocotools) viene del número de cajas por foto. RT-DETRv3 entrega 300 por foto y pycocotools usa las 100 de mayor confianza; YOLO26 da unas 2. En el mAP de COCO, las cajas de confianza baja pueden sumar aciertos al final de la curva y casi no restan.
+- **Regla, fijada el 7 de octubre antes de calcular (ficha D26):** con las 3 cajas de mayor confianza por foto, si la media de E6 y E6b en mAP50-95 global supera a la de E4 y E4b por más de 0.015, la ventaja no viene del número de cajas. Si no, la comparación se reporta con el mismo k para todos y se declara. E7 se informa aparte.
+- **Herramientas:**
+  - `notebooks/evaluar_umbral_yolo26.ipynb` versión 4 (Kaggle): la versión 3 más una celda final que guarda todas las detecciones de los modelos de Ultralytics desde 0.001, sin redondear, en `detecciones_completas.csv.gz`, y comprueba que el archivo se lea de vuelta idéntico.
+  - `scripts/comprobar_cajas_por_foto.py` versión 1.1 (local, sin GPU, con el Python de `venv_paddle`): recalcula con pycocotools el mAP con `params.maxDets = [1, 3, 10, 100]` y aplica la regla.
+  - Archivos en `docs/modelado/eval_p33/`.
+- **Incidencia, antes de ver ninguna cifra por k:**
+  - El primer diseño leía YOLO26 desde `umbral_detecciones.csv.gz` (confianza ≥ 0.01, 4 decimales). Con k = 100, el control (repetir `map_comun.csv`, con una tolerancia de 0.005 fijada antes) no pasó: en YOLO26 el mAP50-95 global salía entre 0.006 y 0.010 por debajo del cuaderno, y el mAP50 hasta 0.020. RT-DETRv3, con su archivo completo, lo repetía exacto.
+  - Causa, medida: a YOLO26 le faltan las cajas de confianza entre 0.001 y 0.01 (entre el 51 y el 60 % de las suyas), y algunas son aciertos. El redondeo a 4 decimales no explica la diferencia: en RT-DETRv3 mueve el mAP50-95 0.0005 como mucho.
+  - Se añadió la celda al cuaderno, se volvió a correr la evaluación y la lectura principal pasó a usar las detecciones completas de todos los modelos. Se conservó la variante con solo las cajas ≥ 0.01 para todos. Las tolerancias de los dos controles quedaron en 0.0005, fijadas antes de ver resultados por k.
+  - La versión 1 del script no encontraba las detecciones de RT-DETRv3, que el estudiante guarda en una subcarpeta por corrida; la 1.1 las busca también ahí.
+- **Detecciones** (validación, confianza ≥ 0.001): YOLO26, de 1018 a 1393 por modelo (de 1.7 a 2.3 por foto de media; máximo de 20 a 36 en una foto). RT-DETRv3, 156 160 y 178 231 (261 y 298 por foto de media; máximo 300).
+- **Controles:**
+  1. La corrida del cuaderno versión 4 repite la del 7 de octubre: 35 cifras de mAP (siete modelos, cinco particiones), diferencia máxima 0. También los controles de su sección 8: E1 y E1b frente a septiembre ("igual") y RT-DETRv3 frente a PaddleDetection (+0.0001).
+  2. Con k = 100 el script repite `map_comun.csv` en los siete modelos y en global, ENA24 e iNaturalist: diferencia máxima 0.
+  3. Internos del script: con k = 100, la lectura de la matriz de precisión repite `summarize()`; con k = 3, quitar a mano las cajas sobrantes de cada foto da lo mismo que `maxDets = 3`.
+  4. Por otra vía, en el entorno de Claude (Linux, Python 3.12.3, numpy 1.26.4 y pycocotools 2.0.11): un cálculo del AP de COCO escrito desde cero, sin pycocotools, repite a pycocotools con una diferencia de 2e-16, y repite al cuarto decimal las cifras del estudiante en RT-DETRv3 (48 cifras) y en la variante. Las de YOLO26 con detecciones completas no se repitieron fuera de su equipo.
+
+**mAP50-95 global con k cajas por foto** (pycocotools):
+
+| Modelo | k = 1 | k = 3 | k = 10 | k = 100 (estándar, = cuaderno) |
+|---|---|---|---|---|
+| E1 (YOLO26n) | 0.7003 | 0.7438 | 0.7497 | 0.7494 |
+| E1b (YOLO26n) | 0.6874 | 0.7352 | 0.7389 | 0.7388 |
+| E4 (YOLO26m) | 0.6949 | 0.7391 | 0.7432 | 0.7434 |
+| E4b (YOLO26m) | 0.6962 | 0.7429 | 0.7460 | 0.7468 |
+| E7 (YOLO26m, 200 épocas) | 0.6884 | 0.7441 | 0.7477 | 0.7478 |
+| E6 (RT-DETRv3) | 0.7693 | 0.8232 | 0.8300 | 0.8308 |
+| E6b (RT-DETRv3) | 0.7642 | 0.8195 | 0.8265 | 0.8270 |
+
+**mAP50 global con k cajas por foto:**
+
+| Modelo | k = 1 | k = 3 | k = 10 | k = 100 |
+|---|---|---|---|---|
+| E1 | 0.8592 | 0.9180 | 0.9221 | 0.9218 |
+| E1b | 0.8537 | 0.9098 | 0.9180 | 0.9178 |
+| E4 | 0.8678 | 0.9181 | 0.9275 | 0.9274 |
+| E4b | 0.8765 | 0.9254 | 0.9291 | 0.9291 |
+| E7 | 0.8615 | 0.9292 | 0.9336 | 0.9335 |
+| E6 | 0.8950 | 0.9510 | 0.9619 | 0.9616 |
+| E6b | 0.8927 | 0.9568 | 0.9623 | 0.9631 |
+
+**Media de RT-DETRv3 (E6, E6b) menos media de YOLO26m (E4, E4b):**
+
+| | k = 1 | k = 3 | k = 10 | k = 100 |
+|---|---|---|---|---|
+| mAP50-95 global | +0.0712 | **+0.0804** | +0.0837 | +0.0838 |
+| mAP50 global | +0.0217 | +0.0322 | +0.0338 | +0.0341 |
+| mAP50-95 ENA24* | +0.068 | +0.074 | +0.071 | +0.071 |
+| mAP50-95 iNaturalist* | +0.069 | +0.079 | +0.085 | +0.085 |
+| Variante (todos ≥ 0.01), mAP50-95 global | +0.0746 | +0.0854 | +0.0919 | +0.0922 |
+| Variante (todos ≥ 0.01), mAP50 global | +0.0258 | +0.0380 | +0.0430 | +0.0430 |
+
+\* Calculadas con las cifras de 4 decimales de la salida; las exactas están en `cajas_por_foto.csv`.
+
+**Cajas que quedan con cada k** (validación, 598 fotos):
+
+| Modelo | k = 1 | k = 3 | k = 10 | k = 100 | Todas |
+|---|---|---|---|---|---|
+| E1 | 370 | 684 | 930 | 1018 | 1018 |
+| E1b | 401 | 756 | 1034 | 1076 | 1076 |
+| E4 | 402 | 799 | 1131 | 1201 | 1201 |
+| E4b | 412 | 861 | 1276 | 1340 | 1340 |
+| E7 | 411 | 857 | 1283 | 1393 | 1393 |
+| E6 | 598 | 1794 | 5980 | 59 786 | 156 160 |
+| E6b | 598 | 1794 | 5980 | 59 800 | 178 231 |
+
+**Lectura con la regla de D26:** con k = 3, mAP50-95 global de 0.8232 (E6), 0.8195 (E6b), 0.7391 (E4) y 0.7429 (E4b). Media de RT-DETRv3 0.8214 y de YOLO26m 0.7410: **+0.0804**, más que el margen de 0.015. La ventaja de RT-DETRv3 no viene del número de cajas por foto. La variante da +0.0854: la misma lectura. E7, aparte: 0.7441 con k = 3; RT-DETRv3 queda +0.0773.
+
+**Otras lecturas:**
+- Con una sola caja por foto, RT-DETRv3 sigue 0.071 por encima en mAP50-95. La ventaja está en el ajuste de las cajas, como ya indicaba que la distancia fuera mayor en mAP50-95 que en mAP50.
+- Con k = 3 el tope es el mismo, pero RT-DETRv3 lo llena en todas las fotos (1794 cajas) y YOLO26m no (799 y 861). Con k = 1 ninguno pasa de una caja por foto, y la diferencia sigue en 0.071.
+- En mAP50, parte de la ventaja sí depende de las cajas extra: de +0.034 (k = 100) a +0.022 (k = 1). Informativo; la regla es sobre mAP50-95.
+- Las cajas de confianza baja ayudan más a YOLO26 que a RT-DETRv3. Quitando las de confianza < 0.01, YOLO26m baja de 0.7451 a 0.7363 en mAP50-95 (y de 0.9282 a 0.9191 en mAP50), y RT-DETRv3 de 0.8289 a 0.8285. Las 300 cajas por foto no inflan el mAP de RT-DETRv3; la preocupación de la pregunta 33 era la contraria.
+- El mAP no siempre sube con k: E1 da 0.7497 con k = 10 y 0.7494 con k = 100. Las cajas que entran pueden tener más confianza que aciertos de otras fotos y bajarles la precisión.
+
+**Consecuencia:** la comparación de arquitecturas del capítulo 3 se reporta con el mAP estándar de pycocotools (k = 100), y esta comprobación va como prueba de robustez.
+
+**Salvedades:**
+- Todo es validación, y la mejor época y el umbral de cada modelo se eligieron con estas fotos.
+- Con k < 100 el mAP no es el estándar de COCO: solo sirve para esta comprobación.
+- La comprobación responde a la duda del número de cajas, no a la de la receta (lotes de 8 fotos frente a 64 y más actualizaciones de pesos en RT-DETRv3).
+- E7 tiene una sola semilla.
+
+**Archivos:** `docs/modelado/eval_p33/` (las salidas del cuaderno versión 4, `cajas_por_foto.csv` y `salida_cajas_por_foto.txt`).
 
 ---

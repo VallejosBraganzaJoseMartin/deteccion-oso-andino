@@ -1,0 +1,145 @@
+== 1. Entradas ==
+Python 3.12.9 | numpy 1.26.4 | pycocotools 2.0.11
+Fotos de 'val': 598 (ENA24 338, iNaturalist 260), 326 con oso; cajas reales 351; para pycocotools 351 (0 recortadas al borde, 0 descartadas) -> coincide con el informe de preparación
+Detecciones completas de cada modelo (confianza >= 0.001):
+   e1_n_deg0_s0            1018 cajas,    1.7 por foto de media, máximo  36 | detecciones_completas.csv.gz
+   e1b_n_deg0_s1           1076 cajas,    1.8 por foto de media, máximo  20 | detecciones_completas.csv.gz
+   e4_m_deg0_s0            1201 cajas,    2.0 por foto de media, máximo  27 | detecciones_completas.csv.gz
+   e4b_m_deg0_s1           1340 cajas,    2.2 por foto de media, máximo  21 | detecciones_completas.csv.gz
+   e7_m_deg0_s0            1393 cajas,    2.3 por foto de media, máximo  26 | detecciones_completas.csv.gz
+   e6_rtdetrv3r18_s0     156160 cajas,  261.1 por foto de media, máximo 300 | docs\modelado\rtdetrv3\e6_rtdetrv3r18_s0\e6_rtdetrv3r18_s0_detecciones_val.csv.gz
+   e6b_rtdetrv3r18_s1    178231 cajas,  298.0 por foto de media, máximo 300 | docs\modelado\rtdetrv3\e6b_rtdetrv3r18_s1\e6b_rtdetrv3r18_s1_detecciones_val.csv.gz
+
+== 2. Controles ==
+Control 1: la corrida del cuaderno repite la anterior (docs\modelado\eval_e7\map_comun.csv); se acepta hasta 0.0005.
+   35 cifras comparadas (modelo y partición); mayor diferencia en mAP50-95 o mAP50: 0.000000 -> repite
+Control 2: con k = 100 este script repite el map_comun.csv de docs\modelado\eval_p33; se acepta hasta 0.0005.
+   modelo               partición     mAP50-95  cuaderno      dif.     mAP50  cuaderno      dif.
+   e1_n_deg0_s0         Global          0.7494    0.7494  +0.00000    0.9218    0.9218  +0.00000
+   e1_n_deg0_s0         ENA24           0.7763    0.7763  +0.00000    0.9558    0.9558  +0.00000
+   e1_n_deg0_s0         iNaturalist     0.7290    0.7290  +0.00000    0.8885    0.8885  +0.00000
+   e1b_n_deg0_s1        Global          0.7388    0.7388  +0.00000    0.9178    0.9178  +0.00000
+   e1b_n_deg0_s1        ENA24           0.7483    0.7483  +0.00000    0.9294    0.9294  +0.00000
+   e1b_n_deg0_s1        iNaturalist     0.7375    0.7375  +0.00000    0.9081    0.9081  +0.00000
+   e4_m_deg0_s0         Global          0.7434    0.7434  +0.00000    0.9274    0.9274  +0.00000
+   e4_m_deg0_s0         ENA24           0.7526    0.7526  +0.00000    0.9504    0.9504  +0.00000
+   e4_m_deg0_s0         iNaturalist     0.7439    0.7439  +0.00000    0.9073    0.9073  +0.00000
+   e4b_m_deg0_s1        Global          0.7468    0.7468  +0.00000    0.9291    0.9291  +0.00000
+   e4b_m_deg0_s1        ENA24           0.7605    0.7605  +0.00000    0.9593    0.9593  +0.00000
+   e4b_m_deg0_s1        iNaturalist     0.7446    0.7446  +0.00000    0.9033    0.9033  +0.00000
+   e7_m_deg0_s0         Global          0.7478    0.7478  +0.00000    0.9335    0.9335  +0.00000
+   e7_m_deg0_s0         ENA24           0.7656    0.7656  +0.00000    0.9613    0.9613  +0.00000
+   e7_m_deg0_s0         iNaturalist     0.7400    0.7400  +0.00000    0.9085    0.9085  +0.00000
+   e6_rtdetrv3r18_s0    Global          0.8308    0.8308  +0.00000    0.9616    0.9616  +0.00000
+   e6_rtdetrv3r18_s0    ENA24           0.8318    0.8318  +0.00000    0.9734    0.9734  +0.00000
+   e6_rtdetrv3r18_s0    iNaturalist     0.8293    0.8293  +0.00000    0.9508    0.9508  +0.00000
+   e6b_rtdetrv3r18_s1   Global          0.8270    0.8270  +0.00000    0.9631    0.9631  +0.00000
+   e6b_rtdetrv3r18_s1   ENA24           0.8237    0.8237  +0.00000    0.9688    0.9688  +0.00000
+   e6b_rtdetrv3r18_s1   iNaturalist     0.8291    0.8291  +0.00000    0.9541    0.9541  +0.00000
+   Mayor diferencia: 0.000000 -> repite
+Los dos controles pasan.
+
+== 3. mAP con las k cajas de mayor confianza por foto (pycocotools, detecciones completas) ==
+Comprobaciones internas: con k = 100 repite summarize(), y con k = 3 da lo mismo que quitar a mano las cajas sobrantes de cada foto.
+
+=== mAP50-95 | Global ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.7003    0.7438    0.7497    0.7494      0.7494
+   e1b_n_deg0_s1           0.6874    0.7352    0.7389    0.7388      0.7388
+   e4_m_deg0_s0            0.6949    0.7391    0.7432    0.7434      0.7434
+   e4b_m_deg0_s1           0.6962    0.7429    0.7460    0.7468      0.7468
+   e7_m_deg0_s0            0.6884    0.7441    0.7477    0.7478      0.7478
+   e6_rtdetrv3r18_s0       0.7693    0.8232    0.8300    0.8308      0.8308
+   e6b_rtdetrv3r18_s1      0.7642    0.8195    0.8265    0.8270      0.8270
+
+=== mAP50-95 | ENA24 ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.7453    0.7710    0.7763    0.7763      0.7763
+   e1b_n_deg0_s1           0.7178    0.7457    0.7484    0.7483      0.7483
+   e4_m_deg0_s0            0.7260    0.7502    0.7527    0.7526      0.7526
+   e4b_m_deg0_s1           0.7217    0.7552    0.7606    0.7605      0.7605
+   e7_m_deg0_s0            0.7282    0.7654    0.7656    0.7656      0.7656
+   e6_rtdetrv3r18_s0       0.7999    0.8306    0.8311    0.8318      0.8318
+   e6b_rtdetrv3r18_s1      0.7846    0.8226    0.8232    0.8237      0.8237
+
+=== mAP50-95 | iNaturalist ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.6637    0.7245    0.7295    0.7290      0.7290
+   e1b_n_deg0_s1           0.6705    0.7340    0.7376    0.7375      0.7375
+   e4_m_deg0_s0            0.6749    0.7367    0.7432    0.7439      0.7439
+   e4b_m_deg0_s1           0.6838    0.7422    0.7431    0.7446      0.7446
+   e7_m_deg0_s0            0.6625    0.7338    0.7399    0.7400      0.7400
+   e6_rtdetrv3r18_s0       0.7474    0.8184    0.8282    0.8293      0.8293
+   e6b_rtdetrv3r18_s1      0.7484    0.8176    0.8287    0.8291      0.8291
+
+=== mAP50 | Global ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.8592    0.9180    0.9221    0.9218      0.9218
+   e1b_n_deg0_s1           0.8537    0.9098    0.9180    0.9178      0.9178
+   e4_m_deg0_s0            0.8678    0.9181    0.9275    0.9274      0.9274
+   e4b_m_deg0_s1           0.8765    0.9254    0.9291    0.9291      0.9291
+   e7_m_deg0_s0            0.8615    0.9292    0.9336    0.9335      0.9335
+   e6_rtdetrv3r18_s0       0.8950    0.9510    0.9619    0.9616      0.9616
+   e6b_rtdetrv3r18_s1      0.8927    0.9568    0.9623    0.9631      0.9631
+
+=== mAP50 | ENA24 ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.9237    0.9509    0.9558    0.9558      0.9558
+   e1b_n_deg0_s1           0.8911    0.9254    0.9294    0.9294      0.9294
+   e4_m_deg0_s0            0.9074    0.9414    0.9506    0.9504      0.9504
+   e4b_m_deg0_s1           0.9216    0.9563    0.9593    0.9593      0.9593
+   e7_m_deg0_s0            0.9232    0.9627    0.9613    0.9613      0.9613
+   e6_rtdetrv3r18_s0       0.9314    0.9708    0.9744    0.9734      0.9734
+   e6b_rtdetrv3r18_s1      0.9185    0.9653    0.9678    0.9688      0.9688
+
+=== mAP50 | iNaturalist ===
+   modelo                   k = 1     k = 3    k = 10   k = 100    cuaderno
+   e1_n_deg0_s0            0.8057    0.8866    0.8891    0.8885      0.8885
+   e1b_n_deg0_s1           0.8281    0.8991    0.9083    0.9081      0.9081
+   e4_m_deg0_s0            0.8375    0.8963    0.9073    0.9073      0.9073
+   e4b_m_deg0_s1           0.8333    0.9018    0.8999    0.9033      0.9033
+   e7_m_deg0_s0            0.8100    0.9006    0.9088    0.9085      0.9085
+   e6_rtdetrv3r18_s0       0.8673    0.9367    0.9493    0.9508      0.9508
+   e6b_rtdetrv3r18_s1      0.8663    0.9464    0.9535    0.9541      0.9541
+
+Cajas que quedan en total con cada k (detecciones completas):
+   modelo                   k = 1     k = 3    k = 10   k = 100       todas
+   e1_n_deg0_s0               370       684       930      1018        1018
+   e1b_n_deg0_s1              401       756      1034      1076        1076
+   e4_m_deg0_s0               402       799      1131      1201        1201
+   e4b_m_deg0_s1              412       861      1276      1340        1340
+   e7_m_deg0_s0               411       857      1283      1393        1393
+   e6_rtdetrv3r18_s0          598      1794      5980     59786      156160
+   e6b_rtdetrv3r18_s1         598      1794      5980     59800      178231
+
+== 4. RT-DETRv3 (media de E6 y E6b) frente a YOLO26m (media de E4 y E4b), global ==
+Detecciones completas (confianza >= 0.001)
+                                k = 1     k = 3    k = 10   k = 100
+   mAP50-95, RT-DETRv3         0.7667    0.8214    0.8283    0.8289
+   mAP50-95, YOLO26m           0.6955    0.7410    0.7446    0.7451
+   mAP50-95, diferencia       +0.0712   +0.0804   +0.0837   +0.0838
+   mAP50, RT-DETRv3            0.8939    0.9539    0.9621    0.9624
+   mAP50, YOLO26m              0.8722    0.9217    0.9283    0.9282
+   mAP50, diferencia          +0.0217   +0.0322   +0.0338   +0.0341
+Variante: solo las cajas de confianza >= 0.01, para todos
+                                k = 1     k = 3    k = 10   k = 100
+   mAP50-95, RT-DETRv3         0.7672    0.8212    0.8282    0.8285
+   mAP50-95, YOLO26m           0.6926    0.7358    0.7363    0.7363
+   mAP50-95, diferencia       +0.0746   +0.0854   +0.0919   +0.0922
+   mAP50, RT-DETRv3            0.8939    0.9539    0.9621    0.9621
+   mAP50, YOLO26m              0.8681    0.9159    0.9191    0.9191
+   mAP50, diferencia          +0.0258   +0.0380   +0.0430   +0.0430
+
+== 5. Lectura (regla de la ficha D26, fijada el 7 de octubre de 2026, antes de calcular) ==
+Con k = 3, mAP50-95 global:
+   e6_rtdetrv3r18_s0    0.8232
+   e6b_rtdetrv3r18_s1   0.8195
+   e4_m_deg0_s0         0.7391
+   e4b_m_deg0_s1        0.7429
+Media de RT-DETRv3 0.8214 - media de YOLO26m 0.7410 = +0.0804 (hace falta más de 0.015). Con k = 100 es +0.0838.
+Resultado: RT-DETRv3 sigue por encima por más del margen -> su ventaja en mAP50-95 no viene del número de cajas por foto.
+Variante con solo las cajas de confianza >= 0.01, para todos: +0.0854 -> la misma lectura.
+Aparte, e7_m_deg0_s0 (YOLO26m con 200 épocas, una semilla): 0.7441 con k = 3; la media de RT-DETRv3 queda +0.0773.
+Esto no cambia la regla B ni D19: la regla B solo usa las cajas por encima del umbral de cada modelo.
+
+Resultados guardados en docs\modelado\eval_p33\cajas_por_foto.csv y en docs\modelado\eval_p33\salida_cajas_por_foto.txt
